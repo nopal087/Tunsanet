@@ -62,11 +62,19 @@ Route::get('/pengguna', function () {
     return view('user/index');
 });
 
+// Pengguna yang berlangganan
+Route::get('/Lpengguna', function () {
+    return view('admin/menu/LanggananPengguna');
+});
+
 
 // transaksi
-Route::get('/pesanan', function () {
-    return view('transaksi/pesan');
-});
+// Route::get('/pesanan', function () {
+//     return view('transaksi/pesan');
+// });
+
+//post transaksi
+Route::post('pesanan', [UserController::class, 'pesanan_action'])->name('pesanan.action');
 
 // Register
 Route::get('register', [UserController::class, 'register'])->name('register');
@@ -93,3 +101,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //mengambil paket internet didatabase
 Route::get('/', [UserController::class, 'paket']);
+
+// tess
+Route::get('pesanan', [UserController::class, 'pesanan'])->name('pesanan');

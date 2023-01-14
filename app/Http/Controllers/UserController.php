@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use App\Models\paketInternet;
+use App\Models\Transaksi;
 
 class UserController extends Controller
 {
@@ -19,6 +20,7 @@ class UserController extends Controller
         return view('admin/menu/pengguna')->with('data', $data);
     }
     //=================================================================================================
+
     //fungsi manggil data paket internet dari database==================================================
     public function paket()
     {
@@ -105,7 +107,45 @@ class UserController extends Controller
 
     //==========================================================================================================
 
-    //fungsi untuk menampilkan paket internet===================================================================
+    public function pesanan(Request $request)
+    {
+        $id = $request->id;
+        $data['$title'] =
+            'pesanan';
+        $data['$id'] = $id;
+        $paketInternets = paketInternet::all();
+        $biaya_pemasangan = 300000;
+        return view('transaksi.pesan', compact('id',  'paketInternets', 'biaya_pemasangan'));
+    }
 
-    //==========================================================================================================
+
+    //post pesanan / transaksi
+    public function transaksi(Request $request)
+    {
+        $request->validate([
+            'id_user' => 'required',
+            'id_paket' => 'required',
+            'tanggal_pembelian' => 'required',
+            'metode_pembayaran' => 'required',
+            'status' => 'required',
+        ]);
+        $transkasi = new Transaksi([
+            'id_user' => $request->id_user,
+            'id_paket' => $request->id_paket,
+            'tanggal_pembelian' => $request->tanggal_pembelian,
+            'metode_pembayaran' => $request->metode_pembayaran,
+            'status' => $request->status,
+
+        ]);
+        $transkasi->save();
+        return redirect()->route('index');
+    }
+
+    //mencari user dengan id
+    public function findUserById($id)
+    {
+        $user = Transaksi::find($id);
+        return view('transaksi.pesan', compact('user'));
+        // return $paketInternets;
+    }
 }

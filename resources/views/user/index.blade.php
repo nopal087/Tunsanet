@@ -152,7 +152,8 @@
                                 <ul class="list-unstyled mt-3 mb-4">
                                     <li>{{ $paket->deskripsi }}</li>
                                 </ul>
-                                <a href="/pesanan"><button type="button" class="w-100 btn btn-lg btn-primary">
+                                <a href={{ route('pesanan', ['id' => $paket->id]) }}><button type="button"
+                                        class="w-100 btn btn-lg btn-primary">
                                         Pilih
                                     </button></a>
                             </div>

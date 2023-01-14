@@ -29,12 +29,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="btn-pengguna">
+                            {{-- <div class="btn-pengguna">
                                 <a class="btn btn-info btn-sm" href="#">
                                     <i class="fas fa-plus"></i>
                                     Data Pengguna
                                 </a>
-                            </div>
+                            </div> --}}
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
@@ -55,7 +55,7 @@
                                     @foreach ($data as $item)
                                         <tr>
                                             <td>{{ $loop->iteration }}.</td>
-                                            <td>{{ $item->user_id }}</td>
+                                            <td>{{ $item->id }}</td>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->email }}</td>
                                             <td>{{ $item->no_hp }}</td>

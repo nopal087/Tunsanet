@@ -45,6 +45,15 @@
                          </p>
                      </a>
                  </li>
+                 <li class="nav-header">LANGGANAN</li>
+                 <li class="nav-item">
+                     <a href="/Lpengguna" class="nav-link">
+                         <i class="nav-icon fas fa-user"></i>
+                         <p>
+                             Pengguna
+                         </p>
+                     </a>
+                 </li>
                  <li class="nav-header">TAGIHAN DAN PEMBAYARAN</li>
                  <li class="nav-item">
                      <a href="/tagihan" class="nav-link">
@@ -63,14 +72,14 @@
                      </a>
                  </li>
                  <li class="nav-header">KEUANGAN</li>
-                 <li class="nav-item">
+                 {{-- <li class="nav-item">
                      <a href="/dpendapatan" class="nav-link">
                          <i class="nav-icon fas fa-dollar-sign"></i>
                          <p>
                              Data Pendapatan
                          </p>
                      </a>
-                 </li>
+                 </li> --}}
                  <li class="nav-item">
                      <a href="/laporanBul" class="nav-link">
                          <i class="nav-icon fas fa-scroll"></i>

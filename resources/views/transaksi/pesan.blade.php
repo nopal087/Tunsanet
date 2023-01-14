@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
     <meta name="generator" content="Hugo 0.104.2" />
-    <title>WIFI | BUMDES TUNJUNGSARI</title>
+    <title>WIFI | Pesanan</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/pricing/" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -127,74 +127,208 @@
 
         <main>
             <div class="row g-5">
-                <div class="col-md-5 col-lg-4 order-md-last">
+                <div class="col-md-5 col-lg-4 order-md-last border rounded p-3 h-25">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="mb-3">Ringkasan</span>
                     </h4>
-                    <ul class="list-group mb-3">
-                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                            <div>
-                                <h6 class="my-0">Paket langganan</h6>
-                                <small class="text-muted">silver</small>
-                            </div>
-                            <span class="text-muted">Rp.150.000</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                            <div>
-                                <h6 class="my-0">Biaya Pemasangan</h6>
-                                <small class="text-muted">untuk pertama kali pembelian</small>
-                            </div>
-                            <span class="text-muted">Rp300.000</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Total</span>
-                            <strong>Rp. 450.000</strong>
-                        </li>
-                    </ul>
+                    @foreach ($paketInternets as $paket)
+                        @if ($paket->id == $id)
+                            <ul class="list-group mb-3">
+                                <li class="list-group-item d-flex justify-content-between lh-lg">
+                                    <div>
+                                        <h6 class="my-0">Paket Internet</h6>
+                                        <small class="text-muted">{{ $paket->nama_paket }}</small>
+                                    </div>
+                                    <span class="text-muted">Rp. {{ number_format($paket->harga) }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between lh-sm">
+                                    <div>
+                                        <h6 class="my-0">Biaya Pemasangan</h6>
+                                        <small class="text-muted">untuk pertama kali pembelian</small>
+                                    </div>
+                                    <span class="text-muted">Rp. {{ number_format($biaya_pemasangan) }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Total</span>
+                                    <strong>Rp. {{ number_format($paket->harga + $biaya_pemasangan) }}</strong>
+                                </li>
+                            </ul>
+                        @endif
+                    @endforeach
                     {{-- data diri pengguna/pembeli --}}
                 </div>
                 <div class="col-md-7 col-lg-8">
-                    <h4 class="mb-3">Lengkapi data diri</h4>
-                    <form class="needs-validation" action="#" method="#">
-                        <div class="row g-3">
-                            <div class="col-sm-12">
-                                <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="" value=""
-                                    required>
-                                <div class="invalid-feedback">
-                                    Mohon isi nama lengkap
+                    <div class="border rounded p-3">
+                        <h4 class="mb-3">Lengkapi data diri</h4>
+                        <form class="needs-validation" action="#" method="post">
+                            <div class="row g-3">
+                                <div class="col-sm-12">
+                                    <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder=""
+                                        value="" required>
+                                    <div class="invalid-feedback">
+                                        Mohon isi nama lengkap
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-12">
+                                {{-- <div class="col-12">
                                 <label for="email" class="form-label">Email <span
                                         class="text-muted">(wajib)</span></label>
                                 <input type="email" class="form-control" id="email" placeholder="">
                                 <div class="invalid-feedback">
                                     Please enter a valid email address.
                                 </div>
-                            </div>
+                            </div> --}}
 
-                            <div class="col-12">
-                                <label for="no_hp" class="form-label">No handphone <span
-                                        class="text-muted">(wajib)</span></label>
-                                <input type="text" class="form-control" id="no_hp" placeholder="">
-                                <div class="invalid-feedback">
-                                    Please enter a valid phone.
+                                <div class="col-12">
+                                    <label for="no_hp" class="form-label">No handphone <span
+                                            class="text-muted"></span></label>
+                                    <input type="text" class="form-control" id="no_hp" placeholder="">
+                                    <div class="invalid-feedback">
+                                        Please enter a valid phone.
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="address" class="form-label">Alamat</label>
+                                    {{-- <input type="text" class="form-control" id="address" placeholder="" required>
+                                <div class="invalid-feedback"> --}}
+                                    <textarea name="alamat" class="form-control mb-3" id="alamat" cols="30" rows="5"></textarea>
+
                                 </div>
                             </div>
+                    </div>
+                    <div class="border rounded p-3 mt-3">
+                        <h4 class="mb-3">Pilih Metode Pembayaran</h4>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
+                                        aria-controls="collapseOne">
+                                        E-Wallet
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check d-flex align-items-center">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label d-flex m-3 align-items-center"
+                                                for="flexRadioDefault1">
+                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
+                                                    alt="">
+                                                <h5 class="ms-5"> Shopee Pay </h5>
+                                            </label>
+                                        </div>
 
-                            <div class="col-12">
-                                <label for="address" class="form-label">Alamat</label>
-                                <input type="text" class="form-control" id="address" placeholder="" required>
-                                <div class="invalid-feedback">
-                                    Please enter your address.
+                                        <div class="form-check d-flex align-items-center">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label d-flex m-3 align-items-center"
+                                                for="flexRadioDefault1">
+                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
+                                                    alt="">
+                                                <h5 class="ms-5"> Shopee Pay </h5>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <hr class="my-4">
-
-                            <button class="w-100 btn btn-primary btn-lg" type="submit">Lanjutkan</button>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                        aria-controls="collapseTwo">
+                                        Internet Banking
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check d-flex align-items-center">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label d-flex m-3 align-items-center"
+                                                for="flexRadioDefault1">
+                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
+                                                    alt="">
+                                                <h5 class="ms-5"> Shopee Pay </h5>
+                                            </label>
+                                        </div>
+                                        <div class="form-check d-flex align-items-center">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label d-flex m-3 align-items-center"
+                                                for="flexRadioDefault1">
+                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
+                                                    alt="">
+                                                <h5 class="ms-5"> Shopee Pay </h5>
+                                            </label>
+                                        </div>
+                                        <div class="form-check d-flex align-items-center">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label d-flex m-3 align-items-center"
+                                                for="flexRadioDefault1">
+                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
+                                                    alt="">
+                                                <h5 class="ms-5"> Shopee Pay </h5>
+                                            </label>
+                                        </div>
+                                        <div class="form-check d-flex align-items-center">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label d-flex m-3 align-items-center"
+                                                for="flexRadioDefault1">
+                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
+                                                    alt="">
+                                                <h5 class="ms-5"> Shopee Pay </h5>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                        aria-expanded="false" aria-controls="collapseThree">
+                                        Store
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check d-flex align-items-center">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label d-flex m-3 align-items-center"
+                                                for="flexRadioDefault1">
+                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
+                                                    alt="">
+                                                <h5 class="ms-5"> Shopee Pay </h5>
+                                            </label>
+                                        </div>
+                                        <div class="form-check d-flex align-items-center">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label d-flex m-3 align-items-center"
+                                                for="flexRadioDefault1">
+                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
+                                                    alt="">
+                                                <h5 class="ms-5"> Shopee Pay </h5>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="w-100 btn btn-primary btn-lg mt-3" type="submit">Lanjutkan</button>
                     </form>
+
                 </div>
             </div>
         </main>
