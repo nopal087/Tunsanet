@@ -139,14 +139,14 @@
                                         <h6 class="my-0">Paket Internet</h6>
                                         <small class="text-muted">{{ $paket->nama_paket }}</small>
                                     </div>
-                                    <span class="text-muted">Rp. {{ number_format($paket->harga) }}</span>
+                                    <span class="text-muted">Rp.{{ number_format($paket->harga) }}</span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between lh-sm">
+                                <li class="list-group-item d-flex justify-content-between lh-md">
                                     <div>
                                         <h6 class="my-0">Biaya Pemasangan</h6>
                                         <small class="text-muted">untuk pertama kali pembelian</small>
                                     </div>
-                                    <span class="text-muted">Rp. {{ number_format($biaya_pemasangan) }}</span>
+                                    <span class="text-muted">Rp.{{ number_format($biaya_pemasangan) }}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between">
                                     <span>Total</span>
@@ -160,12 +160,14 @@
                 <div class="col-md-7 col-lg-8">
                     <div class="border rounded p-3">
                         <h4 class="mb-3">Lengkapi data diri</h4>
-                        <form class="needs-validation" action="#" method="post">
+                        <form class="needs-validation" action="{{ route('pesanan', ['id' => $paket->id]) }}"
+                            method="POST">
+                            @csrf
                             <div class="row g-3">
                                 <div class="col-sm-12">
                                     <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
                                     <input type="text" class="form-control" id="firstName" placeholder=""
-                                        value="" required>
+                                        value="{{ $user->name }}" required>
                                     <div class="invalid-feedback">
                                         Mohon isi nama lengkap
                                     </div>
@@ -183,7 +185,8 @@
                                 <div class="col-12">
                                     <label for="no_hp" class="form-label">No handphone <span
                                             class="text-muted"></span></label>
-                                    <input type="text" class="form-control" id="no_hp" placeholder="">
+                                    <input type="text" class="form-control" id="no_hp" placeholder=""
+                                        value="{{ $user->no_hp }}">
                                     <div class="invalid-feedback">
                                         Please enter a valid phone.
                                     </div>
@@ -193,7 +196,7 @@
                                     <label for="address" class="form-label">Alamat</label>
                                     {{-- <input type="text" class="form-control" id="address" placeholder="" required>
                                 <div class="invalid-feedback"> --}}
-                                    <textarea name="alamat" class="form-control mb-3" id="alamat" cols="30" rows="5"></textarea>
+                                    <textarea name="alamat" class="form-control mb-3" id="alamat" cols="30" rows="5">{{ $user->alamat }}</textarea>
 
                                 </div>
                             </div>
@@ -225,12 +228,12 @@
 
                                         <div class="form-check d-flex align-items-center">
                                             <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
+                                                id="flexRadioDefault2">
                                             <label class="form-check-label d-flex m-3 align-items-center"
                                                 for="flexRadioDefault1">
-                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
+                                                <img src="{{ asset('logopembayaran/ewallet/gopay.svg') }}"
                                                     alt="">
-                                                <h5 class="ms-5"> Shopee Pay </h5>
+                                                <h5 class="ms-5"> Gopay </h5>
                                             </label>
                                         </div>
                                     </div>
@@ -252,9 +255,9 @@
                                                 id="flexRadioDefault1">
                                             <label class="form-check-label d-flex m-3 align-items-center"
                                                 for="flexRadioDefault1">
-                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
-                                                    alt="">
-                                                <h5 class="ms-5"> Shopee Pay </h5>
+                                                <img src="{{ asset('logopembayaran/bank/BRIMO LOGO.jpg') }}"
+                                                    width="100px" height="50px" alt="">
+                                                <h5 class="ms-5"> Bri Mobile </h5>
                                             </label>
                                         </div>
                                         <div class="form-check d-flex align-items-center">
@@ -262,9 +265,9 @@
                                                 id="flexRadioDefault1">
                                             <label class="form-check-label d-flex m-3 align-items-center"
                                                 for="flexRadioDefault1">
-                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
-                                                    alt="">
-                                                <h5 class="ms-5"> Shopee Pay </h5>
+                                                <img src="{{ asset('logopembayaran/bank/BCAKLIKPAY.png') }}"
+                                                    width="100px" alt="">
+                                                <h5 class="ms-5"> BCA KlikPay </h5>
                                             </label>
                                         </div>
                                         <div class="form-check d-flex align-items-center">
@@ -272,19 +275,9 @@
                                                 id="flexRadioDefault1">
                                             <label class="form-check-label d-flex m-3 align-items-center"
                                                 for="flexRadioDefault1">
-                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
-                                                    alt="">
-                                                <h5 class="ms-5"> Shopee Pay </h5>
-                                            </label>
-                                        </div>
-                                        <div class="form-check d-flex align-items-center">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
-                                            <label class="form-check-label d-flex m-3 align-items-center"
-                                                for="flexRadioDefault1">
-                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
-                                                    alt="">
-                                                <h5 class="ms-5"> Shopee Pay </h5>
+                                                <img src="{{ asset('logopembayaran/bank/DANAMON.png') }}"
+                                                    width="100px" height="50px" alt="">
+                                                <h5 class="ms-5"> Danamon </h5>
                                             </label>
                                         </div>
                                     </div>
@@ -306,9 +299,9 @@
                                                 id="flexRadioDefault1">
                                             <label class="form-check-label d-flex m-3 align-items-center"
                                                 for="flexRadioDefault1">
-                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
-                                                    alt="">
-                                                <h5 class="ms-5"> Shopee Pay </h5>
+                                                <img src="{{ asset('logopembayaran/store/Logo_indomaret.png') }}"
+                                                    width="100px" height="50px" alt="">
+                                                <h5 class="ms-5"> Indomaret </h5>
                                             </label>
                                         </div>
                                         <div class="form-check d-flex align-items-center">
@@ -316,9 +309,9 @@
                                                 id="flexRadioDefault1">
                                             <label class="form-check-label d-flex m-3 align-items-center"
                                                 for="flexRadioDefault1">
-                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
-                                                    alt="">
-                                                <h5 class="ms-5"> Shopee Pay </h5>
+                                                <img src="{{ asset('logopembayaran/store/ALFAMART.png') }}"
+                                                    width="100px" height="50px" alt="">
+                                                <h5 class="ms-5"> Alfamart</h5>
                                             </label>
                                         </div>
                                     </div>

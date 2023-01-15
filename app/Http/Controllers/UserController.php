@@ -105,7 +105,7 @@ class UserController extends Controller
         return redirect('/tamu')->with('success', 'berhasil logout');
     }
 
-    //==========================================================================================================
+    //=========================================================================================================
 
     public function pesanan(Request $request)
     {
@@ -115,37 +115,37 @@ class UserController extends Controller
         $data['$id'] = $id;
         $paketInternets = paketInternet::all();
         $biaya_pemasangan = 300000;
-        return view('transaksi.pesan', compact('id',  'paketInternets', 'biaya_pemasangan'));
+        $user = User::find(auth()->user()->id);
+        return view('transaksi.pesan', compact('id',  'paketInternets', 'biaya_pemasangan', 'user'));
     }
 
 
     //post pesanan / transaksi
-    public function transaksi(Request $request)
+    public function transaksi_action(Request $request)
     {
-        $request->validate([
-            'id_user' => 'required',
-            'id_paket' => 'required',
-            'tanggal_pembelian' => 'required',
-            'metode_pembayaran' => 'required',
-            'status' => 'required',
-        ]);
-        $transkasi = new Transaksi([
-            'id_user' => $request->id_user,
-            'id_paket' => $request->id_paket,
-            'tanggal_pembelian' => $request->tanggal_pembelian,
-            'metode_pembayaran' => $request->metode_pembayaran,
-            'status' => $request->status,
+        // $request->validate([
+        //     'id_user' => 'required',
+        //     'id_paket' => 'required',
+        //     'tanggal_pembelian' => 'required',
+        //     'metode_pembayaran' => 'required',
+        //     'status' => 'required',
+        // ]);
+        $transaksi = new Transaksi([
+            'id_user' => auth()->user()->id,
+            'id_paket' => $request->id,
+            'tanggal_pembelian' => date_create('now')->format('Y-m-d H:i:s'),
+            'metode_pembayaran' => "gopay",
+            'status' => "belum bayar",
 
         ]);
-        $transkasi->save();
-        return redirect()->route('index');
+        $transaksi->save();
+        return view('welcome');
     }
 
-    //mencari user dengan id
+    //mencari user dengan id di ringkasan
     public function findUserById($id)
     {
         $user = Transaksi::find($id);
         return view('transaksi.pesan', compact('user'));
-        // return $paketInternets;
     }
 }

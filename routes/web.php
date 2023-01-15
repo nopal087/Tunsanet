@@ -104,3 +104,6 @@ Route::get('/', [UserController::class, 'paket']);
 
 // tess
 Route::get('pesanan', [UserController::class, 'pesanan'])->name('pesanan');
+
+//mengirim data ke database transaksi
+Route::post('pesanan', [UserController::class, 'transaksi_action'])->name('transaksi.action');
