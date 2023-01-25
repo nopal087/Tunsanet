@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\Registercontroller;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 
@@ -67,6 +68,9 @@ Route::get('/Lpengguna', function () {
     return view('admin/menu/LanggananPengguna');
 });
 
+Route::get('/countdown', function () {
+    return view('admin/countdown');
+});
 
 // transaksi
 // Route::get('/pesanan', function () {
@@ -74,7 +78,7 @@ Route::get('/Lpengguna', function () {
 // });
 
 //post transaksi
-Route::post('pesanan', [UserController::class, 'pesanan_action'])->name('pesanan.action');
+Route::post('pesanan', [TransaksiController::class, 'pesanan_action'])->name('pesanan.action');
 
 // Register
 Route::get('register', [UserController::class, 'register'])->name('register');
@@ -103,7 +107,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [UserController::class, 'paket']);
 
 // tess
-Route::get('pesanan', [UserController::class, 'pesanan'])->name('pesanan');
+Route::get('pesanan', [TransaksiController::class, 'pesanan'])->name('pesanan');
 
 //mengirim data ke database transaksi
-Route::post('pesanan', [UserController::class, 'transaksi_action'])->name('transaksi.action');
+Route::post('pesanan', [TransaksiController::class, 'transaksi_action'])->name('transaksi.action');

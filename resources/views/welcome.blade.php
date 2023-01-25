@@ -73,7 +73,10 @@
 
 <body>
 
-    <div class="container py-3">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <div class="container-fluid py-3 px-5">
         <header>
             <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
                 <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
@@ -104,7 +107,43 @@
                 </nav>
             </div>
 
-            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <section class="hero">
+                <div class="">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <h1 class="hero-heading text-primary-emphasis">Internet dengan Tunsanet</h1>
+                            <p class="mt-3 d-flex align-items-center">
+                                <span class="material-symbols-outlined me-2 text-primary">
+                                    language
+                                </span> internet stabil
+                            </p>
+                            <p class="d-flex align-items-center">
+                                <span class="material-symbols-outlined me-2 text-primary">
+                                    headset_mic
+                                </span> Bantuan 24/7
+                            </p>
+                            <span class="hero-subheading">Rp</span>
+                            <span class="hero-subheading display-4 fw-bold text-primary-emphasis">150,000</span>
+                            <span class="hero-subheading">/bulan</span>
+
+                            <p class="mt-4 mb-1 ">
+                                <a href="#paket" class="btn btn-primary btn-md">Pilih Paket sekarang !</a>
+                            <p class="d-flex align-items-center ">
+                                <span class="material-symbols-outlined me-2 text-primary">
+                                    verified_user
+                                </span> jaminan lancar
+                            </p>
+                            </p>
+
+                        </div>
+                        <div class="col-lg-5 mb-5 pb-4">
+                            <img src="{{ asset('pengguna/img/logo.png') }}" class="img-fluid" alt="Hero Image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center" id="paket">
                 <h1 class="display-4 fw-normal">Paket Internet Rumahan</h1>
                 <p class="fs-5 text-muted">
                     Internet Cepat dan ngebut dengan Layanan Wifi TUNSANET!
@@ -112,7 +151,7 @@
             </div>
         </header>
 
-        <main>
+        <main class="container">
             <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sm border-primary">

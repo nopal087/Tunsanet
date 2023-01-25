@@ -36,9 +36,10 @@
                                 </a>
                             </div> --}}
                         </div>
+
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
-                            <table class="table table-bordered text-nowrap">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th>No.</th>
@@ -60,12 +61,79 @@
                                             <td>{{ $item->email }}</td>
                                             <td>{{ $item->no_hp }}</td>
                                             <td>{{ $item->alamat }}</td>
-                                            <td class="project-actions">
-                                                <a class="btn btn-info btn-sm" href="#">
+                                            <td class="project-actions d-flex justify-content-between align-items-center">
+
+
+                                                {{-- edit --}}
+                                                <!-- Button to trigger modal -->
+                                                <button class="btn btn-primary btn-md" data-toggle="modal"
+                                                    data-target="#modalForm">
                                                     <i class="fas fa-pencil-alt">
                                                     </i>
-                                                </a>
-                                                <a class="btn btn-danger btn-sm" href="#">
+                                                </button>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="modalForm" role="dialog">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <!-- Modal Header -->
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" id="myModalLabel">Tambah Pengguna
+                                                                </h4>
+                                                                <button type="button" class="close" data-dismiss="modal">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                    <span class="sr-only">Close</span>
+                                                                </button>
+                                                            </div>
+
+                                                            <!-- Modal Body -->
+                                                            <div class="modal-body">
+                                                                <p class="statusMsg"></p>
+                                                                @foreach ($data as $edit)
+                                                                    @if ($edit->id == $item->id)
+                                                                        <form role="form" method="GET" action="">
+                                                                            @csrf
+                                                                            <div class="form-group">
+                                                                                <label for="inputName">Name</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="inputName"
+                                                                                    placeholder="Enter your name"
+                                                                                    value="{{ $edit->name }}" />
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputEmail">Email</label>
+                                                                                <input type="email" class="form-control"
+                                                                                    id="inputEmail"
+                                                                                    placeholder="Enter your email"
+                                                                                    value="{{ $edit->email }}" />
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputEmail">No.Telephone</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="inputtelephone"
+                                                                                    placeholder="Enter your email"
+                                                                                    value="{{ $edit->no_hp }}" />
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputMessage">Alamat</label>
+                                                                                <textarea class="form-control" id="inputMessage" placeholder="Enter your message">{{ $item->alamat }}</textarea>
+                                                                            </div>
+                                                                        </form>
+                                                                    @endif
+                                                                @endforeach
+                                                            </div>
+                                                            <!-- Modal Footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default"
+                                                                    data-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary submitBtn"
+                                                                    onclick="submitContactForm()">SUBMIT</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{-- hapus --}}
+                                                <a class="btn btn-danger btn-md" href="#">
                                                     <i class="fas fa-trash">
                                                     </i>
                                                 </a>

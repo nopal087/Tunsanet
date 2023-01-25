@@ -14,6 +14,8 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="{{ asset('pengguna/css/bootstrap.min.css') }}" rel="stylesheet" />
 
+
+
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -77,6 +79,9 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
 
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <div class="container py-3">
         <header>
             <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
@@ -128,12 +133,14 @@
         <main>
             <div class="row g-5">
                 <div class="col-md-5 col-lg-4 order-md-last border rounded p-3 h-25">
-                    <h4 class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="mb-3">Ringkasan</span>
+                    <h4 class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="">Ringkasan</span>
+
                     </h4>
+                    <h6><small class="text-muted">Detail ringkasan !</small></h6>
                     @foreach ($paketInternets as $paket)
                         @if ($paket->id == $id)
-                            <ul class="list-group mb-3">
+                            <ul class="list-group mt-3">
                                 <li class="list-group-item d-flex justify-content-between lh-lg">
                                     <div>
                                         <h6 class="my-0">Paket Internet</h6>
@@ -159,49 +166,44 @@
                 </div>
                 <div class="col-md-7 col-lg-8">
                     <div class="border rounded p-3">
-                        <h4 class="mb-3">Lengkapi data diri</h4>
-                        <form class="needs-validation" action="{{ route('pesanan', ['id' => $paket->id]) }}"
+                        <h4 class="mb-1">Lengkapi data diri</h4>
+                        <h6><small class="text-muted">Silahkan isi data diri anda dengan lengkap !</small></h6>
+                        <form class="needs-validation mt-4" action="{{ route('pesanan', ['id' => $paket->id]) }}"
                             method="POST">
                             @csrf
-                            <div class="row g-3">
-                                <div class="col-sm-12">
-                                    <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                                    <input type="text" class="form-control" id="firstName" placeholder=""
-                                        value="{{ $user->name }}" required>
-                                    <div class="invalid-feedback">
-                                        Mohon isi nama lengkap
+                            <div class="border rounded p-3">
+                                <div class="row g-3">
+                                    <div class="col-sm-12">
+                                        <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                                        <input disabled type="text" class="form-control" id="firstName"
+                                            placeholder="" value="{{ $user->name }}" required>
+                                        <div class="invalid-feedback">
+                                            Mohon isi nama lengkap
+                                        </div>
                                     </div>
-                                </div>
 
-                                {{-- <div class="col-12">
-                                <label for="email" class="form-label">Email <span
-                                        class="text-muted">(wajib)</span></label>
-                                <input type="email" class="form-control" id="email" placeholder="">
-                                <div class="invalid-feedback">
-                                    Please enter a valid email address.
-                                </div>
-                            </div> --}}
-
-                                <div class="col-12">
-                                    <label for="no_hp" class="form-label">No handphone <span
-                                            class="text-muted"></span></label>
-                                    <input type="text" class="form-control" id="no_hp" placeholder=""
-                                        value="{{ $user->no_hp }}">
-                                    <div class="invalid-feedback">
-                                        Please enter a valid phone.
+                                    <div class="col-12">
+                                        <label for="no_hp" class="form-label">No handphone <span
+                                                class="text-muted"></span></label>
+                                        <input disabled type="text" class="form-control" id="no_hp"
+                                            placeholder="" value="{{ $user->no_hp }}">
+                                        <div class="invalid-feedback">
+                                            Please enter a valid phone.
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="col-12">
-                                    <label for="address" class="form-label">Alamat</label>
-                                    {{-- <input type="text" class="form-control" id="address" placeholder="" required>
+                                    <div class="col-12">
+                                        <label for="address" class="form-label">Alamat</label>
+                                        {{-- <input type="text" class="form-control" id="address" placeholder="" required>
                                 <div class="invalid-feedback"> --}}
-                                    <textarea name="alamat" class="form-control mb-3" id="alamat" cols="30" rows="5">{{ $user->alamat }}</textarea>
+                                        <textarea disabled name="alamat" class="form-control mb-3" id="alamat" cols="30" rows="5">{{ $user->alamat }}</textarea>
 
+                                    </div>
                                 </div>
                             </div>
                     </div>
                     <div class="border rounded p-3 mt-3">
+
                         <h4 class="mb-3">Pilih Metode Pembayaran</h4>
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
@@ -209,7 +211,9 @@
                                     <button class="accordion-button collapsed" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
                                         aria-controls="collapseOne">
-                                        E-Wallet
+                                        <span class="material-symbols-outlined me-2">
+                                            wallet
+                                        </span> E-Wallet
                                     </button>
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse"
@@ -244,7 +248,9 @@
                                     <button class="accordion-button collapsed" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
                                         aria-controls="collapseTwo">
-                                        Internet Banking
+                                        <span class="material-symbols-outlined me-2">
+                                            phone_iphone
+                                        </span>Internet Banking
                                     </button>
                                 </h2>
                                 <div id="collapseTwo" class="accordion-collapse collapse"
@@ -288,7 +294,9 @@
                                     <button class="accordion-button collapsed" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#collapseThree"
                                         aria-expanded="false" aria-controls="collapseThree">
-                                        Store
+                                        <span class="material-symbols-outlined me-2">
+                                            store
+                                        </span> Store
                                     </button>
                                 </h2>
                                 <div id="collapseThree" class="accordion-collapse collapse"
