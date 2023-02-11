@@ -131,76 +131,91 @@
         </header>
 
         <main>
+
             <div class="row g-5">
                 <div class="col-md-5 col-lg-4 order-md-last border rounded p-3 h-25">
                     <h4 class="d-flex justify-content-between align-items-center mb-1">
                         <span class="">Ringkasan</span>
-
                     </h4>
                     <h6><small class="text-muted">Detail ringkasan !</small></h6>
-                    @foreach ($paketInternets as $paket)
-                        @if ($paket->id == $id)
-                            <ul class="list-group mt-3">
-                                <li class="list-group-item d-flex justify-content-between lh-lg">
-                                    <div>
-                                        <h6 class="my-0">Paket Internet</h6>
-                                        <small class="text-muted">{{ $paket->nama_paket }}</small>
-                                    </div>
-                                    <span class="text-muted">Rp.{{ number_format($paket->harga) }}</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between lh-md">
-                                    <div>
-                                        <h6 class="my-0">Biaya Pemasangan</h6>
-                                        <small class="text-muted">untuk pertama kali pembelian</small>
-                                    </div>
-                                    <span class="text-muted">Rp.{{ number_format($biaya_pemasangan) }}</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <span>Total</span>
-                                    <strong>Rp. {{ number_format($paket->harga + $biaya_pemasangan) }}</strong>
-                                </li>
-                            </ul>
-                        @endif
-                    @endforeach
-                    {{-- data diri pengguna/pembeli --}}
+                    <form class="needs-validation mt-4" action="/checkout" method="POST">
+                        @foreach ($paketInternets as $paket)
+                            @if ($paket->id == $id)
+                                <ul class="list-group mt-3">
+                                    <li class="list-group-item d-flex justify-content-between lh-lg">
+                                        <div>
+                                            <h6 class="my-0">Paket Internet</h6>
+                                            <small class="text-muted">{{ $paket->nama_paket }}</small>
+                                        </div>
+                                        <span class="text-muted">Rp.{{ number_format($paket->harga) }}</span>
+                                    </li>
+                                    <input type="hidden" class="form-control" name="paket" id="paket"
+                                        placeholder="" value="{{ $paket->nama_paket }}" required>
+                                    <li class="list-group-item d-flex justify-content-between lh-md">
+                                        <div>
+                                            <h6 class="my-0">Biaya Pemasangan</h6>
+                                            <small class="text-muted">untuk pertama kali pembelian</small>
+                                        </div>
+                                        <span class="text-muted">Rp.{{ number_format($biaya_pemasangan) }}</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Total</span>
+                                        <strong>Rp. {{ $paket->harga + $biaya_pemasangan }}</strong>
+                                        <input type="hidden" id="total_price" name="total_price"
+                                            value="{{ $paket->harga + $biaya_pemasangan }}">
+                                    </li>
+                                </ul>
+                            @endif
+                        @endforeach
+                        {{-- data diri pengguna/pembeli --}}
                 </div>
                 <div class="col-md-7 col-lg-8">
                     <div class="border rounded p-3">
                         <h4 class="mb-1">Lengkapi data diri</h4>
                         <h6><small class="text-muted">Silahkan isi data diri anda dengan lengkap !</small></h6>
-                        <form class="needs-validation mt-4" {{--  action="{{ route('pesanan', ['id' => $paket->id]) }}" --}} method="POST">
-                            @csrf
-                            <div class="border rounded p-3">
-                                <div class="row g-3">
-                                    <div class="col-sm-12">
-                                        <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                                        <input disabled type="text" class="form-control" id="firstName"
-                                            placeholder="" value="{{ $user->name }}" required>
-                                        <div class="invalid-feedback">
-                                            Mohon isi nama lengkap
-                                        </div>
-                                    </div>
 
-                                    <div class="col-12">
-                                        <label for="no_hp" class="form-label">No handphone <span
-                                                class="text-muted"></span></label>
-                                        <input disabled type="text" class="form-control" id="no_hp"
-                                            placeholder="" value="{{ $user->no_hp }}">
-                                        <div class="invalid-feedback">
-                                            Please enter a valid phone.
+                        @foreach ($paketInternets as $paket)
+                            @if ($paket->id == $id)
+                                @csrf
+                                <div class="border rounded p-3">
+                                    <div class="row g-3">
+                                        {{-- <div class="col-sm-12">
+                                            <label for="paket" class="form-label">Paket yang dipilih</label>
+                                            <input type="text" class="form-control" name="paket" id="paket"
+                                                placeholder="" value="{{ $paket->nama_paket }}" required>
+                                        </div> --}}
+                                        <div class="col-sm-12">
+                                            <label for="nama" class="form-label">Nama Lengkap</label>
+                                            <input type="text" class="form-control" name="nama" id="nama"
+                                                placeholder="" value="" required>
+                                            <div class="invalid-feedback">
+                                                Mohon isi nama lengkap
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-12">
-                                        <label for="address" class="form-label">Alamat</label>
-                                        {{-- <input type="text" class="form-control" id="address" placeholder="" required>
+                                        <div class="col-12">
+                                            <label for="phone" class="form-label">No handphone <span
+                                                    class="text-muted"></span></label>
+                                            <input type="text" class="form-control" name="phone" id="phone"
+                                                placeholder="" value="">
+                                            <div class="invalid-feedback">
+                                                Please enter a valid phone.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="alamat" class="form-label">Alamat</label>
+                                            {{-- <input type="text" class="form-control" id="address" placeholder="" required>
                                 <div class="invalid-feedback"> --}}
-                                        <textarea disabled name="alamat" class="form-control mb-3" id="alamat" cols="30" rows="5">{{ $user->alamat }}</textarea>
+                                            <textarea name="alamat" class="form-control mb-3" id="alamat" cols="30" rows="5"
+                                                placeholder="Masukkan alamat lengkap disini"></textarea>
 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                     </div>
+                    @endif
+                    @endforeach
                     {{-- <div class="border rounded p-3 mt-3">
 
                         <h4 class="mb-3">Pilih Metode Pembayaran</h4>
@@ -326,7 +341,7 @@
                             </div>
                         </div>
                     </div> --}}
-                    <button class="w-100 btn btn-primary btn-lg mt-3" type="submit">Bayar Sekarang</button>
+                    <button class="w-100 btn btn-primary btn-lg mt-3" type="submit">Lanjutkan</button>
                     </form>
 
                 </div>

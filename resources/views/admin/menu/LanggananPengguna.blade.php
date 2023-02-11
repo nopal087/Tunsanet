@@ -48,11 +48,12 @@
                                     <div class="modal-content">
                                         <!-- Modal Header -->
                                         <div class="modal-header">
+                                            <h4 class="modal-title" id="myModalLabel">Tambah Pengguna</h4>
                                             <button type="button" class="close" data-dismiss="modal">
                                                 <span aria-hidden="true">&times;</span>
                                                 <span class="sr-only">Close</span>
                                             </button>
-                                            <h4 class="modal-title" id="myModalLabel">Tambah Pengguna</h4>
+
                                         </div>
 
                                         <!-- Modal Body -->
@@ -64,11 +65,11 @@
                                                     <input type="text" class="form-control" id="inputName"
                                                         placeholder="Enter your name" />
                                                 </div>
-                                                <div class="form-group">
+                                                {{-- <div class="form-group">
                                                     <label for="inputEmail">Email</label>
                                                     <input type="email" class="form-control" id="inputEmail"
                                                         placeholder="Enter your email" />
-                                                </div>
+                                                </div> --}}
                                                 <div class="form-group">
                                                     <label for="inputEmail">No.Telephone</label>
                                                     <input type="text" class="form-control" id="inputtelephone"
@@ -77,6 +78,11 @@
                                                 <div class="form-group">
                                                     <label for="inputMessage">Alamat</label>
                                                     <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputMessage">Peket internet</label>
+                                                    <input type="text" class="form-control" id="input"
+                                                        placeholder="Paket internet" />
                                                 </div>
                                             </form>
                                         </div>
@@ -103,7 +109,7 @@
                                         <th>No.</th>
                                         <th>ID</th>
                                         <th>Nama</th>
-                                        <th>Email</th>
+                                        {{-- <th>Email</th> --}}
                                         <th>No.Telp</th>
                                         <th>Alamat</th>
                                         <th>Paket internet</th>
@@ -111,26 +117,31 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                    <tr>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>Nopal</td>
-                                        <td>nopal@gmail.com</td>
-                                        <td>085712666154</td>
-                                        <td>Tunjungsari RT07 RW02</td>
-                                        <td>Silver</td>
-                                        <td class="project-actions">
-                                            <a class="btn btn-info btn-sm" href="#">
-                                                <i class="fas fa-pencil-alt">
-                                                </i>
-                                            </a>
-                                            <a class="btn btn-danger btn-sm" href="#">
-                                                <i class="fas fa-trash">
-                                                </i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    @foreach ($orders as $item)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->id }}</td>
+                                            <td>{{ $item->nama }}</td>
+                                            {{-- <td>nopal@gmail.com</td> --}}
+                                            <td>{{ $item->phone }}</td>
+                                            <td>{{ $item->alamat }}</td>
+                                            <td>{{ $item->paket }}</td>
+                                            <td class="project-actions">
+                                                <a class="btn btn-info btn-sm" href="#">
+                                                    <i class="fas fa-pencil-alt">
+                                                    </i>
+                                                </a>
+                                                <a class="btn btn-danger btn-sm" href="#">
+                                                    <i class="fas fa-trash">
+                                                    </i>
+                                                </a>
+                                                <a class="btn btn-success btn-sm" href="#">
+                                                    <i class="far fa-paper-plane"></i>
+                                                    </i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
 

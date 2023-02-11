@@ -156,7 +156,7 @@
 
                         </div>
                         <div class="col-lg-5 mb-5 pb-4">
-                            <img src="{{ asset('pengguna/img/logo.png') }}" class="img-fluid" alt="Hero Image">
+                            <img src="{{ asset('pengguna/img/Logo_Stempel.png') }}" class="img-fluid " alt="Hero Image">
                         </div>
                     </div>
                 </div>
@@ -191,7 +191,7 @@
                                 <ul class="list-unstyled mt-3 mb-4">
                                     <li>{{ $paket->deskripsi }}</li>
                                 </ul>
-                                <a href={{ route('pesanan', ['id' => $paket->id]) }}><button type="button"
+                                <a href={{ route('summary', ['id' => $paket->id]) }}><button type="button"
                                         class="w-100 btn btn-lg btn-primary">
                                         Pilih
                                     </button></a>

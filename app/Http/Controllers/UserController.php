@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -20,6 +21,22 @@ class UserController extends Controller
         return view('admin/menu/pengguna')->with('data', $data);
     }
     //=================================================================================================
+
+    // menampilkan data pengguna berlangganan ke menu pengguna=========================================
+    public function order()
+    {
+        $orders = order::all();
+
+        return view('admin/menu/LanggananPengguna', compact('orders'));
+    }
+
+    //menampilkan data transaksi data transaksi
+    public function transaksi()
+    {
+        $orders = order::all();
+
+        return view('admin/menu/tagihan', compact('orders'));
+    }
 
     //fungsi manggil data paket internet dari database==================================================
     public function paket()

@@ -33,8 +33,8 @@ class TransaksiController extends Controller
             'id_user' => auth()->user()->id,
             'id_paket' => $request->id,
             'tanggal_pembelian' => date_create('now')->format('Y-m-d H:i:s'),
-            'metode_pembayaran' => "gopay",
-            'status' => "belum bayar",
+            'metode_pembayaran' => "Shopee pay",
+            'status' => "Sudah Bayar",
 
         ]);
         $transaksi->save();

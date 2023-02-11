@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Logincontroller;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Registercontroller;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
@@ -100,14 +101,41 @@ Route::post('password', [UserController::class, 'password_action'])->name('passw
 Route::get('user', [UserController::class, 'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//mengambil data dari databse orders
+Route::get('/Lpengguna', [UserController::class, 'order']);
+
+//transaksi / tagihan
+Route::get('/tagihan', [UserController::class, 'transaksi']);
+
 //home
 // Route::get('/', [Homecontroller::class, 'index']);
 
 //mengambil paket internet didatabase
 Route::get('/', [UserController::class, 'paket']);
 
-// tess
+// transaksi
 Route::get('pesanan', [TransaksiController::class, 'pesanan'])->name('pesanan');
 
 //mengirim data ke database transaksi
 Route::post('pesanan', [TransaksiController::class, 'transaksi_action'])->name('transaksi.action');
+
+
+
+//orders
+Route::get('/order', [OrderController::class, 'summary'])->name('summary');
+Route::post('/checkout', [OrderController::class, 'checkout']);
+//midtrans-callback
+
+//detail order
+Route::get('/detail_order', function () {
+    return view('transaksi.detail_order');
+});
+
+Route::get('transaksi.detail_order', [OrderController::class, 'detail_order'])->name('detail_order');
+
+//invoice
+Route::get('/invoice', function () {
+    return view('transaksi.invoice');
+});
+
+Route::get('transaksi.invoice/{id}', [OrderController::class, 'invoice'])->name('invoice');

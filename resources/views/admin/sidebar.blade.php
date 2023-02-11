@@ -63,14 +63,14 @@
                          </p>
                      </a>
                  </li>
-                 <li class="nav-item">
+                 {{-- <li class="nav-item">
                      <a href="/btagihan" class="nav-link">
                          <i class="nav-icon fas fa-bell"></i>
                          <p>
                              Buat Tagihan
                          </p>
                      </a>
-                 </li>
+                 </li> --}}
                  <li class="nav-header">KEUANGAN</li>
                  {{-- <li class="nav-item">
                      <a href="/dpendapatan" class="nav-link">

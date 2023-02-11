@@ -47,31 +47,33 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>123</td>
-                                        <td>12/12/2022</td>
-                                        <td>Muhammad Naufal Faruq</td>
-                                        <td>Rp. 150.000</span></td>
-                                        <td>
-                                            <a class="btn btn-danger btn-sm" href="#">
-                                                Belum bayar
-                                            </a>
-                                        </td>
-                                        <td class="project-actions">
-                                            <a class="btn btn-info btn-sm" href="#">
-                                                <i class="fas fa-check"></i>
-                                                </i>
-                                                sudah bayar
-                                            </a>
-                                            <a class="btn btn-success btn-sm" href="#">
-                                                <i class="fas fa-paper-plane"></i>
-                                                </i>
-                                                Kirim tagihan WA
-                                            </a>
-                                        </td>
-                                    </tr>
-
+                                    @foreach ($orders as $item)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->id }}</td>
+                                            <td>12/12/2022</td>
+                                            <td>{{ $item->nama }}</td>
+                                            <td>{{ number_format($item->total_price) }}</span></td>
+                                            <td><label
+                                                    class="badge {{ $item->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $item->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
+                                                {{-- <a class="btn btn-danger btn-sm" href="#">
+                                                    Belum bayar
+                                                </a> --}}
+                                            </td>
+                                            <td class="project-actions">
+                                                <a class="btn btn-info btn-sm" href="#">
+                                                    <i class="fas fa-check"></i>
+                                                    </i>
+                                                    sudah bayar
+                                                </a>
+                                                <a class="btn btn-success btn-sm" href="#">
+                                                    <i class="fas fa-paper-plane"></i>
+                                                    </i>
+                                                    Kirim tagihan WA
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
