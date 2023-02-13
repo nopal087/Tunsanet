@@ -10,6 +10,7 @@ class HomeController extends Controller
     //
     public function index()
     {
+        // $paketInternets = paketInternet::all();
         return view('user.index', [
             'title' => 'Home',
         ]);

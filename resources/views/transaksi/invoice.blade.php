@@ -139,17 +139,25 @@
 
         <main>
             <div class="row g-5 justify-content-center">
-                <div class="col-md-7 col-lg-6">
-                    <div class="border rounded p-3">
-                        <h4 class="mb-1">Detail Pesanan</h4>
-                        <h6><small class="text-muted badge text-bg-warning "><span
-                                    class="material-symbols-outlined p-3 ">
-                                    warning
-                                </span>Silahkan Screenshot halaman ini sebagai
-                                bukti pembayaran!</small>
-                        </h6>
+                <div class="col-md-7 col-lg-8">
+                    <div class="border rounded p-3 ">
+                        <li class="list-group-item d-flex justify-content-between lh-lg mb-3">
+                            <div>
+                                <h4 class="my-0">Detail Pesanan</h4>
+                            </div>
+                            <small
+                                class="text-muted">{{ $order->updated_at->translatedFormat('l, d F Y : H:i') }}</small>
 
-
+                        </li>
+                        {{-- <h4 class="mb-1">Detail Pesanan</h4> --}}
+                        <div>
+                            <h6 class="d-flex align-items-center"><small class="text-muted badge text-bg-warning "><span
+                                        class="material-symbols-outlined m-2 ">
+                                        warning
+                                    </span>Silahkan Screenshot halaman ini sebagai
+                                    bukti pembayaran!</small>
+                            </h6>
+                        </div>
                         <div class="row g-3">
 
                             <div class="row g-3">
@@ -168,11 +176,11 @@
                                         </div>
                                         <small class="text-muted">{{ $order->phone }}</small>
                                     </li>
-                                    <li class="list-group-item d-flex justify-content-between lh-md">
+                                    <li class="list-group-item d-flex justify-content-between lh-lg">
                                         <div>
                                             <h6 class="my-0">Alamat :</h6>
                                         </div>
-                                        <small class="text-muted">{{ $order->alamat }}</small>
+                                        <small class="text-muted ">{{ $order->alamat }}</small>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between lh-md">
                                         <div>
@@ -185,14 +193,15 @@
                                             <h6 class="my-0">Status :</h6>
                                         </div>
                                         <label
-                                            class="badge text-{{ $order->status == 'Paid' ? 'bg-success' : 'badge-danger' }}">{{ $order->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
+                                            class="badge text-{{ $order->status == 'Paid' ? 'bg-success' : 'bg-danger' }}">{{ $order->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between lh-md">
                                         <div>
                                             <h6 class="my-0">Total :
                                             </h6>
                                         </div>
-                                        <small class="text-muted">IDR. {{ number_format($order->total_price) }}</small>
+                                        <small class="text-muted">IDR.
+                                            {{ number_format($order->total_price) }}</small>
                                     </li>
                                 </ul>
 

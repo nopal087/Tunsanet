@@ -174,48 +174,48 @@
                         <h4 class="mb-1">Lengkapi data diri</h4>
                         <h6><small class="text-muted">Silahkan isi data diri anda dengan lengkap !</small></h6>
 
-                        @foreach ($paketInternets as $paket)
-                            @if ($paket->id == $id)
-                                @csrf
-                                <div class="border rounded p-3">
-                                    <div class="row g-3">
-                                        {{-- <div class="col-sm-12">
+                        {{-- @foreach ($user as $usr) --}}
+                        {{-- @if ($user->auth()->id == $id) --}}
+                        @csrf
+                        <div class="border rounded p-3">
+                            <div class="row g-3">
+                                {{-- <div class="col-sm-12">
                                             <label for="paket" class="form-label">Paket yang dipilih</label>
                                             <input type="text" class="form-control" name="paket" id="paket"
                                                 placeholder="" value="{{ $paket->nama_paket }}" required>
                                         </div> --}}
-                                        <div class="col-sm-12">
-                                            <label for="nama" class="form-label">Nama Lengkap</label>
-                                            <input type="text" class="form-control" name="nama" id="nama"
-                                                placeholder="" value="" required>
-                                            <div class="invalid-feedback">
-                                                Mohon isi nama lengkap
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <label for="phone" class="form-label">No handphone <span
-                                                    class="text-muted"></span></label>
-                                            <input type="text" class="form-control" name="phone" id="phone"
-                                                placeholder="" value="">
-                                            <div class="invalid-feedback">
-                                                Please enter a valid phone.
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <label for="alamat" class="form-label">Alamat</label>
-                                            {{-- <input type="text" class="form-control" id="address" placeholder="" required>
-                                <div class="invalid-feedback"> --}}
-                                            <textarea name="alamat" class="form-control mb-3" id="alamat" cols="30" rows="5"
-                                                placeholder="Masukkan alamat lengkap disini"></textarea>
-
-                                        </div>
+                                <div class="col-sm-12">
+                                    <label for="nama" class="form-label">Nama Lengkap</label>
+                                    <input type="text" class="form-control" name="nama" id="nama"
+                                        placeholder="Masukkan Nama Lengkap" value="{{ $user->name }}" required>
+                                    <div class="invalid-feedback">
+                                        Mohon isi nama lengkap
                                     </div>
                                 </div>
+
+                                <div class="col-12">
+                                    <label for="phone" class="form-label">No handphone (<b>wa</b>) <span
+                                            class="text-muted"></span></label>
+                                    <input type="text" class="form-control" name="phone" id="phone"
+                                        placeholder="+6285712666154" value="{{ $user->no_hp }}">
+                                    <div class="invalid-feedback">
+                                        Please enter a valid phone.
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="alamat" class="form-label">Alamat</label>
+                                    {{-- <input type="text" class="form-control" id="address" placeholder="" required>
+                                <div class="invalid-feedback"> --}}
+                                    <textarea name="alamat" class="form-control mb-3" id="alamat" cols="30" rows="5"
+                                        placeholder="Masukkan alamat lengkap disini">{{ $user->alamat }}</textarea>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    @endif
-                    @endforeach
+                    {{-- @endif --}}
+                    {{-- @endforeach --}}
                     {{-- <div class="border rounded p-3 mt-3">
 
                         <h4 class="mb-3">Pilih Metode Pembayaran</h4>

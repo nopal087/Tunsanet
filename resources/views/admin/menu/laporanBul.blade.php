@@ -16,38 +16,27 @@
                 <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
-                            {{-- cari tanggal --}}
-                            <div class="mb-3 row">
-                                <label for="caritanggal" class="col-sm-2 col-form-label">Tanggal</label>
-                                <div class="col-sm-10 row gx-5 d-flex align-items-center">
-                                    <input type="date" class="form-control col-sm-3" id="caritanggal">
-                                    <i class="fas fa-minus mx-2"></i>
-                                    <input type="date" class="form-control col-sm-3" id="caritanggal">
+                            <div class="mb-3 row p-0 mx-2">
+                                <label for="caritanggal" class="col-sm-2 col-form-label">Bulan
+                                </label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control col-sm-3" id="caritanggal">
                                 </div>
                             </div>
-                            {{-- cari jumlah --}}
-                            <div class="mb-3 row">
-                                <label for="carijumlah" class="col-sm-2 col-form-label">Jumlah</label>
-                                <div class="col-sm-10 row gx-5 d-flex align-items-center">
-                                    <input type="text" class="form-control col-sm-3" id="dengan-rupiah">
-                                    <i class="fas fa-minus mx-2 "></i>
-                                    <input type="text" class="form-control col-sm-3" id="dengan-rupiah1">
-                                    <a href="#" class="col-sm-2"><button type="button"
-                                            class="btn btn-info ">Cari</button></a>
+                            <div class="mb-3 row p-0 mx-2">
+                                <label for="caritanggal" class="col-sm-2 col-form-label">Tahun
+                                </label>
+                                <div class="col-sm-10 row">
+                                    <input type="text" class="form-control col-sm-3 m-2" id="caritanggal">
+                                    <button type="button" class="btn btn-info m-2">Cari</button></a>
                                 </div>
-                            </div>
-                            {{-- <div class="mb-3 row">
-                                <a href="#" class="col-sm-10 offset-sm-2 row"><button type="button"
-                                        class="btn btn-info col-sm-3">Cari</button></a>
-                            </div> --}}
-                            {{-- enter cari --}}
-                            <tr>
-                                <th>No.</th>
-                                <th>Bulan/Tanggal/Tahun</th>
-                                <th>Nama</th>
-                                <th>jenis Paket</th>
-                                <th>Jumlah Pembayaran (Rp)</th>
-                            </tr>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Bulan/Tanggal/Tahun</th>
+                                    <th>Nama</th>
+                                    <th>Paket</th>
+                                    <th>Jumlah Pembayaran (Rp)</th>
+                                </tr>
                         </thead>
                         <tbody>
                             <tr>

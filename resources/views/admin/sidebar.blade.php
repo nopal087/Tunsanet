@@ -1,5 +1,5 @@
  <!-- Main Sidebar Container -->
- <aside class="main-sidebar sidebar-light-primary elevation-2">
+ <aside class="main-sidebar sidebar-dark-primary elevation-2">
      <!-- Brand Logo -->
      {{-- <a href="index3.html" class="brand-link">
       <img src="{{ asset ('AdminLTE/dist/img/logobsr.jpg') }}" alt="BUMDES" class="brand-image img-Square elevation-2" style="opacity:">
@@ -15,7 +15,7 @@
                      alt="User Image">
              </div>
              <div class="info">
-                 <a href="#" class="d-block">Admin | Petugas </a>
+                 <a href="#" class="d-block">SIBUMDES </a>
              </div>
          </div>
 
@@ -63,14 +63,14 @@
                          </p>
                      </a>
                  </li>
-                 {{-- <li class="nav-item">
+                 <li class="nav-item">
                      <a href="/btagihan" class="nav-link">
-                         <i class="nav-icon fas fa-bell"></i>
+                         <i class="nav-icon fas fa-edit"></i>
                          <p>
                              Buat Tagihan
                          </p>
                      </a>
-                 </li> --}}
+                 </li>
                  <li class="nav-header">KEUANGAN</li>
                  {{-- <li class="nav-item">
                      <a href="/dpendapatan" class="nav-link">

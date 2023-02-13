@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\BuatTagihanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\Registercontroller;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
@@ -65,12 +67,12 @@ Route::get('/pengguna', function () {
 });
 
 // Pengguna yang berlangganan
-Route::get('/Lpengguna', function () {
-    return view('admin/menu/LanggananPengguna');
-});
+// Route::get('/Lpengguna', function () {
+//     return view('admin/menu/LanggananPengguna');
+// });
 
-Route::get('/countdown', function () {
-    return view('admin/countdown');
+Route::get('/create', function () {
+    return view('admin/menu/Tambahpengguna');
 });
 
 // transaksi
@@ -99,13 +101,18 @@ Route::post('password', [UserController::class, 'password_action'])->name('passw
 
 // mengambil data dari database user
 Route::get('user', [UserController::class, 'index']);
+// Route::get('user', [UserController::class, 'pengguna']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //mengambil data dari databse orders
-Route::get('/Lpengguna', [UserController::class, 'order']);
+// Route::get('/Lpengguna', [UserController::class, 'order']);
 
 //transaksi / tagihan
 Route::get('/tagihan', [UserController::class, 'transaksi']);
+
+Route::get('/btagihan', [BuatTagihanController::class, 'btagihan']);
+//lihat tagihan
+Route::get('/LihatTagihan', [BuatTagihanController::class, 'ViewTagihan']);
 
 //home
 // Route::get('/', [Homecontroller::class, 'index']);
@@ -139,3 +146,11 @@ Route::get('/invoice', function () {
 });
 
 Route::get('transaksi.invoice/{id}', [OrderController::class, 'invoice'])->name('invoice');
+
+//pengguna langganan
+Route::get('/Lpengguna', [PenggunaController::class, 'index']);
+Route::get('/admin/menu/Tambahpengguna', [PenggunaController::class, 'create']);
+Route::post('/admin/menu/store', [PenggunaController::class, 'store']);
+Route::get('/admin/menu/{id}/edit', [PenggunaController::class, 'edit']);
+Route::put('/admin/menu/{id}', [PenggunaController::class, 'update']);
+Route::delete('/admin/menu/{id}', [PenggunaController::class, 'destroy']);

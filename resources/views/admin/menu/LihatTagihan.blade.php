@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2 justify-content-between">
                     <div class="col-sm-6">
-                        <h1>Data Transaksi</h1>
+                        <h1>Data Tagihan</h1>
                     </div>
                     <div class="card-tools">
 
@@ -38,7 +38,7 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>ID Pengguna</th>
-                                        <th>Tanggal Pembayaran</th>
+                                        <th>Tanggal Tagihan</th>
                                         <th>Nama</th>
                                         <th>Jumlah</th>
                                         <th>Status</th>
@@ -46,27 +46,30 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($orders as $item)
-                                        <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $item->id }}</td>
-                                            <td>{{ $item->created_at->translatedFormat('l, d F Y') }}</td>
-                                            <td>{{ $item->nama }}</td>
-                                            <td>Rp. {{ number_format($item->total_price) }}</span></td>
-                                            <td><label
-                                                    class="badge {{ $item->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $item->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
-                                                {{-- <a class="btn btn-danger btn-sm" href="#">
+
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></span></td>
+                                        <td>
+                                            {{-- <a class="btn btn-danger btn-sm" href="#">
                                                     Belum bayar
                                                 </a> --}}
-                                            </td>
-                                            <td class="project-actions">
-                                                <a class="btn btn-info btn-sm" href="#">
-                                                    <i class="fas fa-check"></i>
-                                                    </i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                        </td>
+                                        <td class="project-actions">
+                                            <a class="btn btn-info btn-sm" href="#">
+                                                <i class="fas fa-check"></i>
+                                                </i>
+                                            </a>
+                                            <a class="btn btn-success btn-sm" href="#">
+                                                <i class="fab fa-whatsapp"></i>
+                                                </i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>

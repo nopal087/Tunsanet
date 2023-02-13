@@ -137,7 +137,7 @@
 
                         </div>
                         <div class="col-lg-5 mb-5 pb-4">
-                            <img src="{{ asset('pengguna/img/logo.png') }}" class="img-fluid" alt="Hero Image">
+                            <img src="{{ asset('pengguna/img/Logo_Stempel.png') }}" class="img-fluid" alt="Hero Image">
                         </div>
                     </div>
                 </div>

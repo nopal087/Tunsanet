@@ -29,21 +29,18 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div class="btn-pengguna">
-                                <a class="btn btn-info btn-sm" href="#">
-                                    <i class="fas fa-plus"></i>
-                                    Data Pengguna
-                                </a>
-                            </div> --}}
 
                             <!-- Button to trigger modal -->
-                            <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#modalForm">
-                                <i class="fas fa-plus"> Tambah Pengguna
-                                </i>
-                            </button>
+                            {{-- <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalForm">
+                                <i class="fas fa-user-edit"> Pengguna</i>
+                            </button> --}}
+                            <a class="btn btn-primary btn-sm" href="/admin/menu/Tambahpengguna"><i class="fas fa-user-edit">
+                                    Pengguna</i></a>
+                            <a class="btn btn-primary btn-sm" href="/btagihan"><i class="fas fa-edit"> Tagihan
+                                </i></a>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="modalForm" role="dialog">
+                            {{-- <div class="modal fade" id="modalForm" role="dialog">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <!-- Modal Header -->
@@ -59,7 +56,8 @@
                                         <!-- Modal Body -->
                                         <div class="modal-body">
                                             <p class="statusMsg"></p>
-                                            <form role="form">
+                                            <form action="#" method="">
+                                                @csrf
                                                 <div class="form-group">
                                                     <label for="inputName">Name</label>
                                                     <input type="text" class="form-control" id="inputName"
@@ -70,7 +68,7 @@
                                                     <input type="email" class="form-control" id="inputEmail"
                                                         placeholder="Enter your email" />
                                                 </div> --}}
-                                                <div class="form-group">
+                            {{-- <div class="form-group">
                                                     <label for="inputEmail">No.Telephone</label>
                                                     <input type="text" class="form-control" id="inputtelephone"
                                                         placeholder="Enter your email" />
@@ -92,11 +90,11 @@
                                             <button type="button" class="btn btn-default"
                                                 data-dismiss="modal">Close</button>
                                             <button type="button" class="btn btn-primary submitBtn"
-                                                onclick="submitContactForm()">SUBMIT</button>
+                                                onclick="submitContactForm()">Simpan</button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
 
 
@@ -117,28 +115,31 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($orders as $item)
+                                    @foreach ($pengguna as $p)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $item->id }}</td>
-                                            <td>{{ $item->nama }}</td>
+                                            <td>{{ $p->id }}</td>
+                                            <td>{{ $p->nama }}</td>
                                             {{-- <td>nopal@gmail.com</td> --}}
-                                            <td>{{ $item->phone }}</td>
-                                            <td>{{ $item->alamat }}</td>
-                                            <td>{{ $item->paket }}</td>
+                                            <td>{{ $p->phone }}</td>
+                                            <td>{{ $p->alamat }}</td>
+                                            <td>{{ $p->paket }}</td>
                                             <td class="project-actions">
-                                                <a class="btn btn-info btn-sm" href="#">
+                                                <a class="btn btn-info btn-sm" href="admin/menu/{{ $p->id }}/edit">
                                                     <i class="fas fa-pencil-alt">
                                                     </i>
                                                 </a>
-                                                <a class="btn btn-danger btn-sm" href="#">
-                                                    <i class="fas fa-trash">
-                                                    </i>
-                                                </a>
-                                                <a class="btn btn-success btn-sm" href="#">
-                                                    <i class="far fa-paper-plane"></i>
-                                                    </i>
-                                                </a>
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+
+                                                    <form action="/admin/menu/{{ $p->id }}" method="POST">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <input class="btn btn-danger btn-sm" type="submit" value="delete">
+
+
+                                                    </form>
+                                                </div>
+
                                             </td>
                                         </tr>
                                     @endforeach

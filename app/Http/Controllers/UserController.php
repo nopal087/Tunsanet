@@ -17,16 +17,22 @@ class UserController extends Controller
     function index()
     {
         // $data = User::all();
-        $data = User::orderBy('id', 'asc')->latest()->paginate(7);
+        $data = User::orderBy('id', 'asc')->latest()->paginate();
         return view('admin/menu/pengguna')->with('data', $data);
     }
+
+    // function pengguna($id)
+    // {
+    //     // $data = User::all();
+    //     $data = User::findUserById($id);
+    //     return view('transaksi.order')->with('data', $data);
+    // }
     //=================================================================================================
 
     // menampilkan data pengguna berlangganan ke menu pengguna=========================================
     public function order()
     {
         $orders = order::all();
-
         return view('admin/menu/LanggananPengguna', compact('orders'));
     }
 
@@ -124,39 +130,4 @@ class UserController extends Controller
 
     //=========================================================================================================
 
-    // public function pesanan(Request $request)
-    // {
-    //     $id = $request->id;
-    //     $data['$title'] =
-    //         'pesanan';
-    //     $data['$id'] = $id;
-    //     $paketInternets = paketInternet::all();
-    //     $biaya_pemasangan = 300000;
-    //     $user = User::find(auth()->user()->id);
-    //     return view('transaksi.pesan', compact('id',  'paketInternets', 'biaya_pemasangan', 'user'));
-    // }
-
-
-
-    // //post pesanan / transaksi
-    // public function transaksi_action(Request $request)
-    // {
-    //     $transaksi = new Transaksi([
-    //         'id_user' => auth()->user()->id,
-    //         'id_paket' => $request->id,
-    //         'tanggal_pembelian' => date_create('now')->format('Y-m-d H:i:s'),
-    //         'metode_pembayaran' => "gopay",
-    //         'status' => "belum bayar",
-
-    //     ]);
-    //     $transaksi->save();
-    //     return view('welcome');
-    // }
-
-    // //mencari user dengan id di ringkasan
-    // public function findUserById($id)
-    // {
-    //     $user = Transaksi::find($id);
-    //     return view('transaksi.pesan', compact('user'));
-    // }
 }
