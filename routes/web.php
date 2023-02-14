@@ -112,7 +112,6 @@ Route::get('/tagihan', [UserController::class, 'transaksi']);
 
 Route::get('/btagihan', [BuatTagihanController::class, 'btagihan']);
 //lihat tagihan
-Route::get('/LihatTagihan', [BuatTagihanController::class, 'ViewTagihan']);
 
 //home
 // Route::get('/', [Homecontroller::class, 'index']);
@@ -157,3 +156,8 @@ Route::delete('/admin/menu/{id}', [PenggunaController::class, 'destroy']);
 
 // Carii 
 Route::get('/search', [PenggunaController::class, 'search'])->name('search');
+
+//buat tagihan
+// Route::get('/LihatTagihan', [PenggunaController::class, 'LihatTagihan']);
+Route::get('/LihatTagihan', [BuatTagihanController::class, 'ViewTagihan']);
+Route::post('/admin/menu/btagihan', [BuatTagihanController::class, 'BuatTagihan']);

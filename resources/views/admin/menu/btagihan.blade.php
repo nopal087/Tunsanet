@@ -16,22 +16,16 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-body table-responsive p-0">
-                                <form action="">
-                                    {{-- <div class="mb-3 row p-0 mx-2">
-
-                                        <label for="caritanggal" class="col-sm-2 col-form-label">Bulan
-                                        </label>
-                                        <div class="col-sm-10">
-                                            <input type="date" class="form-control col-sm-3" id="caritanggal">
-                                        </div>
-                                    </div> --}}
+                                <form action="admin/menu/btagihan" method="POST">
+                                    @csrf
                                     <div class="mb-3 row p-0 mx-2">
                                         <label for="caritanggal" class="col-sm-2 col-form-label">Tanggal
                                         </label>
                                         <div class="col-sm-10">
-                                            <input type="date" class="form-control col-sm-3 m-2 " id="caritanggal">
-                                            <a href="date"><button type="button" class="btn btn-info m-2">Buat
-                                                    Tagihan</button></a>
+                                            <input type="date" class="form-control col-sm-3 m-2 " name="tanggal"
+                                                id="">
+                                            {{-- <a href="date"><button type="submit" class="btn btn-info m-2">Buat
+                                                    Tagihan</button></a> --}}
                                             <a href="/LihatTagihan"><button type="button" class="btn btn-success m-2">Lihat
                                                     Tagihan</button></a>
                                         </div>
@@ -55,31 +49,31 @@
                                                     <td>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <input disabled type="text" class="form-control"
-                                                                    placeholder="" value="{{ $p->id }}"
+                                                                <input type="text" class="form-control" placeholder=""
+                                                                    value="{{ $p->id }}" name="id_pengguna"
                                                                     aria-label="ID pengguna">
                                                             </div>
                                                     </td>
                                                     <td>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <input disabled type="text" class="form-control"
-                                                                    placeholder="" value="{{ $p->nama }}"
+                                                                <input type="text" class="form-control" placeholder=""
+                                                                    value="{{ $p->nama }}" name="nama"
                                                                     aria-label="Nama">
                                                             </div>
                                                     </td>
                                                     <td>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <input disabled type="text" class="form-control"
-                                                                    placeholder="" value="{{ $p->paket }}"
+                                                                <input type="text" class="form-control" placeholder=""
+                                                                    value="{{ $p->paket }}" name="paket"
                                                                     aria-label="Paket">
                                                             </div>
                                                     </td>
                                                     <td>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <select name="paket" id="" class="form-control">
+                                                                <select name="tagihan" id="" class="form-control">
                                                                     <option value="">Pilih Tagihan</option>
                                                                     <option value="150000">Rp. 150,000
                                                                     </option>
@@ -88,8 +82,6 @@
                                                                     <option value="220000">Rp. 220,000
                                                                     </option>
                                                                 </select>
-                                                                {{-- <input type="text" class="form-control" placeholder=""
-                                                                value="" aria-label="Tagihan"> --}}
                                                             </div>
                                                     </td>
                                                 </tr>
@@ -109,6 +101,9 @@
                                                 <a href="/tagihan"><button type="button" class="btn btn-info">Buat
                                                         Tagihan</button></a>
                                             </div> --}}
+                                            <div class="card-footer">
+                                                <button type="submit" class="btn btn-primary">Buat Tagihan</button>
+                                            </div>
 
                                         </div>
                                     </div>

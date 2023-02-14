@@ -37,7 +37,7 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>ID Pengguna</th>
+                                        <th>ID</th>
                                         <th>Tanggal Tagihan</th>
                                         <th>Nama</th>
                                         <th>Jumlah</th>
@@ -46,30 +46,29 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($tagihan as $t)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $t->id_pengguna }}</td>
+                                            <td>{{ $t->tanggal }}</td>
+                                            <td>{{ $t->nama }}</td>
+                                            <td>Rp. {{ number_format($t->tagihan) }}</td>
+                                            <td><label
+                                                    class="badge {{ $t->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $t->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
+                                            </td>
 
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></span></td>
-                                        <td>
-                                            {{-- <a class="btn btn-danger btn-sm" href="#">
-                                                    Belum bayar
-                                                </a> --}}
-                                        </td>
-                                        <td class="project-actions">
-                                            <a class="btn btn-info btn-sm" href="#">
-                                                <i class="fas fa-check"></i>
-                                                </i>
-                                            </a>
-                                            <a class="btn btn-success btn-sm" href="#">
-                                                <i class="fab fa-whatsapp"></i>
-                                                </i>
-                                            </a>
-                                        </td>
-                                    </tr>
-
+                                            <td class="project-actions">
+                                                <a class="btn btn-info btn-sm" href="#">
+                                                    <i class="fas fa-check"></i>
+                                                    </i>
+                                                </a>
+                                                <a class="btn btn-success btn-sm" href="#">
+                                                    <i class="fab fa-whatsapp"></i>
+                                                    </i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

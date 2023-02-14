@@ -14,6 +14,7 @@ class PenggunaController extends Controller
         return view('admin/menu/LanggananPengguna', compact('pengguna'));
     }
 
+
     //tambah
     public function create()
     {
