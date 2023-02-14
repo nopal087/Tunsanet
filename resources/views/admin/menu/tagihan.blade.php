@@ -50,7 +50,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $item->id }}</td>
-                                            <td>{{ $item->created_at->translatedFormat('l, d F Y') }}</td>
+                                            <td>{{ $item->updated_at->translatedFormat('d F Y, H:i:s') }}</td>
                                             <td>{{ $item->nama }}</td>
                                             <td>Rp. {{ number_format($item->total_price) }}</span></td>
                                             <td><label

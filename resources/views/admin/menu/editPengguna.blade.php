@@ -66,6 +66,33 @@
                                 </div>
                             </form>
                         </div>
+                    </div>
+                    <!-- right column -->
+                    <div class="col-md-6">
+                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne">
+                                        <strong>Petunjuk Penggunaan</strong>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body">
+                                        Lakukan Pengeditan data ketika perlu dilakukan perubahan, seperti pengguna ingin
+                                        merubah paket langganannya dari paket <strong>Silver</strong> menjadi paket
+                                        <strong>Gold</strong> atau <strong>Diamond</strong>, pengguna ingin memindahkan
+                                        perangkat internet dilain alamat atau ingin mengganti nama yang berlangganan.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
     </div>

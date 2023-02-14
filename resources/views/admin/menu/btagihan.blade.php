@@ -17,25 +17,24 @@
                         <div class="card-header">
                             <div class="card-body table-responsive p-0">
                                 <form action="">
-                                    <div class="mb-3 row p-0 mx-2">
+                                    {{-- <div class="mb-3 row p-0 mx-2">
 
                                         <label for="caritanggal" class="col-sm-2 col-form-label">Bulan
                                         </label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control col-sm-3" id="caritanggal">
+                                            <input type="date" class="form-control col-sm-3" id="caritanggal">
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="mb-3 row p-0 mx-2">
-                                        <label for="caritanggal" class="col-sm-2 col-form-label">Tahun
+                                        <label for="caritanggal" class="col-sm-2 col-form-label">Tanggal
                                         </label>
-                                        <div class="col-sm-10 row">
-                                            <input type="text" class="form-control col-sm-3 m-2" id="caritanggal">
-                                            <a href="#"><button type="button" class="btn btn-info m-2">Buat
+                                        <div class="col-sm-10">
+                                            <input type="date" class="form-control col-sm-3 m-2 " id="caritanggal">
+                                            <a href="date"><button type="button" class="btn btn-info m-2">Buat
                                                     Tagihan</button></a>
                                             <a href="/LihatTagihan"><button type="button" class="btn btn-success m-2">Lihat
                                                     Tagihan</button></a>
                                         </div>
-
                                     </div>
                                     <table class="table table-hover text-nowrap">
                                         <thead>

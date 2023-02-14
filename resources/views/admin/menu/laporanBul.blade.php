@@ -16,27 +16,20 @@
                 <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
-                            <div class="mb-3 row p-0 mx-2">
+                            {{-- <div class="mb-3 row  mx-2">
                                 <label for="caritanggal" class="col-sm-2 col-form-label">Bulan
                                 </label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control col-sm-3" id="caritanggal">
                                 </div>
-                            </div>
-                            <div class="mb-3 row p-0 mx-2">
-                                <label for="caritanggal" class="col-sm-2 col-form-label">Tahun
-                                </label>
-                                <div class="col-sm-10 row">
-                                    <input type="text" class="form-control col-sm-3 m-2" id="caritanggal">
-                                    <button type="button" class="btn btn-info m-2">Cari</button></a>
-                                </div>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Bulan/Tanggal/Tahun</th>
-                                    <th>Nama</th>
-                                    <th>Paket</th>
-                                    <th>Jumlah Pembayaran (Rp)</th>
-                                </tr>
+                            </div> --}}
+                            <tr>
+                                <th>No.</th>
+                                <th>Bulan/Tanggal/Tahun</th>
+                                <th>Nama</th>
+                                <th>Paket</th>
+                                <th>Jumlah Pembayaran (Rp)</th>
+                            </tr>
                         </thead>
                         <tbody>
                             <tr>

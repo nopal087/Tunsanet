@@ -62,6 +62,105 @@
                                 </div>
                             </form>
                         </div>
+                    </div>
+
+                    <!-- right column -->
+                    <div class="col-md-6">
+                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne">
+                                        <strong>Petunjuk Penggunaan</strong>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body">
+                                        <strong>Tambah Pengguna Baru</strong>, dilakukan ketika pengguna sudah melakukan
+                                        pembayaran baik secara Cashless maupun secara manual, dan sudah dilakukan pemasangan
+                                        jaringan internet <strong>Tunsanet</strong> pada tempat tinggal pengguna. Maka
+                                        secara otomatis pengguna tersebut termasuk kedalamam pengguna berlangganan, sehingga
+                                        pengguna sudah dapat ditambahkan sebagai pengguna berlangganan. <br>
+                                        <hr>
+                                        <strong>Tambah Pengguna Lama</strong>, Bagi pengguna lama yang sudah membeli paket
+                                        internet sebelum adanya sistem ini, maka pengguna tersebut wajib ditambahkan sesuai
+                                        data yang sudah ada.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseTwo">
+                                        <strong> Nama Lengkap</strong>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body">
+                                        <strong>Nama Lengkap</strong>, Tuliskan Nama lengkap pengguna sesuai dengan
+                                        transaksi yang tertera, ketika pengguna melakukan transaksi melalui cashles maka
+                                        tuliskan data sesuai dengan transaksi yang tertera pada menu <strong>Data
+                                            Transaksi</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseThree">
+                                        <strong>No Telephone</strong>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingThree">
+                                    <div class="accordion-body">
+                                        <strong>No.Telephone</strong> Masukkan nomor telephone yang terdaftar sebagai
+                                        Whatsapp karena nantinya nomer ini akan digunakan untuk mengirim tagihan kepada
+                                        pengguna
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseFour">
+                                        <strong>Alamat</strong>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingFour">
+                                    <div class="accordion-body">
+                                        <strong>Alamat</strong>, Isi alamat sesuai dengan data yang tertera.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingfive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapsefive" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapsefive">
+                                        <strong>Paket</strong>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapsefive" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingfive">
+                                    <div class="accordion-body">
+                                        <strong>Paket</strong>, Pilih Paket yang digunakan pengguna saat pengguna melakukan
+                                        transaksi/pembelian.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
         </section>
 
     </div>

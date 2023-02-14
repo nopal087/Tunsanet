@@ -154,3 +154,6 @@ Route::post('/admin/menu/store', [PenggunaController::class, 'store']);
 Route::get('/admin/menu/{id}/edit', [PenggunaController::class, 'edit']);
 Route::put('/admin/menu/{id}', [PenggunaController::class, 'update']);
 Route::delete('/admin/menu/{id}', [PenggunaController::class, 'destroy']);
+
+// Carii 
+Route::get('/search', [PenggunaController::class, 'search'])->name('search');
