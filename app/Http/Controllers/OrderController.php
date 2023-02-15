@@ -36,7 +36,7 @@ class OrderController extends Controller
     public function checkout(Request $request)
     {
         // return $request->all();;
-        $request->request->add(['status' => 'Unpaid']); //add request
+        $request->request->add(['status' => 'Unpaid', 'payment_id' => uniqid()]); //add request
         // dd($request->all());
         $order = order::create($request->all());
 
@@ -51,7 +51,7 @@ class OrderController extends Controller
 
         $params = array(
             'transaction_details' => array(
-                'order_id' => $order->id,
+                'order_id' => $order->payment_id,
                 'gross_amount' => $order->total_price,
             ),
             'customer_details' => array(
@@ -72,7 +72,7 @@ class OrderController extends Controller
         $hashed = hash("sha512", $request->order_id . $request->status_code . $request->gross_amount . $serverKey);
         if ($hashed == $request->signature_key) {
             if ($request->transaction_status == 'settlement' or $request->transaction_status == 'capture') {
-                $order = Order::find($request->order_id);
+                $order = Order::where('payment_id',  $request->order_id)->first();
                 $order->update(['status' => 'Paid']);
             }
         }
@@ -82,5 +82,15 @@ class OrderController extends Controller
     {
         $order = Order::find($id);
         return view('transaksi.invoice', compact('order'));
+    }
+
+
+    // Manual Transaksi
+    public function manual($id)
+    {
+        $order = order::find($id);
+        // dd($tagihan);
+        $order->update(['status' => 'Paid']);
+        return redirect()->back()->with('success', 'Tagihan Telah Lunas');
     }
 }

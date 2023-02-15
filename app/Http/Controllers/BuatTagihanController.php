@@ -32,9 +32,27 @@ class BuatTagihanController extends Controller
     public function BuatTagihan(Request $request)
     {
         // dd($request->all());
-        Tagihan::create($request->all());
-
+        foreach ($request->id_pengguna as $key => $value) {
+            Tagihan::create([
+                'id_pengguna' => $value,
+                'tanggal' => $request->tanggal,
+                'nama' => $request->nama[$key],
+                'phone' => $request->phone[$key],
+                'paket' => $request->paket[$key],
+                'tagihan' => $request->tagihan[$key],
+                // 'status' => $request->status[$key],
+            ]);
+        }
 
         return redirect('/LihatTagihan');
+    }
+
+    //manual transaski dengan menekan tombol ceklis
+    public function Lunas($id)
+    {
+        $tagihan = Tagihan::find($id);
+        // dd($tagihan);
+        $tagihan->update(['status' => 'Paid']);
+        return redirect()->back()->with('success', 'Tagihan Telah Lunas');
     }
 }

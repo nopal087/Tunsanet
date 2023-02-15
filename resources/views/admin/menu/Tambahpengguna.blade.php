@@ -119,7 +119,10 @@
                                 <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="panelsStayOpen-headingThree">
                                     <div class="accordion-body">
-                                        <strong>No.Telephone</strong> Masukkan nomor telephone yang terdaftar sebagai
+                                        <strong>No.Telephone</strong> awali nomor telephone dengan <strong>62</strong>,
+                                        digunakan untuk kode
+                                        negara indonesia agar dapat digunakan untuk mengirim tagihan melalui whatapps
+                                        , Masukkan nomor telephone yang terdaftar sebagai
                                         Whatsapp karena nantinya nomer ini akan digunakan untuk mengirim tagihan kepada
                                         pengguna
                                     </div>

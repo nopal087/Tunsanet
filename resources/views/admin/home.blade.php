@@ -60,7 +60,7 @@
                         <!-- small box -->
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>44</h3>
+                                <h3>53<sup style="font-size: 20px">%</sup></h3>
 
                                 <p>Pengguna</p>
                             </div>
@@ -119,7 +119,8 @@
                                     <div class="accordion-body">
                                         Merupakan Sistem Informasi Badan Usaha Milik Desa
                                         Tunjungsari yang digunakan untuk melakukan pengelolaan pengguna dan Tagihan Internet
-                                        di Desa Tunjungsari
+                                        di Desa Tunjungsari, dengan adanya sistem ini diharapkan dapat mengelola pengguna
+                                        dengan baik dan memberikan palayan yang baik juga kepada masyarakat desa Tunjungsari
                                     </div>
                                 </div>
                             </div>

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('id_pengguna');
             $table->date('tanggal');
             $table->string('nama');
+            $table->string('phone');
             $table->string('paket');
             $table->enum('tagihan', ['150000', '180000', '220000']);
             $table->enum('status', ['Unpaid', 'Paid']);

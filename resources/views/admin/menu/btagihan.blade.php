@@ -36,6 +36,7 @@
                                                 <th>No.</th>
                                                 <th>ID Pengguna</th>
                                                 <th>Nama</th>
+                                                <th>No Hp</th>
                                                 <th>Paket</th>
                                                 <th>Tagihan (Rp)</th>
                                             </tr>
@@ -50,7 +51,7 @@
                                                         <div class="row">
                                                             <div class="col">
                                                                 <input type="text" class="form-control" placeholder=""
-                                                                    value="{{ $p->id }}" name="id_pengguna"
+                                                                    value="{{ $p->id }}" name="id_pengguna[]"
                                                                     aria-label="ID pengguna">
                                                             </div>
                                                     </td>
@@ -58,7 +59,7 @@
                                                         <div class="row">
                                                             <div class="col">
                                                                 <input type="text" class="form-control" placeholder=""
-                                                                    value="{{ $p->nama }}" name="nama"
+                                                                    value="{{ $p->nama }}" name="nama[]"
                                                                     aria-label="Nama">
                                                             </div>
                                                     </td>
@@ -66,14 +67,23 @@
                                                         <div class="row">
                                                             <div class="col">
                                                                 <input type="text" class="form-control" placeholder=""
-                                                                    value="{{ $p->paket }}" name="paket"
+                                                                    value="{{ $p->phone }}" name="phone[]"
+                                                                    aria-label="Nama">
+                                                            </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <input type="text" class="form-control" placeholder=""
+                                                                    value="{{ $p->paket }}" name="paket[]"
                                                                     aria-label="Paket">
                                                             </div>
                                                     </td>
                                                     <td>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <select name="tagihan" id="" class="form-control">
+                                                                <select name="tagihan[]" id=""
+                                                                    class="form-control">
                                                                     <option value="">Pilih Tagihan</option>
                                                                     <option value="150000">Rp. 150,000
                                                                     </option>

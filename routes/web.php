@@ -161,3 +161,7 @@ Route::get('/search', [PenggunaController::class, 'search'])->name('search');
 // Route::get('/LihatTagihan', [PenggunaController::class, 'LihatTagihan']);
 Route::get('/LihatTagihan', [BuatTagihanController::class, 'ViewTagihan']);
 Route::post('/admin/menu/btagihan', [BuatTagihanController::class, 'BuatTagihan']);
+Route::get('/admin/menu/Lunas/{id}', [BuatTagihanController::class, 'Lunas']);
+
+//TRANSAKSI MANUAL
+Route::get('/admin/manual/lunas/{id}', [OrderController::class, 'manual']);
