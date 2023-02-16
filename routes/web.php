@@ -155,7 +155,6 @@ Route::put('/admin/menu/{id}', [PenggunaController::class, 'update']);
 Route::delete('/admin/menu/{id}', [PenggunaController::class, 'destroy']);
 
 // Carii 
-Route::get('/search', [PenggunaController::class, 'search'])->name('search');
 
 //buat tagihan
 // Route::get('/LihatTagihan', [PenggunaController::class, 'LihatTagihan']);

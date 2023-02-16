@@ -40,6 +40,8 @@
                                         <th>ID Pengguna</th>
                                         <th>Tanggal Pembayaran</th>
                                         <th>Nama</th>
+                                        <th>No.Telephone</th>
+                                        <th>Alamat</th>
                                         <th>Jumlah</th>
                                         <th>Status</th>
                                         <th>Aksi</th>
@@ -52,6 +54,8 @@
                                             <td>{{ $item->id }}</td>
                                             <td>{{ $item->updated_at->translatedFormat('d F Y, H:i:s') }}</td>
                                             <td>{{ $item->nama }}</td>
+                                            <td>{{ $item->phone }}</td>
+                                            <td>{{ $item->alamat }}</td>
                                             <td>Rp. {{ number_format($item->total_price) }}</span></td>
                                             <td><label
                                                     class="badge {{ $item->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $item->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>

@@ -47,7 +47,7 @@
                  </li>
                  <li class="nav-header">LANGGANAN</li>
                  <li class="nav-item">
-                     <a href="/Lpengguna" class="nav-link">
+                     <a href="Lpengguna" class="nav-link">
                          <i class="nav-icon fas fa-user"></i>
                          <p>
                              Pengguna

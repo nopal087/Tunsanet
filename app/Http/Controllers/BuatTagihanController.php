@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class BuatTagihanController extends Controller
 {
+    //mengambil data pengguna
     public function btagihan()
     {
         $pengguna = Pengguna::all();
@@ -20,15 +21,11 @@ class BuatTagihanController extends Controller
     {
         $tagihan = Tagihan::all();
         // dd($tagihan);
-
         return view('admin.menu.LihatTagihan', compact('tagihan'));
     }
 
-    // public function create()
-    // {
-    //     return view('admin/menu/btagihan');
-    // }
 
+    // fungsi untuk melakukan buat tagihan dengan mengambil data dari pengguna
     public function BuatTagihan(Request $request)
     {
         // dd($request->all());
@@ -40,7 +37,6 @@ class BuatTagihanController extends Controller
                 'phone' => $request->phone[$key],
                 'paket' => $request->paket[$key],
                 'tagihan' => $request->tagihan[$key],
-                // 'status' => $request->status[$key],
             ]);
         }
 

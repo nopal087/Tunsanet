@@ -48,11 +48,4 @@ class PenggunaController extends Controller
         $pengguna->delete();
         return redirect('/Lpengguna');
     }
-
-    public function search(Request $request)
-    {
-        $keyword = $request->search;
-        $pengguna = Pengguna::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
-        return view('admin/menu/LanggananPengguna', compact('pengguna'))->with('i', (request()->input('page', 1) - 1) * 5);
-    }
 }

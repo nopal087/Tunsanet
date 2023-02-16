@@ -2,16 +2,7 @@
 @section('content')
     {{-- {{ json_encode($data) }} --}}
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        {{-- <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>Tambah Pengguna</h1>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
+        
 
         <section class="content p-3">
             <div class="container-fluid">
@@ -31,16 +22,17 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nama Lengkap</label>
                                         <input type="text" name="nama" class="form-control" id="email"
-                                            placeholder="">
+                                            placeholder="Masukkan Nama lengkap">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">No.Hanphone (Wa)</label>
                                         <input type="text" name="phone" class="form-control" id="no_hp"
-                                            placeholder="">
+                                            placeholder="example 6285712666154">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputFile">Alamat</label>
-                                        <textarea class="form-control" name="alamat" id="" cols="30" rows="5"></textarea>
+                                        <textarea class="form-control" name="alamat" id="" cols="30" rows="5"
+                                            placeholder="Masukkan alamat lengkap"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Paket</label>

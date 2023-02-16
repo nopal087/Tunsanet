@@ -39,6 +39,7 @@ class UserController extends Controller
     //menampilkan data transaksi data transaksi
     public function transaksi()
     {
+        // $orders = order::orderBy('id', 'asc')->latest();
         $orders = order::all();
 
         return view('admin/menu/tagihan', compact('orders'));
@@ -130,4 +131,13 @@ class UserController extends Controller
 
     //=========================================================================================================
 
+    public function sidebar_pengguna()
+    {
+
+        // $data['$title'] = 'Login';
+        // return view('user/login', $data);
+        return view('admin.menu.LanggananPengguna', [
+            'title' => 'Pengguna',
+        ]);
+    }
 }

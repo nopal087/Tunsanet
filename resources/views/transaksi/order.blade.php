@@ -138,7 +138,7 @@
                         <span class="">Ringkasan</span>
                     </h4>
                     <h6><small class="text-muted">Detail ringkasan !</small></h6>
-                    <form class="needs-validation mt-4" action="/checkout" method="POST">
+                    <form class="needs-validation mt-4" action="checkout" method="POST">
                         @foreach ($paketInternets as $paket)
                             @if ($paket->id == $id)
                                 <ul class="list-group mt-3">
@@ -216,131 +216,6 @@
                     </div>
                     {{-- @endif --}}
                     {{-- @endforeach --}}
-                    {{-- <div class="border rounded p-3 mt-3">
-
-                        <h4 class="mb-3">Pilih Metode Pembayaran</h4>
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
-                                        aria-controls="collapseOne">
-                                        <span class="material-symbols-outlined me-2">
-                                            wallet
-                                        </span> E-Wallet
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <div class="form-check d-flex align-items-center">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
-                                            <label class="form-check-label d-flex m-3 align-items-center"
-                                                for="flexRadioDefault1">
-                                                <img src="{{ asset('logopembayaran/ewallet/shopeepay.svg') }}"
-                                                    alt="">
-                                                <h5 class="ms-5"> Shopee Pay </h5>
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check d-flex align-items-center">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault2">
-                                            <label class="form-check-label d-flex m-3 align-items-center"
-                                                for="flexRadioDefault1">
-                                                <img src="{{ asset('logopembayaran/ewallet/gopay.svg') }}"
-                                                    alt="">
-                                                <h5 class="ms-5"> Gopay </h5>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
-                                        <span class="material-symbols-outlined me-2">
-                                            phone_iphone
-                                        </span>Internet Banking
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse"
-                                    aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <div class="form-check d-flex align-items-center">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
-                                            <label class="form-check-label d-flex m-3 align-items-center"
-                                                for="flexRadioDefault1">
-                                                <img src="{{ asset('logopembayaran/bank/BRIMO LOGO.jpg') }}"
-                                                    width="100px" height="50px" alt="">
-                                                <h5 class="ms-5"> Bri Mobile </h5>
-                                            </label>
-                                        </div>
-                                        <div class="form-check d-flex align-items-center">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
-                                            <label class="form-check-label d-flex m-3 align-items-center"
-                                                for="flexRadioDefault1">
-                                                <img src="{{ asset('logopembayaran/bank/BCAKLIKPAY.png') }}"
-                                                    width="100px" alt="">
-                                                <h5 class="ms-5"> BCA KlikPay </h5>
-                                            </label>
-                                        </div>
-                                        <div class="form-check d-flex align-items-center">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
-                                            <label class="form-check-label d-flex m-3 align-items-center"
-                                                for="flexRadioDefault1">
-                                                <img src="{{ asset('logopembayaran/bank/DANAMON.png') }}"
-                                                    width="100px" height="50px" alt="">
-                                                <h5 class="ms-5"> Danamon </h5>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                        aria-expanded="false" aria-controls="collapseThree">
-                                        <span class="material-symbols-outlined me-2">
-                                            store
-                                        </span> Store
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <div class="form-check d-flex align-items-center">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
-                                            <label class="form-check-label d-flex m-3 align-items-center"
-                                                for="flexRadioDefault1">
-                                                <img src="{{ asset('logopembayaran/store/Logo_indomaret.png') }}"
-                                                    width="100px" height="50px" alt="">
-                                                <h5 class="ms-5"> Indomaret </h5>
-                                            </label>
-                                        </div>
-                                        <div class="form-check d-flex align-items-center">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
-                                            <label class="form-check-label d-flex m-3 align-items-center"
-                                                for="flexRadioDefault1">
-                                                <img src="{{ asset('logopembayaran/store/ALFAMART.png') }}"
-                                                    width="100px" height="50px" alt="">
-                                                <h5 class="ms-5"> Alfamart</h5>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                     <button class="w-100 btn btn-primary btn-lg mt-3" type="submit">Lanjutkan</button>
                     </form>
 

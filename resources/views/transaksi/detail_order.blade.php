@@ -198,9 +198,22 @@
                     </div>
                     </form>
                     <div class="d-flex">
-                        <button class="w-100 btn btn-primary btn-lg mt-3" id="pay-button" type="submit">Bayar
-                            Sekarang</button>
+                        <div class="row p-3">
+                            <button class="w-100 btn btn-primary btn-lg mt-3" id="pay-button" type="submit">Bayar
+                                Sekarang</button>
+                        </div>
+                        <div class="row p-3">
+                            <a class="btn btn-success btn-lg mt-3" target="_blank"
+                                href="https://wa.me/6285712666154?text=Halo petugas Bumdes%20saya ingin melakukan pembayaran untuk paket internet wifi yang saya beli atas nama..., tolong segera dilakukan pemasangan dirumah saya terimakasih%20">
+                                <i class="fab fa-whatsapp-square"></i> Hubungi Petugas
+                            </a>
+                        </div>
+
                     </div>
+                    <i>*Tombol Bayar sekarang digunakan ketika ingin melakukan pembayaran secara cashless
+                        atau dengan
+                        transfer</i> <br>
+                    <i>*Tombol hubungi petugas digunakan ketika ingin melakukan pembayaran secara manual</i>
                 </div>
             </div>
         </main>
@@ -208,8 +221,8 @@
         <footer class="pt-4 my-md-5 pt-md-5 border-top">
             <div class="row">
                 <div class="col-12 col-md">
-                    <img class="mb-2" src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="24"
-                        height="19" />
+                    <img class="mb-2" src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt=""
+                        width="24" height="19" />
                     <small class="d-block mb-3 text-muted">&copy; 2022–2023</small>
                 </div>
                 <div class="col-6 col-md">
