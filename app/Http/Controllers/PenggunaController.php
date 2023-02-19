@@ -46,6 +46,6 @@ class PenggunaController extends Controller
     {
         $pengguna = Pengguna::Find($id);
         $pengguna->delete();
-        return redirect('/tagihan');
+        return redirect('/Lpengguna');
     }
 }

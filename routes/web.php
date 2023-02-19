@@ -4,6 +4,7 @@ use App\Http\Controllers\BuatTagihanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PenggunaController;
@@ -158,7 +159,7 @@ Route::get('/admin/menu/Tambahpengguna', [PenggunaController::class, 'create']);
 Route::post('/admin/menu/store', [PenggunaController::class, 'store']);
 Route::get('/admin/menu/{id}/edit', [PenggunaController::class, 'edit']);
 Route::put('/admin/menu/{id}', [PenggunaController::class, 'update']);
-Route::delete('/admin/menu/{id}', [PenggunaController::class, 'destroy']);
+Route::delete('/admin/menu/pengguna/{id}', [PenggunaController::class, 'destroy']);
 
 // Carii 
 
@@ -178,6 +179,8 @@ Route::get('homedashboard', [HomeController::class, 'jumlah']);
 
 // Menampilkan data di Laporan Bulanan
 Route::get('/laporanBul', [OrderController::class, 'laporanBulanan']);
+// Route::get('/laporan', [LaporanController::class, 'laporan']);
+
 
 // Cetak Invoice
 Route::get('/invoice.cetak/{id}', [InvoiceController::class, 'print'])->name('invoice.cetak');

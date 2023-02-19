@@ -28,7 +28,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">No.Hanphone (Wa)</label>
                                         <input type="text" name="phone" class="form-control" id="no_hp"
-                                            placeholder="example 6285712666154" required>
+                                            value="62" placeholder="example 6285712666154" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputFile">Alamat</label>
@@ -53,8 +53,6 @@
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                 </div>
-
-
                             </form>
                         </div>
                     </div>

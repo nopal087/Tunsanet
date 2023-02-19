@@ -307,12 +307,19 @@
 
                 <!-- this row will not appear when printing -->
                 <div class="row no-print">
-                    <div class="col-6">
+                    <div class="col-4">
                         <a href="{{ route('invoice.cetak', $order->id) }}" rel="noopener" target="_blank"
                             class="w-100 btn btn-secondary btn-lg mt-3"><i class="fas fa-print"></i> Cetak</a>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                         <a href="/" class="w-100 btn btn-primary btn-lg mt-3">Kembali</a>
+                    </div>
+                    <div class="col-4">
+                        <a class="w-100 btn btn-success btn-lg mt-3" target="_blank"
+                            href="https://wa.me/6285712666154?text=Hallo%20petugas%20bumdes%20saya%20ingin%20melampirkan%20bukti%20pembayaran,%20berikut%20bukti%20pembayarannya%20Terimakasih">
+                            Whatsapp
+                            </i>
+                        </a>
                     </div>
                 </div>
             </div>

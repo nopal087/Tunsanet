@@ -111,7 +111,7 @@
                 <!-- info row -->
                 <div class="row invoice-info">
                     <div class="col-sm-4 invoice-col">
-                        From
+                        Dari :
                         <address>
                             <strong>Bumdes Tunjungsari</strong><br>
                             Tunjungsari<br>
@@ -121,7 +121,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-sm-4 invoice-col">
-                        To
+                        Kepada :
                         <address>
                             <strong>{{ $order->nama }}</strong><br>
                             {{ $order->alamat }}<br>

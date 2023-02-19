@@ -73,7 +73,35 @@
                                                     <form action="/admin/menu/tagihan/{{ $item->id }}" method="POST">
                                                         @csrf
                                                         @method('delete')
-                                                        <input class="btn btn-danger btn-sm" type="submit" value="delete">
+                                                        <button type="button" class="btn btn-danger btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#confirm-delete-{{ $item->id }}">Hapus</button>
+                                                        <div class="modal fade" id="confirm-delete-{{ $item->id }}"
+                                                            tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title" id="myModalLabel">Konfirmasi
+                                                                            Penghapusan</h4>
+                                                                        <button type="button" class="close"
+                                                                            data-dismiss="modal"
+                                                                            aria-hidden="true">&times;</button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        Apakah Anda yakin ingin menghapus data ini?
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-default"
+                                                                            data-dismiss="modal">Batal</button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-danger">Hapus</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{-- <input class="btn btn-danger btn-sm" type="button" value="delete"> --}}
+
                                                     </form>
                                                 </div>
                                             </td>

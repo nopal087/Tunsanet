@@ -33,7 +33,7 @@
                         <div class="inner">
                             <h3>Rp.</h3>
 
-                            <p>Jumlah Pendapatan</p>
+                            <p>Jumlah Pemasukan</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-arrow-graph-up-right"></i>
@@ -48,15 +48,17 @@
                 <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
+
                             <tr>
                                 <th>No.</th>
-                                <th>Bulan/Tanggal/Tahun</th>
+                                <th>Tanggal</th>
                                 <th>Nama</th>
                                 <th>Paket</th>
                                 <th>Jumlah Pembayaran (Rp)</th>
                             </tr>
                         </thead>
                         <tbody>
+
                             <tr>
                                 <td>1</td>
                                 <td>
@@ -72,6 +74,7 @@
                                     Rp. 150.000
                                 </td>
                             </tr>
+
                         </tbody>
                     </table>
                 </div>

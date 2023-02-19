@@ -9,12 +9,10 @@ use App\Models\User;
 
 class OrderController extends Controller
 {
-    public function order()
+    public function laporan()
     {
         return view('transaksi.order');
     }
-
-
 
 
     //ringkasan order

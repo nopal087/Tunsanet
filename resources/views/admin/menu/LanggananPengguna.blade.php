@@ -60,16 +60,47 @@
                                             <td>{{ $p->alamat }}</td>
                                             <td>{{ $p->paket }}</td>
                                             <td class="project-actions">
-                                                <a class="btn btn-info btn-sm" href="admin/menu/{{ $p->id }}/edit">
+                                                <a class="btn btn-info btn-sm"
+                                                    href="admin/menu/pengguna/{{ $p->id }}/edit">
                                                     <i class="fas fa-pencil-alt">
                                                     </i>
                                                 </a>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
 
-                                                    <form action="/admin/menu/{{ $p->id }}" method="POST">
+                                                    <form action="/admin/menu/pengguna/{{ $p->id }}" method="POST">
                                                         @csrf
                                                         @method('delete')
-                                                        <input class="btn btn-danger btn-sm" type="submit" value="delete">
+                                                        {{-- Modal Button Hapus --}}
+                                                        {{-- <input class="btn btn-danger btn-sm" type="submit"
+                                                            data-toggle="modal"> --}}
+                                                        <button type="button" class="btn btn-danger btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#pengguna-{{ $p->id }}">Hapus</button>
+                                                        <div class="modal fade" id="pengguna-{{ $p->id }}"
+                                                            tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title" id="myModalLabel">Konfirmasi
+                                                                            Penghapusan</h4>
+                                                                        <button type="button" class="close"
+                                                                            data-dismiss="modal"
+                                                                            aria-hidden="true">&times;</button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        Apakah Anda yakin ingin menghapus ini?
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-default"
+                                                                            data-dismiss="modal">Batal</button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-danger">Hapus</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{-- <input class="btn btn-danger btn-sm" type="submit" value="delete"> --}}
                                                     </form>
                                                 </div>
 
