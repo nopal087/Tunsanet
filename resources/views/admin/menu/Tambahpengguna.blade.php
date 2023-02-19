@@ -2,7 +2,7 @@
 @section('content')
     {{-- {{ json_encode($data) }} --}}
     <div class="content-wrapper">
-        
+
 
         <section class="content p-3">
             <div class="container-fluid">
@@ -18,25 +18,26 @@
                             <!-- form start -->
                             <form action="/admin/menu/store" method="POST">
                                 @csrf
+
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nama Lengkap</label>
                                         <input type="text" name="nama" class="form-control" id="email"
-                                            placeholder="Masukkan Nama lengkap">
+                                            placeholder="Masukkan Nama lengkap" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">No.Hanphone (Wa)</label>
                                         <input type="text" name="phone" class="form-control" id="no_hp"
-                                            placeholder="example 6285712666154">
+                                            placeholder="example 6285712666154" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputFile">Alamat</label>
                                         <textarea class="form-control" name="alamat" id="" cols="30" rows="5"
-                                            placeholder="Masukkan alamat lengkap"></textarea>
+                                            placeholder="Masukkan alamat lengkap" required></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Paket</label>
-                                        <select name="paket" id="" class="form-control">
+                                        <select name="paket" id="" class="form-control" required>
                                             <option value="">Pilih Paket Internet</option>
                                             <option value="Silver">Silver</option>
                                             <option value="Gold">Gold</option>
@@ -52,6 +53,8 @@
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                 </div>
+
+
                             </form>
                         </div>
                     </div>

@@ -22,7 +22,7 @@
                                         <label for="caritanggal" class="col-sm-2 col-form-label">Tanggal
                                         </label>
                                         <div class="col-sm-10">
-                                            <input type="date" class="form-control col-sm-3 m-2 " name="tanggal"
+                                            <input type="date" class="form-control col-sm-3 m-2 " name="tanggal" required
                                                 id="">
                                             {{-- <a href="date"><button type="submit" class="btn btn-info m-2">Buat
                                                     Tagihan</button></a> --}}
@@ -82,8 +82,8 @@
                                                     <td>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <select name="tagihan[]" id=""
-                                                                    class="form-control">
+                                                                <select name="tagihan[]" id="" class="form-control"
+                                                                    required>
                                                                     <option value="">Pilih Tagihan</option>
                                                                     <option value="150000">Rp. 150,000
                                                                     </option>

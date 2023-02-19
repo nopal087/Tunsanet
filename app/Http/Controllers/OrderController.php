@@ -15,6 +15,8 @@ class OrderController extends Controller
     }
 
 
+
+
     //ringkasan order
     public function summary(Request $request)
     {
@@ -80,6 +82,11 @@ class OrderController extends Controller
         return view('transaksi.invoice', compact('order'));
     }
 
+    // public function finish()
+    // {
+    //     return view('transaksi.finish');
+    // }
+
 
     // Manual Transaksi
     public function manual($id)
@@ -88,5 +95,18 @@ class OrderController extends Controller
         // dd($tagihan);
         $order->update(['status' => 'Paid']);
         return redirect()->back()->with('success', 'Tagihan Telah Lunas');
+    }
+
+    public function destroy($id)
+    {
+        $order = order::Find($id);
+        $order->delete();
+        return redirect('/tagihan');
+    }
+
+    public function laporanBulanan()
+    {
+        $order = order::all()->count();
+        return view('admin.menu.laporanBul', compact('order'));
     }
 }

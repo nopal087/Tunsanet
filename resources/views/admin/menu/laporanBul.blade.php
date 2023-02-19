@@ -6,23 +6,48 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Laporan Bulanan</h1>
+                        <h1>Laporan</h1>
                     </div>
                 </div>
             </div>
-
             {{-- table --}}
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-light">
+                        <div class="inner">
+                            <h3>{{ $order }}</h3>
+
+                            <p>Jumlah Transaksi</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-cash"></i>
+                        </div>
+                        <a href="/tagihan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-light">
+                        <div class="inner">
+                            <h3>Rp.</h3>
+
+                            <p>Jumlah Pendapatan</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-arrow-graph-up-right"></i>
+                        </div>
+                        <a href="/tagihan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+
+            </div>
             <div class="card">
                 <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
-                            {{-- <div class="mb-3 row  mx-2">
-                                <label for="caritanggal" class="col-sm-2 col-form-label">Bulan
-                                </label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control col-sm-3" id="caritanggal">
-                                </div>
-                            </div> --}}
                             <tr>
                                 <th>No.</th>
                                 <th>Bulan/Tanggal/Tahun</th>

@@ -33,7 +33,6 @@
                                     Pengguna</i></a>
                             <a class="btn btn-primary btn-sm" href="/btagihan"><i class="fas fa-edit"> Tagihan
                                 </i></a>
-
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
@@ -71,8 +70,6 @@
                                                         @csrf
                                                         @method('delete')
                                                         <input class="btn btn-danger btn-sm" type="submit" value="delete">
-
-
                                                     </form>
                                                 </div>
 
@@ -83,11 +80,9 @@
                             </table>
 
                         </div>
-
                         <!-- /.card-body -->
                     </div>
                     <div class="">
-
                     </div>
                     <!-- /.card -->
                 </div>

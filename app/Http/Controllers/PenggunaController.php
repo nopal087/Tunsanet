@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\order;
 use App\Models\Pengguna;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,6 @@ class PenggunaController extends Controller
         // dd($pengguna);
         return view('admin/menu/LanggananPengguna', compact('pengguna'));
     }
-
 
     //tambah
     public function create()
@@ -46,6 +46,6 @@ class PenggunaController extends Controller
     {
         $pengguna = Pengguna::Find($id);
         $pengguna->delete();
-        return redirect('/Lpengguna');
+        return redirect('/tagihan');
     }
 }

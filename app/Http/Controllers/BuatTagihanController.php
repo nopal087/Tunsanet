@@ -51,4 +51,11 @@ class BuatTagihanController extends Controller
         $tagihan->update(['status' => 'Paid']);
         return redirect()->back()->with('success', 'Tagihan Telah Lunas');
     }
+
+    public function destroy($id)
+    {
+        $tagihan = Tagihan::Find($id);
+        $tagihan->delete();
+        return redirect('/LihatTagihan');
+    }
 }

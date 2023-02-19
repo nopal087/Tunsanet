@@ -69,6 +69,13 @@
                                                     <i class="fas fa-check"></i>
                                                     </i>
                                                 </a>
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <form action="/admin/menu/tagihan/{{ $item->id }}" method="POST">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <input class="btn btn-danger btn-sm" type="submit" value="delete">
+                                                    </form>
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach

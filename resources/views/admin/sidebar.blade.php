@@ -72,19 +72,11 @@
                      </a>
                  </li>
                  <li class="nav-header">KEUANGAN</li>
-                 {{-- <li class="nav-item">
-                     <a href="/dpendapatan" class="nav-link">
-                         <i class="nav-icon fas fa-dollar-sign"></i>
-                         <p>
-                             Data Pendapatan
-                         </p>
-                     </a>
-                 </li> --}}
                  <li class="nav-item">
                      <a href="/laporanBul" class="nav-link">
                          <i class="nav-icon fas fa-scroll"></i>
                          <p>
-                             Laporan Bulanan
+                             Laporan
                          </p>
                      </a>
                  </li>

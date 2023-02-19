@@ -3,6 +3,7 @@
 use App\Http\Controllers\BuatTagihanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PenggunaController;
@@ -130,6 +131,7 @@ Route::post('pesanan', [TransaksiController::class, 'transaksi_action'])->name('
 //orders
 Route::get('/order', [OrderController::class, 'summary'])->name('summary');
 Route::post('/checkout', [OrderController::class, 'checkout']);
+Route::delete('/admin/menu/tagihan/{id}', [OrderController::class, 'destroy']);
 //midtrans-callback
 
 //detail order
@@ -143,8 +145,12 @@ Route::get('transaksi.detail_order', [OrderController::class, 'detail_order'])->
 Route::get('/invoice', function () {
     return view('transaksi.invoice');
 });
+Route::get('/finish', function () {
+    return view('transaksi.finish');
+});
 
 Route::get('transaksi.invoice/{id}', [OrderController::class, 'invoice'])->name('invoice');
+// Route::get('transaksi.finish}', [OrderController::class, 'finish']);
 
 //pengguna langganan
 Route::get('/Lpengguna', [PenggunaController::class, 'index']);
@@ -161,6 +167,17 @@ Route::delete('/admin/menu/{id}', [PenggunaController::class, 'destroy']);
 Route::get('/LihatTagihan', [BuatTagihanController::class, 'ViewTagihan']);
 Route::post('/admin/menu/btagihan', [BuatTagihanController::class, 'BuatTagihan']);
 Route::get('/admin/menu/Lunas/{id}', [BuatTagihanController::class, 'Lunas']);
+Route::delete('/admin/menu/LihatTagihan/{id}', [BuatTagihanController::class, 'destroy']);
 
 //TRANSAKSI MANUAL
 Route::get('/admin/manual/lunas/{id}', [OrderController::class, 'manual']);
+
+// MENAMPILKAN DATA DI HOME
+Route::get('homedashboard', [HomeController::class, 'jumlah']);
+// Route::get('homedashboard', [HomeController::class, 'jumTransaksi']);
+
+// Menampilkan data di Laporan Bulanan
+Route::get('/laporanBul', [OrderController::class, 'laporanBulanan']);
+
+// Cetak Invoice
+Route::get('/invoice.cetak/{id}', [InvoiceController::class, 'print'])->name('invoice.cetak');

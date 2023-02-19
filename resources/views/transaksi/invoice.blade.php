@@ -131,16 +131,16 @@
 
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
                 <h1 class="display-8 fw-normal">Invoice</h1>
-                <p class="fs-5 text-muted">
+                {{-- <p class="fs-5 text-muted">
                     Internet Cepat dan ngebut dengan Layanan Wifi TUNSANET!
-                </p>
+                </p> --}}
             </div>
         </header>
 
         <main>
             <div class="row g-5 justify-content-center">
                 <div class="col-md-7 col-lg-8">
-                    <div class="border rounded p-3 ">
+                    {{-- <div class="border rounded p-3 ">
                         <li class="list-group-item d-flex justify-content-between lh-lg mb-3">
                             <div>
                                 <h4 class="my-0">Detail Pesanan</h4>
@@ -150,70 +150,170 @@
 
                         </li>
                         {{-- <h4 class="mb-1">Detail Pesanan</h4> --}}
-                        <div>
-                            <h6 class="d-flex align-items-center"><small class="text-muted badge text-bg-warning "><span
-                                        class="material-symbols-outlined m-2 ">
-                                        warning
-                                    </span>Silahkan Screenshot halaman ini sebagai
-                                    bukti pembayaran!</small>
-                            </h6>
-                        </div>
+                    {{-- <div>
+                        <h6 class="d-flex align-items-center"><small class="text-muted badge text-bg-warning "><span
+                                    class="material-symbols-outlined m-2 ">
+                                    warning
+                                </span>Silahkan Screenshot halaman ini sebagai
+                                bukti pembayaran!</small>
+                        </h6>
+                    </div>
+                    <div class="row g-3">
+
                         <div class="row g-3">
 
-                            <div class="row g-3">
+                            <ul class="list-group mt-3">
+                                <li class="list-group-item d-flex justify-content-between lh-lg">
+                                    <div>
+                                        <h6 class="my-0">Nama :</h6>
+                                    </div>
+                                    <small class="text-muted">{{ $order->nama }}</small>
 
-                                <ul class="list-group mt-3">
-                                    <li class="list-group-item d-flex justify-content-between lh-lg">
-                                        <div>
-                                            <h6 class="my-0">Nama :</h6>
-                                        </div>
-                                        <small class="text-muted">{{ $order->nama }}</small>
-
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between lh-md">
-                                        <div>
-                                            <h6 class="my-0">No. Telephone :</h6>
-                                        </div>
-                                        <small class="text-muted">{{ $order->phone }}</small>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between lh-lg">
-                                        <div>
-                                            <h6 class="my-0">Alamat :</h6>
-                                        </div>
-                                        <small class="text-muted ">{{ $order->alamat }}</small>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between lh-md">
-                                        <div>
-                                            <h6 class="my-0">Paket :</h6>
-                                        </div>
-                                        <small class="text-muted">{{ $order->paket }}</small>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between lh-md">
-                                        <div>
-                                            <h6 class="my-0">Status :</h6>
-                                        </div>
-                                        <label
-                                            class="badge text-{{ $order->status == 'Paid' ? 'bg-success' : 'bg-danger' }}">{{ $order->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between lh-md">
-                                        <div>
-                                            <h6 class="my-0">Total :
-                                            </h6>
-                                        </div>
-                                        <small class="text-muted">IDR.
-                                            {{ number_format($order->total_price) }}</small>
-                                    </li>
-                                </ul>
-
-                            </div>
-
-
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between lh-md">
+                                    <div>
+                                        <h6 class="my-0">No. Telephone :</h6>
+                                    </div>
+                                    <small class="text-muted">{{ $order->phone }}</small>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between lh-lg">
+                                    <div>
+                                        <h6 class="my-0">Alamat :</h6>
+                                    </div>
+                                    <small class="text-muted ">{{ $order->alamat }}</small>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between lh-md">
+                                    <div>
+                                        <h6 class="my-0">Paket :</h6>
+                                    </div>
+                                    <small class="text-muted">{{ $order->paket }}</small>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between lh-md">
+                                    <div>
+                                        <h6 class="my-0">Status :</h6>
+                                    </div>
+                                    <label
+                                        class="badge text-{{ $order->status == 'Paid' ? 'bg-success' : 'bg-danger' }}">{{ $order->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between lh-md">
+                                    <div>
+                                        <h6 class="my-0">Total :
+                                        </h6>
+                                    </div>
+                                    <small class="text-muted">IDR.
+                                        {{ number_format($order->total_price) }}</small>
+                                </li>
+                            </ul>
                         </div>
-
                     </div>
-                    <a href="/" class="w-100 btn btn-primary btn-lg mt-3">Kembali</a>
+
+                </div> --}}
+
+
+
                     {{-- <button class="w-100 btn btn-primary btn-lg mt-3" type="submit">kembali</button> --}}
 
+                </div>
+            </div>
+            <div class="invoice p-3 mb-3">
+                <!-- title row -->
+                <div class="row">
+                    <div class="col-8 d-flex">
+                        <img src="{{ asset('AdminLTE/dist/img/logo-bumdes.jpg') }}" class="img-circle elevation-1"
+                            width="20" height="20" alt="User Image">
+                        <i class="fas fa-globe"></i>
+                        <h4> Bumdes Sari Rejeki,</h4>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <small class="float-right">{{ $order->updated_at->translatedFormat('l, d F Y : H:i') }}</small>
+                    </div>
+                </div>
+                <!-- info row -->
+                <div class="row invoice-info">
+                    <div class="col-sm-4 invoice-col">
+                        Dari :
+                        <address>
+                            <strong>Bumdes Tunjungsari</strong><br>
+                            Tunjungsari<br>
+                            Pekalongan<br>
+                            Phone: 08992929922<br>
+                            Email: Bumdes@gmail.com
+                        </address>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-4 invoice-col">
+                        Kepada :
+                        <address>
+                            <strong>{{ $order->nama }}</strong><br>
+                            {{ $order->alamat }}<br>
+                        </address>
+                    </div>
+                    <!-- /.col -->
+
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+
+                <!-- Table row -->
+                <div class="row">
+                    <div class="col-12 table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Paket</th>
+                                    <th>Status</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1.</td>
+                                    <td>{{ $order->paket }}</td>
+                                    <td><label
+                                            class="badge text-{{ $order->status == 'Paid' ? 'bg-success' : 'bg-danger' }}">{{ $order->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
+                                    </td>
+                                    <td>IDR. {{ number_format($order->total_price) }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <!-- accepted payments column -->
+                    <div class="col-6">
+
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-6">
+
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th style="width:50%">Subtotal:</th>
+                                    <td>IDR. {{ number_format($order->total_price) }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+
+                <!-- this row will not appear when printing -->
+                <div class="row no-print">
+                    <div class="col-6">
+                        <a href="{{ route('invoice.cetak', $order->id) }}" rel="noopener" target="_blank"
+                            class="w-100 btn btn-secondary btn-lg mt-3"><i class="fas fa-print"></i> Cetak</a>
+                    </div>
+                    <div class="col-6">
+                        <a href="/" class="w-100 btn btn-primary btn-lg mt-3">Kembali</a>
+                    </div>
                 </div>
             </div>
         </main>
@@ -224,63 +324,6 @@
                     <img class="mb-2" src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="24"
                         height="19" />
                     <small class="d-block mb-3 text-muted">&copy; 2022–2023</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Features</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Cool stuff</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Random feature</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Team feature</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Stuff for developers</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Another one</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Last time</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Resources</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Resource</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Resource name</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Another resource</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Final resource</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>About</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Team</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Locations</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Privacy</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Terms</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </footer>
