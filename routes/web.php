@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PenggunaController;
@@ -32,9 +33,9 @@ Route::get('/', function () {
     return view('user/index', ['title' => 'index']);
 })->name('index');
 
-Route::get('/homedashboard', function () {
-    return view('admin/home');
-});
+// Route::get('/homedashboard', function () {
+//     return view('admin/home');
+// });
 
 Route::get('/apengguna', function () {
     return view('admin/menu/pengguna');
@@ -88,11 +89,24 @@ Route::post('pesanan', [TransaksiController::class, 'pesanan_action'])->name('pe
 // Register
 Route::get('register', [UserController::class, 'register'])->name('register');
 Route::post('register', [UserController::class, 'register_action'])->name('register.action');
-// login
+// login User
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/login', [UserController::class, 'authenticate']);
 
-// logout
+// Login admin
+Route::get('/login_admin', [LoginAdminController::class, 'login_admin'])->name('login_admin');
+Route::post('/login_admin', [LoginAdminController::class, 'authenticate']);
+
+// register admin
+Route::get('register_admin', [LoginAdminController::class, 'register_admin'])->name('register_admin');
+Route::post('register_admin', [LoginAdminController::class, 'registeradmin_action'])->name('registeradmin.action');
+// Route::get('/homedashboard', [LoginAdminController::class, 'home']);
+
+//logout admin
+Route::get('/logout_admin', [LoginAdminController::class, 'logout_admin'])->name('logout_admin');
+Route::post('/logout_admin', [LoginAdminController::class, 'logout_action'])->name('logout.action');
+
+// logout user
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::post('/logout', [UserController::class, 'logout_action'])->name('logout.action');
 
@@ -174,7 +188,7 @@ Route::delete('/admin/menu/LihatTagihan/{id}', [BuatTagihanController::class, 'd
 Route::get('/admin/manual/lunas/{id}', [OrderController::class, 'manual']);
 
 // MENAMPILKAN DATA DI HOME
-Route::get('homedashboard', [HomeController::class, 'jumlah']);
+Route::get('homedashboard2023', [HomeController::class, 'jumlah']);
 // Route::get('homedashboard', [HomeController::class, 'jumTransaksi']);
 
 // Menampilkan data di Laporan Bulanan

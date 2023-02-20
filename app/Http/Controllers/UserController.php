@@ -126,7 +126,7 @@ class UserController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/tamu')->with('success', 'berhasil logout');
+        return redirect('/')->with('success', 'berhasil logout');
     }
 
     //=========================================================================================================

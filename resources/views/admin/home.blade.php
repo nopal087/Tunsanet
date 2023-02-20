@@ -19,7 +19,6 @@
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
-
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
@@ -190,7 +189,6 @@
 
             </div>
             <!-- right col -->
-
     </div>
     </div>
     </section>

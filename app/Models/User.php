@@ -30,6 +30,8 @@ class User extends Authenticatable
     //     'password',
     // ];
 
+    // protected $table = 'admins_tabel';
+
     // AFTER
     protected $guarded = ['id'];
 
