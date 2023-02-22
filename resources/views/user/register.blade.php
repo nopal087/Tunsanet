@@ -127,7 +127,7 @@
                         <!-- /.col -->
                         <div class="col-4 d-flex">
                             <button name="submit" type="submit" class="btn btn-primary btn-block">Register</button>
-                            <a class="btn btn-danger ml-2" href="{{ route('home') }}">back</a>
+                            {{-- <a class="btn btn-danger ml-2" href="{{ route('home') }}">back</a> --}}
                         </div>
                         <!-- /.col -->
                     </div>
@@ -145,7 +145,7 @@
                     </a>
                 </div> --}}
 
-                <a href="/login" class="text-center">sudah mempunyai akun!</a>
+                Sudah punya akun ? <a href="/login" class="text-center">Login</a>
             </div>
             <!-- /.form-box -->
         </div><!-- /.card -->

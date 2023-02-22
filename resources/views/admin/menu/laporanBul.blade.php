@@ -14,7 +14,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-light">
+                    <div class="small-box bg-primary">
                         <div class="inner">
                             <h3>{{ $order }}</h3>
 
@@ -23,62 +23,138 @@
                         <div class="icon">
                             <i class="ion ion-cash"></i>
                         </div>
-                        <a href="/tagihan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="#transaksi" class="small-box-footer">More info <i
+                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-light">
+                    <div class="small-box bg-primary">
                         <div class="inner">
-                            <h3>Rp.</h3>
+                            <h3>Rp. {{ number_format($jumlahTotalPrice1) }}</h3>
 
-                            <p>Jumlah Pemasukan</p>
+                            <p>Jumlah Pemasukan Transaksi</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-arrow-graph-up-right"></i>
                         </div>
-                        <a href="/tagihan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="#transaksi" class="small-box-footer">More info <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>{{ $totaltagihan }}</h3>
+
+                            <p>Jumlah tagihan</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-cash"></i>
+                        </div>
+                        <a href="#tagihan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>Rp. {{ number_format($jumlahTotal) }}</h3>
+
+                            <p>Jumlah Pemasukan Tagihan</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-arrow-graph-up-right"></i>
+                        </div>
+                        <a href="#tagihan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
 
             </div>
             <div class="card">
-                <div class="card-body">
-                    <table id="example1" class="table table-bordered table-striped">
-                        <thead>
-
-                            <tr>
-                                <th>No.</th>
-                                <th>Tanggal</th>
-                                <th>Nama</th>
-                                <th>Paket</th>
-                                <th>Jumlah Pembayaran (Rp)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <tr>
-                                <td>1</td>
-                                <td>
-                                    12/16/2022
-                                </td>
-                                <td>
-                                    Muhammad
-                                </td>
-                                <td>
-                                    silver
-                                </td>
-                                <td>
-                                    Rp. 150.000
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
+                <div class="row">
+                    <div class="">
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered">
+                                <thead>
+                                    <div class="text-center" id="transaksi">
+                                        <h4>Tabel Pembelian Paket Internet</h4>
+                                    </div>
+                                    <tr class="bg-primary">
+                                        <th>No.</th>
+                                        <th>Tanggal</th>
+                                        <th>Nama</th>
+                                        <th>Paket</th>
+                                        <th>Jumlah</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($table_order as $item)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>
+                                                {{ $item->updated_at->translatedFormat('d F Y') }}
+                                            </td>
+                                            <td>
+                                                {{ $item->nama }}
+                                            </td>
+                                            <td>
+                                                {{ $item->paket }}
+                                            </td>
+                                            <td>
+                                                Rp. {{ number_format($item->total_price) }}
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered">
+                            <thead>
+                                <div class="text-center" id="tagihan">
+                                    <h4>Tabel Tagihan Paket Internet</h4>
+                                </div>
+                                <tr class="bg-success">
+                                    <th>No.</th>
+                                    <th>Tanggal</th>
+                                    <th>Nama</th>
+                                    <th>Paket</th>
+                                    <th>Jumlah</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($table_tagihan as $tag)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>
+                                            {{ $tag->tanggal }}
+                                        </td>
+                                        <td>
+                                            {{ $tag->nama }}
+                                        </td>
+                                        <td>
+                                            {{ $tag->paket }}
+                                        </td>
+                                        <td>
+                                            Rp. {{ number_format($tag->tagihan) }}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+
         </section>
     </div>
     <script>

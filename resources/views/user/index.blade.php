@@ -130,7 +130,7 @@
                 <div class="">
                     <div class="row justify-content-center">
                         <div class="col-lg-5">
-                            <h1 class="hero-heading text-primary-emphasis">Internet dengan Tunsanet</h1>
+                            <h1 class="hero-heading text-primary-emphasis"><b>Internet cepat dengan Tunsanet</b></h1>
                             <p class="mt-3 d-flex align-items-center">
                                 <span class="material-symbols-outlined me-2 text-primary">
                                     language
@@ -164,7 +164,7 @@
 
 
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center" id="paket">
-                <h3 class="display-6 fw-normal">Paket Internet Rumahan</h3>
+                <h3 class="display-6 text-primary-emphasis"><b>Paket Internet Rumahan</b></h3>
                 <p class="fs-5 text-muted">
                     Internet Cepat dan ngebut dengan Layanan Wifi TUNSANET!
                 </p>
@@ -191,10 +191,18 @@
                                 <ul class="list-unstyled mt-3 mb-4">
                                     <li>{{ $paket->deskripsi }}</li>
                                 </ul>
-                                <a href={{ route('summary', ['id' => $paket->id]) }}><button type="button"
-                                        class="w-100 btn btn-lg btn-primary">
-                                        Pilih
-                                    </button></a>
+                                @auth
+                                    <a href={{ route('summary', ['id' => $paket->id]) }}><button type="button"
+                                            class="w-100 btn btn-lg btn-primary">
+                                            Pilih
+                                        </button></a>
+                                @endauth
+                                @guest
+                                    <a href={{ route('login') }}><button type="button"
+                                            class="w-100 btn btn-lg btn-primary">
+                                            Pilih
+                                        </button></a>
+                                @endguest
                             </div>
                         </div>
                     </div>

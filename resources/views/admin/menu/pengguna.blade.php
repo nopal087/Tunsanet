@@ -33,7 +33,7 @@
                         <div class="card-body table-responsive p-0">
                             <table class="table table-hover text-nowrap">
                                 <thead>
-                                    <tr>
+                                    <tr class="bg-primary-subtle">
                                         <th>No.</th>
                                         <th>ID</th>
                                         <th>Nama</th>

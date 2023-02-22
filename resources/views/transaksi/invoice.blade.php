@@ -308,10 +308,6 @@
                 <!-- this row will not appear when printing -->
                 <div class="row no-print">
                     <div class="col-4">
-                        <a href="{{ route('invoice.cetak', $order->id) }}" rel="noopener" target="_blank"
-                            class="w-100 btn btn-secondary btn-lg mt-3"><i class="fas fa-print"></i> Cetak</a>
-                    </div>
-                    <div class="col-4">
                         <a href="/" class="w-100 btn btn-primary btn-lg mt-3">Kembali</a>
                     </div>
                     <div class="col-4">
@@ -320,6 +316,10 @@
                             Whatsapp
                             </i>
                         </a>
+                    </div>
+                    <div class="col-4">
+                        <a href="{{ route('invoice.cetak', $order->id) }}" rel="noopener" target="_blank"
+                            class="w-100 btn btn-secondary btn-lg mt-3"><i class="fas fa-print"></i> Cetak</a>
                     </div>
                 </div>
             </div>

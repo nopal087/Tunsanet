@@ -12,6 +12,7 @@ use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\Registercontroller;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
+
 use App\Models\User;
 
 /*
@@ -94,20 +95,19 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/login', [UserController::class, 'authenticate']);
 
 // Login admin
-Route::get('/login_admin', [LoginAdminController::class, 'login_admin'])->name('login_admin');
-Route::post('/login_admin', [LoginAdminController::class, 'authenticate']);
+// Route::get('/login_admin', [LoginAdminController::class, 'login_admin'])->name('login_admin');
+// Route::post('/login_admin', [LoginAdminController::class, 'authenticate']);
 
 // register admin
-Route::get('register_admin', [LoginAdminController::class, 'register_admin'])->name('register_admin');
-Route::post('register_admin', [LoginAdminController::class, 'registeradmin_action'])->name('registeradmin.action');
+// Route::get('register_admin', [LoginAdminController::class, 'register_admin'])->name('register_admin');
+// Route::post('register_admin', [LoginAdminController::class, 'registeradmin_action'])->name('registeradmin.action');
 // Route::get('/homedashboard', [LoginAdminController::class, 'home']);
 
-//logout admin
-Route::get('/logout_admin', [LoginAdminController::class, 'logout_admin'])->name('logout_admin');
-Route::post('/logout_admin', [LoginAdminController::class, 'logout_action'])->name('logout.action');
+
 
 // logout user
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+// Route::get('/logout_admin', [UserController::class, 'logout_admin'])->name('logout');
 Route::post('/logout', [UserController::class, 'logout_action'])->name('logout.action');
 
 // ubah pachange_password
@@ -188,11 +188,11 @@ Route::delete('/admin/menu/LihatTagihan/{id}', [BuatTagihanController::class, 'd
 Route::get('/admin/manual/lunas/{id}', [OrderController::class, 'manual']);
 
 // MENAMPILKAN DATA DI HOME
-Route::get('homedashboard2023', [HomeController::class, 'jumlah']);
+Route::get('homedashboard', [HomeController::class, 'jumlah']);
 // Route::get('homedashboard', [HomeController::class, 'jumTransaksi']);
 
 // Menampilkan data di Laporan Bulanan
-Route::get('/laporanBul', [OrderController::class, 'laporanBulanan']);
+Route::get('/laporanBul', [LaporanController::class, 'laporanBulanan']);
 // Route::get('/laporan', [LaporanController::class, 'laporan']);
 
 

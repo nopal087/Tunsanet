@@ -32,7 +32,7 @@
                                     </div>
                                     <table class="table table-hover text-nowrap">
                                         <thead>
-                                            <tr>
+                                            <tr class="bg-primary-subtle">
                                                 <th>No.</th>
                                                 <th>ID Pengguna</th>
                                                 <th>Nama</th>

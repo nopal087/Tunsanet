@@ -6,6 +6,7 @@ use App\Models\order;
 use Illuminate\Http\Request;
 use App\Models\paketInternet;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -100,11 +101,5 @@ class OrderController extends Controller
         $order = order::Find($id);
         $order->delete();
         return redirect('/tagihan');
-    }
-
-    public function laporanBulanan()
-    {
-        $order = order::all()->count();
-        return view('admin.menu.laporanBul', compact('order'));
     }
 }

@@ -81,10 +81,10 @@
                 </form>
 
                 <p class="mb-1">
-                    <a href="forgot-password.html">Lupa pasword?</a>
+                    {{-- <a href="forgot-password.html">Lupa pasword?</a> --}}
                 </p>
                 <p class="mb-0">
-                    <a href="{{ route('register') }}" class="text-center">Daftar</a>
+                    Belum punya akun ? <a href="{{ route('register') }}" class="text-center">Daftar</a>
                 </p>
             </div>
             <!-- /.login-card-body -->
