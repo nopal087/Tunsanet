@@ -35,7 +35,7 @@
                             <div class="icon">
                                 <i class="ion ion-cash"></i>
                             </div>
-                            <a href="/tagihan" class="small-box-footer">More info <i
+                            <a href="/LihatTagihan" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
 
@@ -72,9 +72,9 @@
 
                         <div class="small-box bg-danger">
                             <div class="inner">
-                                <h3>65</h3>
+                                <h3>2</h3>
 
-                                <p>Laporan Bulanan</p>
+                                <p>Laporan</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>

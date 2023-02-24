@@ -2,9 +2,70 @@
 @section('content')
     {{-- {{ json_encode($data) }} --}}
     <div class="content-wrapper">
+        {{-- <p class="ml-4">Tanggal sekarang :<b> {{ $tanggal_sekarang }}</b></p> --}}
 
 
         <section class="content p-3">
+            <div class="accordion mb-3" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapsetable" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseOne">
+                            <strong>Data Transaksi | Tanggal sekarang :<b> {{ $tanggal_sekarang }}</b></strong>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapsetable" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered">
+                                    <thead>
+                                        {{-- <div class="text-center" id="transaksi">
+                                            <h4>Tabel Pembelian Paket Internet</h4>
+                                        </div> --}}
+                                        <tr class="bg-primary">
+                                            <th>No.</th>
+                                            <th>Tanggal</th>
+                                            <th>Nama</th>
+                                            <th>no_hp</th>
+                                            <th>Alamat</th>
+                                            <th>Paket</th>
+                                            <th>Jumlah</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($order as $item)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>
+                                                    {{ $item->updated_at->translatedFormat('d F Y') }}
+                                                </td>
+                                                <td>
+                                                    {{ $item->nama }}
+                                                </td>
+                                                <td>
+                                                    {{ $item->phone }}
+                                                </td>
+                                                <td>
+                                                    {{ $item->alamat }}
+                                                </td>
+                                                <td>
+                                                    {{ $item->paket }}
+                                                </td>
+                                                <td>
+                                                    Rp. {{ number_format($item->total_price) }}
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                                {{-- {{ $order->links() }} --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="container-fluid">
                 <div class="row">
                     <!-- left column -->
@@ -28,7 +89,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">No.Hanphone (Wa)</label>
                                         <input type="text" name="phone" class="form-control" id="no_hp"
-                                            value="62" placeholder="example 6285712666154" required>
+                                            value="" placeholder="example 6285712666154" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputFile">Alamat</label>
@@ -52,6 +113,7 @@
 
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary">Simpan</button>
+                                    <a href="/Lpengguna" class="btn btn-danger">Kembali</a>
                                 </div>
                             </form>
                         </div>
@@ -72,13 +134,17 @@
                                     aria-labelledby="panelsStayOpen-headingOne">
                                     <div class="accordion-body">
                                         <strong>Tambah Pengguna Baru</strong>, dilakukan ketika pengguna sudah melakukan
-                                        pembayaran baik secara Cashless maupun secara manual, dan sudah dilakukan pemasangan
+                                        pembayaran baik secara Cashless maupun secara manual, dan sudah dilakukan
+                                        pemasangan
                                         jaringan internet <strong>Tunsanet</strong> pada tempat tinggal pengguna. Maka
-                                        secara otomatis pengguna tersebut termasuk kedalamam pengguna berlangganan, sehingga
+                                        secara otomatis pengguna tersebut termasuk kedalamam pengguna berlangganan,
+                                        sehingga
                                         pengguna sudah dapat ditambahkan sebagai pengguna berlangganan. <br>
                                         <hr>
-                                        <strong>Tambah Pengguna Lama</strong>, Bagi pengguna lama yang sudah membeli paket
-                                        internet sebelum adanya sistem ini, maka pengguna tersebut wajib ditambahkan sesuai
+                                        <strong>Tambah Pengguna Lama</strong>, Bagi pengguna lama yang sudah membeli
+                                        paket
+                                        internet sebelum adanya sistem ini, maka pengguna tersebut wajib ditambahkan
+                                        sesuai
                                         data yang sudah ada.
                                     </div>
                                 </div>
@@ -147,7 +213,8 @@
                                 <div id="panelsStayOpen-collapsefive" class="accordion-collapse collapse"
                                     aria-labelledby="panelsStayOpen-headingfive">
                                     <div class="accordion-body">
-                                        <strong>Paket</strong>, Pilih Paket yang digunakan pengguna saat pengguna melakukan
+                                        <strong>Paket</strong>, Pilih Paket yang digunakan pengguna saat pengguna
+                                        melakukan
                                         transaksi/pembelian.
                                     </div>
                                 </div>

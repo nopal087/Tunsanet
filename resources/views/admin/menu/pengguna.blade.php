@@ -62,7 +62,7 @@
                         <!-- /.card-body -->
                     </div>
                     <div class="">
-                        {{-- {{ $data->links() }} --}}
+                        {{ $data->links() }}
                     </div>
                     <!-- /.card -->
                 </div>

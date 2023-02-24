@@ -17,25 +17,13 @@
                     <div class="card">
                         <div class="card-header">
 
-                            <div class="card-tools">
-                                <div class="input-group input-group-sm" style="width: 150px;">
-                                    <input type="text" name="search" class="form-control float-left"
-                                        placeholder="Search">
-
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-default">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
                             <a class="btn btn-primary btn-sm" href="/admin/menu/Tambahpengguna"><i class="fas fa-user-edit">
                                     Pengguna</i></a>
                             <a class="btn btn-primary btn-sm" href="/btagihan"><i class="fas fa-edit"> Tagihan
                                 </i></a>
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body table-responsive p-0">
+                        <div class="card-body table-bordered-responsive p-0">
                             <table class="table table-bordered text-nowrap">
                                 <thead>
                                     <tr class="bg-primary-subtle">

@@ -17,7 +17,7 @@ class UserController extends Controller
     function index()
     {
         // $data = User::all();
-        $data = User::orderBy('id', 'asc')->latest()->paginate();
+        $data = User::orderBy('id', 'desc')->latest()->paginate();
         return view('admin/menu/pengguna')->with('data', $data);
     }
 

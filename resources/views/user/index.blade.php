@@ -67,6 +67,65 @@
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
         }
+
+        /* style coba */
+        .hero {
+            background: linear-gradient(to bottom, rgba(16, 127, 226, 0.95), rgba(7, 63, 112, 0.85)),
+                url("{{ asset('pengguna/img/pemandangan.jpg') }}") no-repeat center;
+            background-size: cover;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Styling untuk teks di atas background */
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .hero-text h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text button {
+            background-color: #0c7cd5;
+            border: none;
+            color: #fff;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* Styling untuk responsif */
+        @media only screen and (max-width: 768px) {
+            .hero-text {
+                width: 90%;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .hero-text p {
+                font-size: 1.2rem;
+            }
+
+            .hero-text button {
+                font-size: 1rem;
+            }
+        }
     </style>
 
     <!-- Custom styles for this template -->
@@ -127,7 +186,7 @@
 
             <br>
             <section class="hero">
-                <div class="">
+                {{-- <div class="">
                     <div class="row justify-content-center">
                         <div class="col-lg-5">
                             <h1 class="hero-heading text-primary-emphasis"><b>Internet cepat dengan Tunsanet</b></h1>
@@ -159,11 +218,16 @@
                             <img src="{{ asset('pengguna/img/Logo_Stempel.png') }}" class="img-fluid " alt="Hero Image">
                         </div>
                     </div>
+                </div> --}}
+                <div class="hero-text">
+                    <h1>Paket Internet Terbaik!</h1>
+                    <p>Dapatkan kecepatan internet tercepat dan unlimited dengan harga terjangkau!</p>
+                    <a href="#paket" class="btn btn-primary btn-lg">Beli Sekarang</a>
                 </div>
             </section>
 
 
-            <div class="pricing-header p-3 pb-md-4 mx-auto text-center" id="paket">
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center mt-5" id="paket">
                 <h3 class="display-6 text-primary-emphasis"><b>Paket Internet Rumahan</b></h3>
                 <p class="fs-5 text-muted">
                     Internet Cepat dan ngebut dengan Layanan Wifi TUNSANET!

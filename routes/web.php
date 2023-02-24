@@ -171,7 +171,7 @@ Route::get('transaksi.invoice/{id}', [OrderController::class, 'invoice'])->name(
 Route::get('/Lpengguna', [PenggunaController::class, 'index']);
 Route::get('/admin/menu/Tambahpengguna', [PenggunaController::class, 'create']);
 Route::post('/admin/menu/store', [PenggunaController::class, 'store']);
-Route::get('/admin/menu/{id}/edit', [PenggunaController::class, 'edit']);
+Route::get('/admin/menu/pengguna/{id}/edit', [PenggunaController::class, 'edit']);
 Route::put('/admin/menu/{id}', [PenggunaController::class, 'update']);
 Route::delete('/admin/menu/pengguna/{id}', [PenggunaController::class, 'destroy']);
 
@@ -193,6 +193,9 @@ Route::get('homedashboard', [HomeController::class, 'jumlah']);
 
 // Menampilkan data di Laporan Bulanan
 Route::get('/laporanBul', [LaporanController::class, 'laporanBulanan']);
+Route::get('/admin/menu/Tambahpengguna', [LaporanController::class, 'dataAccordion']);
+Route::get('/admin/header', [LaporanController::class, 'date']);
+// Route::get('/admin/menu/Tambahpengguna', [HomeController::class, 'date']);
 // Route::get('/laporan', [LaporanController::class, 'laporan']);
 
 

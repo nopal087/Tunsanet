@@ -15,7 +15,7 @@
                      alt="User Image">
              </div>
              <div class="info">
-                 <a href="#" class="d-block">SIBUMDES </a>
+                 <a href="/" class="d-block">SIBUMDES </a>
              </div>
          </div>
 
@@ -34,12 +34,12 @@
 
          <!-- Sidebar Menu -->
          <nav class="mt-2">
-             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+             <ul class="nav nav-pills nav-sidebar flex-column menu" data-widget="treeview" role="menu"
                  data-accordion="false">
                  <li class="nav-header">PILIHAN MENU</li>
                  <li class="nav-item">
-                     <a href="/homedashboard" class="nav-link">
-                         <i class="nav-icon fas fa-tachometer-alt"></i>
+                     <a href="homedashboard" class="nav-link">
+                         <i class="nav-icon fas fa-tachometer-alt "></i>
                          <p>
                              Beranda
                          </p>

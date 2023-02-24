@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\paketInternet;
 use App\Models\Pengguna;
 use App\Models\Tagihan;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -40,4 +41,5 @@ class HomeController extends Controller
     //     $Totaltransaksi = order::all()->count();
     //     return view('admin.home', compact('Totaltransaksi'));
     // }
+
 }

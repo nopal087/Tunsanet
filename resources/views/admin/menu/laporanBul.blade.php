@@ -63,7 +63,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>Rp. {{ number_format($jumlahTotal) }}</h3>
+                            <h3>Rp. {{ number_format($jumlahtagihantotal) }}</h3>
 
                             <p>Jumlah Pemasukan Tagihan</p>
                         </div>
