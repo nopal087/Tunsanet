@@ -98,7 +98,7 @@
     <div class="container py-3">
         <header>
 
-            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4">
                 <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
                     {{-- Navbar Bumdes --}}
                     <nav class="navbar">
@@ -166,7 +166,7 @@
         </header>
 
         <main>
-            <div class="row g-5">
+            <div class="row g-2 mb-3">
                 <div class="col-md-5 col-lg-4 order-md-last border rounded p-3 h-25">
                     <h4 class="d-flex justify-content-between align-items-center mb-1">
                         <span class="">Paket Internet</span>

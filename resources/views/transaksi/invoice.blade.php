@@ -91,7 +91,7 @@
 
     <div class="container py-3">
         <header>
-            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4">
                 <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
                     {{-- Navbar Bumdes --}}
                     <nav class="navbar">

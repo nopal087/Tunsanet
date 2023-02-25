@@ -94,12 +94,12 @@
 
     <div class="container py-3">
         <header>
-            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4">
                 <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
                     {{-- Navbar Bumdes --}}
                     <nav class="navbar">
                         <div class="container-fluid">
-                            <a class="navbar-brand" href="#">
+                            <a class="navbar-brand" href="/">
                                 <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="Logo" width="35"
                                     height="30" class="d-inline-block align-text-top">
                             </a>
@@ -142,7 +142,7 @@
 
         <main>
 
-            <div class="row g-5">
+            <div class="row g-2 mb-3">
                 <div class="col-md-5 col-lg-4 order-md-last border rounded p-3 h-25">
                     <h4 class="d-flex justify-content-between align-items-center mb-1">
                         <span class="">Ringkasan</span>
@@ -168,6 +168,7 @@
                                         </div>
                                         <span class="text-muted">Rp.{{ number_format($biaya_pemasangan) }}</span>
                                     </li>
+                                    <span></span>
                                     <li class="list-group-item d-flex justify-content-between">
                                         <span>Total</span>
                                         <strong>Rp. {{ $paket->harga + $biaya_pemasangan }}</strong>
@@ -189,11 +190,6 @@
                         @csrf
                         <div class="border rounded p-3">
                             <div class="row g-3">
-                                {{-- <div class="col-sm-12">
-                                            <label for="paket" class="form-label">Paket yang dipilih</label>
-                                            <input type="text" class="form-control" name="paket" id="paket"
-                                                placeholder="" value="{{ $paket->nama_paket }}" required>
-                                        </div> --}}
                                 <div class="col-sm-12">
                                     <label for="nama" class="form-label">Nama Lengkap</label>
                                     <input type="text" class="form-control" name="nama" id="nama"
@@ -215,8 +211,6 @@
 
                                 <div class="col-12">
                                     <label for="alamat" class="form-label">Alamat</label>
-                                    {{-- <input type="text" class="form-control" id="address" placeholder="" required>
-                                <div class="invalid-feedback"> --}}
                                     <textarea name="alamat" class="form-control mb-3" id="alamat" cols="30" rows="5"
                                         placeholder="Masukkan alamat lengkap disini">{{ $user->alamat }}</textarea>
 
@@ -224,17 +218,8 @@
                             </div>
                         </div>
                     </div>
-                    {{-- @endif --}}
-                    {{-- @endforeach --}}
                     <button class="w-100 btn btn-primary btn-lg mt-3" data-bs-toggle="modal"
                         data-bs-target="#confirmModal" type="button">Lanjutkan</button>
-
-
-                    <!-- Button trigger modal -->
-                    {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#confirmModal">
-                        Lanjutkan
-                    </button> --}}
 
                     <!-- Modal -->
                     <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel"
@@ -257,7 +242,6 @@
                                         data-bs-dismiss="modal">Batal</button>
                                     <button type="submit" class="btn btn-primary"
                                         data-bs-dismiss="modal">lanjutkan</button>
-                                    {{-- <a href="#" class="btn btn-primary">Lanjutkan</a> --}}
                                 </div>
                             </div>
                         </div>
