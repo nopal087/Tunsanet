@@ -77,21 +77,31 @@
 
             </div>
             <div class="card">
+
                 <div class="row">
                     <div class="">
                         <div class="card-body">
+
                             <table id="example1" class="table table-bordered">
                                 <thead>
                                     <div class="text-center" id="transaksi">
                                         <h4>Tabel Pembelian Paket Internet</h4>
                                     </div>
-                                    <tr class="bg-primary">
-                                        <th>No.</th>
-                                        <th>Tanggal</th>
-                                        <th>Nama</th>
-                                        <th>Paket</th>
-                                        <th>Jumlah</th>
-                                    </tr>
+                                    @if (count($datalaporan1) > 0)
+                                        <tr class="bg-primary">
+                                            <th>No.</th>
+                                            <th>Tanggal</th>
+                                            <th>Nama</th>
+                                            <th>Paket</th>
+                                            <th>Jumlah</th>
+                                        </tr>
+                                    @else
+                                        <div class="text-center">
+                                            <img src="{{ asset('pengguna/img/empty.jpg') }}" alt="No Data Found"
+                                                width="35%">
+                                            <p>Tidak ada data yang tersedia.</p>
+                                        </div>
+                                    @endif
                                 </thead>
                                 <tbody>
                                     @foreach ($table_order as $item)
@@ -112,7 +122,9 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
+
                             </table>
+
                         </div>
                     </div>
                 </div>
@@ -130,9 +142,10 @@
                                     <th>Paket</th>
                                     <th>Jumlah</th>
                                 </tr>
+
                             </thead>
-                            <tbody>
-                                @foreach ($table_tagihan as $tag)
+                            @foreach ($table_tagihan as $tag)
+                                <tbody>
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>
@@ -148,10 +161,11 @@
                                             Rp. {{ number_format($tag->tagihan) }}
                                         </td>
                                     </tr>
-                                @endforeach
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
+
                 </div>
             </div>
 

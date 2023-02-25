@@ -19,12 +19,14 @@ class LaporanController extends Controller
     {
         $order = order::all()->count();
         $jumlahTotalPrice1 = DB::table('orders')->sum('total_price');
-        $table_order = order::all();
+        $datalaporan1 = DB::table('orders')->get();
+        $table_order = order::orderBy('id', 'desc')->latest()->paginate();
 
         $totaltagihan = Tagihan::all()->count();
-        $table_tagihan = Tagihan::all();
+        $datalaporan2 = DB::table('orders')->get();
+        $table_tagihan = Tagihan::orderBy('id', 'desc')->latest()->paginate();
         $jumlahtagihantotal = Tagihan::all()->sum('tagihan');
-        return view('admin.menu.laporanBul', compact('order', 'totaltagihan', 'jumlahTotalPrice1', 'jumlahtagihantotal', 'table_order', 'table_tagihan'));
+        return view('admin.menu.laporanBul', compact('order', 'datalaporan1', 'datalaporan2', 'totaltagihan', 'jumlahTotalPrice1', 'jumlahtagihantotal', 'table_order', 'table_tagihan'));
     }
 
     public function dataAccordion()

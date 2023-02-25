@@ -12,7 +12,7 @@
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapsetable" aria-expanded="true"
                             aria-controls="panelsStayOpen-collapseOne">
-                            <strong>Data Transaksi | Tanggal sekarang :<b> {{ $tanggal_sekarang }}</b></strong>
+                            <strong>Data Transaksi Terbaru | Tanggal sekarang :<b> {{ $tanggal_sekarang }}</b></strong>
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapsetable" class="accordion-collapse collapse"
@@ -113,7 +113,7 @@
 
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary">Simpan</button>
-                                    <a href="/Lpengguna" class="btn btn-danger">Kembali</a>
+                                    <a href="/Lpengguna" class="btn btn-danger">Batal</a>
                                 </div>
                             </form>
                         </div>

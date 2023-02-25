@@ -40,9 +40,10 @@ class UserController extends Controller
     public function transaksi()
     {
         // $orders = order::orderBy('id', 'asc')->latest();
-        $orders = order::all();
+        $orders = order::orderBy('id', 'desc')->latest()->paginate();
+        $datatransaksi = DB::table('orders')->get();
 
-        return view('admin/menu/tagihan', compact('orders'));
+        return view('admin/menu/tagihan', compact('orders', 'datatransaksi'));
     }
 
     //fungsi manggil data paket internet dari database==================================================

@@ -9,6 +9,16 @@
     <meta name="generator" content="Hugo 0.104.2" />
     <title>WIFI | Pesanan</title>
 
+    <!-- Load CSS Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Load JavaScript jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- Load JavaScript Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- Load JavaScript Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/pricing/" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -216,9 +226,43 @@
                     </div>
                     {{-- @endif --}}
                     {{-- @endforeach --}}
-                    <button class="w-100 btn btn-primary btn-lg mt-3" type="submit">Lanjutkan</button>
-                    </form>
+                    <button class="w-100 btn btn-primary btn-lg mt-3" data-bs-toggle="modal"
+                        data-bs-target="#confirmModal" type="button">Lanjutkan</button>
 
+
+                    <!-- Button trigger modal -->
+                    {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#confirmModal">
+                        Lanjutkan
+                    </button> --}}
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="confirmModalLabel">Lanjutkan Ke Pembayaran</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Pastikan data diri anda sudah sesuai! </br></br> Apakah Anda yakin ingin
+                                    melanjutkan?
+                                    data anda akan masuk ke admin dalam status belum bayar, segera lakukan
+                                    pembayaran cashless atau dapat melakukan pembayaran lewat petugas
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Batal</button>
+                                    <button type="submit" class="btn btn-primary"
+                                        data-bs-dismiss="modal">lanjutkan</button>
+                                    {{-- <a href="#" class="btn btn-primary">Lanjutkan</a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
                 </div>
             </div>
         </main>

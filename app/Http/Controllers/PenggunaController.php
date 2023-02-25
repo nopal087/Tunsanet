@@ -5,14 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\order;
 use App\Models\Pengguna;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PenggunaController extends Controller
 {
     public function index()
     {
-        $pengguna = Pengguna::all();
+        $pengguna = Pengguna::orderBy('id', 'desc')->latest()->paginate();
+        $datapengguna = DB::table('penggunas')->get();
         // dd($pengguna);
-        return view('admin/menu/LanggananPengguna', compact('pengguna'));
+        return view('admin/menu/LanggananPengguna', compact('pengguna', 'datapengguna'));
     }
 
     //tambah

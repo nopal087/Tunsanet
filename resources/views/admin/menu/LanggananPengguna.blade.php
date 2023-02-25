@@ -24,79 +24,88 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-bordered-responsive p-0">
-                            <table class="table table-bordered text-nowrap">
-                                <thead>
-                                    <tr class="bg-primary-subtle">
-                                        <th>No.</th>
-                                        <th>ID</th>
-                                        <th>Nama</th>
-                                        {{-- <th>Email</th> --}}
-                                        <th>No.Telp</th>
-                                        <th>Alamat</th>
-                                        <th>Paket internet</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($pengguna as $p)
-                                        <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $p->id }}</td>
-                                            <td>{{ $p->nama }}</td>
-                                            {{-- <td>nopal@gmail.com</td> --}}
-                                            <td>{{ $p->phone }}</td>
-                                            <td>{{ $p->alamat }}</td>
-                                            <td>{{ $p->paket }}</td>
-                                            <td class="project-actions">
-                                                <a class="btn btn-info btn-sm"
-                                                    href="admin/menu/pengguna/{{ $p->id }}/edit">
-                                                    <i class="fas fa-pencil-alt">
-                                                    </i>
-                                                </a>
-                                                <div class="btn-group" role="group" aria-label="Basic example">
+                            @if (count($datapengguna) > 0)
+                                <table class="table table-bordered text-nowrap">
+                                    <thead>
+                                        <tr class="bg-primary-subtle">
+                                            <th>No.</th>
+                                            <th>ID</th>
+                                            <th>Nama</th>
+                                            {{-- <th>Email</th> --}}
+                                            <th>No.Telp</th>
+                                            <th>Alamat</th>
+                                            <th>Paket internet</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($pengguna as $p)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $p->id }}</td>
+                                                <td>{{ $p->nama }}</td>
+                                                {{-- <td>nopal@gmail.com</td> --}}
+                                                <td>{{ $p->phone }}</td>
+                                                <td>{{ $p->alamat }}</td>
+                                                <td>{{ $p->paket }}</td>
+                                                <td class="project-actions">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="admin/menu/pengguna/{{ $p->id }}/edit">
+                                                        <i class="fas fa-pencil-alt">
+                                                        </i>
+                                                    </a>
+                                                    <div class="btn-group" role="group" aria-label="Basic example">
 
-                                                    <form action="/admin/menu/pengguna/{{ $p->id }}" method="POST">
-                                                        @csrf
-                                                        @method('delete')
-                                                        {{-- Modal Button Hapus --}}
-                                                        {{-- <input class="btn btn-danger btn-sm" type="submit"
+                                                        <form action="/admin/menu/pengguna/{{ $p->id }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            @method('delete')
+                                                            {{-- Modal Button Hapus --}}
+                                                            {{-- <input class="btn btn-danger btn-sm" type="submit"
                                                             data-toggle="modal"> --}}
-                                                        <button type="button" class="btn btn-danger btn-sm"
-                                                            data-toggle="modal"
-                                                            data-target="#pengguna-{{ $p->id }}">Hapus</button>
-                                                        <div class="modal fade" id="pengguna-{{ $p->id }}"
-                                                            tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                                                            aria-hidden="true">
-                                                            <div class="modal-dialog">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h4 class="modal-title" id="myModalLabel">Konfirmasi
-                                                                            Penghapusan</h4>
-                                                                        <button type="button" class="close"
-                                                                            data-dismiss="modal"
-                                                                            aria-hidden="true">&times;</button>
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                        Apakah Anda yakin ingin menghapus ini?
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-default"
-                                                                            data-dismiss="modal">Batal</button>
-                                                                        <button type="submit"
-                                                                            class="btn btn-danger">Hapus</button>
+                                                            <button type="button" class="btn btn-danger btn-sm"
+                                                                data-toggle="modal"
+                                                                data-target="#pengguna-{{ $p->id }}">Hapus</button>
+                                                            <div class="modal fade" id="pengguna-{{ $p->id }}"
+                                                                tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                                aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h4 class="modal-title" id="myModalLabel">
+                                                                                Konfirmasi
+                                                                                Penghapusan</h4>
+                                                                            <button type="button" class="close"
+                                                                                data-dismiss="modal"
+                                                                                aria-hidden="true">&times;</button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            Apakah Anda yakin ingin menghapus ini?
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-default"
+                                                                                data-dismiss="modal">Batal</button>
+                                                                            <button type="submit"
+                                                                                class="btn btn-danger">Hapus</button>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        {{-- <input class="btn btn-danger btn-sm" type="submit" value="delete"> --}}
-                                                    </form>
-                                                </div>
+                                                            {{-- <input class="btn btn-danger btn-sm" type="submit" value="delete"> --}}
+                                                        </form>
+                                                    </div>
 
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            @else
+                                <div class="text-center">
+                                    <img src="{{ asset('pengguna/img/empty.jpg') }}" alt="No Data Found" width="50%">
+                                    <p>Tidak ada data yang tersedia.</p>
+                                </div>
+                            @endif
 
                         </div>
                         <!-- /.card-body -->

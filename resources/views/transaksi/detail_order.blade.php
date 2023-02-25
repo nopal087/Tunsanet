@@ -20,6 +20,13 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="{{ asset('pengguna/css/bootstrap.min.css') }}" rel="stylesheet" />
 
+    {{-- toats bootsrtap --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Load JavaScript Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
+    <!-- Load JavaScript Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
 
 
     <style>
@@ -90,6 +97,7 @@
 
     <div class="container py-3">
         <header>
+
             <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
                 <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
                     {{-- Navbar Bumdes --}}
@@ -103,6 +111,26 @@
                     </nav>
                     <span class="fs-4">TUNSANET</span>
                 </a>
+                <!-- Flexbox container for aligning the toasts -->
+                <div aria-live="polite" aria-atomic="true"
+                    class="d-flex justify-content-center align-items-center w-100">
+
+                    <!-- Then put toasts within -->
+                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" class="rounded me-2"width="20px"
+                                alt="logo">
+                            <strong class="me-auto">Tunsanet</strong>
+                            <small>1 mins ago</small>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            Kami menerima pembayaran secara cashless silahkan klik bayar sekarang untuk melakukan
+                            pembayaran secara virtual
+                        </div>
+                    </div>
+                </div>
 
                 <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
                     @auth
@@ -127,6 +155,7 @@
 
                 </nav>
             </div>
+
 
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
                 <h1 class="display-8 fw-normal">Detail Order</h1>
@@ -204,7 +233,7 @@
                         </div>
                         <div class="row p-3">
                             <a class="btn btn-success btn-lg mt-3" target="_blank"
-                                href="https://wa.me/6285712666154?text=Halo petugas Bumdes%20saya ingin melakukan pembayaran untuk paket internet wifi yang saya beli atas nama..., tolong segera dilakukan pemasangan dirumah saya terimakasih%20">
+                                href="https://wa.me/6285712666154?text=Halo%20petugas%20Bumdes%20saya%20ingin%20melakukan%20pembayaran%20untuk%20paket%20internet%20wifi%20yang%20saya%20beli%20atas%0ANama :%0ANo. hp:%0AAlamat :%0APaket Internet :%0Atolong segera dilakukan pemasangan dirumah saya terimakasih%20">
                                 <i class="fab fa-whatsapp-square"></i> Hubungi Petugas
                             </a>
                         </div>
@@ -293,7 +322,13 @@
                 }
             })
         });
+
+        var myToast = document.querySelector('.toast');
+        var bsToast = new bootstrap.Toast(myToast);
+        bsToast.show();
     </script>
+
+
 </body>
 
 

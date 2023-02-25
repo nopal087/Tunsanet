@@ -6,6 +6,7 @@ use App\Models\order;
 use App\Models\Pengguna;
 use App\Models\Tagihan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BuatTagihanController extends Controller
 {
@@ -13,15 +14,16 @@ class BuatTagihanController extends Controller
     public function btagihan()
     {
         $pengguna = Pengguna::all();
-
-        return view('admin/menu/btagihan', compact('pengguna'));
+        $databuattagihan = DB::table('penggunas')->get();
+        return view('admin/menu/btagihan', compact('pengguna', 'databuattagihan'));
     }
 
     public function ViewTagihan()
     {
-        $tagihan = Tagihan::all();
+        $tagihan = Tagihan::orderBy('id', 'desc')->latest()->paginate(1000);
+        $datatagihan = DB::table('tagihans')->get();
         // dd($tagihan);
-        return view('admin.menu.LihatTagihan', compact('tagihan'));
+        return view('admin.menu.LihatTagihan', compact('tagihan', 'datatagihan'));
     }
 
 
