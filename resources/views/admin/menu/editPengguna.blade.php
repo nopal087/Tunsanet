@@ -52,7 +52,8 @@
                                             </option>
                                             <option value="Gold" @if ($pengguna->paket == 'Gold') selected @endif>Gold
                                             </option>
-                                            <option value="Diamon" @if ($pengguna->paket == 'Diamond') selected @endif>Diamond
+                                            <option value="Diamond" @if ($pengguna->paket == 'Diamond') selected @endif>
+                                                Diamond
                                             </option>
                                         </select>
                                         {{-- <label for="exampleInputPassword1">Paket</label>

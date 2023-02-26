@@ -239,19 +239,17 @@
                 </div>
             </header>
     </section>
-
     {{-- <div class="section2"> --}}
     <div class="paket-h1 p-3">
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center mt-5" id="paket">
-            <h3 class="display-4 text-primary-emphasis"><b>Paket Internet Rumahan</b></h3>
+            <h3 class="display-4"><b>Paket Internet Rumahan</b></h3>
             <p class="fs-5 text-muted">
                 Internet Cepat dan ngebut dengan Layanan Wifi TUNSANET!
             </p>
         </div>
     </div>
     </header>
-
-    <main class="container mb-10">
+    <main class="container mb-2">
         <div class=" row row-cols- row-cols-md-3 mb-3 text-center p-2">
             @foreach ($paketInternets as $paket)
                 <div class="col-sm-4">
@@ -260,6 +258,7 @@
                             <h4 class="my-0 fw-normal">{{ $paket->nama_paket }}</h4>
                         </div>
                         <div class="card-body">
+                            <img src="{{ asset('pengguna/img/gold.png') }}" width="50%" alt="">
                             <h1 class="card-title pricing-card-title">
                                 {{ $paket->kecepatan }} <h4><small class="text-muted fw-light">Unlimited</small>
                                 </h4>
@@ -286,8 +285,140 @@
                 </div>
             @endforeach
         </div>
-        </div>
+
     </main>
+    <section id="kelebihan" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5"><strong>Kelebihan Internet Kami</strong></h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body d-flex">
+                            <img class="mr-4" src="{{ asset('pengguna/img/1.png') }}" width="50%"
+                                alt="Koneksi Stabil">
+                            <div>
+                                <h4 class="card-title">Koneksi Paling Stabil</h4>
+                                <p class="card-text">Kami menawarkan koneksi internet yang stabil sehingga dapat
+                                    memudahkan Anda dalam menjalankan aktivitas online.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body d-flex">
+                            <img class="mr-4" src="{{ asset('pengguna/img/2.png') }}" width="50%"
+                                alt="Kecepatan Tinggi">
+                            <div>
+                                <h4 class="card-title">Kecepatan Tinggi</h4>
+                                <p class="card-text">Dengan kecepatan internet yang tinggi, Anda dapat melakukan
+                                    browsing, streaming, dan download dengan mudah dan lancar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body d-flex">
+                            <img class="mr-4" src="{{ asset('pengguna/img/3.png') }}" width="50%"
+                                alt="Pilihan Paket yang Fleksibel">
+                            <div>
+                                <h4 class="card-title">Pilihan Paket yang Fleksibel</h4>
+                                <p class="card-text">Kami menyediakan berbagai pilihan paket internet dengan harga yang
+                                    terjangkau dan fitur yang sesuai dengan kebutuhan Anda.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bantuan" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="{{ asset('pengguna/img/operator.jpg') }}" width="100%" class="img-fluid"
+                        alt="Bantuan 24/7">
+                </div>
+                <div class="col-lg-6">
+                    <h2><strong>Bantuan 24/7</strong></h2>
+                    <p>Kami siap membantu Anda kapan saja dan di mana saja. Jika Anda mengalami masalah dengan layanan
+                        internet kami, silakan hubungi kami melalui:</p>
+                    <ul>
+                        <li><i class="fa fa-phone"></i> 0800-123-4567 (24 jam)</li>
+                        <li><i class="fa fa-envelope"></i> BumdesTunsa@gmail.com</li>
+                        <li><i class="fa fa-comment"></i> Live chat (24 jam)</li>
+                    </ul>
+                    <p>Kami akan segera merespon aduan Anda dan memberikan solusi terbaik untuk Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2>Pertanyaan yang sering ditanyakan</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Apa itu Tunsanet
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Tunsanet adalah Badan Usaha Milik Desa Tunjungsari yang memberikan pelayanan wifi kepada
+                                warga sekitar untuk meningkatkan perekonomian desa Tunjungsari.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Bagaimana cara melakukan pembayarannya?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Jika anda melakukan pembelian melalui website ini maka akan terdapat 2 opsi
+                                pembayaran<br>
+                                1. pembayaran menggunakan cashless atau secara online , anda hanya tinggal mengikuti
+                                intruksi yang ada untuk melakukan pembayaran, opsi pembayaran online nya juga bervariasi
+                                anda dapat menentukannya sendiri. <br>
+                                2. pembayaran secara manual, anda dapat datang ke kantor atau anda dapat menguhubungi
+                                petugas Bumdes Tunsanet untuk melakukan pembayaran.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Apakah setelah pembelian akan segera dilakukan pemasangan?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Pemasangan akan dilakukan ketika pembeli sudah melakukan konfirmasi pembayaran kepada
+                                petugas melalui whatsapp maupun secara langsung dengan menyertakan bukti pembayaran.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 justify-content-end">
+                <img src="{{ asset('pengguna/img/FAQ.png') }}" width="90%" alt="gambar FAQ" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
     @include('user/footer')
     </div>
 </body>
