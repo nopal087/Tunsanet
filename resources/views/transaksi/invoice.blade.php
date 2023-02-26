@@ -93,19 +93,13 @@
     <div class="container py-3">
         <header>
             <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4">
-                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none py-3">
                     {{-- Navbar Bumdes --}}
-                    <nav class="navbar mx-2">
-                        <div class="bg-light rounded-3">
-                            <a class="" href="/">
-                                <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="Logo" width="35"
-                                    height="30" class="d-inline-block align-text-top">
-                            </a>
-                        </div>
-                    </nav>
+                    <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="35">
+                    <span class=" fs-2"><strong><a href="/" class="text-decoration-none text-secondary">
+                                TUNSANET</a></strong></span>
                 </a>
-                <span class=" fs-4 text-white "><strong><a href="/" class="text-decoration-none text-secondary">
-                            TUNSANET</a></strong></span>
+
                 </a>
 
                 <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
@@ -148,7 +142,7 @@
                     <div class="col-8 d-flex">
                         <img src="{{ asset('AdminLTE/dist/img/logo-bumdes.jpg') }}" class="img-circle elevation-1"
                             width="20" height="20" alt="User Image">
-                        <i class="fas fa-globe"></i>
+                        {{-- <i class="fas fa-globe"></i> --}}
                         <h4> Bumdes Sari Rejeki,</h4>
                     </div>
                     <!-- /.col -->
@@ -231,8 +225,7 @@
                             <h4 class="alert-heading">Terimakasih telah melakukan pembelian</h4>
                             <p>Silahkan cetak invoice ini dan simpan diperangkat anda, setelah itu tekan tombol whatsapp
                                 untuk mengirimkan bukti transaksi berupa invoice kepada petugas</p>
-                            <p class="mb-0">Terimakasih kepada pelanggan yang terhormat berikan kritik dan saran agar
-                                website ini dapat lebih baik lagi dalam memberikan pelayanan kepada anda</p>
+
                         </div>
                     </div>
                     <div class="col-4">
@@ -240,8 +233,7 @@
                             class="w-100 btn btn-secondary btn-lg mt-3"><i class="fas fa-print"></i> Cetak</a>
                         <a class="w-100 btn btn-success btn-lg mt-3" target="_blank"
                             href="https://wa.me/6285712666154?text=Hallo%20petugas%20bumdes%20saya%20ingin%20melampirkan%20bukti%20pembayaran,%20berikut%20bukti%20pembayarannya%20Terimakasih">
-                            Whatsapp
-                            </i>
+                            <i class="fab fa-whatsapp"></i> WA
                         </a>
                         <a href="/" class="w-100 btn btn-primary btn-lg mt-3">Beranda</a>
                     </div>
@@ -249,7 +241,7 @@
             </div>
         </main>
 
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        {{-- <footer class="pt-4 my-md-5 pt-md-5 border-top">
             <div class="row">
                 <div class="col-12 col-md">
                     <img class="mb-2" src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt=""
@@ -293,7 +285,8 @@
                     </ul>
                 </div>
             </div>
-        </footer>
+        </footer> --}}
+        @include('user/footer')
     </div>
 </body>
 

@@ -96,17 +96,18 @@
     <div class="container py-3">
         <header>
             <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4">
-                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none py-3">
                     {{-- Navbar Bumdes --}}
-                    <nav class="navbar">
+                    {{-- <nav class="navbar">
                         <div class="container-fluid">
                             <a class="navbar-brand" href="/">
                                 <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="Logo" width="35"
                                     height="30" class="d-inline-block align-text-top">
                             </a>
                         </div>
-                    </nav>
-                    <span class=" fs-4"><strong><a href="/" class="text-decoration-none text-secondary">
+                    </nav> --}}
+                    <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="35">
+                    <span class=" fs-2"><strong><a href="/" class="text-decoration-none text-secondary">
                                 TUNSANET</a></strong></span>
                 </a>
 
@@ -142,7 +143,7 @@
             </div>
         </header>
 
-        <main>
+        <main class="mb-10">
 
             <div class="row g-2 mb-3">
                 <div class="col-md-5 col-lg-4 order-md-last border rounded p-3 h-25">
@@ -252,51 +253,7 @@
                 </div>
             </div>
         </main>
-
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <img class="mb-2" src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt=""
-                        width="24" height="19" />
-                    <small class="d-block mb-3 text-muted">&copy; 2022–2023</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Lokasi</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Tunjungsari</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Kec. Siwalan</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Kab. Pekalongan</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Jawa Tengah</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Contact</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Bumdes@gmail.com</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">08671222222</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Tentang</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Nopal Tech</a>
-                        </li>
-                    </ul>
-                </div>
-        </footer>
+        @include('user/footer')
     </div>
 </body>
 

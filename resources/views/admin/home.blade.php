@@ -1,5 +1,5 @@
 @extends('admin/panel')
-@include ('app')
+{{-- @include ('app') --}}
 
 @section('content')
     <div class="content-wrapper">

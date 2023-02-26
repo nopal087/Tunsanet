@@ -100,19 +100,21 @@
         <header>
 
             <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4">
-                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none py-3">
                     {{-- Navbar Bumdes --}}
-                    <nav class="navbar mx-2">
+                    {{-- <nav class="navbar mx-2">
                         <div class="bg-light rounded-3">
                             <a class="" href="/">
                                 <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="Logo" width="35"
                                     height="30" class="d-inline-block align-text-top">
                             </a>
                         </div>
-                    </nav>
+                    </nav> --}}
+                    <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="35">
+                    <span class=" fs-2"><strong><a href="/" class="text-decoration-none text-secondary">
+                                TUNSANET</a></strong></span>
                 </a>
-                <span class=" fs-4 text-white "><strong><a href="/" class="text-decoration-none text-secondary">
-                            TUNSANET</a></strong></span>
+
                 </a>
                 <!-- Flexbox container for aligning the toasts -->
 
@@ -166,7 +168,7 @@
             </div>
         </header>
 
-        <main>
+        <main class="mb-10">
             <div class="row g-2 mb-3">
                 <div class="col-md-5 col-lg-4 order-md-last border rounded p-3 h-25">
                     <h4 class="d-flex justify-content-between align-items-center mb-1">
@@ -235,7 +237,7 @@
                         <div class="row p-3">
                             <a class="btn btn-success btn-lg mt-3" target="_blank"
                                 href="https://wa.me/6285712666154?text=Halo%20petugas%20Bumdes%20saya%20ingin%20melakukan%20pembayaran%20untuk%20paket%20internet%20wifi%20yang%20saya%20beli%20atas%0ANama :%0ANo. hp:%0AAlamat :%0APaket Internet :%0Atolong segera dilakukan pemasangan dirumah saya terimakasih%20">
-                                <i class="fab fa-whatsapp-square"></i> Hubungi Petugas
+                                <i class="fab fa-whatsapp"></i> Hubungi Petugas
                             </a>
                         </div>
 
@@ -248,7 +250,7 @@
             </div>
         </main>
 
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        {{-- <footer class="pt-4 my-md-5 pt-md-5 border-top">
             <div class="row">
                 <div class="col-12 col-md">
                     <img class="mb-2" src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt=""
@@ -292,7 +294,8 @@
                     </ul>
                 </div>
             </div>
-        </footer>
+        </footer> --}}
+        @include('user/footer')
     </div>
 
     <script type="text/javascript">

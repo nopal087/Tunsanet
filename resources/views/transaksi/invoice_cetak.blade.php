@@ -170,6 +170,11 @@
         </main>
     </div>
 </body>
+<footer>
+    <div class="display-8 fw-bold text-secondary text-center ">
+        <h4>Terimakasih</h4>
+    </div>
+</footer>
 <script>
     window.addEventListener("load", window.print());
 </script>

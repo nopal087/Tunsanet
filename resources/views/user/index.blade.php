@@ -74,7 +74,7 @@
 
         /* style coba */
         .hero {
-            background: linear-gradient(to bottom, rgba(16, 127, 226, 0.85), rgba(7, 63, 112, 0.85)),
+            background: linear-gradient(to bottom, rgba(0, 129, 243, 0.9), rgba(7, 63, 112, 0.7)),
                 url("{{ asset('pengguna/img/pemandangan.jpg') }}") no-repeat center;
             background-size: cover;
             height: 100vh;
@@ -118,6 +118,15 @@
             cursor: pointer;
         }
 
+        /* .section2 {
+            background-color: #BAD7E9;
+            background-size: cover;
+            height: 90vh;
+            position: relative;
+        } */
+
+
+
         /* Styling untuk responsif */
         @media only screen and (max-width: 768px) {
             .hero-text {
@@ -153,17 +162,18 @@
     <section class="hero">
         <div class="container-fluid py-1">
             <header>
-                <div class="d-flex flex-column flex-md-row align-items-center p-2">
+                <div class="d-flex flex-column flex-md-row align-items-center p-3 mx-4">
                     <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
                         {{-- Navbar Bumdes --}}
-                        <nav class="navbar mx-2">
+                        {{-- <nav class="navbar mx-2">
                             <div class="bg-light rounded-3">
                                 <a class="" href="/">
                                     <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="Logo" width="35"
                                         height="30" class="d-inline-block align-text-top">
                                 </a>
                             </div>
-                        </nav>
+                        </nav> --}}
+                        <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="35">
                     </a>
                     <span class=" fs-4 text-white "><strong><a href="/" class="text-decoration-none text-white">
                                 TUNSANET</a></strong></span>
@@ -183,7 +193,8 @@
                         @guest
                             <a class="me-3 py-2 text-white text-decoration-none btn btn-outline-white"
                                 href="{{ route('register') }}">Daftar</a>
-                            <a class="py-2 text- white-decoration-none btn btn-light" href="{{ route('login') }}">Login</a>
+                            <a class="py-2 text- white-decoration-none btn btn-outline-light"
+                                href="{{ route('login') }}">Login</a>
                         @endguest
                     </nav>
                 </div>
@@ -229,7 +240,8 @@
             </header>
     </section>
 
-    <div class="paket-h1">
+    {{-- <div class="section2"> --}}
+    <div class="paket-h1 p-3">
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center mt-5" id="paket">
             <h3 class="display-4 text-primary-emphasis"><b>Paket Internet Rumahan</b></h3>
             <p class="fs-5 text-muted">
@@ -239,8 +251,8 @@
     </div>
     </header>
 
-    <main class="container ">
-        <div class=" row row-cols- row-cols-md-3 mb-3 text-center">
+    <main class="container mb-10">
+        <div class=" row row-cols- row-cols-md-3 mb-3 text-center p-2">
             @foreach ($paketInternets as $paket)
                 <div class="col-sm-4">
                     <div class="card mb-4 rounded-3 shadow-sm border-primary">
@@ -274,52 +286,10 @@
                 </div>
             @endforeach
         </div>
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <img class="mb-2" src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="24"
-                        height="19" /> Tunsanet
-                    <small class="d-block mb-3 text-muted">&copy; 2022–2023</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Lokasi</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Tunjungsari</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Kec. Siwalan</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Kab. Pekalongan</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Jawa Tengah</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Contact</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Bumdes@gmail.com</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">08671222222</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Tentang</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Nopal Tech</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
         </div>
+    </main>
+    @include('user/footer')
+    </div>
 </body>
 
 </html>
