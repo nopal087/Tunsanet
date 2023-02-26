@@ -1,4 +1,5 @@
 @extends('admin/panel')
+@include ('app')
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -87,8 +88,6 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            {{-- <input class="btn btn-danger btn-sm" type="button" value="delete"> --}}
-
                                                         </form>
                                                     </div>
                                                 </td>
@@ -103,9 +102,7 @@
                                 </div>
                             @endif
                         </div>
-                        <!-- /.card-body -->
                     </div>
-                    <!-- /.card -->
                 </div>
             </div>
         </section>

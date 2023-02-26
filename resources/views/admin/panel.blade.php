@@ -40,7 +40,7 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ asset('AdminLTE/dist/img/logo-bumdes.jpg') }}" alt="AdminLTELogo"
+            <img class="animation__shake" src="{{ asset('AdminLTE/dist/img/tanpa_wifi.png') }}" alt="AdminLTELogo"
                 height="60" width="60">
             <p> SELAMAT DATANG DI BUMDES DESA TUNJUNGSARI</p>
         </div>

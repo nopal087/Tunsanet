@@ -76,21 +76,18 @@
             -webkit-overflow-scrolling: touch;
         }
     </style>
-
-    <!-- Custom styles for this template -->
     <link href="{{ asset('pengguna/pricing.css') }}" rel="stylesheet" />
+    @include ('app')
+
 </head>
 
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
-
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
     <div class="container py-3">
-
         <main>
             <div class="invoice p-3 mb-3">
                 <!-- title row -->
@@ -127,12 +124,7 @@
                             {{ $order->alamat }}<br>
                         </address>
                     </div>
-                    <!-- /.col -->
-
-                    <!-- /.col -->
                 </div>
-                <!-- /.row -->
-
                 <!-- Table row -->
                 <div class="row">
                     <div class="col-12 table-responsive">
@@ -157,19 +149,13 @@
                             </tbody>
                         </table>
                     </div>
-                    <!-- /.col -->
                 </div>
-                <!-- /.row -->
 
                 <div class="row">
-                    <!-- accepted payments column -->
                     <div class="col-6">
 
                     </div>
-                    <!-- /.col -->
                     <div class="col-6">
-
-
                         <div class="table-responsive">
                             <table class="table">
                                 <tr>
@@ -179,7 +165,6 @@
                             </table>
                         </div>
                     </div>
-                    <!-- /.col -->
                 </div>
             </div>
         </main>
@@ -188,6 +173,5 @@
 <script>
     window.addEventListener("load", window.print());
 </script>
-
 
 </html>

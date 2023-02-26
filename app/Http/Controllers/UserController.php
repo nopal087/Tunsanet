@@ -46,6 +46,22 @@ class UserController extends Controller
         return view('admin/menu/tagihan', compact('orders', 'datatransaksi'));
     }
 
+    // fungsi cari tabel order
+    public function liveSearch(Request $request)
+    {
+        $query = $request->input('query');
+
+        $orders = order::all("%$query%");
+
+        $output = '<ul class="list-group">';
+        foreach ($orders as $order) {
+            $output .= '<li class="list-group-item">' . $order->title . '</li>';
+        }
+        $output .= '</ul>';
+
+        return $output;
+    }
+
     //fungsi manggil data paket internet dari database==================================================
     public function paket()
     {
@@ -67,8 +83,6 @@ class UserController extends Controller
 
     public function authenticate(Request $request)
     {
-        // dd($request->all);
-        // dd($paketInternets);
 
         $credentials = $request->validate([
             'email' => ['required', 'email'],

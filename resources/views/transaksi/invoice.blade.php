@@ -76,6 +76,7 @@
             -webkit-overflow-scrolling: touch;
         }
     </style>
+    @include ('app')
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('pengguna/pricing.css') }}" rel="stylesheet" />
@@ -94,15 +95,17 @@
             <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4">
                 <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
                     {{-- Navbar Bumdes --}}
-                    <nav class="navbar">
-                        <div class="container-fluid">
-                            <a class="navbar-brand" href="#">
+                    <nav class="navbar mx-2">
+                        <div class="bg-light rounded-3">
+                            <a class="" href="/">
                                 <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="Logo" width="35"
                                     height="30" class="d-inline-block align-text-top">
                             </a>
                         </div>
                     </nav>
-                    <span class="fs-4">TUNSANET</span>
+                </a>
+                <span class=" fs-4 text-white "><strong><a href="/" class="text-decoration-none text-secondary">
+                            TUNSANET</a></strong></span>
                 </a>
 
                 <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
@@ -130,89 +133,13 @@
             </div>
 
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-                <h1 class="display-8 fw-normal">Invoice</h1>
-                {{-- <p class="fs-5 text-muted">
-                    Internet Cepat dan ngebut dengan Layanan Wifi TUNSANET!
-                </p> --}}
+                <h1 class="display-8 fw-bold text-secondary ">Invoice</h1>
             </div>
         </header>
 
         <main>
             <div class="row g-5 justify-content-center">
                 <div class="col-md-7 col-lg-8">
-                    {{-- <div class="border rounded p-3 ">
-                        <li class="list-group-item d-flex justify-content-between lh-lg mb-3">
-                            <div>
-                                <h4 class="my-0">Detail Pesanan</h4>
-                            </div>
-                            <small
-                                class="text-muted">{{ $order->updated_at->translatedFormat('l, d F Y : H:i') }}</small>
-
-                        </li>
-                        {{-- <h4 class="mb-1">Detail Pesanan</h4> --}}
-                    {{-- <div>
-                        <h6 class="d-flex align-items-center"><small class="text-muted badge text-bg-warning "><span
-                                    class="material-symbols-outlined m-2 ">
-                                    warning
-                                </span>Silahkan Screenshot halaman ini sebagai
-                                bukti pembayaran!</small>
-                        </h6>
-                    </div>
-                    <div class="row g-3">
-
-                        <div class="row g-3">
-
-                            <ul class="list-group mt-3">
-                                <li class="list-group-item d-flex justify-content-between lh-lg">
-                                    <div>
-                                        <h6 class="my-0">Nama :</h6>
-                                    </div>
-                                    <small class="text-muted">{{ $order->nama }}</small>
-
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between lh-md">
-                                    <div>
-                                        <h6 class="my-0">No. Telephone :</h6>
-                                    </div>
-                                    <small class="text-muted">{{ $order->phone }}</small>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between lh-lg">
-                                    <div>
-                                        <h6 class="my-0">Alamat :</h6>
-                                    </div>
-                                    <small class="text-muted ">{{ $order->alamat }}</small>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between lh-md">
-                                    <div>
-                                        <h6 class="my-0">Paket :</h6>
-                                    </div>
-                                    <small class="text-muted">{{ $order->paket }}</small>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between lh-md">
-                                    <div>
-                                        <h6 class="my-0">Status :</h6>
-                                    </div>
-                                    <label
-                                        class="badge text-{{ $order->status == 'Paid' ? 'bg-success' : 'bg-danger' }}">{{ $order->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between lh-md">
-                                    <div>
-                                        <h6 class="my-0">Total :
-                                        </h6>
-                                    </div>
-                                    <small class="text-muted">IDR.
-                                        {{ number_format($order->total_price) }}</small>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div> --}}
-
-
-
-                    {{-- <button class="w-100 btn btn-primary btn-lg mt-3" type="submit">kembali</button> --}}
-
                 </div>
             </div>
             <div class="invoice p-3 mb-3">
@@ -249,11 +176,7 @@
                             {{ $order->alamat }}<br>
                         </address>
                     </div>
-                    <!-- /.col -->
-
-                    <!-- /.col -->
                 </div>
-                <!-- /.row -->
 
                 <!-- Table row -->
                 <div class="row">
@@ -301,25 +224,26 @@
                             </table>
                         </div>
                     </div>
-                    <!-- /.col -->
                 </div>
-                <!-- /.row -->
-
-                <!-- this row will not appear when printing -->
                 <div class="row no-print">
-                    <div class="col-4">
-                        <a href="/" class="w-100 btn btn-primary btn-lg mt-3">Kembali</a>
+                    <div class="col-8">
+                        <div class="alert alert-success" role="alert">
+                            <h4 class="alert-heading">Terimakasih telah melakukan pembelian</h4>
+                            <p>Silahkan cetak invoice ini dan simpan diperangkat anda, setelah itu tekan tombol whatsapp
+                                untuk mengirimkan bukti transaksi berupa invoice kepada petugas</p>
+                            <p class="mb-0">Terimakasih kepada pelanggan yang terhormat berikan kritik dan saran agar
+                                website ini dapat lebih baik lagi dalam memberikan pelayanan kepada anda</p>
+                        </div>
                     </div>
                     <div class="col-4">
+                        <a href="{{ route('invoice.cetak', $order->id) }}" rel="noopener" target="_blank"
+                            class="w-100 btn btn-secondary btn-lg mt-3"><i class="fas fa-print"></i> Cetak</a>
                         <a class="w-100 btn btn-success btn-lg mt-3" target="_blank"
                             href="https://wa.me/6285712666154?text=Hallo%20petugas%20bumdes%20saya%20ingin%20melampirkan%20bukti%20pembayaran,%20berikut%20bukti%20pembayarannya%20Terimakasih">
                             Whatsapp
                             </i>
                         </a>
-                    </div>
-                    <div class="col-4">
-                        <a href="{{ route('invoice.cetak', $order->id) }}" rel="noopener" target="_blank"
-                            class="w-100 btn btn-secondary btn-lg mt-3"><i class="fas fa-print"></i> Cetak</a>
+                        <a href="/" class="w-100 btn btn-primary btn-lg mt-3">Beranda</a>
                     </div>
                 </div>
             </div>
@@ -328,9 +252,45 @@
         <footer class="pt-4 my-md-5 pt-md-5 border-top">
             <div class="row">
                 <div class="col-12 col-md">
-                    <img class="mb-2" src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="24"
-                        height="19" />
+                    <img class="mb-2" src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt=""
+                        width="24" height="19" />
                     <small class="d-block mb-3 text-muted">&copy; 2022–2023</small>
+                </div>
+                <div class="col-6 col-md">
+                    <h5>Lokasi</h5>
+                    <ul class="list-unstyled text-small">
+                        <li class="mb-1">
+                            <a class="link-secondary text-decoration-none" href="#">Tunjungsari</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="link-secondary text-decoration-none" href="#">Kec. Siwalan</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="link-secondary text-decoration-none" href="#">Kab. Pekalongan</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="link-secondary text-decoration-none" href="#">Jawa Tengah</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled text-small">
+                        <li class="mb-1">
+                            <a class="link-secondary text-decoration-none" href="#">Bumdes@gmail.com</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="link-secondary text-decoration-none" href="#">08671222222</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md">
+                    <h5>Tentang</h5>
+                    <ul class="list-unstyled text-small">
+                        <li class="mb-1">
+                            <a class="link-secondary text-decoration-none" href="#">Nopal Tech</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </footer>

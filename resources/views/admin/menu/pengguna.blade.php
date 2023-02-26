@@ -1,4 +1,5 @@
 @extends('admin/panel')
+@include ('app')
 @section('content')
     {{-- {{ json_encode($data) }} --}}
     <div class="content-wrapper">

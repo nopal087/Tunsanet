@@ -13,7 +13,7 @@
         data-client-key="{{ config('midtrans.client_key') }}"></script>
     <!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
 
-    <title>WIFI | Pesanan</title>
+    <title>WIFI | Detail Pesanan</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/pricing/" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -82,6 +82,7 @@
             -webkit-overflow-scrolling: touch;
         }
     </style>
+    @include ('app')
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('pengguna/pricing.css') }}" rel="stylesheet" />
@@ -101,36 +102,19 @@
             <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4">
                 <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
                     {{-- Navbar Bumdes --}}
-                    <nav class="navbar">
-                        <div class="container-fluid">
-                            <a class="navbar-brand" href="#">
+                    <nav class="navbar mx-2">
+                        <div class="bg-light rounded-3">
+                            <a class="" href="/">
                                 <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="Logo" width="35"
                                     height="30" class="d-inline-block align-text-top">
                             </a>
                         </div>
                     </nav>
-                    <span class="fs-4">TUNSANET</span>
+                </a>
+                <span class=" fs-4 text-white "><strong><a href="/" class="text-decoration-none text-secondary">
+                            TUNSANET</a></strong></span>
                 </a>
                 <!-- Flexbox container for aligning the toasts -->
-                <div aria-live="polite" aria-atomic="true"
-                    class="d-flex justify-content-center align-items-center w-100">
-
-                    <!-- Then put toasts within -->
-                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                            <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" class="rounded me-2"width="20px"
-                                alt="logo">
-                            <strong class="me-auto">Tunsanet</strong>
-                            <small>1 mins ago</small>
-                            <button type="button" class="btn-close" data-bs-dismiss="toast"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="toast-body">
-                            Kami menerima pembayaran secara cashless silahkan klik bayar sekarang untuk melakukan
-                            pembayaran secara virtual
-                        </div>
-                    </div>
-                </div>
 
                 <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
                     @auth
@@ -156,6 +140,23 @@
                 </nav>
             </div>
 
+            <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
+
+                <!-- Then put toasts within -->
+                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" class="rounded me-2"width="20px"
+                            alt="logo">
+                        <strong class="me-auto">Tunsanet</strong>
+                        <small>1 detik yang lalu</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        Kami menerima pembayaran secara cashless silahkan klik bayar sekarang untuk melakukan
+                        pembayaran secara virtual
+                    </div>
+                </div>
+            </div>
 
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
                 <h1 class="display-8 fw-normal">Detail Order</h1>

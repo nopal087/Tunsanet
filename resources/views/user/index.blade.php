@@ -138,7 +138,7 @@
             }
         }
     </style>
-
+    @include ('app')
     <!-- Custom styles for this template -->
     <link href="{{ asset('pengguna/pricing.css') }}" rel="stylesheet" />
 </head>
@@ -156,7 +156,7 @@
                 <div class="d-flex flex-column flex-md-row align-items-center p-2">
                     <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
                         {{-- Navbar Bumdes --}}
-                        <nav class="navbar">
+                        <nav class="navbar mx-2">
                             <div class="bg-light rounded-3">
                                 <a class="" href="/">
                                     <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="Logo" width="35"
@@ -165,11 +165,11 @@
                             </div>
                         </nav>
                     </a>
-                    <span class=" fs-4 text-white"><strong>TUNSANET</strong></span>
+                    <span class=" fs-4 text-white "><strong><a href="/" class="text-decoration-none text-white">
+                                TUNSANET</a></strong></span>
                     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
                         @auth
-
-                            <div class="text-white">
+                            <div class="text-white ml-3">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                     {{ auth()->user()->name }}

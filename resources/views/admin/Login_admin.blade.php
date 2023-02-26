@@ -84,7 +84,7 @@
                     <a href="forgot-password.html">Lupa pasword?</a>
                 </p> --}}
                 <p class="mb-0">
-                    <a href="{{ route('register_admin') }}" class="text-center">Daftar</a>
+                    <a href="{{ route('admin_register') }}" class="text-center">Daftar</a>
                 </p>
             </div>
             <!-- /.login-card-body -->

@@ -79,6 +79,7 @@
             -webkit-overflow-scrolling: touch;
         }
     </style>
+    @include ('app')
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('pengguna/pricing.css') }}" rel="stylesheet" />
@@ -105,7 +106,8 @@
                             </a>
                         </div>
                     </nav>
-                    <span class="fs-4">TUNSANET</span>
+                    <span class=" fs-4"><strong><a href="/" class="text-decoration-none text-secondary">
+                                TUNSANET</a></strong></span>
                 </a>
 
                 <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">

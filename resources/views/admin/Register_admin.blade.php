@@ -51,7 +51,7 @@
                         <p class="alert alert-danger">{{ $err }}</p>
                     @endforeach
                 @endif
-                <form action="{{ route('registeradmin.action') }}" method="post">
+                <form action="{{ route('admin_register.action') }}" method="post">
                     @csrf
                     {{-- nama --}}
                     <div class="input-group mb-3">
