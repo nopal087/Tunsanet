@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Log in</title>
 
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+    {{-- mdb end --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- Google Font: Source Sans Pro -->
@@ -33,11 +40,10 @@
 </head>
 
 <body class="hold-transition login-page">
-    <div class="login-box">
+    {{-- <div class="login-box">
         <div class="login-logo">
             <a href="#"><b>BUMDES</b> SARI REJEKI</a>
         </div>
-        <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Silahkan Login</p>
@@ -72,25 +78,86 @@
                         </div>
                     </div>
                     <div class="row">
-                        <!-- /.col -->
                         <div class="col-4">
                             <button name="submit" type="submit" class="btn btn-primary btn-block">Login</button>
                         </div>
-                        <!-- /.col -->
                     </div>
                 </form>
 
                 <p class="mb-1">
-                    {{-- <a href="forgot-password.html">Lupa pasword?</a> --}}
                 </p>
                 <p class="mb-0">
                     Belum punya akun ? <a href="{{ route('register') }}" class="text-center">Daftar</a>
                 </p>
             </div>
-            <!-- /.login-card-body -->
         </div>
-    </div>
+    </div> --}}
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+            <div class="row d-flex align-items-center justify-content-center h-100">
+                <div class="col-md-8 col-lg-7 col-xl-6">
+                    <img src="{{ asset('pengguna/img/Login2.png') }}" width="100%" class="img-fluid"
+                        alt="Phone image">
+                </div>
+                {{-- <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                    <div class="login-logo">
+                        <a href="#"><b>BUMDES</b> SARI REJEKI</a>
+                    </div> --}}
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card">
+                        <div class="card-body py-5 px-md-5">
+                            @if (session('success'))
+                                <p class="alert alert-success">{{ session('success') }}</p>
+                            @endif
+                            @if ($errors->any())
+                                @foreach ($errors->all() as $err)
+                                    <p class="alert alert-danger">{{ $err }}</p>
+                                @endforeach
+                            @endif
+                            <form method="post" action="{{ route('login') }}">
+                                @csrf
+                                <!-- Email input -->
+                                <div class="form-outline mb-4">
+                                    <input type="email" name="email" id="form1Example13"
+                                        class="form-control form-control-lg" value="{{ old('email') }}" />
+                                    <label class="form-label" for="form1Example13">Email address</label>
+                                </div>
+
+                                <!-- Password input -->
+                                <div class="form-outline mb-4">
+                                    <input type="password" name="password" id="form1Example23"
+                                        class="form-control form-control-lg" value="{{ old('password') }}" />
+                                    <label class="form-label" for="form1Example23">Password</label>
+                                </div>
+
+                                <div class="d-flex justify-content-around align-items-center mb-4">
+                                    <!-- Checkbox -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            id="form1Example3" checked />
+                                        <label class="form-check-label" for="form1Example3"> Remember me </label>
+                                    </div>
+                                    <a href="#!">Forgot password?</a>
+                                </div>
+
+                                <!-- Submit button -->
+                                <button name="submit" type="submit"
+                                    class="btn btn-primary btn-lg btn-block">Login</button>
+                                <div class="divider d-flex align-items-center my-4">
+                                    <p class="text-center fw-bold mx-3 mb-0 text-muted">Belum Punya akun?</p>
+                                </div>
+                                <a href="{{ route('register') }}" class="btn-lg btn-block btn btn-outline-primary"
+                                    data-mdb-ripple-color="dark" role="button">Daftar
+                                    Sekarang
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    </section>
     <!-- /.login-box -->
+
+    {{-- @include('user/footer') --}}
 
     <!-- jQuery -->
     <script src="{{ asset('AdminLTE/plugins/jquery/jquery.min.js') }}"></script>
@@ -135,6 +202,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
         integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous">
     </script>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
 </body>
 
 </html>

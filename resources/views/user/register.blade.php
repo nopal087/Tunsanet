@@ -10,6 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Log in</title>
 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- Google Font: Source Sans Pro -->
@@ -37,7 +45,7 @@
 </head>
 
 <body class="hold-transition register-page">
-    <div class="login-box">
+    {{-- <div class="login-box">
         <div class="login-logo">
             <a href="#"><b>BUMDES</b> SARI REJEKI</a>
         </div>
@@ -53,7 +61,7 @@
                 @endif
                 <form action="{{ route('register.action') }}" method="post">
                     @csrf
-                    {{-- nama --}}
+
                     <div class="input-group mb-3">
                         <input type="text" name="name" class="form-control" placeholder="Nama"
                             value="{{ old('name') }}">
@@ -63,7 +71,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- username --}}
+
                     <div class="input-group mb-3">
                         <input type="text" name="username" class="form-control" placeholder="username"
                             value="{{ old('username') }}">
@@ -73,7 +81,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- email --}}
+
                     <div class="input-group mb-3">
                         <input type="email" name="email" class="form-control"
                             placeholder="email"value="{{ old('email') }}">
@@ -83,7 +91,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- no hp --}}
+
                     <div class="input-group mb-3">
                         <input type="text" name="no_hp" class="form-control"
                             placeholder="Nomer Handphone"value="{{ old('no_hp') }}">
@@ -93,7 +101,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- alamat --}}
+
                     <div class="input-group mb-3">
                         <input type="text" name="alamat" class="form-control"
                             placeholder="Alamat"value="{{ old('alamat') }}">
@@ -103,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- password --}}
+
                     <div class="input-group mb-3">
                         <input type="password" name="password" class="form-control"
                             placeholder="Password"value="{{ old('password') }}">
@@ -113,7 +121,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- confirm password --}}
+
                     <div class="input-group mb-3">
                         <input type="password" name="password_confirmation" class="form-control"
                             placeholder="confirmation password">
@@ -124,33 +132,140 @@
                         </div>
                     </div>
                     <div class="row">
-                        <!-- /.col -->
+
                         <div class="col-4 d-flex">
                             <button name="submit" type="submit" class="btn btn-primary btn-block">Register</button>
-                            {{-- <a class="btn btn-danger ml-2" href="{{ route('home') }}">back</a> --}}
+
                         </div>
-                        <!-- /.col -->
+
                     </div>
                 </form>
-
-                {{-- <div class="social-auth-links text-center">
-                    <p>- OR -</p>
-                    <a href="#" class="btn btn-block btn-primary">
-                        <i class="fab fa-facebook mr-2"></i>
-                        Sign up using Facebook
-                    </a>
-                    <a href="#" class="btn btn-block btn-danger">
-                        <i class="fab fa-google-plus mr-2"></i>
-                        Sign up using Google+
-                    </a>
-                </div> --}}
 
                 Sudah punya akun ? <a href="/login" class="text-center">Login</a>
             </div>
             <!-- /.form-box -->
         </div><!-- /.card -->
-    </div>
-    <!-- /.register-box -->
+    </div> --}}
+    <!-- Section: Design Block -->
+    <section class="">
+        <!-- Jumbotron -->
+        <div class="px-4 py-5 px-md-5 text-center text-lg-start">
+            <div class="container">
+                <div class="row gx-lg-5 align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        {{-- <h1 class="my-5 display-3 fw-bold ls-tight">
+                            Berselancar <br />
+                            <span class="text-primary">dengan Tunsanet</span>
+                        </h1>
+                        <p style="color: hsl(217, 10%, 50.8%)">
+                            Nikmati dunia dengan berselancar diinternet, pastikan koneksimu cepat dengan menggunakan
+                            internet Tunsanet
+                        </p> --}}
+                        <img src="{{ asset('pengguna/img/SignUp.png') }}" width="100%" class="img-fluid"
+                            alt="Phone image">
+                    </div>
+
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="card">
+                            <div class="card-body py-5 px-md-5">
+                                @if ($errors->any())
+                                    @foreach ($errors->all() as $err)
+                                        <p class="alert alert-danger">{{ $err }}</p>
+                                    @endforeach
+                                @endif
+                                <form action="{{ route('register.action') }}" method="post">
+                                    @csrf
+                                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input type="text" name="name" id="form3Example1"
+                                                    class="form-control" value="{{ old('name') }}" />
+                                                <label class="form-label" for="form3Example1">Nama Lengkap</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input type="text" name="username" id="form3Example2"
+                                                    class="form-control" value="{{ old('username') }}" />
+                                                <label class="form-label" for="form3Example2">Username</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Email input -->
+                                    <div class="form-outline mb-4">
+                                        <input type="email" name="email" id="form3Example3" class="form-control"
+                                            value="{{ old('email') }}" />
+                                        <label class="form-label" for="form3Example3">Email address</label>
+                                    </div>
+                                    <!-- no hp input -->
+                                    <div class="form-outline mb-4">
+                                        <input type="text" name="no_hp" id="form3Example3" class="form-control"
+                                            value="{{ old('no_hp') }}" />
+                                        <label class="form-label" for="form3Example3">Nomor Handphone</label>
+                                    </div>
+                                    <!-- Alamat input -->
+                                    <div class="form-outline mb-4">
+                                        <input type="text" name="alamat" id="form3Example4" class="form-control"
+                                            value="{{ old('alamat') }}" value="{{ old('alamat') }}" />
+                                        <label class="form-label" for="form3Example3">Alamat Lengkap</label>
+                                    </div>
+
+                                    <!-- Password input -->
+                                    <div class="form-outline mb-4">
+                                        <input type="password" name="password" id="form3Example5" class="form-control"
+                                            value="{{ old('password') }}" />
+                                        <label class="form-label" for="form3Example4">Password</label>
+                                    </div>
+                                    <!-- Password konfirmasi input -->
+                                    <div class="form-outline mb-4">
+                                        <input type="password" name="password_confirmation" id="form3Example6"
+                                            class="form-control" />
+                                        <label class="form-label" for="form3Example4">Password confirmation</label>
+                                    </div>
+
+                                    <!-- Submit button -->
+                                    <button name="submit" type="submit" class="btn btn-primary btn-block mb-1">
+                                        Daftar
+                                    </button>
+                                    <div class="text-center">
+                                        <p>Sudah Punya akun?</p>
+                                    </div>
+                                    <a href="/login" class="btn-md btn-block btn btn-outline-primary"
+                                        data-mdb-ripple-color="dark" role="button">Login
+                                    </a>
+
+                                    {{-- <!-- Register buttons -->
+                                    <div class="text-center">
+                                        <p>or sign up with:</p>
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </button>
+
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <i class="fab fa-google"></i>
+                                        </button>
+
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <i class="fab fa-twitter"></i>
+                                        </button>
+
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <i class="fab fa-github"></i>
+                                        </button>
+                                    </div> --}}
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Jumbotron -->
+    </section>
+    <!-- Section: Design Block -->
+
     <!-- jQuery -->
     <script src="{{ asset('AdminLTE/plugins/jquery/jquery.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->
@@ -194,6 +309,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
         integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous">
     </script>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
 </body>
 
 </html>

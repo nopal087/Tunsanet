@@ -170,7 +170,7 @@
 
         <main class="mb-10">
             <div class="row g-2 mb-3">
-                <div class="col-md-5 col-lg-4 order-md-last border rounded p-3 h-25">
+                <div class="col-md-5 col-lg-4 order-md-last p-3 h-25">
                     <h4 class="d-flex justify-content-between align-items-center mb-1">
                         <span class="">Paket Internet</span>
                     </h4>
@@ -189,18 +189,18 @@
                                 <span>Total</span>
                                 <strong>Rp.{{ number_format($order->total_price) }} </strong>
                             </li>
+                            <img src="{{ asset('pengguna/img/E-Wallet.png') }}" width="100%" class="img-fluid"
+                                alt="pay">
                         </ul>
                         {{-- data diri pengguna/pembeli --}}
                 </div>
                 <div class="col-md-7 col-lg-8">
-                    <div class="border rounded p-3">
-                        <h4 class="mb-1">Detail Pembeli</h4>
+                    <div class="p-3">
+                        <h4 class="mb-3 m-2">Detail Pembeli</h4>
                         {{-- <h6><small class="text-muted">Silahkan isi data diri anda dengan lengkap !</small></h6> --}}
                         <form class="needs-validation mt-4" action="" method="">
-
-                            <div class="border rounded p-3">
+                            <div class="p-3">
                                 <div class="row g-3">
-
                                     <ul class="list-group mt-3">
                                         <li class="list-group-item d-flex justify-content-between lh-lg">
                                             <div>

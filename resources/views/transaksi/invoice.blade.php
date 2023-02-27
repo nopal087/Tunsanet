@@ -131,162 +131,124 @@
             </div>
         </header>
 
-        <main>
-            <div class="row g-5 justify-content-center">
-                <div class="col-md-7 col-lg-8">
-                </div>
-            </div>
-            <div class="invoice p-3 mb-3">
-                <!-- title row -->
-                <div class="row">
-                    <div class="col-8 d-flex">
-                        <img src="{{ asset('AdminLTE/dist/img/logo-bumdes.jpg') }}" class="img-circle elevation-1"
-                            width="20" height="20" alt="User Image">
-                        {{-- <i class="fas fa-globe"></i> --}}
-                        <h4> Bumdes Sari Rejeki,</h4>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-4">
-                        <small class="float-right">{{ $order->updated_at->translatedFormat('l, d F Y : H:i') }}</small>
+        <main class="mb-10">
+            {{-- <div class="row"> --}}
+            <div class="col-12">
+                <div class="row g-5 justify-content-center">
+                    <div class="col-md-7 col-lg-8">
                     </div>
                 </div>
-                <!-- info row -->
-                <div class="row invoice-info">
-                    <div class="col-sm-4 invoice-col">
-                        Dari :
-                        <address>
-                            <strong>Bumdes Tunjungsari</strong><br>
-                            Tunjungsari<br>
-                            Pekalongan<br>
-                            Phone: 08992929922<br>
-                            Email: Bumdes@gmail.com
-                        </address>
+                <div class="invoice p-3 mb-3">
+                    <!-- title row -->
+                    <div class="row">
+                        <div class="col-8 d-flex">
+                            <img src="{{ asset('AdminLTE/dist/img/logo-bumdes.jpg') }}" class="img-circle elevation-1"
+                                width="20" height="20" alt="User Image">
+                            {{-- <i class="fas fa-globe"></i> --}}
+                            <h4> Bumdes Sari Rejeki,</h4>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <small
+                                class="float-right">{{ $order->updated_at->translatedFormat('l, d F Y : H:i') }}</small>
+                        </div>
                     </div>
-                    <!-- /.col -->
-                    <div class="col-sm-4 invoice-col">
-                        Kepada :
-                        <address>
-                            <strong>{{ $order->nama }}</strong><br>
-                            {{ $order->alamat }}<br>
-                        </address>
+                    <!-- info row -->
+                    <div class="row invoice-info">
+                        <div class="col-sm-4 invoice-col">
+                            Dari :
+                            <address>
+                                <strong>Bumdes Tunjungsari</strong><br>
+                                Tunjungsari<br>
+                                Pekalongan<br>
+                                Phone: 08992929922<br>
+                                Email: Bumdes@gmail.com
+                            </address>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-4 invoice-col">
+                            Kepada :
+                            <address>
+                                <strong>{{ $order->nama }}</strong><br>
+                                {{ $order->alamat }}<br>
+                            </address>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Table row -->
-                <div class="row">
-                    <div class="col-12 table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Paket</th>
-                                    <th>Status</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>{{ $order->paket }}</td>
-                                    <td><label
-                                            class="badge text-{{ $order->status == 'Paid' ? 'bg-success' : 'bg-danger' }}">{{ $order->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
-                                    </td>
-                                    <td>IDR. {{ number_format($order->total_price) }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <!-- accepted payments column -->
-                    <div class="col-6">
-
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-6">
-
-
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tr>
-                                    <th style="width:50%">Subtotal:</th>
-                                    <td>IDR. {{ number_format($order->total_price) }}</td>
-                                </tr>
+                    <!-- Table row -->
+                    <div class="row">
+                        <div class="col-12 table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Paket</th>
+                                        <th>Status</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>{{ $order->paket }}</td>
+                                        <td><label
+                                                class="badge text-{{ $order->status == 'Paid' ? 'bg-success' : 'bg-danger' }}">{{ $order->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
+                                        </td>
+                                        <td>IDR. {{ number_format($order->total_price) }}</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
-                    </div>
-                </div>
-                <div class="row no-print">
-                    <div class="col-8">
-                        <div class="alert alert-success" role="alert">
-                            <h4 class="alert-heading">Terimakasih telah melakukan pembelian</h4>
-                            <p>Silahkan cetak invoice ini dan simpan diperangkat anda, setelah itu tekan tombol whatsapp
-                                untuk mengirimkan bukti transaksi berupa invoice kepada petugas</p>
-
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <a href="{{ route('invoice.cetak', $order->id) }}" rel="noopener" target="_blank"
-                            class="w-100 btn btn-secondary btn-lg mt-3"><i class="fas fa-print"></i> Cetak</a>
-                        <a class="w-100 btn btn-success btn-lg mt-3" target="_blank"
-                            href="https://wa.me/6285712666154?text=Hallo%20petugas%20bumdes%20saya%20ingin%20melampirkan%20bukti%20pembayaran,%20berikut%20bukti%20pembayarannya%20Terimakasih">
-                            <i class="fab fa-whatsapp"></i> WA
-                        </a>
-                        <a href="/" class="w-100 btn btn-primary btn-lg mt-3">Beranda</a>
+                        <!-- /.col -->
                     </div>
                 </div>
             </div>
-        </main>
+            <!-- /.row -->
 
-        {{-- <footer class="pt-4 my-md-5 pt-md-5 border-top">
             <div class="row">
-                <div class="col-12 col-md">
-                    <img class="mb-2" src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt=""
-                        width="24" height="19" />
-                    <small class="d-block mb-3 text-muted">&copy; 2022–2023</small>
+                <!-- accepted payments column -->
+                <div class="col-6">
+
                 </div>
-                <div class="col-6 col-md">
-                    <h5>Lokasi</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Tunjungsari</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Kec. Siwalan</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Kab. Pekalongan</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Jawa Tengah</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Contact</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Bumdes@gmail.com</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">08671222222</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Tentang</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Nopal Tech</a>
-                        </li>
-                    </ul>
+                <!-- /.col -->
+                <div class="col-6">
+
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <th style="width:50%">Subtotal:</th>
+                                <td>IDR. {{ number_format($order->total_price) }}</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </footer> --}}
-        @include('user/footer')
+            <div class="row no-print">
+                <div class="col-8">
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Terimakasih telah melakukan pembelian</h4>
+                        <p>Silahkan cetak invoice ini dan simpan diperangkat anda, setelah itu tekan tombol whatsapp
+                            untuk mengirimkan bukti transaksi berupa invoice kepada petugas</p>
+                    </div>
+
+                </div>
+                {{-- <div class="col-4">
+                </div> --}}
+                <div class="col-4">
+                    <a href="{{ route('invoice.cetak', $order->id) }}" rel="noopener" target="_blank"
+                        class="w-100 btn btn-secondary btn-lg mt-3"><i class="fas fa-print"></i> Cetak</a>
+                    <a class="w-100 btn btn-success btn-lg mt-3" target="_blank"
+                        href="https://wa.me/6285712666154?text=Hallo%20petugas%20bumdes%20saya%20ingin%20melampirkan%20bukti%20pembayaran,%20berikut%20bukti%20pembayarannya%20Terimakasih">
+                        <i class="fab fa-whatsapp"></i> WA
+                    </a>
+                    <a href="/" class="w-100 btn btn-primary btn-lg mt-3">Beranda</a>
+                </div>
+            </div>
+    </div>
+    </main>
+
+    @include('user/footer')
     </div>
 </body>
 

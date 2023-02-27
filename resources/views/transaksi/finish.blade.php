@@ -76,8 +76,7 @@
             -webkit-overflow-scrolling: touch;
         }
     </style>
-
-    <!-- Custom styles for this template -->
+    @include ('app')
     <link href="{{ asset('pengguna/pricing.css') }}" rel="stylesheet" />
 </head>
 
@@ -92,110 +91,36 @@
     <div class="container py-3">
         <header>
             <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-                    {{-- Navbar Bumdes --}}
-                    <nav class="navbar">
-                        <div class="container-fluid">
-                            <a class="navbar-brand" href="#">
-                                <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="Logo" width="35"
-                                    height="30" class="d-inline-block align-text-top">
-                            </a>
-                        </div>
-                    </nav>
-                    <span class="fs-4">TUNSANET</span>
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none py-3">
+                    <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="35">
+                    <span class=" fs-2"><strong><a href="/" class="text-decoration-none text-secondary">
+                                TUNSANET</a></strong></span>
                 </a>
-
-                <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                    @auth
-
-                        <div>
-                            {{-- <li class="nav-item dropdown"> --}}
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                {{ auth()->user()->name }}
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
-                            </ul>
-
-                            {{-- <a class="py-2 text-dark text-decoration-none" href="{{ route('logout') }}">Logout</a> --}}
-                        </div>
-                    @endauth
-                    @guest
-                        <a class="me-3 py-2 text-dark text-decoration-none" href="{{ route('register') }}">Daftar</a>
-                        <a class="py-2 text-dark text-decoration-none" href="{{ route('login') }}">Login</a>
-                    @endguest
-
-                </nav>
             </div>
-
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
                 <h1 class="display-8 fw-normal">Terimakasih</h1>
                 <p class="fs-5 text-muted">
-                    Terimakasih telah melakukan pembelian paket internet dari Tunsanet,
+                    Terimakasih telah melakukan pembayaran paket internet dari Tunsanet,
                     silahkan lakukan konfirmasi kepada petugas dengan menekan tombol dibawah
                 </p>
-            </div>
+
+                <img src="{{ asset('pengguna/img/invoice.png') }}" width="50%" alt="">
         </header>
 
         <main>
-            <div class="row g-5 justify-content-center">
+            <div class="row g-5 justify-content-center mb-10">
                 <div class="text-center">
 
-                    <a href="https://wa.me/6285712666154?text=Hallo%20petugas%20bumdes%20saya%20ingin%20melakukan%20konfirmasi%20telah%20melakukan%20pembayaran%0ANama :%0ANo.Tlp :%0AAlamat :%0A
-Terimakasih, %20tolong%20segera%20lakukan%20pemasangan%20dirumah"
-                        class="w-10 btn btn-success btn-lg mt-3" target="blank">Whatsapp</a>
-                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/6285712666154?text=Hallo%20petugas%20bumdes%20saya%20ingin%20melakukan%20konfirmasi%20telah%20melakukan%20pembayaran%0ANama :%0ANo.Tlp :%0AAlamat :%0ATerimakasih"
+                        class="w-10 btn btn-success btn-lg mt-3" target="blank"> <i class="fab fa-whatsapp"></i>
+                        Whatsapp </a>
                     {{-- <button class="w-100 btn btn-primary btn-lg mt-3" type="submit">kembali</button> --}}
 
                 </div>
             </div>
         </main>
 
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <img class="mb-2" src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="24"
-                        height="19" />
-                    <small class="d-block mb-3 text-muted">&copy; 2022–2023</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Lokasi</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Tunjungsari</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Kec. Siwalan</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Kab. Pekalongan</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Jawa Tengah</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Contact</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Bumdes@gmail.com</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">08671222222</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Tentang</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1">
-                            <a class="link-secondary text-decoration-none" href="#">Nopal Tech</a>
-                        </li>
-                    </ul>
-                </div>
-        </footer>
+        @include('user/footer')
     </div>
 </body>
 

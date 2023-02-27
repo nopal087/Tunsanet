@@ -146,7 +146,7 @@
         <main class="mb-10">
 
             <div class="row g-2 mb-3">
-                <div class="col-md-5 col-lg-4 order-md-last border rounded p-3 h-25">
+                <div class="col-md-5 col-lg-4 order-md-last p-3 h-25">
                     <h4 class="d-flex justify-content-between align-items-center mb-1">
                         <span class="">Ringkasan</span>
                     </h4>
@@ -178,13 +178,15 @@
                                         <input type="hidden" id="total_price" name="total_price"
                                             value="{{ $paket->harga + $biaya_pemasangan }}">
                                     </li>
+                                    <img src="{{ asset('pengguna/img/pay.png') }}" width="100%" class="img-fluid"
+                                        alt="pay">
                                 </ul>
                             @endif
                         @endforeach
                         {{-- data diri pengguna/pembeli --}}
                 </div>
                 <div class="col-md-7 col-lg-8">
-                    <div class="border rounded p-3">
+                    <div class=" p-3">
                         <h4 class="mb-1">Lengkapi data diri</h4>
                         <h6><small class="text-muted">Silahkan isi data diri anda dengan lengkap !</small></h6>
 
