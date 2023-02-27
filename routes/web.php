@@ -86,6 +86,9 @@ Route::get('/finish', function () {
 Route::get('/create', function () {
     return view('admin/menu/Tambahpengguna');
 });
+Route::get('/FAQ', function () {
+    return view('user.FAQ');
+});
 
 
 // Register

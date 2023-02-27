@@ -18,7 +18,6 @@
 
 
     <link href="{{ asset('pengguna/css/bootstrap.min.css') }}" rel="stylesheet" />
-
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -74,8 +73,8 @@
 
         /* style coba */
         .hero {
-            background: linear-gradient(to bottom, rgba(0, 129, 243, 0.9), rgba(7, 63, 112, 0.7)),
-                url("{{ asset('pengguna/img/pemandangan.jpg') }}") no-repeat center;
+            background: linear-gradient(to bottom, rgba(253, 253, 254, 0.5), rgba(39, 84, 129, 0.7)),
+                url("{{ asset('pengguna/img/bg3.jpg') }}") no-repeat center;
             background-size: cover;
             height: 100vh;
             position: relative;
@@ -88,7 +87,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: #fff;
+            color: rgb(255, 255, 255);
             width: 80%;
             max-width: 800px;
             font-family: 'Gloock', serif;
@@ -118,15 +117,6 @@
             cursor: pointer;
         }
 
-        /* .section2 {
-            background-color: #BAD7E9;
-            background-size: cover;
-            height: 90vh;
-            position: relative;
-        } */
-
-
-
         /* Styling untuk responsif */
         @media only screen and (max-width: 768px) {
             .hero-text {
@@ -147,6 +137,7 @@
             }
         }
     </style>
+
     @include ('app')
     <!-- Custom styles for this template -->
     <link href="{{ asset('pengguna/pricing.css') }}" rel="stylesheet" />
@@ -159,25 +150,76 @@
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Navbar brand -->
+                <a class="navbar-brand mt-2 mt-lg-0 px-2" href="/">
+                    <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="35">
+                </a>
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#paket">Paket</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kelebihan">Kelebihan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
+                </ul>
+                <!-- Left links -->
+            </div>
+
+            <!-- Right elements -->
+            <div class="d-flex align-items-center">
+                <!-- Avatar -->
+                <div class="dropdown">
+                    @auth
+                        <a class="nav-link dropdown-toggle d-flex align-items-center hidden-arrow" href="#"
+                            id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                            {{ auth()->user()->name }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('logout') }}">Keluar</a>
+                            </li>
+                        @endauth
+                        @guest
+                            <a class="me-3 py-2 text-dark text-decoration-none btn btn-secondary"
+                                href="{{ route('register') }}">Daftar</a>
+                            <a class="py-2 text-dark-decoration-none btn btn-primary" href="{{ route('login') }}">Masuk</a>
+                        @endguest
+                    </ul>
+                </div>
+            </div>
+            <!-- Right elements -->
+        </div>
+    </nav>
     <section class="hero">
         <div class="container-fluid py-1">
             <header>
-                <div class="d-flex flex-column flex-md-row align-items-center p-3 mx-4">
+                {{-- <div class="d-flex flex-column flex-md-row align-items-center p-3 mx-4">
                     <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-                        {{-- Navbar Bumdes --}}
-                        {{-- <nav class="navbar mx-2">
-                            <div class="bg-light rounded-3">
-                                <a class="" href="/">
-                                    <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="Logo" width="35"
-                                        height="30" class="d-inline-block align-text-top">
-                                </a>
-                            </div>
-                        </nav> --}}
                         <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="35">
                     </a>
                     <span class=" fs-4 text-white "><strong><a href="/" class="text-decoration-none text-white">
                                 TUNSANET</a></strong></span>
-                    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                    <nav class=" d-inline-flex mt-2 mt-md-0 ms-md-auto">
                         @auth
                             <div class="text-white ml-3">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -191,55 +233,22 @@
 
                         @endauth
                         @guest
-                            <a class="me-3 py-2 text-white text-decoration-none btn btn-outline-white"
+                            <a class="me-3 py-2 text-dark text-decoration-none btn btn-secondary"
                                 href="{{ route('register') }}">Daftar</a>
-                            <a class="py-2 text- white-decoration-none btn btn-outline-light"
-                                href="{{ route('login') }}">Login</a>
+                            <a class="py-2 text-dark-decoration-none btn btn-primary" href="{{ route('login') }}">Login</a>
                         @endguest
                     </nav>
-                </div>
-
-                {{-- <div class="">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-5">
-                            <h1 class="hero-heading text-primary-emphasis"><b>Internet cepat dengan Tunsanet</b></h1>
-                            <p class="mt-3 d-flex align-items-center">
-                                <span class="material-symbols-outlined me-2 text-primary">
-                                    language
-                                </span> internet stabil
-                            </p>
-                            <p class="d-flex align-items-center">
-                                <span class="material-symbols-outlined me-2 text-primary">
-                                    headset_mic
-                                </span> Bantuan 24/7
-                            </p>
-                            <span class="hero-subheading">Rp</span>
-                            <span class="hero-subheading display-4 fw-bold text-primary-emphasis">150,000</span>
-                            <span class="hero-subheading">/bulan</span>
-
-                            <p class="mt-4 mb-1 ">
-                                <a href="#paket" class="btn btn-primary btn-md">Pilih Paket sekarang !</a>
-                            <p class="d-flex align-items-center ">
-                                <span class="material-symbols-outlined me-2 text-primary">
-                                    verified_user
-                                </span> jaminan lancar
-                            </p>
-                            </p>
-
-                        </div>
-                        <div class="col-lg-5 mb-5 pb-4">
-                            <img src="{{ asset('pengguna/img/Logo_Stempel.png') }}" class="img-fluid " alt="Hero Image">
-                        </div>
-                    </div>
                 </div> --}}
+                <!-- Container wrapper -->
+                </nav>
                 <div class="hero-text">
                     <h1>Paket Internet Terbaik!</h1>
                     <p>Dapatkan kecepatan internet tercepat dan unlimited dengan harga terjangkau!</p>
-                    <a href="#paket" class="btn btn-light btn-lg">Beli Sekarang!</a>
+                    <a href="#paket" class="btn btn-primary btn-lg">Beli Sekarang!</a>
                 </div>
             </header>
     </section>
-    {{-- <div class="section2"> --}}
+
     <div class="paket-h1 p-3">
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center mt-5" id="paket">
             <h3 class="display-4"><b>Paket Internet Rumahan</b></h3>
@@ -249,10 +258,11 @@
         </div>
     </div>
     </header>
+
     <main class="container mb-2">
         <div class=" row row-cols- row-cols-md-3 mb-3 text-center p-2">
             @foreach ($paketInternets as $paket)
-                <div class="col-sm-4">
+                <div class="col-sm-4" id="paket">
                     <div class="card mb-4 rounded-3 shadow-sm border-primary">
                         <div class="card-header py-3 text-bg-primary border-primary">
                             <h4 class="my-0 fw-normal">{{ $paket->nama_paket }}</h4>
@@ -337,8 +347,8 @@
     <section id="bantuan" class="py-5">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <img src="{{ asset('pengguna/img/operator.jpg') }}" width="100%" class="img-fluid"
+                <div class="col-lg-6" id="kontak">
+                    <img src="{{ asset('pengguna/img/operator.jpg') }}" width="90%" class="img-fluid"
                         alt="Bantuan 24/7">
                 </div>
                 <div class="col-lg-6">
@@ -360,12 +370,12 @@
         <h2>Pertanyaan yang sering ditanyakan</h2>
         <div class="row">
             <div class="col-md-6">
-                <div class="accordion" id="accordionExample">
+                <div class="accordion mb-3" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Apa itu Tunsanet
+                                Apa itu Tunsanet?
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
@@ -412,6 +422,8 @@
                         </div>
                     </div>
                 </div>
+                <a href="/FAQ"> <button type="button" class="btn btn-primary btn-rounded">
+                        Selengkapnya</button></a>
             </div>
             <div class="col-md-6 justify-content-end">
                 <img src="{{ asset('pengguna/img/FAQ.png') }}" width="90%" alt="gambar FAQ" class="img-fluid">

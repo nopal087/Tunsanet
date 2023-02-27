@@ -122,6 +122,7 @@
                         <address>
                             <strong>{{ $order->nama }}</strong><br>
                             {{ $order->alamat }}<br>
+                            {{ $order->phone }}
                         </address>
                     </div>
                 </div>

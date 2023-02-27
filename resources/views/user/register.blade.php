@@ -233,7 +233,7 @@
                                         <p>Sudah Punya akun?</p>
                                     </div>
                                     <a href="/login" class="btn-md btn-block btn btn-outline-primary"
-                                        data-mdb-ripple-color="dark" role="button">Login
+                                        data-mdb-ripple-color="dark" role="button">Masuk
                                     </a>
 
                                     {{-- <!-- Register buttons -->
