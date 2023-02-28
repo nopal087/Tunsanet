@@ -73,8 +73,8 @@
 
         /* style coba */
         .hero {
-            background: linear-gradient(to bottom, rgba(253, 253, 254, 0.5), rgba(39, 84, 129, 0.7)),
-                url("{{ asset('pengguna/img/bg3.jpg') }}") no-repeat center;
+            background: linear-gradient(to bottom, rgba(253, 253, 254, 0), rgba(39, 84, 129, 0.7)),
+                url("{{ asset('pengguna/img/bg6.jpg') }}") no-repeat center;
             background-size: cover;
             height: 100vh;
             position: relative;
@@ -88,6 +88,7 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: rgb(255, 255, 255);
+            /* color: #225fc3; */
             width: 80%;
             max-width: 800px;
             font-family: 'Gloock', serif;
@@ -151,69 +152,37 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <!-- Container wrapper -->
-        <div class="container-fluid">
-            <!-- Toggle button -->
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
+    @include('user/navbar')
 
-            <!-- Collapsible wrapper -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Navbar brand -->
-                <a class="navbar-brand mt-2 mt-lg-0 px-2" href="/">
-                    <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="35">
-                </a>
-                <!-- Left links -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#paket">Paket</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#kelebihan">Kelebihan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#kontak">Kontak</a>
-                    </li>
-                </ul>
-                <!-- Left links -->
-            </div>
-
-            <!-- Right elements -->
-            <div class="d-flex align-items-center">
-                <!-- Avatar -->
-                <div class="dropdown">
-                    @auth
-                        <a class="nav-link dropdown-toggle d-flex align-items-center hidden-arrow" href="#"
-                            id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                            {{ auth()->user()->name }}
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-                            <li>
-                                <a class="dropdown-item" href="{{ route('logout') }}">Keluar</a>
-                            </li>
-                        @endauth
-                        @guest
-                            <a class="me-3 py-2 text-dark text-decoration-none btn btn-secondary"
-                                href="{{ route('register') }}">Daftar</a>
-                            <a class="py-2 text-dark-decoration-none btn btn-primary" href="{{ route('login') }}">Masuk</a>
-                        @endguest
-                    </ul>
+    <div id="intro" class="bg-image vh-100 shadow-1-strong">
+        <video style="min-width: 100%; min-height: 100%;" playsinline autoplay muted loop>
+            <source class="h-100" src="{{ asset('pengguna/video/Lines.mp4') }}" type="video/mp4" />
+        </video>
+        <div class="mask"
+            style="
+        background: linear-gradient(
+          45deg,
+          rgba(135, 175, 230, 0),
+          rgba(6, 29, 128, 0) 100%
+        );
+      ">
+            <div class="container d-flex align-items-center justify-content-center text-center h-100">
+                <div class="hero-text">
+                    <div class="text-white">
+                        <h1 class="mb-3">Paket Internet Terbaik!</h1>
+                        <h5 class="mb-4">Dapatkan kecepatan internet tercepat dan unlimited dengan harga terjangkau!
+                        </h5>
+                        <a class="btn btn-outline-light btn-lg m-2" href="#paket">Beli
+                            Sekarang!</a>
+                    </div>
                 </div>
             </div>
-            <!-- Right elements -->
         </div>
-    </nav>
-    <section class="hero">
+    </div>
+    {{-- <section class="hero">
         <div class="container-fluid py-1">
-            <header>
-                {{-- <div class="d-flex flex-column flex-md-row align-items-center p-3 mx-4">
+            <header> --}}
+    {{-- <div class="d-flex flex-column flex-md-row align-items-center p-3 mx-4">
                     <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
                         <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="35">
                     </a>
@@ -239,15 +208,15 @@
                         @endguest
                     </nav>
                 </div> --}}
-                <!-- Container wrapper -->
-                </nav>
+    <!-- Container wrapper -->
+    {{-- </nav>
                 <div class="hero-text">
                     <h1>Paket Internet Terbaik!</h1>
                     <p>Dapatkan kecepatan internet tercepat dan unlimited dengan harga terjangkau!</p>
                     <a href="#paket" class="btn btn-primary btn-lg">Beli Sekarang!</a>
                 </div>
             </header>
-    </section>
+    </section> --}}
 
     <div class="paket-h1 p-3">
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center mt-5" id="paket">
@@ -334,7 +303,8 @@
                                 alt="Pilihan Paket yang Fleksibel">
                             <div>
                                 <h4 class="card-title">Pilihan Paket yang Fleksibel</h4>
-                                <p class="card-text">Kami menyediakan berbagai pilihan paket internet dengan harga yang
+                                <p class="card-text">Kami menyediakan berbagai pilihan paket internet dengan harga
+                                    yang
                                     terjangkau dan fitur yang sesuai dengan kebutuhan Anda.</p>
                             </div>
                         </div>
@@ -353,7 +323,8 @@
                 </div>
                 <div class="col-lg-6">
                     <h2><strong>Bantuan 24/7</strong></h2>
-                    <p>Kami siap membantu Anda kapan saja dan di mana saja. Jika Anda mengalami masalah dengan layanan
+                    <p>Kami siap membantu Anda kapan saja dan di mana saja. Jika Anda mengalami masalah dengan
+                        layanan
                         internet kami, silakan hubungi kami melalui:</p>
                     <ul>
                         <li><i class="fa fa-phone"></i> 0800-123-4567 (24 jam)</li>
@@ -381,7 +352,8 @@
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Tunsanet adalah Badan Usaha Milik Desa Tunjungsari yang memberikan pelayanan wifi kepada
+                                Tunsanet adalah Badan Usaha Milik Desa Tunjungsari yang memberikan pelayanan wifi
+                                kepada
                                 warga sekitar untuk meningkatkan perekonomian desa Tunjungsari.
                             </div>
                         </div>
@@ -399,9 +371,11 @@
                                 Jika anda melakukan pembelian melalui website ini maka akan terdapat 2 opsi
                                 pembayaran<br>
                                 1. pembayaran menggunakan cashless atau secara online , anda hanya tinggal mengikuti
-                                intruksi yang ada untuk melakukan pembayaran, opsi pembayaran online nya juga bervariasi
+                                intruksi yang ada untuk melakukan pembayaran, opsi pembayaran online nya juga
+                                bervariasi
                                 anda dapat menentukannya sendiri. <br>
-                                2. pembayaran secara manual, anda dapat datang ke kantor atau anda dapat menguhubungi
+                                2. pembayaran secara manual, anda dapat datang ke kantor atau anda dapat
+                                menguhubungi
                                 petugas Bumdes Tunsanet untuk melakukan pembayaran.
                             </div>
                         </div>
@@ -416,7 +390,8 @@
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Pemasangan akan dilakukan ketika pembeli sudah melakukan konfirmasi pembayaran kepada
+                                Pemasangan akan dilakukan ketika pembeli sudah melakukan konfirmasi pembayaran
+                                kepada
                                 petugas melalui whatsapp maupun secara langsung dengan menyertakan bukti pembayaran.
                             </div>
                         </div>

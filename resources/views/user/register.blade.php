@@ -161,7 +161,7 @@
                             Nikmati dunia dengan berselancar diinternet, pastikan koneksimu cepat dengan menggunakan
                             internet Tunsanet
                         </p> --}}
-                        <img src="{{ asset('pengguna/img/SignUp.png') }}" width="100%" class="img-fluid"
+                        <img src="{{ asset('pengguna/img/diamond.png') }}" width="100%" class="img-fluid"
                             alt="Phone image">
                     </div>
 

@@ -98,31 +98,19 @@
 
     <div class="container py-3">
         <header>
-
-            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4">
+            {{-- <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4">
                 <a href="/" class="d-flex align-items-center text-dark text-decoration-none py-3">
-                    {{-- Navbar Bumdes --}}
-                    {{-- <nav class="navbar mx-2">
-                        <div class="bg-light rounded-3">
-                            <a class="" href="/">
-                                <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="Logo" width="35"
-                                    height="30" class="d-inline-block align-text-top">
-                            </a>
-                        </div>
-                    </nav> --}}
                     <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="35">
                     <span class=" fs-2"><strong><a href="/" class="text-decoration-none text-secondary">
                                 TUNSANET</a></strong></span>
                 </a>
 
                 </a>
-                <!-- Flexbox container for aligning the toasts -->
 
                 <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
                     @auth
 
                         <div>
-                            {{-- <li class="nav-item dropdown"> --}}
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 {{ auth()->user()->name }}
@@ -130,8 +118,6 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                             </ul>
-
-                            {{-- <a class="py-2 text-dark text-decoration-none" href="{{ route('logout') }}">Logout</a> --}}
                         </div>
                     @endauth
                     @guest
@@ -140,112 +126,118 @@
                     @endguest
 
                 </nav>
-            </div>
+            </div> --}}
 
-            <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
+            @include('user/navbar')
 
-                <!-- Then put toasts within -->
-                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header">
-                        <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" class="rounded me-2"width="20px"
-                            alt="logo">
-                        <strong class="me-auto">Tunsanet</strong>
-                        <small>1 detik yang lalu</small>
-                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                    <div class="toast-body">
-                        Kami menerima pembayaran secara cashless silahkan klik bayar sekarang untuk melakukan
-                        pembayaran secara virtual
-                    </div>
-                </div>
-            </div>
-
-            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-                <h1 class="display-8 fw-normal">Detail Order</h1>
-                <p class="fs-5 text-muted">
-                    Internet Cepat dan ngebut dengan Layanan Wifi TUNSANET!
-                </p>
-            </div>
         </header>
 
         <main class="mb-10">
-            <div class="row g-2 mb-3">
-                <div class="col-md-5 col-lg-4 order-md-last p-3 h-25">
-                    <h4 class="d-flex justify-content-between align-items-center mb-1">
-                        <span class="">Paket Internet</span>
-                    </h4>
-                    <h6><small class="text-muted">Detail Paket !</small></h6>
-                    <form class="needs-validation mt-4" action="/checkout" method="POST">
-                        @csrf
-                        <ul class="list-group mt-3">
-                            <li class="list-group-item d-flex justify-content-between lh-lg">
-                                <div>
-                                    <h6 class="my-0">Paket Internet</h6>
-                                    <small class="text-muted">{{ $order->paket }}</small>
-                                </div>
-                                <span class="text-muted">Rp.{{ number_format($order->total_price) }}</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>Total</span>
-                                <strong>Rp.{{ number_format($order->total_price) }} </strong>
-                            </li>
-                            <img src="{{ asset('pengguna/img/E-Wallet.png') }}" width="100%" class="img-fluid"
-                                alt="pay">
-                        </ul>
-                        {{-- data diri pengguna/pembeli --}}
+            <div class="container mt-5">
+                <div aria-live="polite" aria-atomic="true"
+                    class="d-flex justify-content-center align-items-center w-100">
+
+                    <!-- Then put toasts within -->
+                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" class="rounded me-2"width="20px"
+                                alt="logo">
+                            <strong class="me-auto">Tunsanet</strong>
+                            <small>1 detik yang lalu</small>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            Kami menerima pembayaran secara cashless silahkan klik bayar sekarang untuk melakukan
+                            pembayaran secara virtual
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-7 col-lg-8">
-                    <div class="p-3">
-                        <h4 class="mb-3 m-2">Detail Pembeli</h4>
-                        {{-- <h6><small class="text-muted">Silahkan isi data diri anda dengan lengkap !</small></h6> --}}
-                        <form class="needs-validation mt-4" action="" method="">
-                            <div class="p-3">
-                                <div class="row g-3">
-                                    <ul class="list-group mt-3">
-                                        <li class="list-group-item d-flex justify-content-between lh-lg">
-                                            <div>
-                                                <h6 class="my-0">Nama :</h6>
-                                                <small class="text-muted">{{ $order->nama }}</small>
-                                            </div>
 
-                                        </li>
-                                        <li class="list-group-item d-flex justify-content-between lh-md">
-                                            <div>
-                                                <h6 class="my-0">No. Telephone</h6>
-                                                <small class="text-muted">{{ $order->phone }}</small>
-                                            </div>
+                <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                    <h1 class="display-8 fw-normal">Detail Order</h1>
+                    <p class="fs-5 text-muted">
+                        Internet Cepat dan ngebut dengan Layanan Wifi TUNSANET!
+                    </p>
+                </div>
+                <div class="row g-2 mb-3">
+                    <div class="col-md-5 col-lg-4 order-md-last p-3 h-25">
+                        <h4 class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="">Paket Internet</span>
+                        </h4>
+                        <h6><small class="text-muted">Detail Paket !</small></h6>
+                        <form class="needs-validation mt-4" action="/checkout" method="POST">
+                            @csrf
+                            <ul class="list-group mt-3">
+                                <li class="list-group-item d-flex justify-content-between lh-lg">
+                                    <div>
+                                        <h6 class="my-0">Paket Internet</h6>
+                                        <small class="text-muted">{{ $order->paket }}</small>
+                                    </div>
+                                    <span class="text-muted">Rp.{{ number_format($order->total_price) }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Total</span>
+                                    <strong>Rp.{{ number_format($order->total_price) }} </strong>
+                                </li>
+                                <img src="{{ asset('pengguna/img/E-Wallet.png') }}" width="100%" class="img-fluid"
+                                    alt="pay">
+                            </ul>
+                            {{-- data diri pengguna/pembeli --}}
+                    </div>
+                    <div class="col-md-7 col-lg-8">
+                        <div class="p-3">
+                            <h4 class="mb-3 m-2">Detail Pembeli</h4>
+                            {{-- <h6><small class="text-muted">Silahkan isi data diri anda dengan lengkap !</small></h6> --}}
+                            <form class="needs-validation mt-4" action="" method="">
+                                <div class="p-3">
+                                    <div class="row g-3">
+                                        <ul class="list-group mt-3">
+                                            <li class="list-group-item d-flex justify-content-between lh-lg">
+                                                <div>
+                                                    <h6 class="my-0">Nama :</h6>
+                                                    <small class="text-muted">{{ $order->nama }}</small>
+                                                </div>
 
-                                        </li>
-                                        <li class="list-group-item d-flex justify-content-between lh-md">
-                                            <div>
-                                                <h6 class="my-0">Alamat</h6>
-                                                <small class="text-muted">{{ $order->alamat }}</small>
-                                            </div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-md">
+                                                <div>
+                                                    <h6 class="my-0">No. Telephone</h6>
+                                                    <small class="text-muted">{{ $order->phone }}</small>
+                                                </div>
 
-                                        </li>
-                                    </ul>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-md">
+                                                <div>
+                                                    <h6 class="my-0">Alamat</h6>
+                                                    <small class="text-muted">{{ $order->alamat }}</small>
+                                                </div>
 
+                                            </li>
+                                        </ul>
+
+                                    </div>
                                 </div>
+                        </div>
+                        </form>
+                        <div class="d-flex">
+                            <div class="row p-3">
+                                <button class="w-100 btn btn-primary btn-lg mt-3" id="pay-button" type="submit">Bayar
+                                    Sekarang</button>
                             </div>
-                    </div>
-                    </form>
-                    <div class="d-flex">
-                        <div class="row p-3">
-                            <button class="w-100 btn btn-primary btn-lg mt-3" id="pay-button" type="submit">Bayar
-                                Sekarang</button>
-                        </div>
-                        <div class="row p-3">
-                            <a class="btn btn-success btn-lg mt-3" target="_blank"
-                                href="https://wa.me/6285712666154?text=Halo%20petugas%20Bumdes%20saya%20ingin%20melakukan%20pembayaran%20untuk%20paket%20internet%20wifi%20yang%20saya%20beli%20atas%0ANama :%0ANo. hp:%0AAlamat :%0APaket Internet :%0Atolong segera dilakukan pemasangan dirumah saya terimakasih%20">
-                                <i class="fab fa-whatsapp"></i> Hubungi Petugas
-                            </a>
-                        </div>
+                            <div class="row p-3">
+                                <a class="btn btn-success btn-lg mt-3" target="_blank"
+                                    href="https://wa.me/6285712666154?text=Halo%20petugas%20Bumdes%20saya%20ingin%20melakukan%20pembayaran%20untuk%20paket%20internet%20wifi%20yang%20saya%20beli%20atas%0ANama :%0ANo. hp:%0AAlamat :%0APaket Internet :%0Atolong segera dilakukan pemasangan dirumah saya terimakasih%20">
+                                    <i class="fab fa-whatsapp"></i> Hubungi Petugas
+                                </a>
+                            </div>
 
+                        </div>
+                        <i>*Tombol Bayar sekarang digunakan ketika ingin melakukan pembayaran secara cashless
+                            atau dengan
+                            transfer</i> <br>
+                        <i>*Tombol hubungi petugas digunakan ketika ingin melakukan pembayaran secara manual</i>
                     </div>
-                    <i>*Tombol Bayar sekarang digunakan ketika ingin melakukan pembayaran secara cashless
-                        atau dengan
-                        transfer</i> <br>
-                    <i>*Tombol hubungi petugas digunakan ketika ingin melakukan pembayaran secara manual</i>
                 </div>
             </div>
         </main>
@@ -295,8 +287,8 @@
                 </div>
             </div>
         </footer> --}}
-        @include('user/footer')
     </div>
+    @include('user/footer')
 
     <script type="text/javascript">
         // For example trigger on button clicked, or any time you need
