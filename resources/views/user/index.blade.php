@@ -273,8 +273,12 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card mb-4 shadow-sm">
                         <div class="card-body d-flex">
-                            <img class="mr-4" src="{{ asset('pengguna/img/1.png') }}" width="50%"
-                                alt="Koneksi Stabil">
+                            {{-- <img class="mr-4" src="{{ asset('pengguna/img/1.png') }}" width="50%"
+                                alt="Koneksi Stabil"> --}}
+                            <video style="min-width: 50%; min-height: 50%;" playsinline autoplay muted loop>
+                                <source class="h-100" src="{{ asset('pengguna/video/animasi 3.mp4') }}"
+                                    type="video/mp4" />
+                            </video>
                             <div>
                                 <h4 class="card-title">Koneksi Paling Stabil</h4>
                                 <p class="card-text">Kami menawarkan koneksi internet yang stabil sehingga dapat
@@ -286,8 +290,12 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card mb-4 shadow-sm">
                         <div class="card-body d-flex">
-                            <img class="mr-4" src="{{ asset('pengguna/img/2.png') }}" width="50%"
-                                alt="Kecepatan Tinggi">
+                            {{-- <img class="mr-4" src="{{ asset('pengguna/img/2.png') }}" width="50%"
+                                alt="Kecepatan Tinggi"> --}}
+                            <video style="min-width: 50%; min-height: 50%;" playsinline autoplay muted loop>
+                                <source class="h-100" src="{{ asset('pengguna/video/animasi 2.mp4') }}"
+                                    type="video/mp4" />
+                            </video>
                             <div>
                                 <h4 class="card-title">Kecepatan Tinggi</h4>
                                 <p class="card-text">Dengan kecepatan internet yang tinggi, Anda dapat melakukan
@@ -299,8 +307,12 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card mb-4 shadow-sm">
                         <div class="card-body d-flex">
-                            <img class="mr-4" src="{{ asset('pengguna/img/3.png') }}" width="50%"
-                                alt="Pilihan Paket yang Fleksibel">
+                            {{-- <img class="mr-4" src="{{ asset('pengguna/img/3.png') }}" width="50%"
+                                alt="Pilihan Paket yang Fleksibel"> --}}
+                            <video style="min-width: 50%; min-height: 50%;" playsinline autoplay muted loop>
+                                <source class="h-100" src="{{ asset('pengguna/video/animasi 1.mp4') }}"
+                                    type="video/mp4" />
+                            </video>
                             <div>
                                 <h4 class="card-title">Pilihan Paket yang Fleksibel</h4>
                                 <p class="card-text">Kami menyediakan berbagai pilihan paket internet dengan harga
@@ -341,10 +353,10 @@
         <h2>Pertanyaan yang sering ditanyakan</h2>
         <div class="row">
             <div class="col-md-6">
-                <div class="accordion mb-3" id="accordionExample">
+                <div class="accordion mb-3 " id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            <button class="accordion-button " type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 Apa itu Tunsanet?
                             </button>
