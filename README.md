@@ -1,7 +1,7 @@
-<h1 align="center">SELAMAT DATANG DI SIBUMDES TUNSANET</h1>
-<a href="#" target="_blank"><img src="https://github.com/nopal087/Tunsanet/blob/master/Screenshot%20(140).png" width="400" alt="Laravel Logo"></a>
+<h1 align="center">👋 SELAMAT DATANG DI SIBUMDES TUNSANET 👋</h1>
+<center><img src="https://github.com/nopal087/Tunsanet/blob/master/Screenshot%20(140).png" width="50%" alt="Laravel Logo"></center>
 
-## Tentang Tunsanet
+## ✌️ 1. TENTANG TUNSANET
 
 Tunsanet merupakan Badan Usaha Milik Desa Tunjungsari yang mengelola usaha desa yaitu Layanan Internet, layanan internet yang disebarkan di desa Tunjungsari dengan tujuan untuk meningkatkan perekonomian desa dengan memberikan layanan Internet kepada para warga desa.
 
@@ -11,46 +11,34 @@ SIBUMDES Tunsanet diharapkan dapat membantu pemerintah desa dalam beberapa hal b
 -   Memberikan Palayanan kepada Pengguna Internet di desa Tunjungsari
 -   memberikan Opsi Pembayaran yang bervariasi kepada pengguna
 
-## Learning Laravel
+## 👍 2. SIBUMDES Tunsanet dikelola di GitHub untuk:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Merekam semua perubahan yg dibuat
+- Memungkinkan kembali ke revisi sebelumnya, apabila diperlukan
+- Memudahkan untuk kolaborasi ketika ingin dikembangkan
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 👌 3. FITUR SIBUMDES
+- Terdapat dua User ( User dan Admin ).
+- Dapat melakukan pembayaran secara cashless dengan menggunakan payment gateway dari **[Midtrans](https://midtrans.com/id)**
+- Dapat melakukan pengiriman pesan tagihan dengan menggunakan **[Whatsapp](https://www.whatsapp.com/?lang=id)**
+- Dapat melakukan pengelolaan pengguna internet yang berlangganan.
+- Menerima pembayaran secara Cahsless
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## 👷‍♂️ 4. SIMBUMDES DIBANGUN DENGAN 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+-   Framework PHP **[Laravel 9](https://laravel.com/)**
+-  Admin **[Admin LTE](https://adminlte.io/)**
+-  CSS **[Bootstrap 5](https://getbootstrap.com/docs/5.3/getting-started/introduction/)**
+-  CSS **[MDB Bootstrap](https://mdbootstrap.com/)**
+-  Pembayaran **[Midtrans](https://midtrans.com/id)**
 
-### Premium Partners
+## 🥳 5. Tujuan Pembuatan SIBUMDES Tunsanet
+Aplikasi Sistem Informasi Badan Usaha Milik Desa Tunjungsari **[Tunsanet](https://tunsanet.my.id)**, dibangun dan dikembangan sebagai Projek Tugas Akhir Skripsi saya yang diharapkan dapat bermanfaat untuk desa Tunjungsari dan dapat dikembangkan dengan baik untuk kedepannya
 
--   **[Vehikl](https://vehikl.com/)**
--   **[Tighten Co.](https://tighten.co)**
--   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
--   **[64 Robots](https://64robots.com)**
--   **[Cubet Techno Labs](https://cubettech.com)**
--   **[Cyber-Duck](https://cyber-duck.co.uk)**
--   **[Many](https://www.many.co.uk)**
--   **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
--   **[DevSquad](https://devsquad.com)**
--   **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
--   **[OP.GG](https://op.gg)**
--   **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
--   **[Lendio](https://lendio.com)**
+## 💻 6. DEMO
+Demo aplikasi Sistem Informasi Badan Usaha Milik Desa (SIBUMDES) dapat dicoba Di **[http://tunsanet.demo.my.id](http://tunsanet.demo.my.id)**
 
-## Contributing
+<br><br><br>
+<h1 align="center">👋 TERIMAKASIH 👋</h1>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
