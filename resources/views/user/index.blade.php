@@ -268,7 +268,9 @@
     </main>
     <section id="kelebihan" class="bg-light py-5">
         <div class="container">
-            <h2 class="text-center mb-5"><strong>Kelebihan Internet Kami</strong></h2>
+            <div class="paket-h1">
+                <h2 class="text-center mb-5"><strong>Kelebihan Internet Kami</strong></h2>
+            </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="card mb-4 shadow-sm">
@@ -326,7 +328,7 @@
         </div>
     </section>
 
-    <section id="bantuan" class="py-5">
+    <section id="bantuan" class="py-1">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6" id="kontak">

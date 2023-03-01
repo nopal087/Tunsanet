@@ -75,16 +75,16 @@
 
             <!-- Right -->
             <div class="mx-5 px-4">
-                <a href="" class="me-4 link-light">
+                <a href="#" class="me-4 link-light">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="" class="me-4 link-light">
+                <a href="#" class="me-4 link-light">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="" class="me-4 link-light">
+                <a href="#" class="me-4 link-light">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="" class="me-4 link-light">
+                <a href="#" class="me-4 link-light">
                     <i class="fab fa-instagram"></i>
                 </a>
                 {{-- <a href="" class="me-4 link-light">

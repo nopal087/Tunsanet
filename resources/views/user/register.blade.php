@@ -166,6 +166,7 @@
                     </div>
 
                     <div class="col-lg-6 mb-5 mb-lg-0">
+                        <h2>Form Registrasi</h2>
                         <div class="card">
                             <div class="card-body py-5 px-md-5">
                                 @if ($errors->any())
