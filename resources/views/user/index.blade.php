@@ -15,12 +15,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@200;400&family=Pacifico&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <link href="{{ asset('pengguna/css/bootstrap.min.css') }}" rel="stylesheet" />
     <style>
@@ -168,56 +168,18 @@
             <div class="container d-flex align-items-center justify-content-center text-center h-100">
                 <div class="hero-text">
                     <div class="text-white">
-                        <h1 class="mb-3">Paket Internet Terbaik!</h1>
-                        <h5 class="mb-4">Dapatkan kecepatan internet tercepat dan unlimited dengan harga
+                        <h1 class="mb-1 gradient-text">Tunsanet Memberikan</h1>
+                        <h1 class="mb-3 gradient-text">Paket Internet Terbaik!</h1>
+                        <h5 class="mb-4 gradient-text">Dapatkan kecepatan internet tercepat dan unlimited dengan harga
                             terjangkau!
                         </h5>
-                        <a class="btn btn-outline-light btn-lg m-2" href="#paket">Beli
+                        <a class="gradient-text btn btn-outline-light btn-lg m-2" href="#paket">Beli
                             Sekarang!</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    {{-- <section class="hero">
-        <div class="container-fluid py-1">
-            <header> --}}
-    {{-- <div class="d-flex flex-column flex-md-row align-items-center p-3 mx-4">
-                    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-                        <img src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt="" width="35">
-                    </a>
-                    <span class=" fs-4 text-white "><strong><a href="/" class="text-decoration-none text-white">
-                                TUNSANET</a></strong></span>
-                    <nav class=" d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                        @auth
-                            <div class="text-white ml-3">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    {{ auth()->user()->name }}
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
-                                </ul>
-                            </div>
-
-                        @endauth
-                        @guest
-                            <a class="me-3 py-2 text-dark text-decoration-none btn btn-secondary"
-                                href="{{ route('register') }}">Daftar</a>
-                            <a class="py-2 text-dark-decoration-none btn btn-primary" href="{{ route('login') }}">Login</a>
-                        @endguest
-                    </nav>
-                </div> --}}
-    <!-- Container wrapper -->
-    {{-- </nav>
-                <div class="hero-text">
-                    <h1>Paket Internet Terbaik!</h1>
-                    <p>Dapatkan kecepatan internet tercepat dan unlimited dengan harga terjangkau!</p>
-                    <a href="#paket" class="btn btn-primary btn-lg">Beli Sekarang!</a>
-                </div>
-            </header>
-    </section> --}}
-
     <div class="paket-h1 p-3">
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center mt-5" id="paket">
             <h3 class="display-4"><b>Paket Internet Rumahan</b></h3>
@@ -263,7 +225,6 @@
                 </div>
             @endforeach
         </div>
-
     </main>
     <section id="kelebihan" class="bg-light py-5">
         <div class="container">
@@ -274,8 +235,6 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card mb-4 shadow-sm">
                         <div class="card-body d-flex">
-                            {{-- <img class="mr-4" src="{{ asset('pengguna/img/1.png') }}" width="50%"
-                                alt="Koneksi Stabil"> --}}
                             <video style="min-width: 50%; min-height: 50%;" playsinline autoplay muted loop>
                                 <source class="h-100" src="{{ asset('pengguna/video/animasi 3.mp4') }}"
                                     type="video/mp4" />

@@ -13,56 +13,6 @@
     }
 </style>
 <div class="footer">
-    {{-- <footer class="pt-4 my-md-5 pt-md-5 border-top px-4 mx-2 text-white">
-        <div class="row">
-            <div class="col-12 col-md">
-                <img class="mb-2 bg-light rounded-3" src="{{ asset('pengguna/img/tanpa_wifi.png') }}" alt=""
-                    width="24" height="19" /><strong>Tunsanet</strong>
-                <small class="d-block mb-1 text-muted ">
-                    <p class="text-white">&copy; 2022–2023</p>
-                    <p class="text-white">Tunsanet memberikan kemudahan bagi siapa pun yang ingin internet cepat.
-                        Kami terus menyempurnakan kecepatan internet, menyediakan pilihan paket internet, dan memberikan
-                        pengalaman berselancar yang menyenangkan. </p>
-                </small>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Lokasi</h5>
-                <ul class="list-unstyled text-small text-white">
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none text-white" href="#">Tunjungsari</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none text-white" href="#">Kec. Siwalan</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none text-white" href="#">Kab. Pekalongan</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none text-white" href="#">Jawa Tengah</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Contact</h5>
-                <ul class="list-unstyled text-small">
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none text-white" href="#">Bumdes@gmail.com</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none text-white" href="#">08671222222</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Tentang</h5>
-                <ul class="list-unstyled text-small">
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none text-white" href="#">Nopal Tech</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer> --}}
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-white text-muted">
         <!-- Section: Social media -->
@@ -87,16 +37,9 @@
                 <a href="#" class="me-4 link-light">
                     <i class="fab fa-instagram"></i>
                 </a>
-                {{-- <a href="" class="me-4 link-light">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="" class="me-4 link-light">
-                    <i class="fab fa-github"></i>
-                </a> --}}
             </div>
             <!-- Right -->
         </section>
-        <!-- Section: Social media -->
 
         <!-- Section: Links  -->
         <section class="">

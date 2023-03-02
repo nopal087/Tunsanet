@@ -15,7 +15,6 @@ class OrderController extends Controller
         return view('transaksi.order');
     }
 
-
     //ringkasan order
     public function summary(Request $request)
     {

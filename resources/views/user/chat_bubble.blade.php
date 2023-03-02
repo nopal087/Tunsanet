@@ -92,6 +92,12 @@
             width: 100%;
         }
     }
+
+    .gradient-text {
+        background: linear-gradient(to right, #3B71CA, #FFF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 </style>
 
 <body>
@@ -135,7 +141,7 @@
             </div>
         </div>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script>
         const chatContent = document.querySelector('#chat-content');
         const message = 'Halo, apakah anda ingin berlangganan Tunsanet?, atau ada yang ingin ditanyakan? Yuk chat kami.';
@@ -145,13 +151,17 @@
             if (i < message.length) {
                 chatContent.innerHTML += message.charAt(i);
                 i++;
-                setTimeout(typeMessage, Math.floor(Math.random() * 100) + 100);
+                setTimeout(typeMessage, Math.floor(Math.random() * 200) + 100);
             } else {
                 chatContent.classList.remove('typing');
             }
         }
 
         typeMessage();
+
+        setTimeout(function() {
+            $("#chatCollapse").collapse('show');
+        }, 10000);
     </script>
 </body>
 

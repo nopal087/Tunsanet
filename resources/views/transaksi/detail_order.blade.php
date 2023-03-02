@@ -323,9 +323,6 @@
         var bsToast = new bootstrap.Toast(myToast);
         bsToast.show();
     </script>
-
-
 </body>
-
 
 </html>

@@ -1,6 +1,6 @@
 <h1 align="center">👋 SELAMAT DATANG DI SIBUMDES TUNSANET 👋</h1>
-<img src="https://github.com/nopal087/Tunsanet/blob/master/Screenshot%20(140).png" width="50%" alt="preview">
-<img src="https://github.com/nopal087/Tunsanet/blob/master/Screenshot%20(142).png" width="50%" alt="preview">
+<img src="https://github.com/nopal087/Tunsanet/blob/master/Screenshot%20(140).png" width="100%" alt="preview">
+<img src="https://github.com/nopal087/Tunsanet/blob/master/Screenshot%20(142).png" width="100%" alt="preview">
 
 ## ✌️ 1. TENTANG TUNSANET
 
