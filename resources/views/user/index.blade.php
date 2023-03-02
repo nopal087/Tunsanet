@@ -15,7 +15,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@200;400&family=Pacifico&display=swap"
         rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
 
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <link href="{{ asset('pengguna/css/bootstrap.min.css') }}" rel="stylesheet" />
     <style>
@@ -137,6 +142,8 @@
                 font-size: 1rem;
             }
         }
+
+        /* chat bubble */
     </style>
 
     @include ('app')
@@ -145,15 +152,7 @@
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-    </script>
-
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
     @include('user/navbar')
-
     <div id="intro" class="bg-image vh-100 shadow-1-strong">
         <video style="min-width: 100%; min-height: 100%;" playsinline autoplay muted loop>
             <source class="h-100" src="{{ asset('pengguna/video/Lines.mp4') }}" type="video/mp4" />
@@ -170,7 +169,8 @@
                 <div class="hero-text">
                     <div class="text-white">
                         <h1 class="mb-3">Paket Internet Terbaik!</h1>
-                        <h5 class="mb-4">Dapatkan kecepatan internet tercepat dan unlimited dengan harga terjangkau!
+                        <h5 class="mb-4">Dapatkan kecepatan internet tercepat dan unlimited dengan harga
+                            terjangkau!
                         </h5>
                         <a class="btn btn-outline-light btn-lg m-2" href="#paket">Beli
                             Sekarang!</a>
@@ -227,7 +227,6 @@
         </div>
     </div>
     </header>
-
     <main class="container mb-2">
         <div class=" row row-cols- row-cols-md-3 mb-3 text-center p-2">
             @foreach ($paketInternets as $paket)
@@ -419,9 +418,9 @@
             </div>
         </div>
     </div>
-
     @include('user/footer')
     </div>
+    @include('user/chat_bubble')
 </body>
 
 </html>

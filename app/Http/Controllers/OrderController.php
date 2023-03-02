@@ -81,11 +81,6 @@ class OrderController extends Controller
         return view('transaksi.invoice', compact('order'));
     }
 
-    // public function finish()
-    // {
-    //     return view('transaksi.finish');
-    // }
-
 
     // Manual Transaksi
     public function manual($id)
