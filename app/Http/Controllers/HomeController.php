@@ -11,21 +11,15 @@ use Carbon\Carbon;
 
 class HomeController extends Controller
 {
-    //
+    // menampilkan halaman home atau index pada halama user
     public function index()
     {
-        // $paketInternets = paketInternet::all();
         return view('user.index', [
             'title' => 'Home',
         ]);
     }
 
-    // public function jumPengguna()
-    // {
-    //     $Totaltagihan = Tagihan::all()->count();
-    //     dd($Totaltagihan);
-    //     return view('admin.home', compact('Totaltagihan'));
-    // }
+    // menampilkan jumlah totaltagihan, total transaksi, total pengguna, pada halaman beranda dashboard admin
     public function  jumlah()
     {
         $Totaltagihan = tagihan::all()->count();
@@ -35,11 +29,4 @@ class HomeController extends Controller
 
         return view('admin.home', compact('Totaltagihan', 'Totaltransaksi', 'Totalpengguna'));
     }
-
-    // public function  jumTransaksi()
-    // {
-    //     $Totaltransaksi = order::all()->count();
-    //     return view('admin.home', compact('Totaltransaksi'));
-    // }
-
 }

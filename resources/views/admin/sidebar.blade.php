@@ -86,7 +86,7 @@
                      <a href="/user" class="nav-link">
                          <i class="nav-icon fas fa-user"></i>
                          <p>
-                             Data Pengguna
+                             Pengguna Registrasi
                          </p>
                      </a>
                  </li>

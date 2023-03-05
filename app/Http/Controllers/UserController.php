@@ -13,7 +13,7 @@ use App\Models\Transaksi;
 
 class UserController extends Controller
 {
-    //menampilkan data ke table pengguna===============================================================
+    //menampilkan data user yang registrasi ke table pengguna
     function index()
     {
         // $data = User::all();
@@ -21,15 +21,7 @@ class UserController extends Controller
         return view('admin/menu/pengguna')->with('data', $data);
     }
 
-    // function pengguna($id)
-    // {
-    //     // $data = User::all();
-    //     $data = User::findUserById($id);
-    //     return view('transaksi.order')->with('data', $data);
-    // }
-    //=================================================================================================
-
-    // menampilkan data pengguna berlangganan ke menu pengguna=========================================
+    // menampilkan data pengguna berlangganan ke menu pengguna
     public function order()
     {
         $orders = order::all();
@@ -37,43 +29,74 @@ class UserController extends Controller
     }
 
     //menampilkan data transaksi data transaksi
-    public function transaksi()
+    // public function transaksi()
+    // {
+    //     // $orders = order::orderBy('id', 'asc')->latest();
+    //     $orders = order::orderBy('id', 'desc')->latest()->paginate();
+    //     $datatransaksi = DB::table('orders')->get();
+
+    //     return view('admin/menu/tagihan', compact('orders', 'datatransaksi'));
+    // }
+
+    //menampilkan data transaksi dan melakukan fungsi pencarian 
+    public function transaksi(Request $request)
     {
-        // $orders = order::orderBy('id', 'asc')->latest();
-        $orders = order::orderBy('id', 'desc')->latest()->paginate();
+        if ($request->cari) {
+            $orders = order::where('nama', 'like', '%' . $request->cari . '%')
+                ->orWhere('alamat', 'like', '%' . $request->cari . '%')
+                ->orWhere('phone', 'like', '%' . $request->cari . '%')
+                ->orWhere('paket', 'like', '%' . $request->cari . '%')
+                ->orWhere('total_price', 'like', '%' . $request->cari . '%')
+                ->orWhere('status', 'like', '%' . $request->cari . '%')
+                ->latest()->paginate();
+        } else {
+            $orders = order::orderBy('id', 'desc')->latest()->paginate();
+        }
         $datatransaksi = DB::table('orders')->get();
 
-        return view('admin/menu/tagihan', compact('orders', 'datatransaksi'));
-    }
-
-    // fungsi cari tabel order
-    public function liveSearch(Request $request)
-    {
-        $query = $request->input('query');
-
-        $orders = order::all("%$query%");
-
-        $output = '<ul class="list-group">';
-        foreach ($orders as $order) {
-            $output .= '<li class="list-group-item">' . $order->title . '</li>';
+        // Menambahkan kondisi jika data tidak ditemukan
+        if ($orders->isEmpty()) {
+            $status = 'Tidak ada hasil yang ditemukan untuk "' . $request->cari . '"';
+            $gambar = asset('pengguna/img/empty.jpg');
+            return view('admin/menu/tagihan', compact('orders', 'request', 'datatransaksi', 'gambar', 'status'));
         }
-        $output .= '</ul>';
 
-        return $output;
+
+        // fungsi untuk memnfilter status apakah sudah  bayar atau belum
+        $filter = $request->filter ?? 'all'; // set filter default ke "all" jika tidak ada parameter filter
+
+        if ($request->cari) {
+            $orders = Order::where('nama', 'like', '%' . $request->cari . '%')
+                ->orWhere('phone', 'like', '%' . $request->cari . '%')
+                ->orWhere('alamat', 'like', '%' . $request->cari . '%')
+                ->orWhere('paket', 'like', '%' . $request->cari . '%');
+        } else {
+            $orders = Order::orderBy('id', 'desc');
+        }
+
+        if ($filter == 'belum_bayar') {
+            $orders = $orders->where('status', 'Unpaid');
+        } else if ($filter == 'lunas') {
+            $orders = $orders->where('status', 'Paid');
+        }
+
+        $orders = $orders->paginate(10);
+        $datatransaksi = DB::table('orders')->get();
+
+        return view('admin.menu.tagihan', compact('orders', 'request', 'datatransaksi', 'filter'));
     }
 
-    //fungsi manggil data paket internet dari database==================================================
+
+    //fungsi untuk manggil data paket internet dari database paketinternets
     public function paket()
     {
         $paketInternets = paketInternet::all();
         return view('user.index', compact('paketInternets'));
-        // return $paketInternets;
     }
-    //===================================================================================================
-    //fungi login======================================================================================
+
+    //fungi untuk menampilkan halaman login user
     public function login()
     {
-
         // $data['$title'] = 'Login';
         // return view('user/login', $data);
         return view('user.login', [
@@ -81,35 +104,29 @@ class UserController extends Controller
         ]);
     }
 
+    // fungsi untuk mengautentikasi login user dengan mengecek apakah email dan password sama dengan yang ada pada database jika benar maka akan diarahkan masuk kehalaman utama atau index
     public function authenticate(Request $request)
     {
-
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-
-
-
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
             return redirect()->intended('/');
         }
         return back()->with('loginError', 'Login failed');
-
-        // $paketInternets = paketInternet::all();
-        // return view('user.index', compact('paketInternets'));
     }
-    //=================================================================================================
 
-    //fungsi register==================================================================================
+    //fungsi untuk menampilkan halaman register user
     public function register()
     {
         $data['$title'] = 'Register';
         return view('user/register', $data);
     }
 
+    // fungsi untuk register user dengan mengisi data yang dibutuhkan dan dikirim ke dalam database users dan kemudian disimpan dan diarahkan kehalaman login.
     public function register_action(Request $request)
     {
         $request->validate([
@@ -133,9 +150,8 @@ class UserController extends Controller
         $user->save();
         return redirect()->route('login')->with('success', 'Registration Success. Please Login!');
     }
-    //===========================================================================================================
 
-    //fungsi logout=========================================================================================
+    //fungsi untuk halaman logout user, dan diarahkan kehalaman index.
     public function logout(Request $request)
     {
         Auth::logout();
@@ -144,13 +160,9 @@ class UserController extends Controller
         return redirect('/')->with('success', 'berhasil logout');
     }
 
-    //=========================================================================================================
-
+    // menampilkan halaman admin sidebar pengguna yang berlangganan atau nama dari tabelnya 'Pengguna berlangganan'
     public function sidebar_pengguna()
     {
-
-        // $data['$title'] = 'Login';
-        // return view('user/login', $data);
         return view('admin.menu.LanggananPengguna', [
             'title' => 'Pengguna',
         ]);

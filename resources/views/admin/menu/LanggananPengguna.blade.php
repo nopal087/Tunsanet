@@ -13,6 +13,17 @@
                 </div>
             </div>
             <!-- /.container-fluid -->
+            <form action="{{ route('Lpengguna') }}" method="GET">
+                <div class="p-3 row">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="ketikan disini..." name="cari" value="{{ $request->cari }}">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary">Cari</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
             <div class="row">
                 <div class="col-12">
                     <div class="card">
@@ -26,7 +37,7 @@
                         <!-- /.card-header -->
                         <div class="card-body table-bordered-responsive p-0">
                             @if (count($datapengguna) > 0)
-                                <table class="table table-bordered text-nowrap">
+                                <table class="table table-bordered text-nowrap mb-3">
                                     <thead>
                                         <tr class="bg-primary-subtle">
                                             <th>No.</th>
@@ -101,6 +112,17 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                {{-- menampilkan pencarian ketika tidak ditemukan --}}
+                                @if (isset($status))
+                                    <div class="alert alert-danger text-center">{{ $status }}</div>
+                                    <div class="text-center">
+                                        <img src="{{ $gambar }}" width="50%" alt="no data">
+                                    </div>
+                                @else
+                                    <!-- Tampilkan tabel data pengguna -->
+                                @endif
+
+                                {{-- menampilkan ketika data kosong --}}
                             @else
                                 <div class="text-center">
                                     <img src="{{ asset('pengguna/img/empty.jpg') }}" alt="No Data Found" width="50%">

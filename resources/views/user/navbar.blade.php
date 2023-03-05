@@ -8,7 +8,7 @@
     /* Color of the links AFTER scroll */
     .navbar-scrolled .nav-link,
     .navbar-scrolled .navbar-toggler .fa-bars {
-        color: #3B71CA;
+        color: #2d2d2e;
     }
 
     /* Color of the navbar AFTER scroll */
@@ -38,24 +38,36 @@
                 <img src="{{ asset('pengguna/img/Logo_Stempel.png') }}" alt="Logo" width="150">
             </a>
             <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="/">Beranda</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#paket">Paket</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#kelebihan">Kelebihan</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#kontak">Kontak</a>
-                </li>
-            </ul>
+            {{-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="/">Beranda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#paket">Paket</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#kelebihan">Kelebihan</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#kontak">Kontak</a>
+            </li>
+            </ul> --}}
         </div>
 
         <!-- Right elements -->
         <div class="d-flex align-items-center">
+            <div class="dropdown">
+                <button class="btn btn-link btn-rounded dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-mdb-toggle="dropdown" aria-expanded="false">
+                    Menu
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="/">Beranda</a></li>
+                    <li><a class="dropdown-item" href="#paket">Paket Internet</a></li>
+                    <li><a class="dropdown-item" href="#kelebihan">Kelebihan</a></li>
+                    <li><a class="dropdown-item" href="#kontak">Kontak</a></li>
+                </ul>
+            </div>
             <!-- Avatar -->
             <div class="dropdown">
                 @auth

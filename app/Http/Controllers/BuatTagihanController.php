@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class BuatTagihanController extends Controller
 {
-    //mengambil data pengguna
+    //mengambil data pengguna dan ditampilkan pada halaman buat tagihan
     public function btagihan()
     {
         $pengguna = Pengguna::all();
@@ -18,16 +18,62 @@ class BuatTagihanController extends Controller
         return view('admin/menu/btagihan', compact('pengguna', 'databuattagihan'));
     }
 
-    public function ViewTagihan()
+    // menampilkan halaman lihat tagihan ketika buat tagihan telah dibuat dan melakukan pencarian dikolom pencarian
+    public function ViewTagihan(Request $request)
     {
-        $tagihan = Tagihan::orderBy('id', 'desc')->latest()->paginate(1000);
+        // $tagihan = Tagihan::orderBy('id', 'desc')->latest()->paginate(1000);
+        // $datatagihan = DB::table('tagihans')->get();
+        // // dd($tagihan);
+        // return view('admin.menu.LihatTagihan', compact('tagihan', 'datatagihan'));
+
+        // 
+        if ($request->cari) {
+            $tagihan = Tagihan::where('nama', 'like', '%' . $request->cari . '%')
+                ->orWhere('phone', 'like', '%' . $request->cari . '%')
+                ->orWhere('paket', 'like', '%' . $request->cari . '%')
+                ->orWhere('tagihan', 'like', '%' . $request->cari . '%')
+                ->orWhere('status', 'like', '%' . $request->cari . '%')
+                ->orWhere('tanggal', 'like', '%' . $request->cari . '%')
+                ->get();
+        } else {
+            $tagihan = Tagihan::orderBy('id', 'desc')->latest()->paginate(1000);
+        }
         $datatagihan = DB::table('tagihans')->get();
-        // dd($tagihan);
-        return view('admin.menu.LihatTagihan', compact('tagihan', 'datatagihan'));
+
+        // Menambahkan kondisi jika data tidak ditemukan
+        if ($tagihan->isEmpty()) {
+            $status = 'Tidak ada hasil yang ditemukan untuk "' . $request->cari . '"';
+            $gambar = asset('pengguna/img/empty.jpg');
+            return view('admin.menu.LihatTagihan', compact('tagihan', 'request', 'datatagihan', 'gambar', 'status'));
+        }
+
+        // fungsi filter status belum bayar dan lunas
+
+        $filter = $request->filter ?? 'all'; // set filter default ke "all" jika tidak ada parameter filter
+
+        if ($request->cari) {
+            $tagihan = Tagihan::where('nama', 'like', '%' . $request->cari . '%')
+                ->orWhere('phone', 'like', '%' . $request->cari . '%')
+                ->orWhere('paket', 'like', '%' . $request->cari . '%')
+                ->orWhere('tagihan', 'like', '%' . $request->cari . '%');
+        } else {
+            $tagihan = Tagihan::orderBy('id', 'desc');
+        }
+
+        if ($filter == 'belum_bayar') {
+            $tagihan = $tagihan->where('status', 'Unpaid');
+        } else if ($filter == 'lunas') {
+            $tagihan = $tagihan->where('status', 'Paid');
+        }
+
+        $tagihan = $tagihan->paginate(1000);
+        $datatagihan = DB::table('tagihans')->get();
+
+        return view('admin.menu.LihatTagihan', compact('tagihan', 'request', 'datatagihan', 'filter'));
     }
 
 
-    // fungsi untuk melakukan buat tagihan dengan mengambil data dari pengguna
+    // fungsi untuk melakukan buat tagihan dengan mengambil data dari pengguna dan dikirim ke halaman tagihan
     public function BuatTagihan(Request $request)
     {
         // dd($request->all());
@@ -45,7 +91,7 @@ class BuatTagihanController extends Controller
         return redirect('/LihatTagihan');
     }
 
-    //manual transaski dengan menekan tombol ceklis
+    //fungsi untuk menual transaksi dengan menekan tombol ceklis pada halaman lihat tagihan
     public function Lunas($id)
     {
         $tagihan = Tagihan::find($id);
@@ -54,6 +100,7 @@ class BuatTagihanController extends Controller
         return redirect()->back()->with('success', 'Tagihan Telah Lunas');
     }
 
+    // fungsi untuk menghapus tagihan pada halaman tagihan
     public function destroy($id)
     {
         $tagihan = Tagihan::Find($id);

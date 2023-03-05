@@ -6,20 +6,48 @@
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2 justify-content-between">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 mb-3">
                         <h1>Data Transaksi</h1>
                     </div>
 
                 </div>
             </div>
             <!-- /.container-fluid -->
-
+            <div class="row">
+                <div class="col-4">
+                    <form action="{{ route('transaksi') }}" method="GET">
+                        <div class="form-group">
+                            <label for="filter">Filter Status :</label>
+                            <select name="filter" id="filter" class="form-control" onchange="this.form.submit()">
+                                <option value="all" {{ $filter == 'all' ? 'selected' : '' }}>Semua</option>
+                                <option value="belum_bayar" {{ $filter == 'belum_bayar' ? 'selected' : '' }}>Belum Bayar
+                                </option>
+                                <option value="lunas" {{ $filter == 'lunas' ? 'selected' : '' }}>Lunas</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-8">
+                    <form action="{{ route('transaksi') }}" method="GET">
+                        <div class="mx-auto">
+                            <label for="filter">Cari :</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="ketikan disini..." name="cari" value="{{ $request->cari }}">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-primary">Cari</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body table-responsive p-0">
                             @if (count($datatransaksi) > 0)
-                                <table class="table table-hover text-nowrap">
+                                <table class="table table-hover text-nowrap mb-3">
                                     <thead>
                                         <tr class="bg-primary-subtle">
                                             <th>No.</th>
@@ -28,6 +56,7 @@
                                             <th>Nama</th>
                                             <th>No.Telephone</th>
                                             <th>Alamat</th>
+                                            <th>Paket</th>
                                             <th>Jumlah</th>
                                             <th>Status</th>
                                             <th>Aksi</th>
@@ -42,6 +71,7 @@
                                                 <td>{{ $item->nama }}</td>
                                                 <td>{{ $item->phone }}</td>
                                                 <td>{{ $item->alamat }}</td>
+                                                <td>{{ $item->paket }}</td>
                                                 <td>Rp. {{ number_format($item->total_price) }}</span></td>
                                                 <td><label
                                                         class="badge {{ $item->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $item->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
@@ -95,6 +125,15 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                {{-- menampilkan pencarian ketika tidak ditemukan --}}
+                                @if (isset($status))
+                                    <div class="alert alert-danger text-center">{{ $status }}</div>
+                                    <div class="text-center">
+                                        <img src="{{ $gambar }}" width="50%" alt="no data">
+                                    </div>
+                                @else
+                                    <!-- Tampilkan tabel data pengguna -->
+                                @endif
                             @else
                                 <div class="text-center">
                                     <img src="{{ asset('pengguna/img/empty.jpg') }}" alt="No Data Found" width="50%">

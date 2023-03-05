@@ -173,7 +173,7 @@
                         <h5 class="mb-4 gradient-text">Dapatkan kecepatan internet tercepat dan unlimited dengan harga
                             terjangkau!
                         </h5>
-                        <a class="gradient-text btn btn-outline-light btn-lg m-2" href="#paket">Beli
+                        <a class="gradient-text btn btn-outline-primary btn-lg m-2" href="#paket">Beli
                             Sekarang!</a>
                     </div>
                 </div>
@@ -380,6 +380,8 @@
     @include('user/footer')
     </div>
     @include('user/chat_bubble')
+    @include('user/cookies')
+
 </body>
 
 </html>

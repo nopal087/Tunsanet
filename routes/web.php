@@ -34,6 +34,7 @@ Route::get('/tamu', function () {
     return view('welcome');
 });
 
+// fungsi untuk menampilkan halaman utama user
 Route::get('/', function () {
     return view('user/index', ['title' => 'index']);
 })->name('index');
@@ -91,68 +92,77 @@ Route::get('/FAQ', function () {
 });
 
 
-// Register
+//fungsi untuk user Register
 Route::get('register', [UserController::class, 'register'])->name('register');
 Route::post('register', [UserController::class, 'register_action'])->name('register.action');
-// login User
+
+// fungsi untuk login User
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/login', [UserController::class, 'authenticate']);
-// logout user
+
+// fungsi untuk logout user
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::post('/logout', [UserController::class, 'logout_action'])->name('logout.action');
+
 // ubah pachange_password
 Route::get('password', [UserController::class, 'password'])->name('password');
 Route::post('password', [UserController::class, 'password_action'])->name('password.action');
-// mengambil data dari database user
+
+// mengambil data dari database users registrasi dan ditampilkan kehalaman pengguna
 Route::get('user', [UserController::class, 'index']);
-//menampilkan data ke tabel data transaksi
-Route::get('/tagihan', [UserController::class, 'transaksi']);
+
+//menampilkan data order dan ditampilkan ke tabel data transaksi
+Route::get('/tagihan', [UserController::class, 'transaksi'])->name('transaksi');
+
 //mengambil paket internet didatabase
 Route::get('/', [UserController::class, 'paket']);
 
 // Login admin
-Route::get('/login_admin', [AdminController::class, 'login_admin'])->name('login_admin');
-Route::post('/login_admin', [AdminController::class, 'authenticate']);
+// Route::get('/login_admin', [AdminController::class, 'login_admin'])->name('login_admin');
+// Route::post('/login_admin', [AdminController::class, 'authenticate']);
 
 // register admin
-Route::get('admin_register', [AdminController::class, 'admin_register'])->name('admin_register');
-Route::post('admin_register', [AdminController::class, 'admin_register_action'])->name('admin_register.action');
-Route::get('/homedashboard', [AdminController::class, 'home']);
+// Route::get('admin_register', [AdminController::class, 'admin_register'])->name('admin_register');
+// Route::post('admin_register', [AdminController::class, 'admin_register_action'])->name('admin_register.action');
+// Route::get('/homedashboard', [AdminController::class, 'home']);
 
-//transaksi / tagihan
+//menampilkan halaman buat tagihan
 Route::get('/btagihan', [BuatTagihanController::class, 'btagihan']);
 
 
-//orders
+//menampilkan halaman beberapa langkan untuk melakukan order/transaksi
 Route::get('/order', [OrderController::class, 'summary'])->name('summary');
 Route::post('/checkout', [OrderController::class, 'checkout']);
 Route::delete('/admin/menu/tagihan/{id}', [OrderController::class, 'destroy']);
 Route::get('transaksi.detail_order', [OrderController::class, 'detail_order'])->name('detail_order');
 Route::get('transaksi.invoice/{id}', [OrderController::class, 'invoice'])->name('invoice');
-//TRANSAKSI MANUAL
+
+//melakukan transaksi manual pada halaman transaksi.
 Route::get('/admin/manual/lunas/{id}', [OrderController::class, 'manual']);
 
-//pengguna langganan
-Route::get('/Lpengguna', [PenggunaController::class, 'index']);
+//menampilkan halaman pengguna langganan dengan fungsi CRUD
+Route::get('/Lpengguna', [PenggunaController::class, 'index'])->name('Lpengguna');
 Route::get('/admin/menu/Tambahpengguna', [PenggunaController::class, 'create']);
 Route::post('/admin/menu/store', [PenggunaController::class, 'store']);
 Route::get('/admin/menu/pengguna/{id}/edit', [PenggunaController::class, 'edit']);
 Route::put('/admin/menu/{id}', [PenggunaController::class, 'update']);
 Route::delete('/admin/menu/pengguna/{id}', [PenggunaController::class, 'destroy']);
 
-//buat tagihan
-// Route::get('/LihatTagihan', [PenggunaController::class, 'LihatTagihan']);
-Route::get('/LihatTagihan', [BuatTagihanController::class, 'ViewTagihan']);
+// menampilkan halaman lihat tagihan dengan fungsi CRUD
+Route::get('/LihatTagihan', [BuatTagihanController::class, 'ViewTagihan'])->name('Lihat_tagihan');
 Route::post('/admin/menu/btagihan', [BuatTagihanController::class, 'BuatTagihan']);
 Route::get('/admin/menu/Lunas/{id}', [BuatTagihanController::class, 'Lunas']);
 Route::delete('/admin/menu/LihatTagihan/{id}', [BuatTagihanController::class, 'destroy']);
 
 // Route::get('user', [UserController::class, 'pengguna']);
+
+// menampilkan halaman index user
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// MENAMPILKAN DATA DI HOME
+
+//menampilkan jumlah dari setiap tabel transaksi, tagihan laporan dll.
 Route::get('homedashboard', [HomeController::class, 'jumlah']);
 
-// Menampilkan data di Laporan Bulanan
+// Menampilkan data di halaman Laporan.
 Route::get('/laporanBul', [LaporanController::class, 'laporanBulanan']);
 Route::get('/admin/menu/Tambahpengguna', [LaporanController::class, 'dataAccordion']);
 Route::get('/admin/header', [LaporanController::class, 'date']);

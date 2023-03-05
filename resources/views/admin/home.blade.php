@@ -67,7 +67,7 @@
                             <div class="icon">
                                 <i class="ion ion-person"></i>
                             </div>
-                            <a href="/pengguna" class="small-box-footer">More info <i
+                            <a href="/Lpengguna" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
 

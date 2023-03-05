@@ -37,6 +37,9 @@
                 <a href="#" class="me-4 link-light">
                     <i class="fab fa-instagram"></i>
                 </a>
+                <a href="https://github.com/nopal087/Tunsanet" class="me-4 link-light">
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
             <!-- Right -->
         </section>

@@ -10,12 +10,13 @@ use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
+    // menampilkan halaman laporan dengan mengambil data dari transaki/ order
     public function laporan()
     {
         return view('transaksi.order');
     }
 
-    //ringkasan order
+    // menampilkan halamamnm ringkasan order dengan mengambil data dari paket internet dan biaya pemasangan sesuai dengan paket yang dipilih oleh user
     public function summary(Request $request)
     {
         $id = $request->id;
@@ -28,7 +29,7 @@ class OrderController extends Controller
         return view('transaksi.order', compact('id',  'paketInternets', 'biaya_pemasangan', 'user'));
     }
 
-    //checkout orderan/pesanan
+    //fungsi checkout orderan/pesanan dengan mengirim transaksi detail, order id, dan gross amount untuk ditampilkan pada halaman pembayaran.
     public function checkout(Request $request)
     {
         // return $request->all();;
@@ -61,7 +62,7 @@ class OrderController extends Controller
         return view('transaksi.detail_order', compact('snapToken', 'order'));
     }
 
-    //midtrans callback
+    // fungsi midtrans callback untuk melakukan reques apakah pesanan yang telah dipesan sudah berhasil atau tidak dengan menampilkan status pesanan lunas atau belum lunas.
     public function callback(Request $request)
     {
         $serverKey = config('midtrans.server_key');
@@ -74,6 +75,7 @@ class OrderController extends Controller
         }
     }
 
+    // menampilkan invoice pesanan sesuai dengan id order dan ditampilkan pada halaman invoice.
     public function invoice($id)
     {
         $order = Order::find($id);
@@ -81,15 +83,15 @@ class OrderController extends Controller
     }
 
 
-    // Manual Transaksi
+    //fungsi Manual Transaksi untuk merubah status belum bayar menjadi sudah bayar 
     public function manual($id)
     {
         $order = order::find($id);
-        // dd($tagihan);
         $order->update(['status' => 'Paid']);
         return redirect()->back()->with('success', 'Tagihan Telah Lunas');
     }
 
+    // fungsi untuk menghapus transaksi atau order pada halaman data transaksi.
     public function destroy($id)
     {
         $order = order::Find($id);
