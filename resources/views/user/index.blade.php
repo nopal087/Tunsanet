@@ -384,8 +384,8 @@
     <section id="peta" class="m-3 py-1">
         <div class="container">
             <div class="row align-items-center">
-                <h2><strong>Lokasi</strong> <i class="fa-solid fa-location-dot"></i></h2>
                 <div class="col-lg-6" id="kontak">
+                    <h2><strong>Lokasi</strong> <i class="fa-solid fa-location-dot"></i></h2>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7167371727533!2d109.59409001457598!3d-6.924424894996906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7027369aa45f93%3A0x4825314efa7f5beb!2sBalai%20Desa%20Tunjungsari!5e0!3m2!1sid!2sid!4v1678110784008!5m2!1sid!2sid"
                         width="100%" height="450" style="border:0;" class="rounded-5" allowfullscreen=""
