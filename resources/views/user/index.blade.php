@@ -189,7 +189,7 @@
         </div>
     </div>
     </header>
-    <main class="container mb-2">
+    <main class="container mb-1">
         <div class=" row row-cols- row-cols-md-3 mb-3 text-center p-2">
             @foreach ($paketInternets as $paket)
                 <div class="col-sm-4" id="paket">
@@ -226,14 +226,14 @@
             @endforeach
         </div>
     </main>
-    <section id="kelebihan" class="bg-light py-5">
+    <section id="kelebihan" class="rounded-9 m-3 py-5">
         <div class="container">
             <div class="paket-h1">
                 <h2 class="text-center mb-5"><strong>Kelebihan Internet Kami</strong></h2>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <div class="card mb-4 shadow-sm">
+                    <div class="card mb-4 rounded-9 shadow-md">
                         <div class="card-body d-flex">
                             <video style="min-width: 50%; min-height: 50%;" playsinline autoplay muted loop>
                                 <source class="h-100" src="{{ asset('pengguna/video/animasi 3.mp4') }}"
@@ -248,7 +248,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="card mb-4 shadow-sm">
+                    <div class="card mb-4 rounded-9 shadow-md">
                         <div class="card-body d-flex">
                             {{-- <img class="mr-4" src="{{ asset('pengguna/img/2.png') }}" width="50%"
                                 alt="Kecepatan Tinggi"> --}}
@@ -265,7 +265,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="card mb-4 shadow-sm">
+                    <div class="card mb-4 rounded-9 shadow-md">
                         <div class="card-body d-flex">
                             {{-- <img class="mr-4" src="{{ asset('pengguna/img/3.png') }}" width="50%"
                                 alt="Pilihan Paket yang Fleksibel"> --}}
@@ -286,7 +286,7 @@
         </div>
     </section>
 
-    <section id="bantuan" class="py-1">
+    <section id="bantuan" class="m-3 py-1">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6" id="kontak">
@@ -310,73 +310,94 @@
     </section>
 
     <div class="container">
-        <h2>Pertanyaan yang sering ditanyakan</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="accordion mb-3 " id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button " type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Apa itu Tunsanet?
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Tunsanet adalah Badan Usaha Milik Desa Tunjungsari yang memberikan pelayanan wifi
-                                kepada
-                                warga sekitar untuk meningkatkan perekonomian desa Tunjungsari.
+        <div class="m-3 py-1">
+            <h2>Pertanyaan yang sering ditanyakan</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="accordion mb-3 " id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button " type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Apa itu Tunsanet?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Tunsanet adalah Badan Usaha Milik Desa Tunjungsari yang memberikan pelayanan wifi
+                                    kepada
+                                    warga sekitar untuk meningkatkan perekonomian desa Tunjungsari.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Bagaimana cara melakukan pembayarannya?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Jika anda melakukan pembelian melalui website ini maka akan terdapat 2 opsi
+                                    pembayaran<br>
+                                    1. pembayaran menggunakan cashless atau secara online , anda hanya tinggal mengikuti
+                                    intruksi yang ada untuk melakukan pembayaran, opsi pembayaran online nya juga
+                                    bervariasi
+                                    anda dapat menentukannya sendiri. <br>
+                                    2. pembayaran secara manual, anda dapat datang ke kantor atau anda dapat
+                                    menguhubungi
+                                    petugas Bumdes Tunsanet untuk melakukan pembayaran.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    Apakah setelah pembelian akan segera dilakukan pemasangan?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Pemasangan akan dilakukan ketika pembeli sudah melakukan konfirmasi pembayaran
+                                    kepada
+                                    petugas melalui whatsapp maupun secara langsung dengan menyertakan bukti pembayaran.
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Bagaimana cara melakukan pembayarannya?
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Jika anda melakukan pembelian melalui website ini maka akan terdapat 2 opsi
-                                pembayaran<br>
-                                1. pembayaran menggunakan cashless atau secara online , anda hanya tinggal mengikuti
-                                intruksi yang ada untuk melakukan pembayaran, opsi pembayaran online nya juga
-                                bervariasi
-                                anda dapat menentukannya sendiri. <br>
-                                2. pembayaran secara manual, anda dapat datang ke kantor atau anda dapat
-                                menguhubungi
-                                petugas Bumdes Tunsanet untuk melakukan pembayaran.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Apakah setelah pembelian akan segera dilakukan pemasangan?
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Pemasangan akan dilakukan ketika pembeli sudah melakukan konfirmasi pembayaran
-                                kepada
-                                petugas melalui whatsapp maupun secara langsung dengan menyertakan bukti pembayaran.
-                            </div>
-                        </div>
-                    </div>
+                    <a href="/FAQ"> <button type="button" class="btn btn-primary btn-rounded">
+                            Selengkapnya</button></a>
                 </div>
-                <a href="/FAQ"> <button type="button" class="btn btn-primary btn-rounded">
-                        Selengkapnya</button></a>
-            </div>
-            <div class="col-md-6 justify-content-end">
-                <img src="{{ asset('pengguna/img/FAQ.png') }}" width="90%" alt="gambar FAQ" class="img-fluid">
+                <div class="col-md-6 justify-content-end">
+                    <img src="{{ asset('pengguna/img/FAQ.png') }}" width="90%" alt="gambar FAQ"
+                        class="img-fluid">
+                </div>
             </div>
         </div>
     </div>
+    <section id="peta" class="m-3 py-1">
+        <div class="container">
+            <div class="row align-items-center">
+                <h2><strong>Lokasi</strong> <i class="fa-solid fa-location-dot"></i></h2>
+                <div class="col-lg-6" id="kontak">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7167371727533!2d109.59409001457598!3d-6.924424894996906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7027369aa45f93%3A0x4825314efa7f5beb!2sBalai%20Desa%20Tunjungsari!5e0!3m2!1sid!2sid!4v1678110784008!5m2!1sid!2sid"
+                        width="100%" height="450" style="border:0;" class="rounded-5" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-lg-6">
+                    <img src="{{ asset('pengguna/img/location.png') }}" width="100%" alt="lokasi"
+                        class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
     @include('user/footer')
     </div>
     @include('user/chat_bubble')

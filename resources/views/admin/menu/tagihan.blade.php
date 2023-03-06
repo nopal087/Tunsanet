@@ -20,7 +20,7 @@
                             <label for="filter">Filter Status :</label>
                             <select name="filter" id="filter" class="form-control" onchange="this.form.submit()">
                                 <option value="all" {{ $filter == 'all' ? 'selected' : '' }}>Semua</option>
-                                <option value="belum_bayar" {{ $filter == 'belum_bayar' ? 'selected' : '' }}>Belum Bayar
+                                <option value="belum_bayar" {{ $filter == 'belum_bayar' ? 'selected' : '' }}>Belum lunas
                                 </option>
                                 <option value="lunas" {{ $filter == 'lunas' ? 'selected' : '' }}>Lunas</option>
                             </select>

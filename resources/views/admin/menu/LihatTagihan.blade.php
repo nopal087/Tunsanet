@@ -10,15 +10,6 @@
                         <h1>Data Tagihan</h1>
                     </div>
                     <div class="card-tools">
-                        {{-- <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control float-left" placeholder="Search">
-
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-default">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -30,7 +21,7 @@
                             <label for="filter">Filter Status :</label>
                             <select name="filter" id="filter" class="form-control" onchange="this.form.submit()">
                                 <option value="all" {{ $filter == 'all' ? 'selected' : '' }}>Semua</option>
-                                <option value="belum_bayar" {{ $filter == 'belum_bayar' ? 'selected' : '' }}>Belum Bayar
+                                <option value="belum_bayar" {{ $filter == 'belum_bayar' ? 'selected' : '' }}>Belum lunas
                                 </option>
                                 <option value="lunas" {{ $filter == 'lunas' ? 'selected' : '' }}>Lunas</option>
                             </select>
