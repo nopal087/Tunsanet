@@ -1,12 +1,5 @@
  <!-- Main Sidebar Container -->
  <aside class="main-sidebar sidebar-dark-primary elevation-2">
-     <!-- Brand Logo -->
-     {{-- <a href="index3.html" class="brand-link">
-         <img src="{{ asset('AdminLTE/dist/img/logobsr.jpg') }}" alt="BUMDES" class="brand-image img-Square elevation-2"
-             style="opacity:">
-         <span class="brand-text font-weight-light">SIBUMDES</span>
-     </a> --}}
-
      <!-- Sidebar -->
      <div class="sidebar">
          <!-- Sidebar user panel (optional) -->
