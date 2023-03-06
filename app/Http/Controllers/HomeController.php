@@ -20,13 +20,13 @@ class HomeController extends Controller
     }
 
     // menampilkan jumlah totaltagihan, total transaksi, total pengguna, pada halaman beranda dashboard admin
-    public function  jumlah()
-    {
-        $Totaltagihan = tagihan::all()->count();
-        $Totaltransaksi = order::all()->count();
-        $Totalpengguna = Pengguna::all()->count();
-        $Totaltransaksi = order::all()->count();
+    // public function  jumlah()
+    // {
+    //     $Totaltagihan = tagihan::all()->count();
+    //     $Totaltransaksi = order::all()->count();
+    //     $Totalpengguna = Pengguna::all()->count();
+    //     $Totaltransaksi = order::all()->count();
 
-        return view('admin.home', compact('Totaltagihan', 'Totaltransaksi', 'Totalpengguna'));
-    }
+    //     return view('admin.home', compact('Totaltagihan', 'Totaltransaksi', 'Totalpengguna'));
+    // }
 }

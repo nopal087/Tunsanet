@@ -9,16 +9,40 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use App\Models\paketInternet;
+use App\Models\Pengguna;
+use App\Models\Tagihan;
 use App\Models\Transaksi;
 
 class UserController extends Controller
 {
     //menampilkan data user yang registrasi ke table pengguna
-    function index()
+    function index(Request $request)
     {
-        // $data = User::all();
-        $data = User::orderBy('id', 'desc')->latest()->paginate();
-        return view('admin/menu/pengguna')->with('data', $data);
+        // $data = User::orderBy('id', 'desc')->latest()->paginate();
+        // return view('admin/menu/pengguna')->with('data', $data);
+
+        if ($request->cari) {
+            $user = User::where('name', 'like', '%' . $request->cari . '%')
+                ->orWhere('username', 'like', '%' . $request->cari . '%')
+                ->orWhere('email', 'like', '%' . $request->cari . '%')
+                ->orWhere('no_hp', 'like', '%' . $request->cari . '%')
+                ->orWhere('alamat', 'like', '%' . $request->cari . '%')
+                ->orWhere('is_admin', 'like', '%' . $request->cari . '%')
+                ->get();
+
+            // menampilkan data pengguna 
+        } else {
+            $user = User::orderBy('id', 'desc')->latest()->paginate();
+        }
+        // $datauser = DB::table('users')->get();
+
+        // Menambahkan kondisi jika data tidak ditemukan
+        if ($user->isEmpty()) {
+            $status = 'Tidak ada hasil yang ditemukan untuk "' . $request->cari . '"';
+            $gambar = asset('pengguna/img/empty.jpg');
+            return view('admin/menu/pengguna', compact('user', 'request', 'gambar', 'status'));
+        }
+        return view('admin/menu/pengguna', compact('user', 'request'));
     }
 
     // menampilkan data pengguna berlangganan ke menu pengguna
@@ -104,19 +128,50 @@ class UserController extends Controller
         ]);
     }
 
+    public function dashboard()
+    {
+        $is_admin = auth()->user()->is_admin;
+        if (!$is_admin) {
+            // jika user bukan admin, redirect ke halaman lain atau tampilkan pesan error
+            return redirect('/')->back()->with('error', 'Anda tidak memiliki akses ke halaman ini!');
+        }
+        // jika user adalah admin, tampilkan halaman dashboard
+        return view('homedashboard');
+    }
+
     // fungsi untuk mengautentikasi login user dengan mengecek apakah email dan password sama dengan yang ada pada database jika benar maka akan diarahkan masuk kehalaman utama atau index
+    // public function authenticate(Request $request)
+    // {
+    //     $credentials = $request->validate([
+    //         'email' => ['required', 'email'],
+    //         'password' => ['required'],
+    //     ]);
+    //     if (Auth::attempt($credentials)) {
+    //         $request->session()->regenerate();
+
+    //         return redirect()->intended('/');
+    //     }
+    //     return back()->with('loginError', 'Login failed');
+    // }
+
+
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        if (Auth::attempt($credentials)) {
+
+        if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
 
+            if (Auth::user()->isAdmin()) {
+                return redirect()->intended('/homedashboard');
+            }
             return redirect()->intended('/');
         }
-        return back()->with('loginError', 'Login failed');
+
+        return back()->with('loginError', 'Login gagal');
     }
 
     //fungsi untuk menampilkan halaman register user
@@ -145,6 +200,7 @@ class UserController extends Controller
             'no_hp' => $request->no_hp,
             'alamat' => $request->alamat,
             'password' => Hash::make($request->password),
+            'is_admin' => false,
 
         ]);
         $user->save();
@@ -160,11 +216,30 @@ class UserController extends Controller
         return redirect('/')->with('success', 'berhasil logout');
     }
 
+    //fungsi untuk halaman logout admin, dan diarahkan kehalaman login.
+    public function logout_admin()
+    {
+        Auth::guard('admin')->logout();
+
+        return redirect('/login')->with('success', 'Anda telah berhasil keluar.');
+    }
+
     // menampilkan halaman admin sidebar pengguna yang berlangganan atau nama dari tabelnya 'Pengguna berlangganan'
     public function sidebar_pengguna()
     {
         return view('admin.menu.LanggananPengguna', [
             'title' => 'Pengguna',
         ]);
+    }
+
+
+    public function  jumlah()
+    {
+        $Totaltagihan = Tagihan::all()->count();
+        $Totaltransaksi = order::all()->count();
+        $Totalpengguna = Pengguna::all()->count();
+        $Totaltransaksi = order::all()->count();
+
+        return view('admin.home', compact('Totaltagihan', 'Totaltransaksi', 'Totalpengguna'));
     }
 }

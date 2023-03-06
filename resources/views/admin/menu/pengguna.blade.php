@@ -8,31 +8,31 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Daftar Pengguna</h1>
+                        <h1>Daftar Pengguna Registrasi</h1>
                     </div>
                 </div>
             </div>
             <!-- /.container-fluid -->
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-tools">
-                                <div class="input-group input-group-sm" style="width: 150px;">
-                                    <input type="text" name="table_search" class="form-control float-left"
-                                        placeholder="Search">
-
+                    <div class="card-header">
+                        <form action="{{ route('pengguna') }}" method="GET">
+                            <div class="mx-auto">
+                                <label for="filter">Cari :</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="search-input"
+                                        placeholder="ketikan disini..." name="cari" value="{{ $request->cari }}">
                                     <div class="input-group-append">
-                                        <button type="submit" class="btn btn-default">
-                                            <i class="fas fa-search"></i>
-                                        </button>
+                                        <button type="submit" class="btn btn-primary" id="search-button">Cari</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- /.card-header -->
+                        </form>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card">
                         <div class="card-body table-responsive p-0">
-                            <table class="table table-hover text-nowrap">
+                            <table class="table table-hover text-nowrap mb-3">
                                 <thead>
                                     <tr class="bg-primary-subtle">
                                         <th>No.</th>
@@ -45,7 +45,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($data as $item)
+                                    @foreach ($user as $item)
                                         <tr>
                                             <td>{{ $loop->iteration }}.</td>
                                             <td>{{ $item->id }}</td>
@@ -57,17 +57,21 @@
                                     @endforeach
                                 </tbody>
                             </table>
-
+                            @if (isset($status))
+                                <div class="alert alert-danger text-center">{{ $status }}</div>
+                                <div class="text-center">
+                                    <img src="{{ $gambar }}" width="50%" alt="no data">
+                                </div>
+                            @else
+                            @endif
                         </div>
 
                         <!-- /.card-body -->
                     </div>
-                    <div class="">
-                        {{ $data->links() }}
-                    </div>
                     <!-- /.card -->
                 </div>
             </div>
-        </section>
+    </div>
+    </section>
     </div>
 @endsection

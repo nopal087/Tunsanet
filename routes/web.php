@@ -15,6 +15,7 @@ use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
 
 use App\Models\User;
+use Illuminate\Auth\Events\Logout;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,13 +110,26 @@ Route::get('password', [UserController::class, 'password'])->name('password');
 Route::post('password', [UserController::class, 'password_action'])->name('password.action');
 
 // mengambil data dari database users registrasi dan ditampilkan kehalaman pengguna
-Route::get('user', [UserController::class, 'index']);
+Route::get('user', [UserController::class, 'index'])->name('pengguna');
 
 //menampilkan data order dan ditampilkan ke tabel data transaksi
 Route::get('/tagihan', [UserController::class, 'transaksi'])->name('transaksi');
 
 //mengambil paket internet didatabase
 Route::get('/', [UserController::class, 'paket']);
+
+
+// login admin
+Route::middleware(['auth', 'admin'])->group(function () {
+    // Rute-rute yang ingin dilindungi
+    Route::get('homedashboard', [UserController::class, 'dashboard']);
+});
+
+Route::get('homedashboard', [UserController::class, 'jumlah']);
+// Logout admin
+Route::post('/logout', [UserController::class, 'logout_admin'])->name('logout_admin');
+
+
 
 // Login admin
 // Route::get('/login_admin', [AdminController::class, 'login_admin'])->name('login_admin');
@@ -160,7 +174,7 @@ Route::delete('/admin/menu/LihatTagihan/{id}', [BuatTagihanController::class, 'd
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //menampilkan jumlah dari setiap tabel transaksi, tagihan laporan dll.
-Route::get('homedashboard', [HomeController::class, 'jumlah']);
+// Route::get('homedashboard', [HomeController::class, 'jumlah']);
 
 // Menampilkan data di halaman Laporan.
 Route::get('/laporanBul', [LaporanController::class, 'laporanBulanan']);

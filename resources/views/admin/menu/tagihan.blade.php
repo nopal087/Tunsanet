@@ -32,10 +32,10 @@
                         <div class="mx-auto">
                             <label for="filter">Cari :</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="exampleFormControlInput1"
-                                    placeholder="ketikan disini..." name="cari" value="{{ $request->cari }}">
+                                <input type="text" class="form-control" id="search-input" placeholder="ketikan disini..."
+                                    name="cari" value="{{ $request->cari }}">
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-primary">Cari</button>
+                                    <button type="submit" class="btn btn-primary" id="search-button">Cari</button>
                                 </div>
                             </div>
                         </div>

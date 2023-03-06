@@ -48,7 +48,6 @@ class BuatTagihanController extends Controller
         }
 
         // fungsi filter status belum bayar dan lunas
-
         $filter = $request->filter ?? 'all'; // set filter default ke "all" jika tidak ada parameter filter
 
         if ($request->cari) {
@@ -68,6 +67,13 @@ class BuatTagihanController extends Controller
 
         $tagihan = $tagihan->paginate(1000);
         $datatagihan = DB::table('tagihans')->get();
+
+
+        // Menambahkan kondisi jika data tidak ditemukan
+        if ($tagihan->isEmpty()) {
+            $gambar = asset('pengguna/img/empty.jpg');
+            return view('admin.menu.LihatTagihan', compact('tagihan', 'datatagihan', 'request', 'filter', 'gambar'))->with('status', 'Data tidak ada');
+        }
 
         return view('admin.menu.LihatTagihan', compact('tagihan', 'request', 'datatagihan', 'filter'));
     }

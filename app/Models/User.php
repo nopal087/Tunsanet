@@ -21,19 +21,24 @@ class User extends Authenticatable
     //  BEFORE
     // protected $table = 'users';
     // protected $primrykey = 'user_id';
-    // protected $fillable = [
-    //     'name',
-    //     'username',
-    //     'email',
-    //     'no_hp',
-    //     'alamat',
-    //     'password',
-    // ];
+    protected $fillable = [
+        'name',
+        'username',
+        'email',
+        'no_hp',
+        'alamat',
+        'password',
+        'is_admin',
+    ];
+    public function isAdmin()
+    {
+        return $this->is_admin;
+    }
 
     // protected $table = 'admins_tabel';
 
     // AFTER
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
 
     /**
      * The attributes that should be hidden for serialization.
