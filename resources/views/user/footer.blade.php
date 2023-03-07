@@ -111,7 +111,7 @@
                         <p><i class="fas fa-home me-3 text-secondary"></i> Bumdes, Desa Tunjungsari</p>
                         <p>
                             <i class="fas fa-envelope me-3 text-secondary"></i>
-                            BumdesTunsa@gmail.com
+                            bumdessarirejekitunjungsari@gmail.com
                         </p>
                         <p><i class="fas fa-phone me-3 text-secondary"></i> + 62 234 567 88</p>
                         <p><i class="fas fa-print me-3 text-secondary"></i> + 62 234 567 89</p>

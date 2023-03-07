@@ -286,6 +286,46 @@
         </div>
     </section>
 
+    <div class="container">
+        <div class="m-3 py-1">
+            <div class="paket-h1">
+                <h2 class="text-center mb-5"><strong>Jadi Agen kami</strong></h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+
+                    {{-- <h4><strong>Bergabung bersama kami</strong></h4> --}}
+                    <p align="justify">Anda ingin memberikan akses internet yang lebih baik untuk pelanggan Anda?
+                        Bergabunglah dengan
+                        kami sebagai penyedia paket internet rumahan dan nikmati keuntungan dari bisnis yang berkembang
+                        pesat di era digital ini.
+
+                        Dengan bergabung sebagai penyedia paket internet rumahan, Anda akan memiliki kesempatan untuk
+                        menghadirkan koneksi internet yang cepat dan stabil untuk pelanggan Anda di rumah. Kami
+                        menawarkan berbagai pilihan paket internet dengan kecepatan tinggi dan harga yang terjangkau,
+                        yang akan memenuhi kebutuhan setiap pelanggan Anda.
+
+                        Tidak perlu khawatir tentang infrastruktur dan teknologi, karena kami akan memberikan dukungan
+                        penuh dan bantuan dalam membangun jaringan internet Anda sendiri. Anda akan memiliki kesempatan
+                        untuk mengembangkan bisnis Anda dengan memperluas jaringan pelanggan dan meningkatkan
+                        penghasilan Anda.
+
+                        Jadi, jika Anda siap untuk memulai bisnis internet rumahan yang menguntungkan, jangan ragu untuk
+                        bergabung dengan kami sebagai penyedia paket internet rumahan. Daftarkan diri Anda sekarang dan
+                        jadilah bagian dari bisnis yang akan terus berkembang di masa depan!
+                    </p><br>
+                    <p>Untuk informasi lebih lengkap anda bisa tanyakan ke bubble chat dipojok kanan bawah</p>
+                    <a href="/agen"> <button type="button" class="btn btn-primary btn-rounded">
+                            Selengkapnya</button></a>
+                </div>
+                <div class="col-md-6 justify-content-end">
+                    <img src="{{ asset('pengguna/img/kerjasama.png') }}" width="90%" alt="gambar FAQ"
+                        class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section id="bantuan" class="m-3 py-1">
         <div class="container">
             <div class="row align-items-center">
@@ -300,7 +340,7 @@
                         internet kami, silakan hubungi kami melalui:</p>
                     <ul>
                         <li><i class="fa fa-phone"></i> 0800-123-4567 (24 jam)</li>
-                        <li><i class="fa fa-envelope"></i> BumdesTunsa@gmail.com</li>
+                        <li><i class="fa fa-envelope"></i> bumdessarirejekitunjungsari@gmail.com</li>
                         <li><i class="fa fa-comment"></i> Live chat (24 jam)</li>
                     </ul>
                     <p>Kami akan segera merespon aduan Anda dan memberikan solusi terbaik untuk Anda.</p>

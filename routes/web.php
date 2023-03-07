@@ -91,6 +91,9 @@ Route::get('/create', function () {
 Route::get('/FAQ', function () {
     return view('user.FAQ');
 });
+Route::get('/agen', function () {
+    return view('user.agen');
+});
 
 
 //fungsi untuk user Register
