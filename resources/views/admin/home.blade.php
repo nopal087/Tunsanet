@@ -52,6 +52,18 @@
                             <a href="#" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
+                        <div class="small-box bg-primary">
+                            <div class="inner">
+                                <h3>{{ $TotalAgen }}<sup style="font-size: 20px"></sup></h3>
+
+                                <p>Data Agen</p>
+                            </div>
+                            <div class="icon">
+                                <i class="icon ion-android-people"></i>
+                            </div>
+                            <a href="/Agen" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
 
 
                     </div>

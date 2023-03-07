@@ -66,6 +66,7 @@
                     <li><a class="dropdown-item" href="#paket">Paket Internet</a></li>
                     <li><a class="dropdown-item" href="#kelebihan">Kelebihan</a></li>
                     <li><a class="dropdown-item" href="#kontak">Kontak</a></li>
+                    <li><a class="dropdown-item" href="/agen">Daftar Agen</a></li>
                 </ul>
             </div>
             <!-- Avatar -->

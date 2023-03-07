@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agen;
 use App\Models\order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -239,7 +240,8 @@ class UserController extends Controller
         $Totaltransaksi = order::all()->count();
         $Totalpengguna = Pengguna::all()->count();
         $Totaltransaksi = order::all()->count();
+        $TotalAgen = Agen::all()->count();
 
-        return view('admin.home', compact('Totaltagihan', 'Totaltransaksi', 'Totalpengguna'));
+        return view('admin.home', compact('Totaltagihan', 'Totaltransaksi', 'Totalpengguna', 'TotalAgen'));
     }
 }

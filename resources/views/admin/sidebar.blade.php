@@ -44,7 +44,15 @@
                      <a href="Lpengguna" class="nav-link">
                          <i class="nav-icon fas fa-user"></i>
                          <p>
-                             Pengguna
+                             Data Pengguna
+                         </p>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="Agen" class="nav-link">
+                         <i class="nav-icon fas fa-user"></i>
+                         <p>
+                             Data Agen
                          </p>
                      </a>
                  </li>

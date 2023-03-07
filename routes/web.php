@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AgenController;
 use App\Http\Controllers\BuatTagihanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -186,3 +187,14 @@ Route::get('/admin/header', [LaporanController::class, 'date']);
 
 // Cetak Invoice
 Route::get('/invoice.cetak/{id}', [InvoiceController::class, 'print'])->name('invoice.cetak');
+
+// menangani Agen 
+Route::get('/Agen', [AgenController::class, 'index_agen'])->name('agen');
+Route::get('/admin/menu/TambahAgen', [AgenController::class, 'create']);
+Route::post('/admin/menu/TambahAgen/store', [AgenController::class, 'store']);
+Route::get('/admin/menu/{id}/editAgen', [AgenController::class, 'edit']);
+Route::put('/admin/menu/{id}', [AgenController::class, 'update']);
+Route::delete('/admin/menu/Agen/{id}', [AgenController::class, 'destroy']);
+Route::get('/admin/manual/lunas/{id}', [AgenController::class, 'manual']);
+Route::get('/Agen', [AgenController::class, 'cari'])->name('DataAgen');
+Route::post('/user/agen', [AgenController::class, 'ajukan']);

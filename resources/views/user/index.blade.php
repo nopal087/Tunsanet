@@ -314,7 +314,8 @@
                         bergabung dengan kami sebagai penyedia paket internet rumahan. Daftarkan diri Anda sekarang dan
                         jadilah bagian dari bisnis yang akan terus berkembang di masa depan!
                     </p><br>
-                    <p>Untuk informasi lebih lengkap anda bisa tanyakan ke bubble chat dipojok kanan bawah</p>
+                    <p>Untuk informasi lebih lengkap anda bisa tanyakan ke bubble chat dipojok kanan bawah, atau tekan
+                        selengkapnya</p>
                     <a href="/agen"> <button type="button" class="btn btn-primary btn-rounded">
                             Selengkapnya</button></a>
                 </div>

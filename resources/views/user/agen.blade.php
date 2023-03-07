@@ -111,15 +111,78 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-center">Jika anda berminat menjadi agen kami, bisa hubungi admin di dengan menekan
-                        tombol whatsapp dibawah
-                    </p>
-                    <div class="text-center mt-3">
-                        <a class="btn btn-success btn-lg"
-                            href="https://wa.me/6285712666154?text=Hallo%20petugas%20bumdes%20saya%20ingin%20mendaftar%20menjadi%20agen"
-                            target="blank">
-                            <i class="fab fa-whatsapp"></i> Whatsapp</a>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="paket-h1 mt-4">
+                                <h4 class="text-center mb-5"><strong>Papan Informasi</strong></h4>
+                            </div>
+                            <div class="accordion" id="accordionPanelsStayOpenExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                            aria-controls="panelsStayOpen-collapseOne">
+                                            <strong>Informasi</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="panelsStayOpen-headingOne">
+                                        <div class="accordion-body">
+                                            Setelah anda mengisi form pendaftaran, silahkan tunggu
+                                            dihubungi oleh pihak admin, atau anda bisa melakukan konfirmasi kepada
+                                            admin agar proses pengajuan Agen dapat segera diproses, untuk konfirmasi
+                                            silahkan tekan tombol Whatsapp dibawah <br>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <a class="btn btn-success btn-lg"
+                                    href="https://wa.me/6285712666154?text=Hallo%20petugas%20bumdes%20saya%20ingin%20Konfirmasi%20pendaftaran%20agen"
+                                    target="blank">
+                                    <i class="fab fa-whatsapp"></i> Whatsapp</a>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <div class="paket-h1 mt-4">
+                                <h4 class="text-center mb-5"><strong>Daftar Menjadi Agen</strong></h4>
+                            </div>
+                            <div class="card card-secondary">
+                                <form action="/user/agen" id="join" method="POST">
+                                    @csrf
+                                    <div class="card-body">
+                                        <div class="form-group mb-3">
+                                            <label for="nama">Nama Lengkap</label>
+                                            <input type="text" id="nama" name="nama" class="form-control"
+                                                required>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="no_hp">No.Hanphone (Wa)</label>
+                                            <input type="text" id="phone" name="phone" class="form-control"
+                                                id="no_hp" value="" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="alamat">Alamat</label>
+                                            <textarea class="form-control" id="alamat" name="alamat" id="" cols="30" rows="5" required></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-body -->
+
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary">Ajukan</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- right column -->
+
                     </div>
+                    <p class="text-center mt-4">
+                    </p>
                 </div>
             </section>
             <br>
@@ -132,6 +195,7 @@
     @include('user/footer')
     @include('user/chat_bubble')
 </body>
+
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
 
