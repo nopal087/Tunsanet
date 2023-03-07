@@ -2,6 +2,33 @@
 <img src="https://github.com/nopal087/Tunsanet/blob/master/Screenshot%20(140).png" width="100%" alt="preview">
 <img src="https://github.com/nopal087/Tunsanet/blob/master/Screenshot%20(142).png" width="100%" alt="preview">
 
+## Persyaratan
+- PHP versi 8.1 atau diatasnya **[PHP versi 8.1](https://www.php.net/releases/8.0/en.php)**
+- Composer versi 2.4.1 atau diatasnya **[Composer Versi 2.4.1](https://getcomposer.org/changelog/2.4.1)**
+## Installasi 
+composer,  install terlebih dahulu pada link diatas, lalu
+cek versi composer dengan perintah, pastikan versi composer sesuai
+```html
+$ composer -V 
+```
+cek versi php pastikan sesuai, ketik perintah 
+```html
+$ php --v
+```
+pastikan database sesuai dengan file `.env
+```html
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel #sesuaikan dengan database anda
+DB_USERNAME=root
+DB_PASSWORD=
+```
+Untuk menjalankan project gunakan peirntah
+```html
+$ php artisan run serve 
+```
+
 ## ✌️ 1. TENTANG TUNSANET
 
 Tunsanet merupakan Badan Usaha Milik Desa Tunjungsari yang mengelola usaha desa yaitu Layanan Internet, layanan internet yang disebarkan di desa Tunjungsari dengan tujuan untuk meningkatkan perekonomian desa dengan memberikan layanan Internet kepada para warga desa.
