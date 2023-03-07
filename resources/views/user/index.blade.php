@@ -339,9 +339,9 @@
                         layanan
                         internet kami, silakan hubungi kami melalui:</p>
                     <ul>
-                        <li><i class="fa fa-phone"></i> 0800-123-4567 (24 jam)</li>
+                        <li><i class="fa fa-phone"></i> +62 895-3884-75842 (24 jam) </li>
                         <li><i class="fa fa-envelope"></i> bumdessarirejekitunjungsari@gmail.com</li>
-                        <li><i class="fa fa-comment"></i> Live chat (24 jam)</li>
+                        <li><i class="fa fa-comment"></i> Live chat (24 jam) dengan chat di Bubble chat</li>
                     </ul>
                     <p>Kami akan segera merespon aduan Anda dan memberikan solusi terbaik untuk Anda.</p>
                 </div>

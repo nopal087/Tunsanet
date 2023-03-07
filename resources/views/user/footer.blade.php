@@ -113,8 +113,7 @@
                             <i class="fas fa-envelope me-3 text-secondary"></i>
                             bumdessarirejekitunjungsari@gmail.com
                         </p>
-                        <p><i class="fas fa-phone me-3 text-secondary"></i> + 62 234 567 88</p>
-                        <p><i class="fas fa-print me-3 text-secondary"></i> + 62 234 567 89</p>
+                        <p><i class="fas fa-phone me-3 text-secondary"></i> +62 895-3884-75842</p>
                     </div>
                     <!-- Grid column -->
                 </div>

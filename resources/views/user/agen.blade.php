@@ -75,10 +75,9 @@
             <section id="kelebihan" class="rounded-9 m-3 py-5">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6 col-lg-6">
+                        <div class="col-md-6 col-lg-6">
                             <div class="card mb-4 rounded-9 shadow-md">
                                 <div class="card-body d-flex">
-                                    <img src="{{ asset('pengguna/img/Router.jpg') }}" width="50%" alt="">
                                     <div>
                                         <h4 class="card-title">Router</h4>
                                         <p class="card-text"> Kami akan memberikan perangkat router yang
@@ -88,61 +87,44 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-lg-6">
+                        <div class="col-md-6 col-lg-6">
                             <div class="card mb-4 rounded-9 shadow-md">
                                 <div class="card-body d-flex">
-                                    {{-- <img class="mr-4" src="{{ asset('pengguna/img/2.png') }}" width="50%"
-                                alt="Kecepatan Tinggi"> --}}
-                                    <img src="{{ asset('pengguna/img/pemasangan.png') }}" width="50%" alt="">
                                     <div>
                                         <h4 class="card-title">Perangkat Pendukung</h4>
                                         <p class="card-text">Kami akan memberikan perangkat pendukung
                                             yang diperlukan untuk membangun
-                                            jaringan internet yang kuat dan stabil dan melakukan pemasangan.</p>
+                                            jaringan internet yang kuat dan stabil.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="card mb-4 rounded-9 shadow-md">
+                                <div class="card-body d-flex">
+                                    <div>
+                                        <h4 class="card-title">Pemasangan gratis</h4>
+                                        <p class="card-text">Dapatkan pemasangan GRATIS dengan menjadi agen! Nikmati
+                                            kenyamanan tanpa biaya tambahan.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <p class="text-center">Jika anda berminat menjadi agen kami, bisa hubungi admin di dengan menekan
+                        tombol whatsapp dibawah
+                    </p>
+                    <div class="text-center mt-3">
+                        <a class="btn btn-success btn-lg"
+                            href="https://wa.me/6285712666154?text=Hallo%20petugas%20bumdes%20saya%20ingin%20mendaftar%20menjadi%20agen"
+                            target="blank">
+                            <i class="fab fa-whatsapp"></i> Whatsapp</a>
+                    </div>
                 </div>
             </section>
             <br>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="mt-4  text-center">
-                        <h2>Daftar Sekarang</h2>
-                    </div>
-                    <form action="" method="POST">
 
-                        @csrf
-                        <div class="mb-3">
-                            <label for="nama" class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama...">
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">No Hanphone</label>
-                            <input type="text" class="form-control" id="phone" placeholder="628579999912">
-                        </div>
-                        <div class="mb-3">
-                            <label for="alamat" class="form-label">Alamat Lengkap</label>
-                            <textarea class="form-control" id="alamat" rows="3"></textarea>
-                        </div>
-                        @auth
-                            <button type="submit" class="btn btn-primary">Ajukan</button>
-                        @endauth
-                        @guest
-                            <a href="/login" class="btn btn-primary">Ajukan</a>
-                        @endguest
-                    </form>
-                    <div class="mt-3" align="justify">
-                        <p>jika ada yang ingin ditanyakan sebelum mendaftar anda dapat bertanya pada bubble chat pada
-                            pojok kanan bawah!.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 justify-content-end mb-4">
-                    <img src="{{ asset('pengguna/img/joinus.png') }}" width="90%" alt="gambar FAQ" class="img-fluid">
-                </div>
             </div>
         </div>
     </div>
