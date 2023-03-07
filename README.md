@@ -6,11 +6,22 @@
 - PHP versi 8.1 atau diatasnya **[PHP versi 8.1](https://www.php.net/releases/8.0/en.php)**
 - Composer versi 2.4.1 atau diatasnya **[Composer Versi 2.4.1](https://getcomposer.org/changelog/2.4.1)**
 ## Installasi 
+copy link repository github berikut :
+```html
+https://github.com/nopal087/Tunsanet.git
+```
+gunakan git clone untuk melakukan clone repository
+```html
+$ git clone https://github.com/nopal087/Tunsanet.git
+```
 composer,  install terlebih dahulu pada link diatas, lalu
 cek versi composer dengan perintah, pastikan versi composer sesuai
 ```html
 $ composer -V 
-```
+
+#jika sudah memiliki composer namun versi composer masih dibawah anda dapat mengupdate dengan perintah berikut 
+
+$ composer update
 cek versi php pastikan sesuai, ketik perintah 
 ```html
 $ php --v
