@@ -22,6 +22,7 @@ $ composer -V
 #jika sudah memiliki composer namun versi composer masih dibawah anda dapat mengupdate dengan perintah berikut 
 
 $ composer update
+```
 cek versi php pastikan sesuai, ketik perintah 
 ```html
 $ php --v
