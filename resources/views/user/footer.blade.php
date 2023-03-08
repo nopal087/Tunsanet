@@ -125,7 +125,7 @@
         <!-- Copyright -->
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
             © 2023 Copyright:
-            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">NopalTech</a>
+            <a class="text-reset fw-bold" href="https://github.com/nopal087/Tunsanet">NopalTech</a>
         </div>
         <!-- Copyright -->
     </footer>

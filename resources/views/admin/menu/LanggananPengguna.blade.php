@@ -30,8 +30,8 @@
                         <div class="card-header">
 
                             <a class="btn btn-primary btn-sm" href="/admin/menu/Tambahpengguna"><i class="fas fa-user-edit">
-                                    Pengguna</i></a>
-                            <a class="btn btn-primary btn-sm" href="/btagihan"><i class="fas fa-edit"> Tagihan
+                                    Tambah Pengguna</i></a>
+                            <a class="btn btn-primary btn-sm" href="/btagihan"><i class="fas fa-edit">Buat Tagihan
                                 </i></a>
                         </div>
                         <!-- /.card-header -->

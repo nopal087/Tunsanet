@@ -20,6 +20,19 @@
 
     @include ('app')
 </head>
+<style>
+    .alert {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 0.25rem;
+    }
+
+    .alert-success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+    }
+</style>
 
 <body>
     <!-- Navbar -->
@@ -27,7 +40,11 @@
     <!-- Navbar -->
     <div class="m-3 py-5">
 
-
+        @if (session()->has('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+        @endif
         <div class="container">
             <div class="paket-h1 mt-4">
                 <h4 class="text-center mb-5"><strong>Dengan menjadi Agen Anda akan mendapatkan :</strong></h4>
@@ -131,7 +148,9 @@
                                             Setelah anda mengisi form pendaftaran, silahkan tunggu
                                             dihubungi oleh pihak admin, atau anda bisa melakukan konfirmasi kepada
                                             admin agar proses pengajuan Agen dapat segera diproses, untuk konfirmasi
-                                            silahkan tekan tombol Whatsapp dibawah <br>
+                                            silahkan tekan tombol Whatsapp dibawah <br><br>
+                                            pastikan nomor yang anda masukan adalah nomor yang dapat dihubungi atau yang
+                                            digunakan sebagai nomor whatsapp.
                                             <hr>
                                         </div>
                                     </div>
@@ -147,25 +166,26 @@
                         </div>
                         <div class="col-md-6 mb-2">
                             <div class="paket-h1 mt-4">
-                                <h4 class="text-center mb-5"><strong>Daftar Menjadi Agen</strong></h4>
+                                <h4 class="text-center mb-5" id="daftaragen"><strong>Daftar Menjadi Agen</strong></h4>
                             </div>
                             <div class="card card-secondary">
-                                <form action="/user/agen" id="join" method="POST">
+                                <form action="/user/agen" method="POST">
                                     @csrf
                                     <div class="card-body">
                                         <div class="form-group mb-3">
                                             <label for="nama">Nama Lengkap</label>
-                                            <input type="text" id="nama" name="nama" class="form-control"
-                                                required>
+                                            <input type="text" id="nama" name="nama"
+                                                placeholder="Masukkan Nama Lengkap..." class="form-control" required>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <label for="no_hp">No.Hanphone (Wa)</label>
+                                            <label for="no_hp">No.Hanphone (62)</label>
                                             <input type="text" id="phone" name="phone" class="form-control"
-                                                id="no_hp" value="" required>
+                                                id="no_hp" placeholder="Gunakan format 6285714515151" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="alamat">Alamat</label>
-                                            <textarea class="form-control" id="alamat" name="alamat" id="" cols="30" rows="5" required></textarea>
+                                            <textarea class="form-control" id="alamat" placeholder="Masukkan Alamat lengkap.." name="alamat" id=""
+                                                cols="30" rows="5" required></textarea>
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
@@ -173,7 +193,6 @@
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary">Ajukan</button>
                                     </div>
-
                                 </form>
                             </div>
                         </div>

@@ -45,6 +45,7 @@
                                     <tr class="bg-primary-subtle">
                                         <th>No.</th>
                                         <th>ID</th>
+                                        <th>Tanggal Ajuan</th>
                                         <th>Nama</th>
                                         <th>No.Telp</th>
                                         <th>Alamat</th>
@@ -57,6 +58,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $ag->id }}</td>
+                                            <td>{{ $ag->updated_at->translatedFormat('d F Y, H:i:s') }}</td>
                                             <td>{{ $ag->nama }}</td>
                                             <td>{{ $ag->phone }}</td>
                                             <td>{{ $ag->alamat }}</td>
@@ -64,7 +66,7 @@
                                                     class="badge {{ $ag->status == 'Aktif' ? 'badge-success' : 'badge-danger' }}">{{ $ag->status == 'Aktif' ? 'Aktif' : 'Tidak Aktif' }}</label>
                                             </td>
                                             <td class="project-actions">
-                                                <a class="btn btn-info btn-sm"
+                                                <a class="btn btn-success btn-sm"
                                                     href="/admin/manual/lunas/{{ $ag->id }}">
                                                     <i class="fas fa-check"></i>
                                                     </i>
@@ -72,6 +74,11 @@
                                                 <a class="btn btn-info btn-sm"
                                                     href="admin/menu/{{ $ag->id }}/editAgen">
                                                     <i class="fas fa-pencil-alt">
+                                                    </i>
+                                                </a>
+                                                <a class="btn btn-success btn-sm" target="_blank"
+                                                    href="https://wa.me/{{ $ag->phone }}?text=Terimakasih%20telah%20melakukan%20pendaftaran%20agen,%20ajuan%20anda%20sudah%20kami%20setujui,%20kami%20akan%20segera%20melakukan%20pemasangan%20dirumah%20anda,%20jika%20ada%20yang%20ingin%20ditanyakan%20bisa%20balas%20chat%20ini,%20terimakasih%20">
+                                                    <i class="fab fa-whatsapp"></i>
                                                     </i>
                                                 </a>
                                                 <div class="btn-group" role="group" aria-label="Basic example">

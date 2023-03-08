@@ -37,12 +37,20 @@
                                         <textarea class="form-control" name="alamat" id="" cols="30" rows="5"
                                             placeholder="Masukkan alamat lengkap" required></textarea>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Status</label>
+                                        <select name="status" id="" class="form-control" required>
+                                            <option value="">Pilih Status</option>
+                                            <option value="Aktif">Aktif</option>
+                                            <option value="Tidak Aktif">Tidak Aktif</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary">Simpan</button>
-                                    <a href="/Lpengguna" class="btn btn-danger">Batal</a>
+                                    <a href="/Agen" class="btn btn-danger">Batal</a>
                                 </div>
                             </form>
                         </div>
@@ -64,7 +72,8 @@
                                     <div class="accordion-body">
                                         <strong>Tambah Agen</strong>, dilakukan ketika terdapat pengguna yang ingin
                                         mendaftar menjadi seorang agen dan bekerja sama dengan Tunsanet untuk layanan
-                                        internet <br>
+                                        internet <br><br>
+                                        gunakan format nomor hanphone dengan awalan 62 contoh : 6285712666152.
                                         <hr>
                                     </div>
                                 </div>

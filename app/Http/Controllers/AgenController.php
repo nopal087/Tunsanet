@@ -26,6 +26,13 @@ class AgenController extends Controller
         Agen::create($request->except(['_token']));
         return redirect('/Agen');
     }
+    public function ajukan(Request $request)
+    {
+        // dd($request->all());
+        session()->flash('success', 'Ajuan berhasil dikirim, silahkan konfirmasi ke admin agar proses persetujuan diproses');
+        Agen::create($request->except(['_token']));
+        return redirect('/agen');
+    }
 
     public function edit($id)
     {

@@ -13,6 +13,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- /.container-fluid -->
             <div class="row">
                 <div class="col-4">
