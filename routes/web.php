@@ -146,6 +146,11 @@ Route::post('/logout', [UserController::class, 'logout_admin'])->name('logout_ad
 
 //menampilkan halaman buat tagihan
 Route::get('/btagihan', [BuatTagihanController::class, 'btagihan']);
+Route::get('/UpdateLinkPayment', [BuatTagihanController::class, 'UpdateLink'])->name('UpdateLinkPayment');
+Route::post('/admin/menu/storeLink', [BuatTagihanController::class, 'storeLink']);
+Route::get('/admin/menu/paymentlink/{id}/edit', [BuatTagihanController::class, 'edit']);
+Route::put('/admin/menu/paymentlink/{id}', [BuatTagihanController::class, 'update']);
+
 
 
 //menampilkan halaman beberapa langkan untuk melakukan order/transaksi

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\order;
+use App\Models\PayementLink;
 use App\Models\Pengguna;
 use App\Models\Tagihan;
 use App\Models\User;
@@ -76,6 +77,7 @@ class BuatTagihanController extends Controller
             return view('admin.menu.LihatTagihan', compact('tagihan', 'datatagihan', 'request', 'filter', 'gambar'))->with('status', 'Data tidak ada');
         }
 
+
         return view('admin.menu.LihatTagihan', compact('tagihan', 'request', 'datatagihan', 'filter'));
     }
 
@@ -113,5 +115,33 @@ class BuatTagihanController extends Controller
         $tagihan = Tagihan::Find($id);
         $tagihan->delete();
         return redirect('/LihatTagihan');
+    }
+
+
+    // menampilkan halaman tambah link
+    public function UpdateLink()
+    {
+        $Paymentlink = PayementLink::orderBy('id', 'desc')->latest()->paginate();
+        return view('admin.menu.UpdateLinkPayment', compact('Paymentlink'));
+    }
+
+    public function storeLink(Request $request)
+    {
+        // dd($request->all());
+        PayementLink::create($request->except(['_token']));
+        return redirect('/UpdateLinkPayment');
+    }
+
+    public function edit($id)
+    {
+        $Paymentlink = PayementLink::Find($id);
+        return view('admin.menu.editPaymentLink', compact(['Paymentlink']));
+    }
+
+    public function update($id, Request $request)
+    {
+        $Paymentlink = PayementLink::Find($id);
+        $Paymentlink->update($request->except(['_token']));
+        return redirect('/UpdateLinkPayment');
     }
 }

@@ -48,6 +48,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        <div class="card-header">
+
+                            <a class="btn btn-primary btn-sm" href="/UpdateLinkPayment"><i class="fas fa-user-edit">
+                                    Buat Link Tagihan</i></a>
+                        </div>
                         <div class="card-body table-responsive p-0">
                             @if (count($datatagihan) > 0)
                                 <table class="table table-hover text-nowrap mb-3">
@@ -65,6 +70,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                         @foreach ($tagihan as $t)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
@@ -84,11 +90,21 @@
                                                         <i class="fas fa-check"></i>
                                                         </i>
                                                     </a>
-                                                    <a class="btn btn-success btn-sm" target="_blank"
+                                                    {{-- <a class="btn btn-success btn-sm" target="_blank"
                                                         href="https://wa.me/{{ $t->phone }}?text=kepada%20yang%20terhormat%20bapak/ibu%20pengguna%20layanan%20paket%20internet%20Bumdes%20Desa%20Tunjungsari,%20hari %20ini%20adalah%20masa%20tagihan%20pembayaran%20internet %20anda,%20anda%20dapat%20melakukan%20pembayaran%20secara%20online%20melalui%20link%20berikut.%0ALink pembayaran : %0Aatau%20anda%20dapat%20melakukan%20pembayaran%20manual%20bisa%20hubungi%20petugas%20:%20(085712666154)%20atau%20datang%20ke%20kantor%20bumdes.%0ATerimakasih">
                                                         <i class="fab fa-whatsapp"></i>
                                                         </i>
+                                                    </a> --}}
+                                                    <a class="btn btn-success btn-sm" target="_blank"
+                                                        href="https://wa.me/{{ $t->phone }}?text=kepada%20yang%20terhormat%20*{{ $t->nama }}*%20pengguna%20layanan%20paket%20internet%20Bumdes%20Desa%20Tunjungsari,%20hari%20ini%20adalah%20masa%20tagihan%20pembayaran%20internet%20anda,%20anda%20dapat%20melakukan%20pembayaran%20secara%20online%20melalui%20link%20berikut:%0ALink%20pembayaran%20:%20
+                                                        {{ $t->paket == 'Diamond'
+                                                            ? 'https://app.sandbox.midtrans.com/payment-links/1676782088119PKTDiamond'
+                                                            : ($t->paket == 'Gold'
+                                                                ? 'https://app.sandbox.midtrans.com/payment-links/1676782031099PKTGold'
+                                                                : 'https://app.sandbox.midtrans.com/payment-links/1676781876462PKTSilver') }}%0Aatau%20anda%20dapat%20melakukan%20pembayaran%20manual%20bisa%20hubungi%20petugas%20:%20(085712666154)%20atau%20datang%20ke%20kantor%20bumdes.%0ATerimakasih">
+                                                        <i class="fab fa-whatsapp"></i>
                                                     </a>
+
 
                                                     <div class="btn-group" role="group" aria-label="Basic example">
 
