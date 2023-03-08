@@ -51,7 +51,7 @@
                         <div class="card-header">
 
                             <a class="btn btn-primary btn-sm" href="/UpdateLinkPayment"><i class="fas fa-user-edit">
-                                    Buat Link Tagihan</i></a>
+                                    Link Tagihan</i></a>
                         </div>
                         <div class="card-body table-responsive p-0">
                             @if (count($datatagihan) > 0)

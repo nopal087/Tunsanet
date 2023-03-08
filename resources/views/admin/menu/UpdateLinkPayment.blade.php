@@ -24,6 +24,7 @@
                                     <div class="form-group">
                                         <label for="paket">Paket</label>
                                         <select class="form-control" id="paket" name="paket">
+                                            <option value="">Pilih Paket Internet</option>
                                             <option value="Diamond">Diamond</option>
                                             <option value="Gold">Gold</option>
                                             <option value="Silver">Silver</option>
