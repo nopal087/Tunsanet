@@ -198,7 +198,7 @@ Route::get('/Agen', [AgenController::class, 'index_agen'])->name('agen');
 Route::get('/admin/menu/TambahAgen', [AgenController::class, 'create']);
 Route::post('/admin/menu/TambahAgen/store', [AgenController::class, 'store']);
 Route::get('/admin/menu/{id}/editAgen', [AgenController::class, 'edit']);
-Route::put('/admin/menu/{id}', [AgenController::class, 'update']);
+Route::put('/admin/menu/update/{id}', [AgenController::class, 'update']);
 Route::delete('/admin/menu/Agen/{id}', [AgenController::class, 'destroy']);
 Route::get('/admin/manual/lunas/{id}', [AgenController::class, 'manual']);
 Route::get('/Agen', [AgenController::class, 'cari'])->name('DataAgen');

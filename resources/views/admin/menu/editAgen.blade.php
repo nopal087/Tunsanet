@@ -26,7 +26,7 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="/admin/menu/{{ $agen->id }}" method="POST">
+                            <form action="/admin/menu/update/{{ $agen->id }}" method="POST">
                                 @method('put')
                                 @csrf
                                 <div class="card-body">

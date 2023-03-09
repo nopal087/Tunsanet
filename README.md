@@ -65,7 +65,7 @@ SIBUMDES Tunsanet diharapkan dapat membantu pemerintah desa dalam beberapa hal b
 ## 👌 3. FITUR SIBUMDES
 - Terdapat dua User ( User dan Admin ).
 - Dapat melakukan pembayaran secara cashless dengan menggunakan payment gateway dari **[Midtrans](https://midtrans.com/id)**
-- Dapat melakukan pengiriman pesan tagihan dengan menggunakan **[Whatsapp](https://www.whatsapp.com/?lang=id)**
+- Dapat melakukan pengiriman pesan tagihan dengan menggunakan **[Whatsapp](https://www.whatsapp.com/?lang=id)** serta mengirim paymeny link dari **[Midtrans](https://midtrans.com/id)**
 - Dapat melakukan pengelolaan pengguna internet yang berlangganan.
 - Menerima pembayaran secara Cahsless
 
