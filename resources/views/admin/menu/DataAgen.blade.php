@@ -67,7 +67,7 @@
                                             </td>
                                             <td class="project-actions">
                                                 <a class="btn btn-success btn-sm"
-                                                    href="/admin/manual/lunas/{{ $ag->id }}">
+                                                    href="/admin/manual/status/lunas/{{ $ag->id }}">
                                                     <i class="fas fa-check"></i>
                                                     </i>
                                                 </a>
