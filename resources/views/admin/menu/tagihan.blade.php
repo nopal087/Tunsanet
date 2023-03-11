@@ -1,6 +1,16 @@
 @extends('admin/panel')
 {{-- @include ('app') --}}
 @section('content')
+
+    <style>
+        /* style tabel */
+        td {
+            max-width: 200px;
+            /* ukuran maksimum kolom tabel */
+            word-wrap: break-word;
+            /* memastikan teks panjang tidak melebar */
+        }
+    </style>
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">

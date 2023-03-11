@@ -1,6 +1,14 @@
 @extends('admin/panel')
 {{-- @include ('app') --}}
 @section('content')
+    <style>
+        td {
+            max-width: 200px;
+            /* ukuran maksimum kolom tabel */
+            word-wrap: break-word;
+            /* memastikan teks panjang tidak melebar */
+        }
+    </style>
     {{-- {{ json_encode($data) }} --}}
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -37,7 +45,7 @@
                         <!-- /.card-header -->
                         <div class="card-body table-bordered-responsive p-0">
                             @if (count($datapengguna) > 0)
-                                <table class="table table-bordered text-nowrap mb-3">
+                                <table class="table table-bordered text-wrap mb-3" border="2">
                                     <thead>
                                         <tr class="bg-primary-subtle">
                                             <th>No.</th>

@@ -50,7 +50,7 @@
                  </li>
                  <li class="nav-item">
                      <a href="Agen" class="nav-link">
-                         <i class="nav-icon fas fa-user"></i>
+                         <i class="nav-icon fas fa-user-friends"></i>
                          <p>
                              Data Agen
                          </p>
@@ -70,6 +70,14 @@
                          <i class="nav-icon fas fa-edit"></i>
                          <p>
                              Buat Tagihan
+                         </p>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="/LihatTagihan" class="nav-link">
+                         <i class=" nav-icon fas fa-file-invoice"></i>
+                         <p>
+                             Daftar Tagihan
                          </p>
                      </a>
                  </li>
