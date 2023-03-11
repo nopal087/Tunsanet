@@ -9,9 +9,6 @@
     {{-- bootstrap 5 --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
-
-
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -39,6 +36,10 @@
 
     {{-- data tables --}}
     {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css"> --}}
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/buttons/2.0.0/css/buttons.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -108,23 +109,24 @@
         integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous">
     </script>
 
+    <!-- DataTables JavaScript -->
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
 
-    <!-- DataTables -->
-    {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"> --}}
-    <link href="https://cdn.datatables.net/v/dt/dt-1.13.3/datatables.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    {{-- data table cetak --}}
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js"></script>
 
-    <!-- Buttons -->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.flash.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
-
+    {{-- datatabel --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
 
     {{-- datatables js --}}
     {{-- <script>
@@ -136,47 +138,10 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#myTable').DataTable({
+                targets: [-1], // -1 mengacu pada kolom terakhir (dalam hal ini kolom "aksi")
+                visible: true, // kolom "aksi" tidak terlihat
                 dom: 'Bfrtip',
-                "paging": true,
-                "lengthChange": false,
-                "searching": true,
-                "ordering": true,
-                "info": true,
-                "autoWidth": true,
-                "language": {
-                    "paginate": {
-                        "next": "Next",
-                        "previous": "Previous"
-                    },
-                    "info": "Showing _START_ to _END_ of _TOTAL_ entries"
-                },
-                buttons: [{
-                        text: '<i class="fa fa-copy"></i> Copy',
-                        titleAttr: 'copy',
-                        className: 'btn btn-primary'
-
-                    },
-                    {
-                        text: '<i class="fas fa-file-csv"></i> CSV',
-                        titleAttr: 'csv',
-                        className: 'btn btn-primary'
-                    },
-                    {
-                        text: '<i class="fas fa-file-excel"></i> Excel',
-                        titleAttr: 'excel',
-                        className: 'btn btn-primary'
-                    },
-                    {
-                        text: '<i class="fas fa-file-pdf"></i> PDF',
-                        titleAttr: 'pdf',
-                        className: 'btn btn-primary'
-                    },
-                    {
-                        text: '<i class="fas fa-print"></i> PRINT',
-                        titleAttr: 'print',
-                        className: 'btn btn-primary'
-                    }
-                ]
+                buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
             });
         });
     </script>

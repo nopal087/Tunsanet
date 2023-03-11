@@ -46,7 +46,7 @@
                                     Tambah Agen</i></a>
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body table-bordered-responsive p-0 mx-3">
+                        <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             {{-- @if (count($datapengguna) > 0) --}}
                             <table class="table table-bordered text-wrap mb-3" border="2" id="myTable">
                                 <thead>

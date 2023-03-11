@@ -75,7 +75,7 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 {{-- <td>{{ $t->id_pengguna }}</td> --}}
-                                                <td>{{ $t->tanggal }}</td>
+                                                <td>{{ date('d F Y', strtotime($t->tanggal)) }}</td>
                                                 <td>{{ $t->nama }}</td>
                                                 <td>{{ $t->phone }}</td>
                                                 <td>{{ $t->paket }}</td>

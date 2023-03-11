@@ -85,16 +85,6 @@
                                                         <td>
                                                             <div class="row">
                                                                 <div class="col">
-                                                                    {{-- <select name="tagihan[]" id=""
-                                                                        class="form-control" required>
-                                                                        <option value="">Pilih Tagihan</option>
-                                                                        <option value="150000">Rp. 150,000
-                                                                        </option>
-                                                                        <option value="180000">Rp. 180,000
-                                                                        </option>
-                                                                        <option value="220000">Rp. 220,000
-                                                                        </option>
-                                                                    </select> --}}
                                                                     <select name="tagihan[]" class="form-control" required>
                                                                         {{-- <option value="">Pilih Tagihan</option> --}}
                                                                         @if ($p->paket == 'Silver')
