@@ -1,7 +1,6 @@
 @extends('admin/panel')
 {{-- @include ('app') --}}
 @section('content')
-
     <style>
         /* style tabel */
         td {
@@ -55,14 +54,14 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-body table-responsive p-0">
+                        <div class="card-body table-bordered-responsive p-0">
                             @if (count($datatransaksi) > 0)
-                                <table class="table table-hover text-nowrap mb-3">
+                                <table class="table table-bordered text-wrap mb-3" border="2" id="myTable">
                                     <thead>
-                                        <tr class="bg-primary-subtle">
+                                        <tr class="">
                                             <th>No.</th>
-                                            <th>ID Pengguna</th>
-                                            <th>Tanggal Pembayaran</th>
+                                            <th>ID</th>
+                                            <th>Tanggal</th>
                                             <th>Nama</th>
                                             <th>No.Telephone</th>
                                             <th>Alamat</th>

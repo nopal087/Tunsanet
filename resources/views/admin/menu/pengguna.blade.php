@@ -31,8 +31,8 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card">
-                        <div class="card-body table-responsive p-0">
-                            <table class="table table-hover text-nowrap mb-3">
+                        <div class="card-body table-responsive p-0 mt-3">
+                            <table class="table table-bordered text-wrap mb-3" border="2" id="myTable">
                                 <thead>
                                     <tr class="bg-primary-subtle">
                                         <th>No.</th>

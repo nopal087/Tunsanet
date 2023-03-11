@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header mb-2">
 
                             <a class="btn btn-primary btn-sm" href="/admin/menu/Tambahpengguna"><i class="fas fa-user-edit">
                                     Tambah Pengguna</i></a>
@@ -43,11 +43,11 @@
                                 </i></a>
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body table-bordered-responsive p-0">
+                        <div class="card-body table-bordered-responsive p-0 mx-3">
                             @if (count($datapengguna) > 0)
-                                <table class="table table-bordered text-wrap mb-3" border="2">
+                                <table class="table table-bordered text-wrap mb-3" border="2" id="myTable">
                                     <thead>
-                                        <tr class="bg-primary-subtle">
+                                        <tr class="">
                                             <th>No.</th>
                                             <th>ID</th>
                                             <th>Nama</th>
