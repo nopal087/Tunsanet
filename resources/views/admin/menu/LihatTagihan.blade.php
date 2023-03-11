@@ -53,7 +53,7 @@
                             <a class="btn btn-primary btn-sm" href="/UpdateLinkPayment"><i class="fas fa-user-edit">
                                     Link Tagihan</i></a>
                         </div>
-                        <div class="card-body table-bordered-responsive p-0 mx-3">
+                        <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             @if (count($datatagihan) > 0)
                                 <table class="table table-bordered text-wrap mb-3" id="myTable">
                                     <thead>
