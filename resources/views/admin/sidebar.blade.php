@@ -41,7 +41,7 @@
                  </li>
                  <li class="nav-header">LANGGANAN</li>
                  <li class="nav-item">
-                     <a href="Lpengguna" class="nav-link">
+                     <a href="{{ route('Lpengguna') }}" class="nav-link">
                          <i class="nav-icon fas fa-user"></i>
                          <p>
                              Data Pengguna
@@ -49,7 +49,7 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="Agen" class="nav-link">
+                     <a href="/Agen" class="nav-link">
                          <i class="nav-icon fas fa-user-friends"></i>
                          <p>
                              Data Agen

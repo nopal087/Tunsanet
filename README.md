@@ -78,6 +78,7 @@ SIBUMDES Tunsanet diharapkan dapat membantu pemerintah desa dalam beberapa hal b
 -  CSS **[MDB Bootstrap](https://mdbootstrap.com/)**
 -  Pembayaran **[Midtrans](https://midtrans.com/id)**
 -  Icons **[FontAwesome v5.15.4](https://fontawesome.com/)**
+-  Data Table **[Data Table](https://datatables.net/)**
 
 ## 🥳 5. Tujuan Pembuatan SIBUMDES Tunsanet
 Aplikasi Sistem Informasi Badan Usaha Milik Desa Tunjungsari **[Tunsanet](https://tunsanet.my.id)**, dibangun dan dikembangan sebagai Projek Tugas Akhir Skripsi saya yang diharapkan dapat bermanfaat untuk desa Tunjungsari dan dapat dikembangkan dengan baik untuk kedepannya

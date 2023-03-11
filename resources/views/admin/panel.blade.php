@@ -9,6 +9,9 @@
     {{-- bootstrap 5 --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -36,9 +39,6 @@
 
     {{-- data tables --}}
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css">
-
-    {{-- data table print --}}
-    <!-- DataTables Print Button Plugin -->
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/buttons/2.0.0/css/buttons.dataTables.min.css" />
 
@@ -46,7 +46,6 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__shake" src="{{ asset('AdminLTE/dist/img/tanpa_wifi.png') }}" alt="AdminLTELogo"
@@ -120,6 +119,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js"></script>
 
+    {{-- datatabel --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
@@ -141,7 +141,33 @@
         $(document).ready(function() {
             $('#myTable').DataTable({
                 dom: 'Bfrtip',
-                buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                buttons: [{
+                        text: '<i class="fa fa-copy"></i> Copy',
+                        titleAttr: 'copy',
+                        className: 'btn btn-primary'
+
+                    },
+                    {
+                        text: '<i class="fas fa-file-csv"></i> CSV',
+                        titleAttr: 'csv',
+                        className: 'btn btn-primary'
+                    },
+                    {
+                        text: '<i class="fas fa-file-excel"></i> Excel',
+                        titleAttr: 'excel',
+                        className: 'btn btn-primary'
+                    },
+                    {
+                        text: '<i class="fas fa-file-pdf"></i> PDF',
+                        titleAttr: 'pdf',
+                        className: 'btn btn-primary'
+                    },
+                    {
+                        text: '<i class="fas fa-print"></i> PRINT',
+                        titleAttr: 'print',
+                        className: 'btn btn-primary'
+                    }
+                ]
             });
         });
     </script>
