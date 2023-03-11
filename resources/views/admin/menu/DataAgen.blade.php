@@ -43,7 +43,7 @@
                         <div class="card-header">
 
                             <a class="btn btn-primary btn-sm" href="/admin/menu/TambahAgen"><i class="fas fa-user-edit">
-                                    Tambah Agen</i></a>
+                                </i> Tambah Agen</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
@@ -64,16 +64,16 @@
                                 <tbody>
                                     @foreach ($agen as $ag)
                                         <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $ag->id }}</td>
-                                            <td>{{ $ag->updated_at->translatedFormat('d F Y, H:i:s') }}</td>
-                                            <td>{{ $ag->nama }}</td>
-                                            <td>{{ $ag->phone }}</td>
-                                            <td>{{ $ag->alamat }}</td>
-                                            <td><label
+                                            <td class="border">{{ $loop->iteration }}</td>
+                                            <td class="border">{{ $ag->id }}</td>
+                                            <td class="border">{{ $ag->updated_at->translatedFormat('d F Y, H:i:s') }}</td>
+                                            <td class="border">{{ $ag->nama }}</td>
+                                            <td class="border">{{ $ag->phone }}</td>
+                                            <td class="border">{{ $ag->alamat }}</td>
+                                            <td class="border"><label
                                                     class="badge {{ $ag->status == 'Aktif' ? 'badge-success' : 'badge-danger' }}">{{ $ag->status == 'Aktif' ? 'Aktif' : 'Tidak Aktif' }}</label>
                                             </td>
-                                            <td class="project-actions">
+                                            <td class="project-actions border">
                                                 <a class="btn btn-success btn-sm"
                                                     href="/admin/manual/status/lunas/{{ $ag->id }}">
                                                     <i class="fas fa-check"></i>

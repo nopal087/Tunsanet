@@ -74,21 +74,22 @@
                                     <tbody>
                                         @foreach ($orders as $item)
                                             <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $item->id }}</td>
-                                                <td>{{ $item->updated_at->translatedFormat('d F Y, H:i:s') }}</td>
-                                                <td>{{ $item->nama }}</td>
-                                                <td>{{ $item->phone }}</td>
-                                                <td>{{ $item->alamat }}</td>
-                                                <td>{{ $item->paket }}</td>
-                                                <td>Rp. {{ number_format($item->total_price) }}</span></td>
-                                                <td><label
+                                                <td class="border">{{ $loop->iteration }}</td>
+                                                <td class="border">{{ $item->id }}</td>
+                                                <td class="border">{{ $item->updated_at->translatedFormat('d F Y, H:i:s') }}
+                                                </td>
+                                                <td class="border">{{ $item->nama }}</td>
+                                                <td class="border">{{ $item->phone }}</td>
+                                                <td class="border">{{ $item->alamat }}</td>
+                                                <td class="border">{{ $item->paket }}</td>
+                                                <td class="border">Rp. {{ number_format($item->total_price) }}</span></td>
+                                                <td class="border"><label
                                                         class="badge {{ $item->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $item->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
                                                     {{-- <a class="btn btn-danger btn-sm" href="#">
                                                     Belum bayar
                                                 </a> --}}
                                                 </td>
-                                                <td class="project-actions">
+                                                <td class="project-actions border">
                                                     <a class="btn btn-info btn-sm"
                                                         href="/admin/manual/lunas/{{ $item->id }}">
                                                         <i class="fas fa-check"></i>

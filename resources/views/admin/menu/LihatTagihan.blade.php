@@ -1,6 +1,6 @@
 @extends('admin/panel')
-{{-- @include ('app') --}}
 @section('content')
+    {{-- @include ('admin/mdb') --}}
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -51,11 +51,11 @@
                         <div class="card-header">
 
                             <a class="btn btn-primary btn-sm" href="/UpdateLinkPayment"><i class="fas fa-user-edit">
-                                    Link Tagihan</i></a>
+                                </i> Lihat Link</a>
                         </div>
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             @if (count($datatagihan) > 0)
-                                <table class="table table-bordered text-wrap mb-3" id="myTable">
+                                <table class="table table-bordered mdb-table text-wrap mb-3" id="myTable">
                                     <thead>
                                         <tr>
                                             <th>No.</th>
@@ -73,18 +73,18 @@
 
                                         @foreach ($tagihan as $t)
                                             <tr>
-                                                <td>{{ $loop->iteration }}</td>
+                                                <td class="border">{{ $loop->iteration }}</td>
                                                 {{-- <td>{{ $t->id_pengguna }}</td> --}}
-                                                <td>{{ date('d F Y', strtotime($t->tanggal)) }}</td>
-                                                <td>{{ $t->nama }}</td>
-                                                <td>{{ $t->phone }}</td>
-                                                <td>{{ $t->paket }}</td>
-                                                <td>Rp. {{ number_format($t->tagihan) }}</td>
-                                                <td><label
+                                                <td class="border">{{ date('d F Y', strtotime($t->tanggal)) }}</td>
+                                                <td class="border">{{ $t->nama }}</td>
+                                                <td class="border">{{ $t->phone }}</td>
+                                                <td class="border">{{ $t->paket }}</td>
+                                                <td class="border">Rp. {{ number_format($t->tagihan) }}</td>
+                                                <td class="border"><label
                                                         class="badge {{ $t->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $t->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
                                                 </td>
 
-                                                <td class="project-actions">
+                                                <td class="project-actions border">
                                                     <a class="btn btn-info btn-sm"
                                                         href="/admin/menu/Lunas/{{ $t->id }}">
                                                         <i class="fas fa-check"></i>

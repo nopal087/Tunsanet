@@ -107,17 +107,17 @@
                                 <tbody>
                                     @foreach ($table_order as $item)
                                         <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>
+                                            <td class="border">{{ $loop->iteration }}</td>
+                                            <td class="border">
                                                 {{ $item->updated_at->translatedFormat('d F Y') }}
                                             </td>
-                                            <td>
+                                            <td class="border">
                                                 {{ $item->nama }}
                                             </td>
-                                            <td>
+                                            <td class="border">
                                                 {{ $item->paket }}
                                             </td>
-                                            <td>
+                                            <td class="border">
                                                 Rp. {{ number_format($item->total_price) }}
                                             </td>
                                         </tr>
@@ -131,7 +131,7 @@
                 </div>
                 <div class="">
                     <div class="card-body">
-                        <table class="table table-bordered text-wrap mb-3" border="2" id="myTable2">
+                        <table class="table table-bordered text-wrap mb-3" border="2" id="myTable">
                             <thead>
                                 <div class="text-center" id="tagihan">
                                     <h4>Tabel Tagihan Paket Internet</h4>
@@ -148,17 +148,17 @@
                             @foreach ($table_tagihan as $tag)
                                 <tbody>
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>
+                                        <td class="border">{{ $loop->iteration }}</td>
+                                        <td class="border">
                                             {{ $tag->tanggal }}
                                         </td>
-                                        <td>
+                                        <td class="border">
                                             {{ $tag->nama }}
                                         </td>
-                                        <td>
+                                        <td class="border">
                                             {{ $tag->paket }}
                                         </td>
-                                        <td>
+                                        <td class="border">
                                             Rp. {{ number_format($tag->tagihan) }}
                                         </td>
                                     </tr>

@@ -38,14 +38,14 @@
                         <div class="card-header mb-2">
 
                             <a class="btn btn-primary btn-sm" href="/admin/menu/Tambahpengguna"><i class="fas fa-user-edit">
-                                    Tambah Pengguna</i></a>
-                            <a class="btn btn-primary btn-sm" href="/btagihan"><i class="fas fa-edit">Buat Tagihan
-                                </i></a>
+                                </i> Tambah Pengguna</a>
+                            <a class="btn btn-primary btn-sm" href="/btagihan"><i class="fas fa-edit">
+                                </i> Buat Tagihan</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-bordered-responsive p-0 mx-3">
                             @if (count($datapengguna) > 0)
-                                <table class="table table-bordered text-wrap mb-3" border="2" id="myTable">
+                                <table class="table table-bordered text-wrap mb-3" id="myTable">
                                     <thead>
                                         <tr class="">
                                             <th>No.</th>
@@ -61,14 +61,14 @@
                                     <tbody>
                                         @foreach ($pengguna as $p)
                                             <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $p->id }}</td>
-                                                <td>{{ $p->nama }}</td>
-                                                {{-- <td>nopal@gmail.com</td> --}}
-                                                <td>{{ $p->phone }}</td>
-                                                <td>{{ $p->alamat }}</td>
-                                                <td>{{ $p->paket }}</td>
-                                                <td class="project-actions">
+                                                <td class="border">{{ $loop->iteration }}</td>
+                                                <td class="border">{{ $p->id }}</td>
+                                                <td class="border">{{ $p->nama }}</td>
+                                                {{-- <td class="border">nopal@gmail.com</td> --}}
+                                                <td class="border">{{ $p->phone }}</td>
+                                                <td class="border">{{ $p->alamat }}</td>
+                                                <td class="border">{{ $p->paket }}</td>
+                                                <td class="project-actions border">
                                                     <a class="btn btn-info btn-sm"
                                                         href="admin/menu/pengguna/{{ $p->id }}/edit">
                                                         <i class="fas fa-pencil-alt">

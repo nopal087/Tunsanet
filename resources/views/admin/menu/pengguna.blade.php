@@ -30,11 +30,11 @@
                         </form>
                     </div>
                     <!-- /.card-header -->
-                    <div class="card">
-                        <div class="card-body table-bordered-responsive p-0 mx-3">
+                    <div class="card mt-2">
+                        <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             <table class="table table-bordered text-wrap mb-3" border="2" id="myTable">
                                 <thead>
-                                    <tr class="bg-primary-subtle">
+                                    <tr class="">
                                         <th>No.</th>
                                         <th>ID</th>
                                         <th>Nama</th>

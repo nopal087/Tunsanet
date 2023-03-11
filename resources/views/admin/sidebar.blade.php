@@ -1,3 +1,4 @@
+ @include('admin/mdb')
  <!-- Main Sidebar Container -->
  <aside class="main-sidebar sidebar-dark-primary elevation-2">
      <!-- Sidebar -->
@@ -28,8 +29,7 @@
 
          <!-- Sidebar Menu -->
          <nav class="mt-2">
-             <ul class="nav nav-pills nav-sidebar flex-column menu" data-widget="treeview" role="menu"
-                 data-accordion="false">
+             <ul class="nav nav-sidebar" data-widget="treeview" role="menu" data-accordion="false">
                  <li class="nav-header">PILIHAN MENU</li>
                  <li class="nav-item">
                      <a href="homedashboard" class="nav-link">

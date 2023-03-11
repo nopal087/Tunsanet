@@ -34,7 +34,7 @@
                                     @if (count($databuattagihan) > 0)
                                         <table class="table table-bordered text-wrap mb-3" border="2" id="myTable">
                                             <thead>
-                                                <tr class="bg-primary-subtle">
+                                                <tr class="">
                                                     <th>No.</th>
                                                     <th>ID Pengguna</th>
                                                     <th>Nama</th>
@@ -46,10 +46,10 @@
                                             <tbody>
                                                 @foreach ($pengguna as $p)
                                                     <tr>
-                                                        <td>
+                                                        <td class="border">
                                                             {{ $loop->iteration }}
                                                         </td>
-                                                        <td>
+                                                        <td class="border">
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <input type="text" class="form-control"
@@ -58,7 +58,7 @@
                                                                         readonly>
                                                                 </div>
                                                         </td>
-                                                        <td>
+                                                        <td class="border">
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <input type="text" class="form-control"
@@ -66,7 +66,7 @@
                                                                         name="nama[]" aria-label="Nama" readonly>
                                                                 </div>
                                                         </td>
-                                                        <td>
+                                                        <td class="border">
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <input type="text" class="form-control"
@@ -74,7 +74,7 @@
                                                                         name="phone[]" aria-label="Nama" readonly>
                                                                 </div>
                                                         </td>
-                                                        <td>
+                                                        <td class="border">
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <input type="text" class="form-control"
@@ -82,7 +82,7 @@
                                                                         name="paket[]" aria-label="Paket" readonly>
                                                                 </div>
                                                         </td>
-                                                        <td>
+                                                        <td class="border">
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <select name="tagihan[]" class="form-control" required>

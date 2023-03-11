@@ -40,6 +40,7 @@
         href="https://cdn.datatables.net/buttons/2.0.0/css/buttons.dataTables.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
