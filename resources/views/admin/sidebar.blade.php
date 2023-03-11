@@ -50,7 +50,7 @@
                  </li>
                  <li class="nav-item">
                      <a href="/Agen" class="nav-link">
-                         <i class="nav-icon fas fa-user-friends"></i>
+                         <i class="nav-icon fas fa-handshake"></i>
                          <p>
                              Data Agen
                          </p>
@@ -93,7 +93,7 @@
                  <li class="nav-header">LAINNYA</li>
                  <li class="nav-item">
                      <a href="/user" class="nav-link">
-                         <i class="nav-icon fas fa-user"></i>
+                         <i class="nav-icon fas fa-address-book"></i>
                          <p>
                              Pengguna Registrasi
                          </p>

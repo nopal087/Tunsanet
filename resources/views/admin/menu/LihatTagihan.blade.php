@@ -49,10 +49,10 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-
                             <a class="btn btn-primary btn-sm" href="/UpdateLinkPayment"><i class="fas fa-user-edit">
                                 </i> Lihat Link</a>
                         </div>
+
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             @if (count($datatagihan) > 0)
                                 <table class="table table-bordered mdb-table text-wrap mb-3" id="myTable">
