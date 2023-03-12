@@ -1,6 +1,8 @@
 <h1 align="center">👋 SELAMAT DATANG DI SIBUMDES TUNSANET 👋</h1>
-<img src="https://github.com/nopal087/Tunsanet/blob/master/Screenshot%20(140).png" width="100%" alt="preview">
-<img src="https://github.com/nopal087/Tunsanet/blob/master/Screenshot%20(142).png" width="100%" alt="preview">
+<h4 align="center">User</h4>
+<img src="https://github.com/nopal087/Tunsanet/blob/master/Screenshot%20(147).png" width="100%" alt="preview">
+<h4 align="center">Dashboard Admin</h4>
+<img src="https://github.com/nopal087/Tunsanet/blob/master/Screenshot%20(145).png" width="100%" alt="preview">
 
 ## Persyaratan
 - PHP versi 8.1 atau diatasnya **[PHP versi 8.1](https://www.php.net/releases/8.0/en.php)**
