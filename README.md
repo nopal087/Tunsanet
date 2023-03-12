@@ -74,8 +74,7 @@ SIBUMDES Tunsanet diharapkan dapat membantu pemerintah desa dalam beberapa hal b
 
 -   Framework PHP **[Laravel 9](https://laravel.com/)**
 -  Admin **[Admin LTE](https://adminlte.io/)**
--  CSS **[Bootstrap 5](https://getbootstrap.com/docs/5.3/getting-started/introduction/)**
--  CSS **[MDB Bootstrap](https://mdbootstrap.com/)**
+-  CSS **[MDB Bootstrap](https://mdbootstrap.com/)** **[Bootstrap 5](https://getbootstrap.com/docs/5.3/getting-started/introduction/)**
 -  Pembayaran **[Midtrans](https://midtrans.com/id)**
 -  Icons **[FontAwesome v5.15.4](https://fontawesome.com/)**
 -  Data Table **[Data Table](https://datatables.net/)**
