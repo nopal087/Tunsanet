@@ -32,7 +32,7 @@
                                         </div>
                                     </div>
                                     @if (count($databuattagihan) > 0)
-                                        <table class="table table-bordered text-wrap mb-3" border="2" id="myTable">
+                                        <table class="table table-bordered text-wrap mb-3" border="2">
                                             <thead>
                                                 <tr class="">
                                                     <th>No.</th>

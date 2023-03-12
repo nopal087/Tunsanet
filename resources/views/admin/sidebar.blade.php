@@ -32,7 +32,7 @@
              <ul class="nav nav-sidebar" data-widget="treeview" role="menu" data-accordion="false">
                  <li class="nav-header">PILIHAN MENU</li>
                  <li class="nav-item">
-                     <a href="homedashboard" class="nav-link">
+                     <a href="/homedashboard" class="nav-link">
                          <i class="nav-icon fas fa-tachometer-alt "></i>
                          <p>
                              Beranda

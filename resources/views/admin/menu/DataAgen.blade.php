@@ -95,7 +95,8 @@
                                                         @method('delete')
                                                         <button type="button" class="btn btn-danger btn-sm"
                                                             data-toggle="modal"
-                                                            data-target="#confirm-delete-{{ $ag->id }}">Hapus</button>
+                                                            data-target="#confirm-delete-{{ $ag->id }}"><i
+                                                                class="fas fa-trash"></i></button>
                                                         <div class="modal fade" id="confirm-delete-{{ $ag->id }}"
                                                             tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                                                             aria-hidden="true">

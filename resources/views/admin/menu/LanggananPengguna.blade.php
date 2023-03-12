@@ -45,7 +45,7 @@
                         <!-- /.card-header -->
                         <div class="card-body table-bordered-responsive p-0 mx-3">
                             @if (count($datapengguna) > 0)
-                                <table class="table table-bordered text-wrap mb-3" id="myTable">
+                                <table class="table table-bordered text-wrap mb-3 hover" id="myTable">
                                     <thead>
                                         <tr class="">
                                             <th>No.</th>
@@ -85,7 +85,8 @@
                                                             data-toggle="modal"> --}}
                                                             <button type="button" class="btn btn-danger btn-sm"
                                                                 data-toggle="modal"
-                                                                data-target="#pengguna-{{ $p->id }}">Hapus</button>
+                                                                data-target="#pengguna-{{ $p->id }}"><i
+                                                                    class="fas fa-trash"></i></button>
                                                             <div class="modal fade" id="pengguna-{{ $p->id }}"
                                                                 tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                                                                 aria-hidden="true">

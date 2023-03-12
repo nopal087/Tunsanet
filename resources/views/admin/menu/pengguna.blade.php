@@ -47,12 +47,12 @@
                                 <tbody>
                                     @foreach ($user as $item)
                                         <tr>
-                                            <td>{{ $loop->iteration }}.</td>
-                                            <td>{{ $item->id }}</td>
-                                            <td>{{ $item->name }}</td>
-                                            <td>{{ $item->email }}</td>
-                                            <td>{{ $item->no_hp }}</td>
-                                            <td>{{ $item->alamat }}</td>
+                                            <td class="border">{{ $loop->iteration }}.</td>
+                                            <td class="border">{{ $item->id }}</td>
+                                            <td class="border">{{ $item->name }}</td>
+                                            <td class="border">{{ $item->email }}</td>
+                                            <td class="border">{{ $item->no_hp }}</td>
+                                            <td class="border">{{ $item->alamat }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

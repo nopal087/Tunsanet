@@ -41,6 +41,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 
 
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -137,12 +138,48 @@
     </script> --}}
 
     <script type="text/javascript">
+        // $(document).ready(function() {
+        //     $('#myTable').DataTable({
+        //         targets: [-1], // -1 mengacu pada kolom terakhir (dalam hal ini kolom "aksi")
+        //         visible: true, // kolom "aksi" tidak terlihat
+        //         dom: 'Bfrtip',
+        //         buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+        //     });
+        // });
+
         $(document).ready(function() {
             $('#myTable').DataTable({
-                targets: [-1], // -1 mengacu pada kolom terakhir (dalam hal ini kolom "aksi")
-                visible: true, // kolom "aksi" tidak terlihat
+
+                fixedHeader: true,
+                scrollCollapse: true,
+                paging: true,
                 dom: 'Bfrtip',
-                buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                buttons: [{
+                        extend: 'pdfHtml5',
+                        exportOptions: {
+                            columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
+                        }
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
+                        }
+                    },
+                    {
+                        extend: 'csvHtml5',
+                        exportOptions: {
+                            columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
+                        }
+                    },
+                    {
+                        extend: 'print',
+                        exportOptions: {
+                            columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
+                        }
+                    },
+                    'copy'
+                ]
             });
         });
     </script>

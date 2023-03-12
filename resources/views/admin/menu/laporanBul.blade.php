@@ -82,7 +82,6 @@
                 <div class="row">
                     <div class="">
                         <div class="card-body">
-
                             <table class="table table-bordered text-wrap mb-3" border="2" id="myTable">
                                 <thead>
                                     <div class="text-center" id="transaksi">

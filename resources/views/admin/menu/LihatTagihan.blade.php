@@ -55,7 +55,7 @@
 
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             @if (count($datatagihan) > 0)
-                                <table class="table table-bordered mdb-table text-wrap mb-3" id="myTable">
+                                <table class="table table-bordered mdb-table text-wrap mb-3 hover" id="myTable">
                                     <thead>
                                         <tr>
                                             <th>No.</th>
@@ -114,7 +114,8 @@
                                                             @method('delete')
                                                             <button type="button" class="btn btn-danger btn-sm"
                                                                 data-toggle="modal"
-                                                                data-target="#delete{{ $t->id }}">Hapus</button>
+                                                                data-target="#delete{{ $t->id }}"><i
+                                                                    class="fas fa-trash"></i></button>
                                                             <div class="modal fade" id="delete{{ $t->id }}"
                                                                 tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                                                                 aria-hidden="true">

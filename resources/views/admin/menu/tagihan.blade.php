@@ -56,7 +56,7 @@
                     <div class="card">
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             @if (count($datatransaksi) > 0)
-                                <table class="table table-bordered text-wrap mb-3" border="2" id="myTable">
+                                <table class="table table-bordered text-wrap mb-3 hover" border="2" id="myTable">
                                     <thead>
                                         <tr class="">
                                             <th>No.</th>
@@ -102,7 +102,8 @@
                                                             @method('delete')
                                                             <button type="button" class="btn btn-danger btn-sm"
                                                                 data-toggle="modal"
-                                                                data-target="#confirm-delete-{{ $item->id }}">Hapus</button>
+                                                                data-target="#confirm-delete-{{ $item->id }}"><i
+                                                                    class="fas fa-trash"></i></button>
                                                             <div class="modal fade" id="confirm-delete-{{ $item->id }}"
                                                                 tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                                                                 aria-hidden="true">
