@@ -55,9 +55,9 @@
 
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             @if (count($datatagihan) > 0)
-                                <table class="table table-bordered mdb-table text-wrap mb-3 hover" id="myTable">
+                                <table class="table table-bordered mdb-table text-wrap mb-3 hover stripe" id="myTable">
                                     <thead>
-                                        <tr>
+                                        <tr class="bg-secondary">
                                             <th>No.</th>
                                             {{-- <th>ID</th> --}}
                                             <th>Tanggal Tagihan</th>

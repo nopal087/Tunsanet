@@ -48,9 +48,9 @@
                         <!-- /.card-header -->
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             {{-- @if (count($datapengguna) > 0) --}}
-                            <table class="table table-bordered text-wrap mb-3" border="2" id="myTable">
+                            <table class="table table-bordered text-wrap mb-3 stripe hover" border="2" id="myTable">
                                 <thead>
-                                    <tr class="">
+                                    <tr class="bg-secondary">
                                         <th>No.</th>
                                         <th>ID</th>
                                         <th>Tanggal Ajuan</th>

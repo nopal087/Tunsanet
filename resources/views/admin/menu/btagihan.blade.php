@@ -32,9 +32,9 @@
                                         </div>
                                     </div>
                                     @if (count($databuattagihan) > 0)
-                                        <table class="table table-bordered text-wrap mb-3" border="2">
+                                        <table class="table table-bordered text-wrap mb-3 stripe hover" border="2">
                                             <thead>
-                                                <tr class="">
+                                                <tr class="bg-secondary">
                                                     <th>No.</th>
                                                     <th>ID Pengguna</th>
                                                     <th>Nama</th>
