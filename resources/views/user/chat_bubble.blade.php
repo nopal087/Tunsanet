@@ -119,8 +119,8 @@
                 <ul class="list-unstyled">
                     <li class="mb-3">
                         <div class="d-flex align-items-start">
-                            <img class="rounded-circle me-2" src="{{ asset('pengguna/img/support.png') }}"
-                                alt="User" width="40px" />
+                            <img class="rounded-circle me-2" src="{{ asset('pengguna/img/cs.png') }}" alt="User"
+                                width="40px" />
                             <div class="flex-grow-1">
                                 <p class="mb-0"><strong>Tunsanet Support</strong></p>
                                 <div id="chat-content">

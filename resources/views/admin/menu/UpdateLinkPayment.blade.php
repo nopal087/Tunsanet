@@ -40,10 +40,10 @@
                         </div>
                     </div>
                     <!-- right column -->
-                    <div>
+                    <div class="card p-3">
                         <table class="table table-hover text-nowrap mb-3">
                             <thead>
-                                <tr class="bg-primary-subtle">
+                                <tr>
                                     <th>No.</th>
                                     <th>Paket</th>
                                     <th>Link</th>
@@ -58,7 +58,7 @@
                                         <td id="link-{{ $loop->iteration }}">{{ $link->link }}</td>
                                         <td class="project-actions">
                                             <button onclick="copyLink('link-{{ $loop->iteration }}')"
-                                                class="btn btn-primary btn-sm"><i class="fas fa-copy"></i> Salin</button>
+                                                class="btn btn-primary btn-sm"><i class="fas fa-copy"></i></button>
 
                                             <a class="btn btn-info btn-sm"
                                                 href="/admin/menu/paymentlink/{{ $link->id }}/edit">
@@ -70,7 +70,7 @@
                                                     @csrf
                                                     @method('delete')
                                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-                                                        data-target="#confirm-delete-">Hapus</button>
+                                                        data-target="#confirm-delete-"><i class="fas fa-trash"></i></button>
                                                     <div class="modal fade" id="confirm-delete-" tabindex="-1"
                                                         role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog">

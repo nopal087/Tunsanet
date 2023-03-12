@@ -146,7 +146,6 @@
         //         buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
         //     });
         // });
-
         $(document).ready(function() {
             $('#myTable').DataTable({
 
