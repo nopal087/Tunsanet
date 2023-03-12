@@ -49,7 +49,7 @@
                                     <thead>
                                         <tr class="bg-secondary">
                                             <th>No.</th>
-                                            <th>ID</th>
+                                            {{-- <th>ID</th> --}}
                                             <th>Nama</th>
                                             {{-- <th>Email</th> --}}
                                             <th>No.Telp</th>
@@ -62,7 +62,7 @@
                                         @foreach ($pengguna as $p)
                                             <tr>
                                                 <td class="border">{{ $loop->iteration }}</td>
-                                                <td class="border">{{ $p->id }}</td>
+                                                {{-- <td class="border">{{ $p->id }}</td> --}}
                                                 <td class="border">{{ $p->nama }}</td>
                                                 {{-- <td class="border">nopal@gmail.com</td> --}}
                                                 <td class="border">{{ $p->phone }}</td>

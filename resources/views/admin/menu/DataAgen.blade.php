@@ -52,7 +52,7 @@
                                 <thead>
                                     <tr class="bg-secondary">
                                         <th>No.</th>
-                                        <th>ID</th>
+                                        {{-- <th>ID</th> --}}
                                         <th>Tanggal Ajuan</th>
                                         <th>Nama</th>
                                         <th>No.Telp</th>
@@ -65,7 +65,7 @@
                                     @foreach ($agen as $ag)
                                         <tr>
                                             <td class="border">{{ $loop->iteration }}</td>
-                                            <td class="border">{{ $ag->id }}</td>
+                                            {{-- <td class="border">{{ $ag->id }}</td> --}}
                                             <td class="border">{{ $ag->updated_at->translatedFormat('d F Y, H:i:s') }}</td>
                                             <td class="border">{{ $ag->nama }}</td>
                                             <td class="border">{{ $ag->phone }}</td>

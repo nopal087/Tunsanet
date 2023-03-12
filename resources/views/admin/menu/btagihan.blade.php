@@ -36,7 +36,7 @@
                                             <thead>
                                                 <tr class="bg-secondary">
                                                     <th>No.</th>
-                                                    <th>ID Pengguna</th>
+                                                    {{-- <th>ID Pengguna</th> --}}
                                                     <th>Nama</th>
                                                     <th>No Hp</th>
                                                     <th>Paket</th>
@@ -49,7 +49,7 @@
                                                         <td class="border">
                                                             {{ $loop->iteration }}
                                                         </td>
-                                                        <td class="border">
+                                                        {{-- <td class="border">
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <input type="text" class="form-control"
@@ -57,7 +57,7 @@
                                                                         name="id_pengguna[]" aria-label="ID pengguna"
                                                                         readonly>
                                                                 </div>
-                                                        </td>
+                                                        </td> --}}
                                                         <td class="border">
                                                             <div class="row">
                                                                 <div class="col">
