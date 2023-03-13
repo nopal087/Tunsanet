@@ -56,7 +56,7 @@
                     <div class="card">
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             @if (count($datatransaksi) > 0)
-                                <table class="table table-bordered text-wrap mb-3 hover stripe" border="2"
+                                <table class="table table-bordered display nowrap mb-3 hover stripe" border="2"
                                     id="myTable">
                                     <thead>
                                         <tr class="bg-secondary">

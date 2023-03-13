@@ -42,6 +42,7 @@
 
 
 
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -147,9 +148,8 @@
         //     });
         // });
         $(document).ready(function() {
-            $('#myTable').DataTable({
+            $('#myTable, #mytable2').DataTable({
 
-                fixedHeader: true,
                 scrollCollapse: true,
                 paging: true,
                 dom: 'Bfrtip',
@@ -181,6 +181,10 @@
                 ]
             });
         });
+
+        $(document).ready(function() {
+            $('table.table').DataTable();
+        })
     </script>
 </body>
 

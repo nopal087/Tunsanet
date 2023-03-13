@@ -24,8 +24,7 @@
                         <div class="icon">
                             <i class="ion ion-cash"></i>
                         </div>
-                        <a href="#transaksi" class="small-box-footer">More info <i
-                                class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/tagihan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
@@ -40,8 +39,7 @@
                         <div class="icon">
                             <i class="ion ion-arrow-graph-up-right"></i>
                         </div>
-                        <a href="#transaksi" class="small-box-footer">More info <i
-                                class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/tagihan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
@@ -56,7 +54,8 @@
                         <div class="icon">
                             <i class="ion ion-cash"></i>
                         </div>
-                        <a href="#tagihan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/LihatTagihan" class="small-box-footer">More info <i
+                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
@@ -71,24 +70,24 @@
                         <div class="icon">
                             <i class="ion ion-arrow-graph-up-right"></i>
                         </div>
-                        <a href="#tagihan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/LihatTagihan" class="small-box-footer">More info <i
+                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
 
             </div>
             <div class="card">
-
                 <div class="row">
                     <div class="">
                         <div class="card-body">
-                            <table class="table table-bordered text-wrap mb-3" border="2">
+                            <table class="table table-bordered text-wrap mb-3" border="2" id="table">
                                 <thead>
                                     <div class="text-center" id="transaksi">
                                         <h4>Tabel Pembelian Paket Internet</h4>
                                     </div>
                                     @if (count($datalaporan1) > 0)
-                                        <tr class="bg-primary">
+                                        <tr class="bg-secondary">
                                             <th>No.</th>
                                             <th>Tanggal</th>
                                             <th>Nama</th>
@@ -122,27 +121,26 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
-
                             </table>
-
                         </div>
                     </div>
                 </div>
-                <div class="">
+            </div>
+            <div class="card">
+                <div class="row">
                     <div class="card-body">
-                        <table class="table table-bordered text-wrap mb-3" border="2">
+                        <table class="table table-bordered text-wrap mb-3" border="2" id="table">
                             <thead>
                                 <div class="text-center" id="tagihan">
                                     <h4>Tabel Tagihan Paket Internet</h4>
                                 </div>
-                                <tr class="bg-success">
+                                <tr class="bg-secondary">
                                     <th>No.</th>
                                     <th>Tanggal</th>
                                     <th>Nama</th>
                                     <th>Paket</th>
                                     <th>Jumlah</th>
                                 </tr>
-
                             </thead>
                             @foreach ($table_tagihan as $tag)
                                 <tbody>

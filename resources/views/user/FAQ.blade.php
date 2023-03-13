@@ -94,7 +94,7 @@
                             <h2 class="accordion-header" id="headingFour">
                                 <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
                                     data-mdb-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    Apakah kecepatan Biznet Home akan selalu konstan setiap saat?
+                                    Apakah kecepatan Tunsanet akan selalu konstan setiap saat?
                                 </button>
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
