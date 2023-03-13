@@ -29,6 +29,9 @@
                                                     Tagihan</button></a> --}}
                                             <a href="/LihatTagihan"><button type="button" class="btn btn-success m-2">Lihat
                                                     Tagihan</button></a>
+
+                                            <button type="submit" class="btn btn-primary m-2">Buat Tagihan</button>
+
                                         </div>
                                     </div>
                                     @if (count($databuattagihan) > 0)
@@ -36,7 +39,7 @@
                                             <thead>
                                                 <tr class="bg-secondary">
                                                     <th>No.</th>
-                                                    {{-- <th>ID Pengguna</th> --}}
+                                                    <th>ID Pengguna</th>
                                                     <th>Nama</th>
                                                     <th>No Hp</th>
                                                     <th>Paket</th>
@@ -49,7 +52,7 @@
                                                         <td class="border">
                                                             {{ $loop->iteration }}
                                                         </td>
-                                                        {{-- <td class="border">
+                                                        <td class="border">
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <input type="text" class="form-control"
@@ -57,7 +60,7 @@
                                                                         name="id_pengguna[]" aria-label="ID pengguna"
                                                                         readonly>
                                                                 </div>
-                                                        </td> --}}
+                                                        </td>
                                                         <td class="border">
                                                             <div class="row">
                                                                 <div class="col">
@@ -110,14 +113,7 @@
                                             <p>Tidak ada data yang tersedia.</p>
                                         </div>
                                     @endif
-                                    <div class="ml-2">
-                                        {{-- <div class="card"> --}}
-                                        {{-- <div class="card-footer"> --}}
-                                        <button type="submit" class="btn btn-primary">Buat Tagihan</button>
-                                        {{-- </div> --}}
 
-                                        {{-- </div> --}}
-                                    </div>
                                 </form>
                             </div>
                         </div>

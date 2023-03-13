@@ -23,7 +23,7 @@
             </div>
             <!-- /.container-fluid -->
             <div class="row">
-                <div class="col-4">
+                <div class="col-12">
                     <form action="{{ route('transaksi') }}" method="GET">
                         <div class="form-group">
                             <label for="filter">Filter Status :</label>
@@ -36,7 +36,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-8">
+                {{-- <div class="col-8">
                     <form action="{{ route('transaksi') }}" method="GET">
                         <div class="mx-auto">
                             <label for="filter">Cari :</label>
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> --}}
             </div>
             <div class="row">
                 <div class="col-12">

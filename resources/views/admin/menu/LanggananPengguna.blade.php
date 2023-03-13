@@ -21,7 +21,7 @@
                 </div>
             </div>
             <!-- /.container-fluid -->
-            <form action="{{ route('Lpengguna') }}" method="GET">
+            {{-- <form action="{{ route('Lpengguna') }}" method="GET">
                 <div class="p-3 row">
                     <div class="input-group">
                         <input type="text" class="form-control" id="exampleFormControlInput1"
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-            </form>
+            </form> --}}
             <div class="row">
                 <div class="col-12">
                     <div class="card">

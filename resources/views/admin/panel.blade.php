@@ -36,15 +36,11 @@
 
     <link rel="stylesheet" href="{{ asset('public/style.css') }}">
 
-
     {{-- data tables --}}
     {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css"> --}}
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/buttons/2.0.0/css/buttons.dataTables.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
-
-
-
 
 </head>
 
@@ -193,16 +189,14 @@
 
         $(document).ready(function() {
             var table = $('#myTable').DataTable({
-                select: {
-                    style: 'multi', // menambahkan mode multi-select ke tabel
-                    selector: 'td:first-child' // membuat kolom pertama sebagai selector
-                },
+
                 scrollCollapse: true,
                 paging: true,
                 dom: 'Bfrtip',
+                pagingType: 'full_numbers',
                 buttons: [{
                         text: 'PDF',
-                        className: ' bg-danger',
+                        className: 'btn btn-danger bg-danger',
                         extend: 'pdfHtml5',
                         exportOptions: {
                             columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
@@ -210,7 +204,7 @@
                     },
                     {
                         text: 'Excel',
-                        className: 'bg-success',
+                        className: 'btn btn-succes bg-success',
                         extend: 'excelHtml5',
                         exportOptions: {
                             columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
@@ -218,7 +212,7 @@
                     },
                     {
                         text: 'CSV',
-                        className: 'bg-primary',
+                        className: 'btn btn-primary bg-primary',
                         extend: 'csvHtml5',
                         exportOptions: {
                             columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
@@ -226,7 +220,7 @@
                     },
                     {
                         text: 'Print',
-                        className: 'bg-info',
+                        className: 'btn btn-info bg-info',
                         extend: 'print',
                         exportOptions: {
                             columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
@@ -235,10 +229,6 @@
                 ]
             });
         });
-
-        $(document).ready(function() {
-            $('table.table').DataTable();
-        })
     </script>
 </body>
 
