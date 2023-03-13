@@ -42,14 +42,4 @@ class LaporanController extends Controller
         ];
         return view('admin.menu.Tambahpengguna', $data, compact('order'));
     }
-
-
-    // public function date()
-    // {
-    //     $date = Carbon::now();
-    //     $data = [
-    //         'tanggal_sekarang' => $date->format('d F Y')
-    //     ];
-    //     return view('admin.header', $data);
-    // }
 }

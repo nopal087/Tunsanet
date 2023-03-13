@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminBUMDES | Dashboard</title>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
     {{-- bootstrap 5 --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -33,6 +35,7 @@
     <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/summernote/summernote-bs4.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('public/style.css') }}">
+
 
     {{-- data tables --}}
     {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css"> --}}
@@ -103,6 +106,7 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('AdminLTE/dist/js/pages/dashboard.js') }}"></script>
 
+
     {{-- bootstrp 5 --}}
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -147,37 +151,87 @@
         //         buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
         //     });
         // });
-        $(document).ready(function() {
-            $('#myTable, #mytable2').DataTable({
+        // $(document).ready(function() {
+        //     $('#myTable').DataTable({
+        //         select: {
+        //             style: 'multi', // menambahkan mode multi-select ke tabel
+        //             selector: 'td:first-child' // membuat kolom pertama sebagai selector
+        //         },
+        //         scrollCollapse: true,
+        //         paging: true,
+        //         dom: 'Bfrtip',
+        //         buttons: [
 
+        //             {
+        //                 extend: 'pdfHtml5',
+        //                 exportOptions: {
+        //                     columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
+        //                 }
+        //             },
+        //             {
+        //                 extend: 'excelHtml5',
+        //                 exportOptions: {
+        //                     columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
+        //                 }
+        //             },
+        //             {
+        //                 extend: 'csvHtml5',
+        //                 exportOptions: {
+        //                     columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
+        //                 }
+        //             },
+        //             {
+        //                 extend: 'print',
+        //                 exportOptions: {
+        //                     columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
+        //                 }
+        //             },
+        //             'copy'
+        //         ]
+        //     });
+        // });
+
+        $(document).ready(function() {
+            var table = $('#myTable').DataTable({
+                select: {
+                    style: 'multi', // menambahkan mode multi-select ke tabel
+                    selector: 'td:first-child' // membuat kolom pertama sebagai selector
+                },
                 scrollCollapse: true,
                 paging: true,
                 dom: 'Bfrtip',
                 buttons: [{
+                        text: 'PDF',
+                        className: ' bg-danger',
                         extend: 'pdfHtml5',
                         exportOptions: {
                             columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
                         }
                     },
                     {
+                        text: 'Excel',
+                        className: 'bg-success',
                         extend: 'excelHtml5',
                         exportOptions: {
                             columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
                         }
                     },
                     {
+                        text: 'CSV',
+                        className: 'bg-primary',
                         extend: 'csvHtml5',
                         exportOptions: {
                             columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
                         }
                     },
                     {
+                        text: 'Print',
+                        className: 'bg-info',
                         extend: 'print',
                         exportOptions: {
                             columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
                         }
                     },
-                    'copy'
                 ]
             });
         });

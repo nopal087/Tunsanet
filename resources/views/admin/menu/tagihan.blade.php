@@ -58,8 +58,10 @@
                             @if (count($datatransaksi) > 0)
                                 <table class="table table-bordered display nowrap mb-3 hover stripe" border="2"
                                     id="myTable">
+
                                     <thead>
                                         <tr class="bg-secondary">
+
                                             <th>No.</th>
                                             <th>ID</th>
                                             <th>Tanggal</th>
@@ -75,15 +77,18 @@
                                     <tbody>
                                         @foreach ($orders as $item)
                                             <tr>
+
                                                 <td class="border">{{ $loop->iteration }}</td>
                                                 <td class="border">{{ $item->id }}</td>
-                                                <td class="border">{{ $item->updated_at->translatedFormat('d F Y, H:i:s') }}
+                                                <td class="border">
+                                                    {{ $item->updated_at->translatedFormat('d F Y, H:i:s') }}
                                                 </td>
                                                 <td class="border">{{ $item->nama }}</td>
                                                 <td class="border">{{ $item->phone }}</td>
                                                 <td class="border">{{ $item->alamat }}</td>
                                                 <td class="border">{{ $item->paket }}</td>
-                                                <td class="border">Rp. {{ number_format($item->total_price) }}</span></td>
+                                                <td class="border">Rp. {{ number_format($item->total_price) }}</span>
+                                                </td>
                                                 <td class="border"><label
                                                         class="badge {{ $item->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $item->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
                                                     {{-- <a class="btn btn-danger btn-sm" href="#">

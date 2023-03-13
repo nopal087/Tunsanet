@@ -190,6 +190,7 @@ Route::get('/laporanBul', [LaporanController::class, 'laporanBulanan']);
 Route::get('/admin/menu/Tambahpengguna', [LaporanController::class, 'dataAccordion']);
 Route::get('/admin/header', [LaporanController::class, 'date']);
 
+
 // Cetak Invoice
 Route::get('/invoice.cetak/{id}', [InvoiceController::class, 'print'])->name('invoice.cetak');
 
