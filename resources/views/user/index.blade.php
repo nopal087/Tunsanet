@@ -194,10 +194,13 @@
             @foreach ($paketInternets as $paket)
                 <div class="col-sm-4" id="paket">
                     <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                        <div
-                            class="card-header py-3 text-bg-primary  @if ($paket->nama_paket == 'Silver') bg-secondary @elseif($paket->nama_paket == 'Gold') bg-warning @elseif($paket->nama_paket == 'Diamond') @endif">
+                        <div class="card-header py-3 text-bg-primary">
                             <h4 class="my-0 fw-normal">{{ $paket->nama_paket }}</h4>
                         </div>
+                        {{-- <div
+                            class="card-header py-3 text-bg-primary  @if ($paket->nama_paket == 'Silver') bg-secondary @elseif($paket->nama_paket == 'Gold') bg-warning @elseif($paket->nama_paket == 'Diamond') @endif">
+                            <h4 class="my-0 fw-normal">{{ $paket->nama_paket }}</h4>
+                        </div> --}}
                         <div class="card-body">
                             <img src="{{ asset('pengguna/img/gold.png') }}" width="50%" alt="">
                             <h1 class="card-title pricing-card-title">
@@ -212,9 +215,13 @@
                             </ul>
                             @auth
                                 <a href={{ route('summary', ['id' => $paket->id]) }}><button type="button"
-                                        class="w-100 btn btn-lg btn-primary @if ($paket->id == '1') bg-secondary @elseif($paket->id == '2') btn-warning @elseif($paket->nama_paket == 'Diamond') @endif">
+                                        class="w-100 btn btn-lg btn-primary">
                                         Pilih
                                     </button></a>
+                                {{-- <a href={{ route('summary', ['id' => $paket->id]) }}><button type="button"
+                                        class="w-100 btn btn-lg btn-primary @if ($paket->id == '1') bg-secondary @elseif($paket->id == '2') btn-warning @elseif($paket->nama_paket == 'Diamond') @endif">
+                                        Pilih
+                                    </button></a> --}}
                             @endauth
                             @guest
                                 <a href={{ route('login') }}><button type="button" class="w-100 btn btn-lg btn-primary">

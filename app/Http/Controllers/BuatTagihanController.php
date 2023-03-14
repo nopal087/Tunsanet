@@ -50,36 +50,6 @@ class BuatTagihanController extends Controller
         }
 
         // fungsi filter status belum bayar dan lunas
-        // $filter = $request->get('filter', 'all'); // set filter default ke "all" jika tidak ada parameter filter
-
-        // if ($request->cari) {
-        //     $tagihan = Tagihan::where('nama', 'like', '%' . $request->cari . '%')
-        //         ->orWhere('phone', 'like', '%' . $request->cari . '%')
-        //         ->orWhere('paket', 'like', '%' . $request->cari . '%')
-        //         ->orWhere('tagihan', 'like', '%' . $request->cari . '%');
-        // } else {
-        //     $tagihan = Tagihan::orderBy('id', 'desc');
-        // }
-
-        // if ($filter == 'belum_bayar') {
-        //     $tagihan = $tagihan->where('status', 'Unpaid');
-        // } else if ($filter == 'lunas') {
-        //     $tagihan = $tagihan->where('status', 'Paid');
-        // }
-
-        // $tagihan = $tagihan->paginate(1000);
-        // $datatagihan = DB::table('tagihans')->get();
-
-
-        // // Menambahkan kondisi jika data tidak ditemukan
-        // if ($tagihan->isEmpty()) {
-        //     $gambar = asset('pengguna/img/empty.jpg');
-        //     return view('admin.menu.LihatTagihan', compact('tagihan', 'datatagihan', 'request', 'filter', 'gambar'))->with('status', 'Data tidak ada');
-        // }
-
-
-
-        // return view('admin.menu.LihatTagihan', compact('tagihan', 'request', 'datatagihan', 'filter'));
 
         $filter = $request->get('filter', 'all'); // set filter default ke "all" jika tidak ada parameter filter
 

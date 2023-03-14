@@ -134,9 +134,14 @@
     {{-- datatables js --}}
     {{-- <script>
         $(document).ready(function() {
-            $('#myTable').DataTable()
+            $('table.table').DataTable()
         });
     </script> --}}
+    <script>
+        $(document).ready(function() {
+            $('table.display').DataTable();
+        });
+    </script>
 
     <script type="text/javascript">
         // $(document).ready(function() {

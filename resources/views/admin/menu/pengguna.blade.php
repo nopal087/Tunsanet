@@ -32,7 +32,7 @@
                     <!-- /.card-header -->
                     <div class="card mt-2">
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
-                            <table class="table table-bordered text-wrap mb-3 hover stripe" border="2" id="myTable">
+                            <table class=" table-bordered text-wrap mb-3 hover stripe" border="2" id="myTable">
                                 <thead>
                                     <tr class="bg-secondary">
                                         <th>No.</th>

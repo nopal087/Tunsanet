@@ -15,7 +15,7 @@
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 mb-5">
                         <h1>Pengguna Berlangganan</h1>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                         <!-- /.card-header -->
                         <div class="card-body table-bordered-responsive p-0 mx-3">
                             @if (count($datapengguna) > 0)
-                                <table class="table table-bordered text-wrap mb-3 hover stripe" id="myTable">
+                                <table class="table-bordered text-wrap mb-3 hover stripe" id="myTable">
                                     <thead>
                                         <tr class="bg-secondary">
                                             <th>No.</th>

@@ -23,7 +23,7 @@
                                         <label for="caritanggal" class="col-sm-2 col-form-label">Tanggal
                                         </label>
                                         <div class="col-sm-10">
-                                            <input type="date" class="form-control col-sm-3 m-2 " name="tanggal" required
+                                            <input type="date" class="form-control col-sm-4 m-2 " name="tanggal" required
                                                 id="">
                                             {{-- <a href="date"><button type="submit" class="btn btn-info m-2">Buat
                                                     Tagihan</button></a> --}}
@@ -35,7 +35,8 @@
                                         </div>
                                     </div>
                                     @if (count($databuattagihan) > 0)
-                                        <table class="table table-bordered text-wrap mb-3 stripe hover" border="2">
+                                        <table class="table display table-bordered text-wrap mb-3 stripe hover"
+                                            border="2">
                                             <thead>
                                                 <tr class="bg-secondary">
                                                     <th>No.</th>

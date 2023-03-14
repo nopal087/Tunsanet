@@ -81,7 +81,7 @@
                 <div class="row">
                     <div class="">
                         <div class="card-body">
-                            <table class="table table-bordered text-wrap mb-3" border="2" id="table">
+                            <table class="table display table-bordered text-wrap mb-3" border="2" id="">
                                 <thead>
                                     <div class="text-center" id="transaksi">
                                         <h4>Tabel Pembelian Paket Internet</h4>
@@ -129,7 +129,7 @@
             <div class="card">
                 <div class="row">
                     <div class="card-body">
-                        <table class="table table-bordered text-wrap mb-3" border="2" id="table">
+                        <table class="display table-bordered text-wrap mb-3" border="2" id="">
                             <thead>
                                 <div class="text-center" id="tagihan">
                                     <h4>Tabel Tagihan Paket Internet</h4>

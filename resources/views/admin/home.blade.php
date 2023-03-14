@@ -49,7 +49,7 @@
                             <div class="icon">
                                 <i class="ion ion-arrow-graph-up-right"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i
+                            <a href="/tagihan" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                         <div class="small-box bg-primary">
@@ -92,7 +92,7 @@
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i
+                            <a href="/laporanBul" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
