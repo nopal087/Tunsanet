@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminBUMDES | Dashboard</title>
+    <title> Admin Tunsanet | Dashboard</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 
@@ -139,7 +139,13 @@
     </script> --}}
     <script>
         $(document).ready(function() {
-            $('table.display').DataTable();
+            $('table.display').DataTable({
+                "aLengthMenu": [
+                    [5, 25, 50, 75, -1],
+                    [5, 25, 50, 75, "All"]
+                ],
+                "iDisplayLength": 2,
+            });
         });
     </script>
 
@@ -194,7 +200,11 @@
 
         $(document).ready(function() {
             var table = $('#myTable').DataTable({
-
+                "aLengthMenu": [
+                    [5, 25, 50, 75, -1],
+                    [5, 25, 50, 75, "All"]
+                ],
+                "iDisplayLength": 10,
                 scrollCollapse: true,
                 paging: true,
                 dom: 'Bfrtip',

@@ -16,7 +16,7 @@
             <div class="container-fluid">
                 <div class="row mb-4">
                     <div class="col-sm-6">
-                        <h1>Data Agen</h1>
+                        <h1> Data Agen</h1>
                     </div>
                 </div>
             </div>

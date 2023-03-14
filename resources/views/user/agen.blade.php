@@ -128,6 +128,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="paket-h1 mt-4">
@@ -158,7 +159,7 @@
                             </div>
                             <div class="text-center mt-3">
                                 <a class="btn btn-success btn-lg"
-                                    href="https://wa.me/6285712666154?text=Hallo%20petugas%20bumdes%20saya%20ingin%20Konfirmasi%20pendaftaran%20agen"
+                                    href="https://wa.me/6285712666154?text=Hallo%20petugas%20bumdes%20saya(nama)%20ingin%20Konfirmasi%20pendaftaran%20agen"
                                     target="blank">
                                     <i class="fab fa-whatsapp"></i> Whatsapp</a>
                             </div>

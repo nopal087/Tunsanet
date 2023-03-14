@@ -124,6 +124,7 @@
                             <div class="flex-grow-1">
                                 <p class="mb-0"><strong>Tunsanet Support</strong></p>
                                 <div id="chat-content">
+                                    Silahkan tanyakan keperluan kamu...
                                 </div>
                                 <small class="text-muted">1 detik yang lalu</small>
                             </div>
@@ -142,7 +143,7 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script>
+    {{-- <script>
         const chatContent = document.querySelector('#chat-content');
         const message = 'Halo, apakah anda ingin berlangganan Tunsanet?, atau ada yang ingin ditanyakan? Yuk chat kami.';
         let i = 0;
@@ -162,7 +163,7 @@
         setTimeout(function() {
             $("#chatCollapse").collapse('show');
         }, 10000);
-    </script>
+    </script> --}}
 </body>
 
 </html>
