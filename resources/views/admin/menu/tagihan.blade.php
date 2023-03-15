@@ -12,31 +12,32 @@
     </style>
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2 justify-content-between">
-                    <div class="col-sm-6 mb-3">
-                        <h1>Data Transaksi</h1>
-                    </div>
-
-                </div>
-            </div>
-            <!-- /.container-fluid -->
-            <div class="row">
-                <div class="col-12">
-                    <form action="{{ route('transaksi') }}" method="GET">
-                        <div class="form-group">
-                            <label for="filter">Filter Status :</label>
-                            <select name="filter" id="filter" class="form-control" onchange="this.form.submit()">
-                                <option value="all" {{ $filter == 'all' ? 'selected' : '' }}>Semua</option>
-                                <option value="belum_bayar" {{ $filter == 'belum_bayar' ? 'selected' : '' }}>Belum lunas
-                                </option>
-                                <option value="lunas" {{ $filter == 'lunas' ? 'selected' : '' }}>Lunas</option>
-                            </select>
+        <div class="card">
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2 justify-content-between">
+                        <div class="col-sm-6 mb-3">
+                            <h1>Data Transaksi</h1>
                         </div>
-                    </form>
+
+                    </div>
                 </div>
-                {{-- <div class="col-8">
+                <!-- /.container-fluid -->
+                <div class="row m-2">
+                    <div class="col-12">
+                        <form action="{{ route('transaksi') }}" method="GET">
+                            <div class="form-group">
+                                <label for="filter">Filter Status :</label>
+                                <select name="filter" id="filter" class="form-control" onchange="this.form.submit()">
+                                    <option value="all" {{ $filter == 'all' ? 'selected' : '' }}>Semua</option>
+                                    <option value="belum_bayar" {{ $filter == 'belum_bayar' ? 'selected' : '' }}>Belum lunas
+                                    </option>
+                                    <option value="lunas" {{ $filter == 'lunas' ? 'selected' : '' }}>Lunas</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    {{-- <div class="col-8">
                     <form action="{{ route('transaksi') }}" method="GET">
                         <div class="mx-auto">
                             <label for="filter">Cari :</label>
@@ -50,10 +51,10 @@
                         </div>
                     </form>
                 </div> --}}
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
+                </div>
+                <div class="row">
+                    <div class="col-12">
+
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             @if (count($datatransaksi) > 0)
                                 <table class="table-bordered text-wrap mb-3 hover stripe" id="myTable">
@@ -159,7 +160,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
         </section>
     </div>
 @endsection

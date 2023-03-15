@@ -141,10 +141,10 @@
         $(document).ready(function() {
             $('table.display').DataTable({
                 "aLengthMenu": [
-                    [5, 25, 50, 75, -1],
-                    [5, 25, 50, 75, "All"]
+                    [10, 25, 50, 75, -1],
+                    [10, 25, 50, 75, "All"]
                 ],
-                "iDisplayLength": 2,
+                "iDisplayLength": 10,
             });
         });
     </script>

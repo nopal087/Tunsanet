@@ -3,33 +3,34 @@
     {{-- @include ('admin/mdb') --}}
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2 justify-content-between">
-                    <div class="col-sm-6 mb-4">
-                        <h1>Data Tagihan</h1>
-                    </div>
-                    <div class="card-tools">
-                    </div>
-                </div>
-            </div>
-
-            <!-- /.container-fluid -->
-            <div class="row">
-                <div class="col-12">
-                    <form action="{{ route('Lihat_tagihan') }}" method="GET">
-                        <div class="form-group">
-                            <label for="filter">Filter Status :</label>
-                            <select name="filter" id="filter" class="form-control" onchange="this.form.submit()">
-                                <option value="all" {{ $filter == 'all' ? 'selected' : '' }}>Semua</option>
-                                <option value="belum_bayar" {{ $filter == 'belum_bayar' ? 'selected' : '' }}>Belum lunas
-                                </option>
-                                <option value="lunas" {{ $filter == 'lunas' ? 'selected' : '' }}>Lunas</option>
-                            </select>
+        <div class="card">
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2 justify-content-between">
+                        <div class="col-sm-6 mb-4">
+                            <h1>Data Tagihan</h1>
                         </div>
-                    </form>
+                        <div class="card-tools">
+                        </div>
+                    </div>
                 </div>
-                {{-- <div class="col-8">
+
+                <!-- /.container-fluid -->
+                <div class="row m-2">
+                    <div class="col-12">
+                        <form action="{{ route('Lihat_tagihan') }}" method="GET">
+                            <div class="form-group">
+                                <label for="filter">Filter Status :</label>
+                                <select name="filter" id="filter" class="form-control" onchange="this.form.submit()">
+                                    <option value="all" {{ $filter == 'all' ? 'selected' : '' }}>Semua</option>
+                                    <option value="belum_bayar" {{ $filter == 'belum_bayar' ? 'selected' : '' }}>Belum lunas
+                                    </option>
+                                    <option value="lunas" {{ $filter == 'lunas' ? 'selected' : '' }}>Lunas</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    {{-- <div class="col-8">
                     <form action="{{ route('Lihat_tagihan') }}" method="GET">
                         <div class="mx-auto">
                             <label for="filter">Cari :</label>
@@ -43,12 +44,12 @@
                         </div>
                     </form>
                 </div> --}}
-            </div>
+                </div>
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
+                <div class="row">
+                    <div class="col-12">
+                        {{-- <div class="card"> --}}
+                        <div class="card-header  p-0 mx-3">
                             <a class="btn btn-primary btn-sm" href="/UpdateLinkPayment"><i class="fas fa-user-edit">
                                 </i> Lihat Link</a>
                         </div>
@@ -179,7 +180,7 @@
                     </div>
                     <!-- /.card -->
                 </div>
-            </div>
+        </div>
         </section>
     </div>
 @endsection

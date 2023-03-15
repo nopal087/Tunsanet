@@ -11,36 +11,36 @@
     </style>
     {{-- {{ json_encode($data) }} --}}
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-4">
-                    <div class="col-sm-6">
-                        <h1> Data Agen</h1>
+        <div class="card">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-4">
+                        <div class="col-sm-6">
+                            <h1> Data Agen</h1>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- /.container-fluid -->
-            <div class="row">
-                <div class="col-12">
-                    <form action="{{ route('DataAgen') }}" method="GET">
-                        <div class="form-group">
-                            <label for="filter">Filter Status :</label>
-                            <select name="filter" id="filter" class="form-control" onchange="this.form.submit()">
-                                <option value="all" {{ $filter == 'all' ? 'selected' : '' }}>Semua</option>
-                                <option value="Tidak Aktif" {{ $filter == 'Tidak Aktif' ? 'selected' : '' }}>Tidak Aktif
-                                </option>
-                                <option value="Aktif" {{ $filter == 'Aktif' ? 'selected' : '' }}>Aktif</option>
-                            </select>
-                        </div>
-                    </form>
+                <!-- /.container-fluid -->
+                <div class="row m-2">
+                    <div class="col-12">
+                        <form action="{{ route('DataAgen') }}" method="GET">
+                            <div class="form-group borderd">
+                                <label for="filter">Filter Status :</label>
+                                <select name="filter" id="filter" class="form-control" onchange="this.form.submit()">
+                                    <option value="all" {{ $filter == 'all' ? 'selected' : '' }}>Semua</option>
+                                    <option value="Tidak Aktif" {{ $filter == 'Tidak Aktif' ? 'selected' : '' }}>Tidak Aktif
+                                    </option>
+                                    <option value="Aktif" {{ $filter == 'Aktif' ? 'selected' : '' }}>Aktif</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col-12">
 
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
+                        <div class="card-header p-0 mx-3">
 
                             <a class="btn btn-primary btn-sm" href="/admin/menu/TambahAgen"><i class="fas fa-user-edit">
                                 </i> Tambah Agen</a>
@@ -145,7 +145,7 @@
                     </div>
                     <!-- /.card -->
                 </div>
-            </div>
+        </div>
         </section>
     </div>
 @endsection

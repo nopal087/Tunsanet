@@ -12,16 +12,17 @@
     {{-- {{ json_encode($data) }} --}}
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6 mb-5">
-                        <h1>Pengguna Berlangganan</h1>
+        <div class="card">
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6 mb-5">
+                            <h1>Pengguna Berlangganan</h1>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- /.container-fluid -->
-            {{-- <form action="{{ route('Lpengguna') }}" method="GET">
+                <!-- /.container-fluid -->
+                {{-- <form action="{{ route('Lpengguna') }}" method="GET">
                 <div class="p-3 row">
                     <div class="input-group">
                         <input type="text" class="form-control" id="exampleFormControlInput1"
@@ -32,10 +33,10 @@
                     </div>
                 </div>
             </form> --}}
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header mb-2">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="card-header mb-4 p-0 mx-3">
 
                             <a class="btn btn-primary btn-sm" href="/admin/menu/Tambahpengguna"><i class="fas fa-user-edit">
                                 </i> Tambah Pengguna</a>
@@ -142,11 +143,11 @@
                         </div>
                         <!-- /.card-body -->
                     </div>
-                    <div class="">
-                    </div>
+                    {{-- <div class="">
+                    </div> --}}
                     <!-- /.card -->
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
 @endsection

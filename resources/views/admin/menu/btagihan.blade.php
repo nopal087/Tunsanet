@@ -3,18 +3,18 @@
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>Buat Tagihan Pengguna</h1>
+        <div class="card">
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6 mb-4">
+                            <h1>Buat Tagihan Pengguna</h1>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- /.container-fluid -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
+                <!-- /.container-fluid -->
+                <div class="row">
+                    <div class="col-12">
                         <div class="card-header">
                             <div class="card-body table-responsive p-0">
                                 <form action="admin/menu/btagihan" method="POST">
@@ -122,7 +122,7 @@
                     </div>
                     <!-- /.card -->
                 </div>
-            </div>
+        </div>
         </section>
     </div>
 @endsection
