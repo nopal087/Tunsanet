@@ -200,11 +200,7 @@
 
         $(document).ready(function() {
             var table = $('#myTable').DataTable({
-                "aLengthMenu": [
-                    [5, 25, 50, 75, -1],
-                    [5, 25, 50, 75, "All"]
-                ],
-                "iDisplayLength": 10,
+
                 scrollCollapse: true,
                 paging: true,
                 dom: 'Bfrtip',
@@ -240,6 +236,45 @@
                         exportOptions: {
                             columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
                         }
+                    },
+                ]
+            });
+        });
+
+        $(document).ready(function() {
+            var table = $('#myTable2').DataTable({
+                "aLengthMenu": [
+                    [5, 25, 50, 75, -1],
+                    [5, 25, 50, 75, "All"]
+                ],
+                "iDisplayLength": 10,
+                scrollCollapse: true,
+                paging: true,
+                dom: 'Bfrtip',
+                pagingType: 'full_numbers',
+                buttons: [{
+                        text: 'PDF',
+                        className: 'btn btn-danger bg-danger',
+                        extend: 'pdfHtml5',
+
+                    },
+                    {
+                        text: 'Excel',
+                        className: 'btn btn-succes bg-success',
+                        extend: 'excelHtml5',
+
+                    },
+                    {
+                        text: 'CSV',
+                        className: 'btn btn-primary bg-primary',
+                        extend: 'csvHtml5',
+
+                    },
+                    {
+                        text: 'Print',
+                        className: 'btn btn-info bg-info',
+                        extend: 'print',
+
                     },
                 ]
             });

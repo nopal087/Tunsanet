@@ -27,9 +27,11 @@ class LaporanController extends Controller
         // menampilkan data tagihan ke halaman laporan dan jumlah pendapatan yang didapat dari tagihan user
         $totaltagihan = Tagihan::all()->count();
         $datalaporan2 = DB::table('orders')->get();
-        $table_tagihan = Tagihan::orderBy('id', 'desc')->latest()->paginate();
+        // $table_tagihan = Tagihan::orderBy('id', 'desc')->latest()->paginate();
+        $table_tagihan = Tagihan::where('status', 'Paid')->latest()->paginate();
         $jumlahtagihantotal = Tagihan::all()->sum('tagihan');
-        return view('admin.menu.laporanBul', compact('order', 'datalaporan1', 'datalaporan2', 'totaltagihan', 'jumlahTotalPrice1', 'jumlahtagihantotal', 'table_order', 'table_tagihan'));
+        $totaltagihan_lunas = Tagihan::where('status', 'Paid')->count('tagihan');
+        return view('admin.menu.laporanBul', compact('order', 'datalaporan1', 'datalaporan2', 'totaltagihan', 'jumlahTotalPrice1', 'jumlahtagihantotal', 'table_order', 'table_tagihan', 'totaltagihan_lunas'));
     }
 
     // menampilkan data transaksi terbaru pada halaman tambah pengguna. dan menampilkan tanggal sekarang 

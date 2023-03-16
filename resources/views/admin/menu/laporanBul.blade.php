@@ -63,9 +63,9 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>Rp. {{ number_format($jumlahtagihantotal) }}</h3>
+                            <h3>Rp. {{ number_format($totaltagihan_lunas) }}</h3>
 
-                            <p>Jumlah Pemasukan Tagihan</p>
+                            <p>Jumlah Pemasukan Tagihan Lunas</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-arrow-graph-up-right"></i>
@@ -77,7 +77,7 @@
 
 
             </div>
-            <div class="card">
+            {{-- <div class="card">
                 <div class="row">
                     <div class="">
                         <div class="card-body">
@@ -125,50 +125,64 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="card">
-                <div class="row">
-                    <div class="card-body">
-                        <table class="display table-bordered text-wrap mb-3" border="2" id="">
-                            <thead>
-                                <div class="text-center" id="tagihan">
-                                    <h4>Tabel Tagihan Paket Internet</h4>
-                                </div>
-                                <tr class="bg-secondary">
-                                    <th>No.</th>
-                                    <th>Tanggal</th>
-                                    <th>Nama</th>
-                                    <th>Paket</th>
-                                    <th>Jumlah</th>
-                                </tr>
-                            </thead>
-                            @foreach ($table_tagihan as $tag)
-                                <tbody>
-                                    <tr>
-                                        <td class="border">{{ $loop->iteration }}</td>
-                                        <td class="border">
-                                            {{ $tag->tanggal }}
-                                        </td>
-                                        <td class="border">
-                                            {{ $tag->nama }}
-                                        </td>
-                                        <td class="border">
-                                            {{ $tag->paket }}
-                                        </td>
-                                        <td class="border">
-                                            Rp. {{ number_format($tag->tagihan) }}
-                                        </td>
-                                    </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+
+                <div class="card">
+                    <div class="row">
+                        <div class="">
+                            <div class="card-body">
+                                <table class="table table-bordered text-wrap mb-3" border="2" id="myTable2">
+                                    <thead>
+                                        <div class="text-center" id="transaksi">
+                                            <h4>Tabel Tagihan Paket Internet yang sudah terbayar</h4>
+                                        </div>
+                                        @if (count($datalaporan1) > 0)
+                                            <tr class="bg-secondary">
+                                                <th>No.</th>
+                                                <th>Tanggal</th>
+                                                <th>Nama</th>
+                                                <th>Paket</th>
+                                                <th>Jumlah</th>
+                                            </tr>
+                                        @else
+                                            <div class="text-center">
+                                                <img src="{{ asset('pengguna/img/empty.jpg') }}" alt="No Data Found"
+                                                    width="35%">
+                                                <p>Tidak ada data yang tersedia.</p>
+                                            </div>
+                                        @endif
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($table_tagihan as $item)
+                                            <tr>
+                                                <td class="border">{{ $loop->iteration }}</td>
+                                                <td class="border">
+                                                    {{ $item->tanggal }}
+                                                </td>
+                                                <td class="border">
+                                                    {{ $item->nama }}
+                                                </td>
+                                                <td class="border">
+                                                    {{ $item->paket }}
+                                                </td>
+                                                <td class="border">
+                                                    Rp. {{ number_format($item->tagihan) }}
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-
-
                 </div>
-            </div>
 
-        </section>
+
+            </div>
+    </div>
+
+    </section>
 
 
     </div>
