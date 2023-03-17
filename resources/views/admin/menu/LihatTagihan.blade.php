@@ -23,6 +23,7 @@
                                 <label for="filter">Filter Status :</label>
                                 <select name="filter" id="filter" class="form-control" onchange="this.form.submit()">
                                     <option value="all" {{ $filter == 'all' ? 'selected' : '' }}>Semua</option>
+                                    {{-- <option value="all" {{ $filter == 'all' ? 'selected' : '' }}>Semua</option> --}}
                                     <option value="belum_bayar" {{ $filter == 'belum_bayar' ? 'selected' : '' }}>Belum lunas
                                     </option>
                                     <option value="lunas" {{ $filter == 'lunas' ? 'selected' : '' }}>Lunas</option>
@@ -91,6 +92,7 @@
                                                         <i class="fas fa-check"></i>
                                                         </i>
                                                     </a>
+
                                                     {{-- <a class="btn btn-success btn-sm" target="_blank"
                                                         href="https://wa.me/{{ $t->phone }}?text=kepada%20yang%20terhormat%20bapak/ibu%20pengguna%20layanan%20paket%20internet%20Bumdes%20Desa%20Tunjungsari,%20hari %20ini%20adalah%20masa%20tagihan%20pembayaran%20internet %20anda,%20anda%20dapat%20melakukan%20pembayaran%20secara%20online%20melalui%20link%20berikut.%0ALink pembayaran : %0Aatau%20anda%20dapat%20melakukan%20pembayaran%20manual%20bisa%20hubungi%20petugas%20:%20(085712666154)%20atau%20datang%20ke%20kantor%20bumdes.%0ATerimakasih">
                                                         <i class="fab fa-whatsapp"></i>

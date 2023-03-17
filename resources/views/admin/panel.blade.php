@@ -42,6 +42,16 @@
         href="https://cdn.datatables.net/buttons/2.0.0/css/buttons.dataTables.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
+
+
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -210,7 +220,7 @@
                         className: 'btn btn-danger bg-danger',
                         extend: 'pdfHtml5',
                         exportOptions: {
-                            columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
+                            columns: ':not(:last-child,:nth-last-child(1))' // mengecualikan kolom aksi dan kolom terakhir
                         }
                     },
                     {
@@ -218,7 +228,7 @@
                         className: 'btn btn-succes bg-success',
                         extend: 'excelHtml5',
                         exportOptions: {
-                            columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
+                            columns: ':not(:last-child,:nth-last-child(1))' // mengecualikan kolom aksi dan kolom terakhir
                         }
                     },
                     {
@@ -226,7 +236,7 @@
                         className: 'btn btn-primary bg-primary',
                         extend: 'csvHtml5',
                         exportOptions: {
-                            columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
+                            columns: ':not(:last-child,:nth-last-child(1))' // mengecualikan kolom aksi dan kolom terakhir
                         }
                     },
                     {
@@ -234,7 +244,7 @@
                         className: 'btn btn-info bg-info',
                         extend: 'print',
                         exportOptions: {
-                            columns: ':not(:last-child,:nth-last-child(2))' // mengecualikan kolom aksi dan kolom terakhir
+                            columns: ':not(:last-child,:nth-last-child(1))' // mengecualikan kolom aksi dan kolom terakhir
                         }
                     },
                 ]
@@ -247,6 +257,9 @@
                     [5, 25, 50, 75, -1],
                     [5, 25, 50, 75, "All"]
                 ],
+                "oLanguage": {
+                    "sSearch": "Filter Data"
+                },
                 "iDisplayLength": 10,
                 scrollCollapse: true,
                 paging: true,
@@ -280,6 +293,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>

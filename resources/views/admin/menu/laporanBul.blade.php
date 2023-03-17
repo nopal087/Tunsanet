@@ -132,6 +132,12 @@
                     <div class="row">
                         <div class="">
                             <div class="card-body">
+                                {{-- <div class="form-group">
+                                    <label for="date-filter">Filter by date:</label>
+                                    <input type="text" class="form-control datepicker" id="date-filter"
+                                        placeholder="Select date range">
+                                </div> --}}
+
                                 <table class="table table-bordered text-wrap mb-3" border="2" id="myTable2">
                                     <thead>
                                         <div class="text-center" id="transaksi">
@@ -143,6 +149,7 @@
                                                 <th>Tanggal</th>
                                                 <th>Nama</th>
                                                 <th>Paket</th>
+                                                <th>Status</th>
                                                 <th>Jumlah</th>
                                             </tr>
                                         @else
@@ -158,7 +165,7 @@
                                             <tr>
                                                 <td class="border">{{ $loop->iteration }}</td>
                                                 <td class="border">
-                                                    {{ $item->tanggal }}
+                                                    {{ date('d F Y', strtotime($item->tanggal)) }}
                                                 </td>
                                                 <td class="border">
                                                     {{ $item->nama }}
@@ -166,6 +173,10 @@
                                                 <td class="border">
                                                     {{ $item->paket }}
                                                 </td>
+                                                <td class="border">
+                                                    {{ $item->status }}
+                                                </td>
+
                                                 <td class="border">
                                                     Rp. {{ number_format($item->tagihan) }}
                                                 </td>
@@ -183,7 +194,5 @@
     </div>
 
     </section>
-
-
     </div>
 @endsection

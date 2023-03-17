@@ -30,7 +30,8 @@ class LaporanController extends Controller
         // $table_tagihan = Tagihan::orderBy('id', 'desc')->latest()->paginate();
         $table_tagihan = Tagihan::where('status', 'Paid')->latest()->paginate();
         $jumlahtagihantotal = Tagihan::all()->sum('tagihan');
-        $totaltagihan_lunas = Tagihan::where('status', 'Paid')->count('tagihan');
+        $totaltagihan_lunas = Tagihan::where('status', '=', 'Paid')->sum('tagihan');
+
         return view('admin.menu.laporanBul', compact('order', 'datalaporan1', 'datalaporan2', 'totaltagihan', 'jumlahTotalPrice1', 'jumlahtagihantotal', 'table_order', 'table_tagihan', 'totaltagihan_lunas'));
     }
 
