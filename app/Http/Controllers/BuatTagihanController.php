@@ -15,7 +15,7 @@ class BuatTagihanController extends Controller
     //mengambil data pengguna dan ditampilkan pada halaman buat tagihan
     public function btagihan()
     {
-        $pengguna = Pengguna::all();
+        $pengguna = Pengguna::orderBy('id', 'desc')->latest()->paginate();;
         $databuattagihan = DB::table('penggunas')->get();
         return view('admin/menu/btagihan', compact('pengguna', 'databuattagihan'));
     }
