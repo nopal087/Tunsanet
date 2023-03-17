@@ -17,7 +17,7 @@ class LaporanController extends Controller
     }
 
     // menampilkan data transaksi/order dengan jumlah total pendapatan dari transaksi
-    public function laporanBulanan()
+    public function laporanBulanan(Request $request)
     {
         $order = order::all()->count();
         $jumlahTotalPrice1 = DB::table('orders')->sum('total_price');
@@ -32,7 +32,7 @@ class LaporanController extends Controller
         $jumlahtagihantotal = Tagihan::all()->sum('tagihan');
         $totaltagihan_lunas = Tagihan::where('status', '=', 'Paid')->sum('tagihan');
 
-        return view('admin.menu.laporanBul', compact('order', 'datalaporan1', 'datalaporan2', 'totaltagihan', 'jumlahTotalPrice1', 'jumlahtagihantotal', 'table_order', 'table_tagihan', 'totaltagihan_lunas'));
+        return view('admin.menu.laporanBul', compact('order', 'datalaporan1', 'datalaporan2', 'totaltagihan', 'jumlahTotalPrice1', 'jumlahtagihantotal', 'table_order', 'table_tagihan', 'totaltagihan_lunas',));
     }
 
     // menampilkan data transaksi terbaru pada halaman tambah pengguna. dan menampilkan tanggal sekarang 

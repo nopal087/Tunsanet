@@ -22,6 +22,56 @@
 
                     </div>
                 </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-primary">
+                            <div class="inner">
+                                <h3>{{ $order }}</h3>
+
+                                <p>Jumlah Transaksi Lunas</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-cash"></i>
+                            </div>
+                            <a href="/tagihan" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3>{{ $order1 }}</h3>
+
+                                <p>Jumlah Transaksi Belum Lunas</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-cash"></i>
+                            </div>
+                            <a href="/tagihan" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-primary">
+                            <div class="inner">
+                                <h3>Rp.{{ number_format($jumlahTotalPrice1) }}</h3>
+
+                                <p>Total Semua Pemasukan Transaksi</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-arrow-graph-up-right"></i>
+                            </div>
+                            <a href="/tagihan" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- /.container-fluid -->
                 <div class="row m-2">
                     <div class="col-12">
@@ -30,7 +80,8 @@
                                 <label for="filter">Filter Status :</label>
                                 <select name="filter" id="filter" class="form-control" onchange="this.form.submit()">
                                     <option value="all" {{ $filter == 'all' ? 'selected' : '' }}>Semua</option>
-                                    <option value="belum_bayar" {{ $filter == 'belum_bayar' ? 'selected' : '' }}>Belum lunas
+                                    <option value="belum_bayar" {{ $filter == 'belum_bayar' ? 'selected' : '' }}>Belum
+                                        lunas
                                     </option>
                                     <option value="lunas" {{ $filter == 'lunas' ? 'selected' : '' }}>Lunas</option>
                                 </select>

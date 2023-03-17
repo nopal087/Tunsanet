@@ -78,8 +78,13 @@ class BuatTagihanController extends Controller
             $filter = $filter ?? 'all'; // cek apakah $filter sudah terdefinisi, jika belum, berikan nilai default "all"
             return view('admin.menu.LihatTagihan', compact('tagihan', 'datatagihan', 'request', 'filter', 'gambar'))->with('status', 'Data tidak ada');
         }
+        // $totaltagihan = Tagihan::all()->count();
+        $totaltagihan = Tagihan::where('status', 'Paid')->count();
+        $totaltagihan2 = Tagihan::where('status', 'Unpaid')->count();
+        $jumlahtagihantotal = Tagihan::all()->sum('tagihan');
+        $totaltagihan_lunas = Tagihan::where('status', '=', 'Paid')->sum('tagihan');
 
-        return view('admin.menu.LihatTagihan', compact('tagihan', 'request', 'datatagihan', 'filter'));
+        return view('admin.menu.LihatTagihan', compact('tagihan', 'request', 'datatagihan', 'filter', 'jumlahtagihantotal', 'totaltagihan_lunas', 'totaltagihan', 'totaltagihan2'));
     }
 
 

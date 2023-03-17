@@ -81,7 +81,7 @@
                          </p>
                      </a>
                  </li>
-                 <li class="nav-header">KEUANGAN</li>
+                 {{-- <li class="nav-header">KEUANGAN</li>
                  <li class="nav-item">
                      <a href="/laporanBul" class="nav-link">
                          <i class="nav-icon fas fa-scroll"></i>
@@ -89,7 +89,7 @@
                              Laporan
                          </p>
                      </a>
-                 </li>
+                 </li> --}}
                  <li class="nav-header">LAINNYA</li>
                  <li class="nav-item">
                      <a href="/user" class="nav-link">

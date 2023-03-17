@@ -107,8 +107,12 @@ class UserController extends Controller
 
         $orders = $orders->paginate(10);
         $datatransaksi = DB::table('orders')->get();
+        $order = order::where('status', 'Paid')->count();
+        $order1 = order::where('status', 'Unpaid')->count();
+        // $jumlahTotalPrice1 = DB::table('orders')->sum('total_price');
+        $jumlahTotalPrice1 = order::where('status', '=', 'Paid')->sum('total_price');
 
-        return view('admin.menu.tagihan', compact('orders', 'request', 'datatransaksi', 'filter'));
+        return view('admin.menu.tagihan', compact('orders', 'order', 'order1', 'jumlahTotalPrice1', 'request', 'datatransaksi', 'filter'));
     }
 
 

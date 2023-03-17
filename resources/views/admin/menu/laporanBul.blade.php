@@ -63,9 +63,9 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>Rp. {{ number_format($totaltagihan_lunas) }}</h3>
+                            <h3>Rp. {{ number_format($jumlahtagihantotal) }}</h3>
 
-                            <p>Jumlah Pemasukan Tagihan Lunas</p>
+                            <p>Jumlah Pemasukan Tagihan</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-arrow-graph-up-right"></i>
