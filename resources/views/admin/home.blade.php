@@ -71,8 +71,8 @@
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
                         <div class="small-box bg-warning">
-                            <div class="inner">
-                                <h3>{{ $Totalpengguna }}<sup style="font-size: 20px"></sup></h3>
+                            <div class="inner text-white">
+                                <h3>{{ $Totalpengguna }}</h3>
 
                                 <p>Pengguna</p>
                             </div>

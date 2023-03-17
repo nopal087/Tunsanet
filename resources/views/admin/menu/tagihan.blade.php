@@ -66,15 +66,15 @@
                             <div class="icon">
                                 <i class="ion ion-arrow-graph-up-right"></i>
                             </div>
-                            <a href="/tagihan" class="small-box-footer">More info <i
-                                    class="fas fa-arrow-circle-right"></i></a>
+                            <a href="/tagihan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- /.container-fluid -->
                 <div class="row m-2">
-                    <div class="col-12">
+                    <div class="col-6">
                         <form action="{{ route('transaksi') }}" method="GET">
                             <div class="form-group">
                                 <label for="filter">Filter Status :</label>
@@ -87,6 +87,31 @@
                                 </select>
                             </div>
                         </form>
+                    </div>
+                    <div class="col-6 mt-4">
+                        <div class="form-group">
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header " id="headingTwo">
+                                        <button class="accordion-button collapsed fw-bold" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo"><i class="fas fa-question-circle fa-sm me-2"></i>
+                                            Informasi
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>Total Semua Pemasukan Transaksi</strong> dihitung dari semua transaksi
+                                            yang ada, jika anda ingin menghitung total transaksi sesuai bulan yang
+                                            diinginkan, silahkan cari pada kolom pencarian bulan yang ingin anda cari lalu
+                                            cetak excel lalu gunakan fungsi excel untuk melakukan penghitungan, contoh =
+                                            =SUM(h2:h10)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     {{-- <div class="col-8">
                     <form action="{{ route('transaksi') }}" method="GET">
@@ -138,7 +163,8 @@
                                                 <td class="border">{{ $item->phone }}</td>
                                                 <td class="border">{{ $item->alamat }}</td>
                                                 <td class="border">{{ $item->paket }}</td>
-                                                <td class="border">Rp. {{ number_format($item->total_price) }}</span>
+                                                <td class="border">
+                                                    {{ number_format($item->total_price, 2, ',', '.') }}</span>
                                                 </td>
                                                 <td class="border"><label
                                                         class="badge {{ $item->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $item->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>

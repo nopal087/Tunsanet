@@ -65,7 +65,7 @@
                 </div>
                 <!-- /.container-fluid -->
                 <div class="row m-2">
-                    <div class="col-12">
+                    <div class="col-6">
                         <form action="{{ route('Lihat_tagihan') }}" method="GET">
                             <div class="form-group">
                                 <label for="filter">Filter Status :</label>
@@ -79,6 +79,31 @@
                                 </select>
                             </div>
                         </form>
+                    </div>
+                    <div class="col-6 mt-4">
+                        <div class="form-group">
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header " id="headingTwo">
+                                        <button class="accordion-button collapsed fw-bold" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo"><i class="fas fa-question-circle fa-sm me-2"></i>
+                                            Informasi
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>Total Semua Pemasukan Tagihan</strong> dihitung dari semua tagihan
+                                            yang ada, jika anda ingin menghitung total tagihan sesuai bulan yang
+                                            diinginkan, silahkan cari pada kolom pencarian bulan yang ingin anda cari lalu
+                                            cetak excel lalu gunakan fungsi excel untuk melakukan penghitungan, contoh =
+                                            =SUM(h2:h10)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     {{-- <div class="col-8">
                     <form action="{{ route('Lihat_tagihan') }}" method="GET">
@@ -130,7 +155,7 @@
                                                 <td class="border">{{ $t->nama }}</td>
                                                 <td class="border">{{ $t->phone }}</td>
                                                 <td class="border">{{ $t->paket }}</td>
-                                                <td class="border">Rp. {{ number_format($t->tagihan) }}</td>
+                                                <td class="border">{{ number_format($t->tagihan, 2, ',', '.') }}</td>
                                                 <td class="border"><label
                                                         class="badge {{ $t->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $t->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
                                                 </td>
@@ -179,8 +204,8 @@
                                                                 data-target="#delete{{ $t->id }}"><i
                                                                     class="fas fa-trash"></i></button>
                                                             <div class="modal fade" id="delete{{ $t->id }}"
-                                                                tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                                                                aria-hidden="true">
+                                                                tabindex="-1" role="dialog"
+                                                                aria-labelledby="myModalLabel" aria-hidden="true">
                                                                 <div class="modal-dialog">
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
