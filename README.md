@@ -86,7 +86,7 @@ SIBUMDES Tunsanet diharapkan dapat membantu pemerintah desa dalam beberapa hal b
 Aplikasi Sistem Informasi Badan Usaha Milik Desa Tunjungsari **[Tunsanet](https://tunsanet.my.id)**, dibangun dan dikembangan sebagai Projek Tugas Akhir Skripsi saya yang diharapkan dapat bermanfaat untuk desa Tunjungsari dan dapat dikembangkan dengan baik untuk kedepannya
 
 ## 💻 6. DEMO
-Demo aplikasi Sistem Informasi Badan Usaha Milik Desa (SIBUMDES) dapat dicoba Di **[http://tunsanet.demo.my.id](http://tunsanet.demo.my.id)**
+Demo aplikasi Sistem Informasi Badan Usaha Milik Desa (SIBUMDES) dapat dicoba Di **[http://tunsanet.my.id](http://tunsanet.my.id)**
 
 <br><br><br>
 <h1 align="center">👋 TERIMAKASIH 👋</h1>
