@@ -63,12 +63,15 @@
             <p> SELAMAT DATANG DI BUMDES DESA TUNJUNGSARI</p>
         </div>
 
-        @include('admin/header')
-        @include('admin/sidebar')
-        @yield('content')
-        @include('admin/footer')
-
-
+        @auth
+            @include('admin/header')
+            @include('admin/sidebar')
+            @yield('content')
+            @include('admin/footer')
+        @endauth
+        @guest
+            @include('user/login')
+        @endguest
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
