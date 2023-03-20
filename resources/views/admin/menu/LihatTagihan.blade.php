@@ -145,8 +145,8 @@
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
 
+                                    <tbody>
                                         @foreach ($tagihan as $t)
                                             <tr>
                                                 <td class="border">{{ $loop->iteration }}</td>
@@ -234,8 +234,16 @@
                                                 </td>
                                             </tr>
                                         @endforeach
+
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="5" style="text-align:right">Total:</th>
+                                            <th colspan="3"></th>
+                                        </tr>
+                                    </tfoot>
                                 </table>
+
                                 {{-- menampilkan pencarian ketika tidak ditemukan --}}
                                 @if (isset($status))
                                     <div class="alert alert-danger text-center">{{ $status }}</div>
