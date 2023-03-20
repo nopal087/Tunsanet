@@ -52,14 +52,17 @@
 
 
 
+
+
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ asset('AdminLTE/dist/img/tanpa_wifi.png') }}" alt="AdminLTELogo"
-                height="60" width="60">
+            <img class="spinner-border text-primary" src="{{ asset('AdminLTE/dist/img/tanpa_wifi.png') }}"
+                alt="AdminLTELogo" height="60" width="60">
             <p> SELAMAT DATANG DI BUMDES DESA TUNJUNGSARI</p>
         </div>
 
@@ -211,6 +214,8 @@
         //     });
         // });
 
+
+
         $(document).ready(function() {
             var table = $('#myTable').DataTable({
 
@@ -250,9 +255,16 @@
 
                     // Update footer
                     $(api.column(5).footer()).html('Rp. ' + pageTotal.toLocaleString('id-ID') +
-                        'K ( Rp. ' +
-                        total.toLocaleString('id-ID') + 'K total)');
+                        'K ( Rp. ' + total.toLocaleString('id-ID') + 'K total)');
                 },
+                "aLengthMenu": [
+                    [5, 25, 50, 75, -1],
+                    [5, 25, 50, 75, "All"]
+                ],
+                "oLanguage": {
+                    "sSearch": "Filter Data"
+                },
+                "iDisplayLength": 20,
                 scrollCollapse: true,
                 paging: true,
                 dom: 'Bfrtip',
@@ -294,6 +306,8 @@
 
             });
         });
+
+
 
         $(document).ready(function() {
             var table = $('#myTable2').DataTable({
