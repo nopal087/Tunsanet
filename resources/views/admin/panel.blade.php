@@ -217,6 +217,25 @@
 
             var table = $('#myTable').DataTable({
 
+                initComplete: function() {
+                    var api = this.api();
+                    var total = api.column(5).data().reduce(function(acc, val) {
+                        return acc + parseFloat(val.replace(/[^\d.-]/g, ''));
+                    }, 0);
+
+                    $(".total-tagihan h3").html("Rp. " + total.toLocaleString('id-ID'));
+
+                    api.on('draw', function() {
+                        var total = api.column(5, {
+                            "filter": "applied"
+                        }).data().reduce(function(acc, val) {
+                            return acc + parseFloat(val.replace(/[^\d.-]/g, ''));
+                        }, 0);
+                        $(".total-tagihan h3").html("Rp. " + total.toLocaleString('id-ID'));
+                    });
+                },
+
+
                 footerCallback: function(row, data, start, end, display) {
                     var api = this.api();
 
@@ -260,6 +279,9 @@
                             minimumFractionDigits: 0,
                             maximumFractionDigits: 0
                         }) + ' total)');
+
+                    // Update Total Tagihan
+                    $('.inner jum h3').html('Rp.' + parseInt(total).toLocaleString('id-ID'));
 
 
                 },

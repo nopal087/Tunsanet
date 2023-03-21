@@ -50,7 +50,7 @@
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
                         <div class="small-box bg-success">
-                            <div class="inner">
+                            <div class="inner total-tagihan">
                                 <h3>Rp.{{ number_format($jumlahtagihantotal) }} </h3>
 
                                 <p>Total semua Pemasukan Tagihan</p>
@@ -60,6 +60,7 @@
                             </div>
                             <a href="/LihatTagihan" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
+
                         </div>
                     </div>
                 </div>
