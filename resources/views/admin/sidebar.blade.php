@@ -118,14 +118,4 @@
              <!-- /.sidebar-menu -->
      </div>
      <!-- /.sidebar -->
-
-     {{-- sidebar aktif --}}
-     <script>
-         $(document).ready(function() {
-             $('#sidebar li').on('click', function() {
-                 $('#sidebar li').removeClass('active');
-                 $(this).addClass('active');
-             });
-         });
-     </script>
  </aside>

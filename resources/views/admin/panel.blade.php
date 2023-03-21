@@ -52,6 +52,10 @@
 
 
 
+
+
+
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -144,6 +148,11 @@
     <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
 
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+    <script src=" https://cdn.datatables.net/datetime/1.4.0/js/dataTables.dateTime.min.js"></script>
+
+
+
     {{-- datatables js --}}
     {{-- <script>
         $(document).ready(function() {
@@ -217,6 +226,7 @@
 
             var table = $('#myTable').DataTable({
 
+                //callback datatable untuk menampilkan jumlah total berdasarkan pencarian pada class total-tagihan
                 initComplete: function() {
                     var api = this.api();
                     var total = api.column(5).data().reduce(function(acc, val) {
@@ -235,7 +245,7 @@
                     });
                 },
 
-
+                //footer callback berfungsi untuk menampilkan total nominal atau jumlah pada footer table
                 footerCallback: function(row, data, start, end, display) {
                     var api = this.api();
 
@@ -330,53 +340,41 @@
                             columns: ':not(:last-child,:nth-last-child(1))' // mengecualikan kolom aksi dan kolom terakhir
                         }
                     },
+                    // {
+                    //     text: 'Date Range Filter', // add new button
+                    //     action: function(e, dt, node, config) {
+                    //         $("#date-range-modal").modal("show"); // show the modal
+                    //     },
+                    //     className: 'btn btn-warning bg-warning'
+                    // }
                 ]
 
             });
+            // // Date range filter modal
+            // $("#date-range-form").submit(function(e) {
+            //     e.preventDefault(); // prevent form submission
+            //     var startDate = moment($("#start-date").val(), "DD-MM-YYYY").format("DD-MM-YYYY");
+            //     var endDate = moment($("#end-date").val(), "DD-MM-YYYY").format("DD-MM-YYYY");
 
+
+            //     // Add date range filter
+            //     $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
+            //         var date = moment(data[2], "DD-MM-YYYY").format(
+            //             "YYYY-MM-DD"); // use column 2 (tanggal tagihan) as the basis for filtering
+            //         if (startDate <= date && endDate >= date) {
+            //             return true;
+            //         }
+            //         return false;
+            //     });
+
+            //     table.draw(); // redraw the table with the new filter
+
+            //     // Reset date range filter and form
+            //     $("#date-range-modal").modal("hide");
+            //     $("#date-range-form")[0].reset();
+            //     $.fn.dataTable.ext.search.pop();
+            // });
         });
-
-        // $(document).ready(function() {
-        //     var table = $('#myTable2').DataTable({
-        //         "aLengthMenu": [
-        //             [5, 25, 50, 75, -1],
-        //             [5, 25, 50, 75, "All"]
-        //         ],
-        //         "oLanguage": {
-        //             "sSearch": "Filter Data"
-        //         },
-        //         "iDisplayLength": 10,
-        //         scrollCollapse: true,
-        //         paging: true,
-        //         dom: 'Bfrtip',
-        //         pagingType: 'full_numbers',
-        //         buttons: [{
-        //                 text: 'PDF',
-        //                 className: 'btn btn-danger bg-danger',
-        //                 extend: 'pdfHtml5',
-
-        //             },
-        //             {
-        //                 text: 'Excel',
-        //                 className: 'btn btn-succes bg-success',
-        //                 extend: 'excelHtml5',
-
-        //             },
-        //             {
-        //                 text: 'CSV',
-        //                 className: 'btn btn-primary bg-primary',
-        //                 extend: 'csvHtml5',
-
-        //             },
-        //             {
-        //                 text: 'Print',
-        //                 className: 'btn btn-info bg-info',
-        //                 extend: 'print',
-
-        //             },
-        //         ]
-        //     });
-        // });
     </script>
 
 

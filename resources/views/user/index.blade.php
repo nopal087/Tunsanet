@@ -189,7 +189,7 @@
         </div>
     </div>
     </header>
-    <main class="container mb-1">
+    <main class="container mb-1 ">
         <div class=" row row-cols- row-cols-md-3 mb-3 text-center p-2">
             @foreach ($paketInternets as $paket)
                 <div class="col-sm-4" id="paket">

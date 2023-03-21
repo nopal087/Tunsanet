@@ -84,6 +84,8 @@ class BuatTagihanController extends Controller
         $jumlahtagihantotal = Tagihan::all()->sum('tagihan');
         $totaltagihan_lunas = Tagihan::where('status', '=', 'Paid')->sum('tagihan');
 
+
+
         return view('admin.menu.LihatTagihan', compact('tagihan', 'request', 'datatagihan', 'filter', 'jumlahtagihantotal', 'totaltagihan_lunas', 'totaltagihan', 'totaltagihan2'));
     }
 

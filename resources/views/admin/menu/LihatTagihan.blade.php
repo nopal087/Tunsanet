@@ -130,6 +130,34 @@
                                 </i> Lihat Link</a>
                         </div>
 
+                        <!-- Date range filter modal -->
+                        {{-- <div class="modal fade" id="date-range-modal" tabindex="-1" role="dialog"
+                            aria-labelledby="date-range-modal-label" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="date-range-modal-label">Filter Tanggal</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="date-range-form">
+                                            <div class="form-group">
+                                                <label for="start-date">Start Date:</label>
+                                                <input type="date" class="form-control" id="start-date" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="end-date">End Date:</label>
+                                                <input type="date" class="form-control" id="end-date" required>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Filter</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> --}}
+
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             @if (count($datatagihan) > 0)
                                 <table class=" table-bordered mdb-table text-wrap mb-3 hover stripe" id="myTable">
