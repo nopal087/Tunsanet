@@ -155,7 +155,7 @@
                                                 <td class="border">{{ $t->nama }}</td>
                                                 <td class="border">{{ $t->phone }}</td>
                                                 <td class="border">{{ $t->paket }}</td>
-                                                <td class="border">{{ number_format($t->tagihan, 2, ',', '.') }}</td>
+                                                <td class="border">{{ number_format($t->tagihan) }}</td>
                                                 <td class="border"><label
                                                         class="badge {{ $t->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $t->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
                                                 </td>

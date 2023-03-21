@@ -1,4 +1,10 @@
  @include('admin/mdb')
+
+ <style>
+     #sidebar li.active {
+         background-color: #3B71CA;
+     }
+ </style>
  <!-- Main Sidebar Container -->
  <aside class="main-sidebar sidebar-dark-primary elevation-2">
      <!-- Sidebar -->
@@ -29,7 +35,7 @@
 
          <!-- Sidebar Menu -->
          <nav class="mt-2">
-             <ul class="nav nav-sidebar" data-widget="treeview" role="menu" data-accordion="false">
+             <ul class="nav nav-sidebar" data-widget="treeview" role="menu" data-accordion="false" id="sidebar">
                  <li class="nav-header">PILIHAN MENU</li>
                  <li class="nav-item">
                      <a href="/homedashboard" class="nav-link">
@@ -39,6 +45,7 @@
                          </p>
                      </a>
                  </li>
+
                  <li class="nav-header">LANGGANAN</li>
                  <li class="nav-item">
                      <a href="{{ route('Lpengguna') }}" class="nav-link">
@@ -107,7 +114,18 @@
                          </p>
                      </a>
                  </li>
-                 <!-- /.sidebar-menu -->
+             </ul>
+             <!-- /.sidebar-menu -->
      </div>
      <!-- /.sidebar -->
+
+     {{-- sidebar aktif --}}
+     <script>
+         $(document).ready(function() {
+             $('#sidebar li').on('click', function() {
+                 $('#sidebar li').removeClass('active');
+                 $(this).addClass('active');
+             });
+         });
+     </script>
  </aside>

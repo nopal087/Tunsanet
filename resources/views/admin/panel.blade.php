@@ -52,9 +52,6 @@
 
 
 
-
-
-
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -153,7 +150,7 @@
             $('table.table').DataTable()
         });
     </script> --}}
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             $('table.display').DataTable({
                 "aLengthMenu": [
@@ -163,7 +160,7 @@
                 "iDisplayLength": 10,
             });
         });
-    </script>
+    </script> --}}
 
     <script type="text/javascript">
         // $(document).ready(function() {
@@ -217,6 +214,7 @@
 
 
         $(document).ready(function() {
+
             var table = $('#myTable').DataTable({
 
                 footerCallback: function(row, data, start, end, display) {
@@ -224,9 +222,16 @@
 
                     // Remove the formatting to get integer data for summation
                     var intVal = function(i) {
-                        return typeof i === 'string' ? i.replace(/[\$,]/g, '') * 1 : typeof i ===
-                            'number' ? i : 0;
+                        if (typeof i === 'string') {
+                            var cleanNum = i.replace(/\D/g, '');
+                            return cleanNum !== '' ? parseInt(cleanNum, 10) : 0;
+                        } else if (typeof i === 'number') {
+                            return i;
+                        } else {
+                            return 0;
+                        }
                     };
+
 
                     // Total over all pages
                     total = api
@@ -247,16 +252,18 @@
                         }, 0);
 
                     // Update footer
-                    // $(api.column(5).footer()).html('Rp. ' + pageTotal + ' ( Rp. ' + total + ' total)');
+                    $(api.column(5).footer()).html('Rp. ' + pageTotal.toLocaleString('id-ID', {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 0
+                        }) +
+                        ' ( Rp. ' + total.toLocaleString('id-ID', {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 0
+                        }) + ' total)');
 
-                    // Update footer
-                    // $(api.column(5).footer()).html('Rp. ' + pageTotal.toLocaleString('id-ID') +
-                    //     ' ( Rp. ' + total.toLocaleString('id-ID') + ' total)');
 
-                    // Update footer
-                    $(api.column(5).footer()).html('Rp. ' + pageTotal.toLocaleString('id-ID') +
-                        'K ( Rp. ' + total.toLocaleString('id-ID') + 'K total)');
                 },
+
                 "aLengthMenu": [
                     [5, 25, 50, 75, -1],
                     [5, 25, 50, 75, "All"]
@@ -303,54 +310,54 @@
                     },
                 ]
 
-
             });
+
         });
 
+        // $(document).ready(function() {
+        //     var table = $('#myTable2').DataTable({
+        //         "aLengthMenu": [
+        //             [5, 25, 50, 75, -1],
+        //             [5, 25, 50, 75, "All"]
+        //         ],
+        //         "oLanguage": {
+        //             "sSearch": "Filter Data"
+        //         },
+        //         "iDisplayLength": 10,
+        //         scrollCollapse: true,
+        //         paging: true,
+        //         dom: 'Bfrtip',
+        //         pagingType: 'full_numbers',
+        //         buttons: [{
+        //                 text: 'PDF',
+        //                 className: 'btn btn-danger bg-danger',
+        //                 extend: 'pdfHtml5',
 
+        //             },
+        //             {
+        //                 text: 'Excel',
+        //                 className: 'btn btn-succes bg-success',
+        //                 extend: 'excelHtml5',
 
-        $(document).ready(function() {
-            var table = $('#myTable2').DataTable({
-                "aLengthMenu": [
-                    [5, 25, 50, 75, -1],
-                    [5, 25, 50, 75, "All"]
-                ],
-                "oLanguage": {
-                    "sSearch": "Filter Data"
-                },
-                "iDisplayLength": 10,
-                scrollCollapse: true,
-                paging: true,
-                dom: 'Bfrtip',
-                pagingType: 'full_numbers',
-                buttons: [{
-                        text: 'PDF',
-                        className: 'btn btn-danger bg-danger',
-                        extend: 'pdfHtml5',
+        //             },
+        //             {
+        //                 text: 'CSV',
+        //                 className: 'btn btn-primary bg-primary',
+        //                 extend: 'csvHtml5',
 
-                    },
-                    {
-                        text: 'Excel',
-                        className: 'btn btn-succes bg-success',
-                        extend: 'excelHtml5',
+        //             },
+        //             {
+        //                 text: 'Print',
+        //                 className: 'btn btn-info bg-info',
+        //                 extend: 'print',
 
-                    },
-                    {
-                        text: 'CSV',
-                        className: 'btn btn-primary bg-primary',
-                        extend: 'csvHtml5',
-
-                    },
-                    {
-                        text: 'Print',
-                        className: 'btn btn-info bg-info',
-                        extend: 'print',
-
-                    },
-                ]
-            });
-        });
+        //             },
+        //         ]
+        //     });
+        // });
     </script>
+
+
 
 </body>
 
