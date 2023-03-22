@@ -123,7 +123,7 @@ class UserController extends Controller
         return view('user.index', compact('paketInternets'));
     }
 
-    //fungi untuk menampilkan halaman login user
+    //fungi untuk menampilkan halaman login user 
     public function login()
     {
         // $data['$title'] = 'Login';
@@ -133,6 +133,7 @@ class UserController extends Controller
         ]);
     }
 
+    // untuk menangani jika login admin
     public function dashboard()
     {
         $is_admin = auth()->user()->is_admin;
@@ -240,6 +241,7 @@ class UserController extends Controller
 
     public function  jumlah()
     {
+
         $Totaltagihan = Tagihan::all()->count();
         $Totaltransaksi = order::all()->count();
         $Totalpengguna = Pengguna::all()->count();

@@ -52,18 +52,7 @@
                             <a href="/tagihan" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="small-box bg-primary">
-                            <div class="inner">
-                                <h3>{{ $TotalAgen }}<sup style="font-size: 20px"></sup></h3>
 
-                                <p>Data Agen</p>
-                            </div>
-                            <div class="icon">
-                                <i class="icon ion-android-people"></i>
-                            </div>
-                            <a href="/Agen" class="small-box-footer">More info <i
-                                    class="fas fa-arrow-circle-right"></i></a>
-                        </div>
 
 
                     </div>
@@ -83,18 +72,30 @@
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
 
-                        <div class="small-box bg-danger">
+                        <div class="small-box bg-primary">
+                            <div class="inner">
+                                <h3>{{ $TotalAgen }}<sup style="font-size: 20px"></sup></h3>
+
+                                <p>Data Agen</p>
+                            </div>
+                            <div class="icon">
+                                <i class="icon ion-android-people"></i>
+                            </div>
+                            <a href="/Agen" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                        {{-- <div class="small-box bg-danger">
                             <div class="inner">
                                 <h3>2</h3>
 
-                                <p>Laporan</p>
+                                <p>Daftar Transaksi</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
                             <a href="/laporanBul" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div class="col-md-6">

@@ -226,7 +226,7 @@
 
             var table = $('#myTable').DataTable({
 
-                //callback datatable untuk menampilkan jumlah total berdasarkan pencarian pada class total-tagihan
+                //callback datatable untuk menampilkan jumlah total berdasarkan pencarian pada class total-tagihan sebelah tagihan belum lunas
                 initComplete: function() {
                     var api = this.api();
                     var total = api.column(5).data().reduce(function(acc, val) {
@@ -260,9 +260,7 @@
                             return 0;
                         }
                     };
-
-
-                    // Total over all pages
+                    // Total over all pages / total semua halaman
                     total = api
                         .column(5)
                         .data()
@@ -270,7 +268,7 @@
                             return intVal(a) + intVal(b);
                         }, 0);
 
-                    // Total over this page
+                    // Total over this page / total halaman yang tampil
                     pageTotal = api
                         .column(5, {
                             page: 'current'
@@ -280,7 +278,7 @@
                             return intVal(a) + intVal(b);
                         }, 0);
 
-                    // Update footer
+                    // Update footer / memperbarui footer
                     $(api.column(5).footer()).html('Rp. ' + pageTotal.toLocaleString('id-ID', {
                             minimumFractionDigits: 0,
                             maximumFractionDigits: 0
@@ -290,8 +288,8 @@
                             maximumFractionDigits: 0
                         }) + ' total)');
 
-                    // Update Total Tagihan
-                    $('.inner jum h3').html('Rp.' + parseInt(total).toLocaleString('id-ID'));
+                    // // Update Total Tagihan
+                    // $('.inner jum h3').html('Rp.' + parseInt(total).toLocaleString('id-ID'));
 
 
                 },
