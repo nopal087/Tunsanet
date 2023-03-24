@@ -51,11 +51,6 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
 
 
-
-
-
-
-
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -299,7 +294,7 @@
                     [5, 25, 50, 75, "All"]
                 ],
                 "oLanguage": {
-                    "sSearch": "Filter Data"
+                    "sSearch": "Cari "
                 },
                 "iDisplayLength": 20,
                 scrollCollapse: true,

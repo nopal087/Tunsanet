@@ -1,10 +1,5 @@
  @include('admin/mdb')
 
- <style>
-     #sidebar li.active {
-         background-color: #3B71CA;
-     }
- </style>
  <!-- Main Sidebar Container -->
  <aside class="main-sidebar sidebar-dark-primary elevation-2">
      <!-- Sidebar -->
@@ -38,7 +33,7 @@
              <ul class="nav nav-sidebar" data-widget="treeview" role="menu" data-accordion="false" id="sidebar">
                  <li class="nav-header">PILIHAN MENU</li>
                  <li class="nav-item">
-                     <a href="/homedashboard" class="nav-link">
+                     <a href="/homedashboard" class="nav-link" id="sidebar">
                          <i class="nav-icon fas fa-tachometer-alt "></i>
                          <p>
                              Beranda
