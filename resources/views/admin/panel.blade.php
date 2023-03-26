@@ -333,6 +333,7 @@
                             columns: ':not(:last-child,:nth-last-child(1))' // mengecualikan kolom aksi dan kolom terakhir
                         }
                     },
+
                     // {
                     //     text: 'Date Range Filter', // add new button
                     //     action: function(e, dt, node, config) {
