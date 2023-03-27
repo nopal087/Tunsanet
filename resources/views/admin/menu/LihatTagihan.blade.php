@@ -131,7 +131,7 @@
                         </div>
 
                         <!-- Date range filter modal -->
-                        {{-- <div class="modal fade" id="date-range-modal" tabindex="-1" role="dialog"
+                        <div class="modal fade" id="date-range-modal" tabindex="-1" role="dialog"
                             aria-labelledby="date-range-modal-label" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -156,7 +156,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
 
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             @if (count($datatagihan) > 0)
@@ -180,7 +180,8 @@
                                             <tr>
                                                 <td class="border">{{ $loop->iteration }}</td>
                                                 {{-- <td>{{ $t->id_pengguna }}</td> --}}
-                                                <td class="border">{{ date('d F Y', strtotime($t->tanggal)) }}</td>
+                                                {{-- <td class="border">{{ date('d F Y', strtotime($t->tanggal)) }}</td> --}}
+                                                <td class="border">{{ date('Y-m-d', strtotime($t->tanggal)) }}</td>
                                                 <td class="border">{{ $t->nama }}</td>
                                                 <td class="border">{{ $t->phone }}</td>
                                                 <td class="border">{{ $t->paket }}</td>

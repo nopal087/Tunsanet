@@ -58,7 +58,7 @@
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
                         <div class="small-box bg-primary">
-                            <div class="inner">
+                            <div class="inner total-transaksi">
                                 <h3>Rp.{{ number_format($jumlahTotalPrice1) }}</h3>
 
                                 <p>Total Semua Pemasukan Transaksi</p>
@@ -127,13 +127,41 @@
                         </div>
                     </form>
                 </div> --}}
+
+                    <!-- Date range filter modal -->
+                    <div class="modal fade" id="date-range-modal" tabindex="-1" role="dialog"
+                        aria-labelledby="date-range-modal-label" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="date-range-modal-label">Filter Tanggal</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="date-range-form">
+                                        <div class="form-group">
+                                            <label for="start-date">Start Date:</label>
+                                            <input type="date" class="form-control" id="start-date" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="end-date">End Date:</label>
+                                            <input type="date" class="form-control" id="end-date" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Filter</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
 
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             @if (count($datatransaksi) > 0)
-                                <table class="table-bordered text-wrap mb-3 hover stripe" id="myTable">
+                                <table class="table-bordered text-wrap mb-3 hover stripe" id="myTable2">
 
                                     <thead>
                                         <tr class="bg-secondary">
@@ -156,6 +184,9 @@
 
                                                 <td class="border">{{ $loop->iteration }}</td>
                                                 <td class="border">{{ $item->id }}</td>
+                                                {{-- <td class="border">
+                                                    {{ $item->updated_at->translatedFormat('Y-m-d') }}
+                                                </td> --}}
                                                 <td class="border">
                                                     {{ $item->updated_at->translatedFormat('d F Y, H:i:s') }}
                                                 </td>
@@ -164,7 +195,7 @@
                                                 <td class="border">{{ $item->alamat }}</td>
                                                 <td class="border">{{ $item->paket }}</td>
                                                 <td class="border">
-                                                    {{ number_format($item->total_price, 2, ',', '.') }}</span>
+                                                    {{ number_format($item->total_price) }}</span>
                                                 </td>
                                                 <td class="border"><label
                                                         class="badge {{ $item->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $item->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
@@ -187,8 +218,9 @@
                                                                 data-toggle="modal"
                                                                 data-target="#confirm-delete-{{ $item->id }}"><i
                                                                     class="fas fa-trash"></i></button>
-                                                            <div class="modal fade" id="confirm-delete-{{ $item->id }}"
-                                                                tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                            <div class="modal fade"
+                                                                id="confirm-delete-{{ $item->id }}" tabindex="-1"
+                                                                role="dialog" aria-labelledby="myModalLabel"
                                                                 aria-hidden="true">
                                                                 <div class="modal-dialog">
                                                                     <div class="modal-content">
@@ -218,6 +250,12 @@
                                             </tr>
                                         @endforeach
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="7" style="text-align:right">Total:</th>
+                                            <th colspan="3"></th>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                                 {{-- menampilkan pencarian ketika tidak ditemukan --}}
                                 @if (isset($status))

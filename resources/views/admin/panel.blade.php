@@ -334,26 +334,47 @@
                         }
                     },
 
-                    // {
-                    //     text: 'Date Range Filter', // add new button
-                    //     action: function(e, dt, node, config) {
-                    //         $("#date-range-modal").modal("show"); // show the modal
-                    //     },
-                    //     className: 'btn btn-warning bg-warning'
-                    // }
+                    {
+                        text: 'Filter Tanggal', // add new button
+                        action: function(e, dt, node, config) {
+                            $("#date-range-modal").modal("show"); // show the modal
+                        },
+                        className: 'btn btn-warning bg-warning'
+                    }
                 ]
 
             });
-            // // Date range filter modal
+            // Date range filter modal
+            $("#date-range-form").submit(function(e) {
+                e.preventDefault(); // prevent form submission
+                var startDate = moment($("#start-date").val(), "DD-MM-YYYY").format("YYYY-MM-DD");
+                var endDate = moment($("#end-date").val(), "DD-MM-YYYY").format("YYYY-MM-DD");
+
+                // Add date range filter
+                $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
+                    var date = moment(data[1], "DD-MM-YYYY").format("YYYY-MM-DD");
+                    if (startDate <= date && endDate >= date) {
+                        return true;
+                    }
+                    return false;
+                });
+
+                table.draw(); // redraw the table with the new filter
+
+                // Reset date range filter and form
+                $("#date-range-modal").modal("hide");
+                $("#date-range-form")[0].reset();
+                $.fn.dataTable.ext.search.pop();
+            });
+
             // $("#date-range-form").submit(function(e) {
             //     e.preventDefault(); // prevent form submission
-            //     var startDate = moment($("#start-date").val(), "DD-MM-YYYY").format("DD-MM-YYYY");
-            //     var endDate = moment($("#end-date").val(), "DD-MM-YYYY").format("DD-MM-YYYY");
-
+            //     var startDate = moment($("#start-date").val(), "DD MMMM YYYY").format("YYYY-MM-DD");
+            //     var endDate = moment($("#end-date").val(), "DD MMMM YYYY").format("YYYY-MM-DD");
 
             //     // Add date range filter
             //     $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
-            //         var date = moment(data[2], "DD-MM-YYYY").format(
+            //         var date = moment(data[1], "DD MMMM YYYY").format(
             //             "YYYY-MM-DD"); // use column 2 (tanggal tagihan) as the basis for filtering
             //         if (startDate <= date && endDate >= date) {
             //             return true;
@@ -368,6 +389,165 @@
             //     $("#date-range-form")[0].reset();
             //     $.fn.dataTable.ext.search.pop();
             // });
+
+
+
+        });
+
+
+        $(document).ready(function() {
+
+            var table = $('#myTable2').DataTable({
+
+                //callback datatable untuk menampilkan jumlah total berdasarkan pencarian pada class total-tagihan sebelah tagihan belum lunas
+                initComplete: function() {
+                    var api = this.api();
+                    var total = api.column(7).data().reduce(function(acc, val) {
+                        return acc + parseFloat(val.replace(/[^\d.-]/g, ''));
+                    }, 0);
+
+                    $(".total-transaksi h3").html("Rp. " + total.toLocaleString('id-ID'));
+
+                    api.on('draw', function() {
+                        var total = api.column(7, {
+                            "filter": "applied"
+                        }).data().reduce(function(acc, val) {
+                            return acc + parseFloat(val.replace(/[^\d.-]/g, ''));
+                        }, 0);
+                        $(".total-transaksi h3").html("Rp. " + total.toLocaleString('id-ID'));
+                    });
+                },
+
+                //footer callback berfungsi untuk menampilkan total nominal atau jumlah pada footer table
+                footerCallback: function(row, data, start, end, display) {
+                    var api = this.api();
+
+                    // Remove the formatting to get integer data for summation
+                    var intVal = function(i) {
+                        if (typeof i === 'string') {
+                            var cleanNum = i.replace(/\D/g, '');
+                            return cleanNum !== '' ? parseInt(cleanNum, 10) : 0;
+                        } else if (typeof i === 'number') {
+                            return i;
+                        } else {
+                            return 0;
+                        }
+                    };
+                    // Total over all pages / total semua halaman
+                    total = api
+                        .column(7)
+                        .data()
+                        .reduce(function(a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0);
+
+                    // Total over this page / total halaman yang tampil
+                    pageTotal = api
+                        .column(7, {
+                            page: 'current'
+                        })
+                        .data()
+                        .reduce(function(a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0);
+
+                    // Update footer / memperbarui footer
+                    $(api.column(7).footer()).html('Rp. ' + pageTotal.toLocaleString('id-ID', {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 0
+                        }) +
+                        ' ( Rp. ' + total.toLocaleString('id-ID', {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 0
+                        }) + ' total)');
+
+                    // // Update Total Tagihan
+                    // $('.inner jum h3').html('Rp.' + parseInt(total).toLocaleString('id-ID'));
+
+
+                },
+
+                "aLengthMenu": [
+                    [5, 25, 50, 75, -1],
+                    [5, 25, 50, 75, "All"]
+                ],
+                "oLanguage": {
+                    "sSearch": "Cari "
+                },
+                "iDisplayLength": 20,
+                scrollCollapse: true,
+                paging: true,
+                dom: 'Bfrtip',
+                pagingType: 'full_numbers',
+                buttons: [{
+                        text: 'PDF',
+                        className: 'btn btn-danger bg-danger',
+                        extend: 'pdfHtml5',
+                        exportOptions: {
+                            columns: ':not(:last-child,:nth-last-child(1))' // mengecualikan kolom aksi dan kolom terakhir
+                        }
+                    },
+                    {
+                        text: 'Excel',
+                        className: 'btn btn-succes bg-success',
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: ':not(:last-child,:nth-last-child(1))' // mengecualikan kolom aksi dan kolom terakhir
+                        }
+                    },
+                    {
+                        text: 'CSV',
+                        className: 'btn btn-primary bg-primary',
+                        extend: 'csvHtml5',
+                        exportOptions: {
+                            columns: ':not(:last-child,:nth-last-child(1))' // mengecualikan kolom aksi dan kolom terakhir
+                        }
+                    },
+                    {
+                        text: 'Print',
+                        className: 'btn btn-info bg-info',
+                        extend: 'print',
+                        exportOptions: {
+                            columns: ':not(:last-child,:nth-last-child(1))' // mengecualikan kolom aksi dan kolom terakhir
+                        }
+                    },
+
+                    // {
+                    //     text: 'Filter Tanggal', // add new button
+                    //     action: function(e, dt, node, config) {
+                    //         $("#date-range-modal").modal("show"); // show the modal
+                    //     },
+                    //     className: 'btn btn-warning bg-warning'
+                    // }
+                ]
+
+            });
+            // Date range filter modal
+            // $("#date-range-form").submit(function(e) {
+            //     e.preventDefault(); // prevent form submission
+            //     var startDate = moment($("#start-date").val(), "DD-MM-YYYY").format("YYYY-MM-DD");
+            //     var endDate = moment($("#end-date").val(), "DD-MM-YYYY").format("YYYY-MM-DD");
+
+            //     // Add date range filter
+            //     $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
+            //         var date = moment(data[2], "DD MMMM YYYY, HH:mm:ss").format("YYYY-MM-DD");
+            //         if (startDate <= date && endDate >= date) {
+            //             return true;
+            //         }
+            //         return false;
+            //     });
+
+            //     table.draw(); // redraw the table with the new filter
+
+            //     // Reset date range filter and form
+            //     $("#date-range-modal").modal("hide");
+            //     $("#date-range-form")[0].reset();
+            //     $.fn.dataTable.ext.search.pop();
+            // });
+
+
+
+
         });
     </script>
 
