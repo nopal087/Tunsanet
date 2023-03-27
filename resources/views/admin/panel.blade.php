@@ -367,29 +367,6 @@
                 $.fn.dataTable.ext.search.pop();
             });
 
-            // $("#date-range-form").submit(function(e) {
-            //     e.preventDefault(); // prevent form submission
-            //     var startDate = moment($("#start-date").val(), "DD MMMM YYYY").format("YYYY-MM-DD");
-            //     var endDate = moment($("#end-date").val(), "DD MMMM YYYY").format("YYYY-MM-DD");
-
-            //     // Add date range filter
-            //     $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
-            //         var date = moment(data[1], "DD MMMM YYYY").format(
-            //             "YYYY-MM-DD"); // use column 2 (tanggal tagihan) as the basis for filtering
-            //         if (startDate <= date && endDate >= date) {
-            //             return true;
-            //         }
-            //         return false;
-            //     });
-
-            //     table.draw(); // redraw the table with the new filter
-
-            //     // Reset date range filter and form
-            //     $("#date-range-modal").modal("hide");
-            //     $("#date-range-form")[0].reset();
-            //     $.fn.dataTable.ext.search.pop();
-            // });
-
 
 
         });
@@ -522,7 +499,7 @@
                 ]
 
             });
-            // Date range filter modal
+            // Date range filter modal untuk transaksi
             // $("#date-range-form").submit(function(e) {
             //     e.preventDefault(); // prevent form submission
             //     var startDate = moment($("#start-date").val(), "DD-MM-YYYY").format("YYYY-MM-DD");
