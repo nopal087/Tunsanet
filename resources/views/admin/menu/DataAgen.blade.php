@@ -42,7 +42,7 @@
 
                         <div class="card-header p-0 mx-3">
 
-                            <a class="btn btn-primary btn-sm" href="/admin/menu/TambahAgen"><i class="fas fa-user-edit">
+                            <a class="btn btn-primary btn-md" href="/admin/menu/TambahAgen"><i class="fas fa-user-edit">
                                 </i> Tambah Agen</a>
                         </div>
                         <!-- /.card-header -->

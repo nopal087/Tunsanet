@@ -38,9 +38,9 @@
 
                         <div class="card-header mb-4 p-0 mx-3">
 
-                            <a class="btn btn-primary btn-sm" href="/admin/menu/Tambahpengguna"><i class="fas fa-user-edit">
+                            <a class="btn btn-primary btn-md" href="/admin/menu/Tambahpengguna"><i class="fas fa-user-edit">
                                 </i> Tambah Pengguna</a>
-                            <a class="btn btn-primary btn-sm" href="/btagihan"><i class="fas fa-edit">
+                            <a class="btn btn-primary btn-md" href="/btagihan"><i class="fas fa-edit">
                                 </i> Buat Tagihan</a>
                         </div>
                         <!-- /.card-header -->

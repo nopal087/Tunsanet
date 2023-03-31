@@ -126,7 +126,7 @@
                     <div class="col-12">
                         {{-- <div class="card"> --}}
                         <div class="card-header  p-0 mx-3">
-                            <a class="btn btn-primary btn-sm" href="/UpdateLinkPayment"><i class="fas fa-user-edit">
+                            <a class="btn btn-primary btn-md" href="/UpdateLinkPayment"><i class="fas fa-user-edit">
                                 </i> Lihat Link</a>
                         </div>
 
@@ -144,11 +144,11 @@
                                     <div class="modal-body">
                                         <form id="date-range-form">
                                             <div class="form-group">
-                                                <label for="start-date">Start Date:</label>
+                                                <label for="start-date">Tanggal Mulai:</label>
                                                 <input type="date" class="form-control" id="start-date" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="end-date">End Date:</label>
+                                                <label for="end-date">Tanggal Akhir:</label>
                                                 <input type="date" class="form-control" id="end-date" required>
                                             </div>
                                             <button type="submit" class="btn btn-primary">Filter</button>

@@ -333,6 +333,14 @@
                             columns: ':not(:last-child,:nth-last-child(1))' // mengecualikan kolom aksi dan kolom terakhir
                         }
                     },
+                    {
+                        text: 'COPY',
+                        className: 'btn btn-secondary bg-secondary',
+                        extend: 'copy',
+                        exportOptions: {
+                            columns: ':not(:last-child,:nth-last-child(1))' // mengecualikan kolom aksi dan kolom terakhir
+                        }
+                    },
 
                     {
                         text: 'Filter Tanggal', // add new button
@@ -340,7 +348,7 @@
                             $("#date-range-modal").modal("show"); // show the modal
                         },
                         className: 'btn btn-warning bg-warning'
-                    }
+                    },
                 ]
 
             });
@@ -484,6 +492,14 @@
                         text: 'Print',
                         className: 'btn btn-info bg-info',
                         extend: 'print',
+                        exportOptions: {
+                            columns: ':not(:last-child,:nth-last-child(1))' // mengecualikan kolom aksi dan kolom terakhir
+                        }
+                    },
+                    {
+                        text: 'COPY',
+                        className: 'btn btn-secondary bg-secondary',
+                        extend: 'copy',
                         exportOptions: {
                             columns: ':not(:last-child,:nth-last-child(1))' // mengecualikan kolom aksi dan kolom terakhir
                         }

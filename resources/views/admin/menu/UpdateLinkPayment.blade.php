@@ -23,7 +23,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="paket">Paket</label>
-                                        <select class="form-control" id="paket" name="paket">
+                                        <select class="form-control" id="paket" name="paket" required>
                                             <option value="">Pilih Paket Internet</option>
                                             <option value="Diamond">Diamond</option>
                                             <option value="Gold">Gold</option>
@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="link">Link Pembayaran</label>
-                                        <input type="text" class="form-control" id="link" name="link">
+                                        <input type="text" class="form-control" id="link" name="link" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary mb-4">Tambah Link</button>
                                 </form>
