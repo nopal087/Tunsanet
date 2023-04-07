@@ -50,7 +50,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
 
-
+    @vite([])
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

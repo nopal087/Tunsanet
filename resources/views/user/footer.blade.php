@@ -37,7 +37,7 @@
                 <a href="#" class="me-4 link-light">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://github.com/nopal087/Tunsanet" class="me-4 link-light">
+                <a href="#" class="me-4 link-light">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
@@ -125,7 +125,7 @@
         <!-- Copyright -->
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
             © 2023 Copyright:
-            <a class="text-reset fw-bold" href="https://github.com/nopal087/Tunsanet">NopalTech</a>
+            <a class="text-reset fw-bold" href="#">NopalTech</a>
         </div>
         <!-- Copyright -->
     </footer>

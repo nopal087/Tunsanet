@@ -1,3 +1,4 @@
+@vite([])
 <style>
     /* Color of the links BEFORE scroll */
     .navbar-scroll .nav-link,
