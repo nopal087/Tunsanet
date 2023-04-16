@@ -378,8 +378,9 @@
 
 
         });
+    </script>
 
-
+    <script>
         $(document).ready(function() {
 
             var table = $('#myTable2').DataTable({
@@ -543,7 +544,6 @@
 
         });
     </script>
-
 
 
 </body>

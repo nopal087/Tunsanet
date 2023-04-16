@@ -105,7 +105,7 @@ class UserController extends Controller
             $orders = $orders->where('status', 'Paid');
         }
 
-        $orders = $orders->paginate(10);
+        $orders = $orders->paginate(1000);
         $datatransaksi = DB::table('orders')->get();
         $order = order::where('status', 'Paid')->count();
         $order1 = order::where('status', 'Unpaid')->count();

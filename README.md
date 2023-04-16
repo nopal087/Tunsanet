@@ -5,7 +5,7 @@
 <h4 align="center">Dashboard Admin</h4>
 <img src="https://github.com/nopal087/Tunsanet/blob/master/Screenshot%20(145).png" width="100%" alt="preview">
 
-## Persyaratan
+<!-- ## Persyaratan
 - PHP versi 8.1 atau diatasnya **[PHP versi 8.1](https://www.php.net/releases/8.0/en.php)**
 - Composer versi 2.4.1 atau diatasnya **[Composer Versi 2.4.1](https://getcomposer.org/changelog/2.4.1)**
 ## Installasi 
@@ -44,7 +44,7 @@ $ php artisan migrate
 Untuk menjalankan project gunakan peirntah
 ```html
 $ php artisan run serve 
-```
+``` -->
 
 ## ✌️ 1. TENTANG TUNSANET
 
