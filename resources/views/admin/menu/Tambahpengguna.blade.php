@@ -20,47 +20,49 @@
                         aria-labelledby="panelsStayOpen-headingOne">
                         <div class="accordion-body">
                             <div class="card-body">
-                                <table class="table table-bordered text-wrap mb-3" border="2" id="myTable">
-                                    <thead>
-                                        {{-- <div class="text-center" id="transaksi">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered text-wrap mb-3" border="2" id="myTable">
+                                        <thead>
+                                            {{-- <div class="text-center" id="transaksi">
                                             <h4>Tabel Pembelian Paket Internet</h4>
                                         </div> --}}
-                                        <tr class="bg-primary">
-                                            <th>No.</th>
-                                            <th>Tanggal</th>
-                                            <th>Nama</th>
-                                            <th>no_hp</th>
-                                            <th>Alamat</th>
-                                            <th>Paket</th>
-                                            <th>Jumlah</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($order as $item)
-                                            <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>
-                                                    {{ $item->updated_at->translatedFormat('d F Y') }}
-                                                </td>
-                                                <td>
-                                                    {{ $item->nama }}
-                                                </td>
-                                                <td>
-                                                    {{ $item->phone }}
-                                                </td>
-                                                <td>
-                                                    {{ $item->alamat }}
-                                                </td>
-                                                <td>
-                                                    {{ $item->paket }}
-                                                </td>
-                                                <td>
-                                                    Rp. {{ number_format($item->total_price) }}
-                                                </td>
+                                            <tr class="bg-primary">
+                                                <th>No.</th>
+                                                <th>Tanggal</th>
+                                                <th>Nama</th>
+                                                <th>no_hp</th>
+                                                <th>Alamat</th>
+                                                <th>Paket</th>
+                                                <th>Jumlah</th>
                                             </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($order as $item)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>
+                                                        {{ $item->updated_at->translatedFormat('d F Y') }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $item->nama }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $item->phone }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $item->alamat }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $item->paket }}
+                                                    </td>
+                                                    <td>
+                                                        Rp. {{ number_format($item->total_price) }}
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                                 {{-- {{ $order->links() }} --}}
                             </div>
                         </div>

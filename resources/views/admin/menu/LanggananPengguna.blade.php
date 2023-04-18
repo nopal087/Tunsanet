@@ -37,7 +37,6 @@
                     <div class="col-12">
 
                         <div class="card-header mb-4 p-0 mx-3">
-
                             <a class="btn btn-primary btn-md" href="/admin/menu/Tambahpengguna"><i class="fas fa-user-edit">
                                 </i> Tambah Pengguna</a>
                             <a class="btn btn-primary btn-md" href="/btagihan"><i class="fas fa-edit">
@@ -46,82 +45,85 @@
                         <!-- /.card-header -->
                         <div class="card-body table-bordered-responsive p-0 mx-3">
                             @if (count($datapengguna) > 0)
-                                <table class="table-bordered text-wrap mb-3 hover stripe" id="myTable">
-                                    <thead>
-                                        <tr class="bg-secondary">
-                                            <th>No.</th>
-                                            {{-- <th>ID</th> --}}
-                                            <th>Nama</th>
-                                            {{-- <th>Email</th> --}}
-                                            <th>No.Telp</th>
-                                            <th>Alamat</th>
-                                            <th>Paket internet</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($pengguna as $p)
-                                            <tr>
-                                                <td class="border">{{ $loop->iteration }}</td>
-                                                {{-- <td class="border">{{ $p->id }}</td> --}}
-                                                <td class="border">{{ $p->nama }}</td>
-                                                {{-- <td class="border">nopal@gmail.com</td> --}}
-                                                <td class="border">{{ $p->phone }}</td>
-                                                <td class="border">{{ $p->alamat }}</td>
-                                                <td class="border">{{ $p->paket }}</td>
-                                                <td class="project-actions border">
-                                                    <a class="btn btn-info btn-sm"
-                                                        href="admin/menu/pengguna/{{ $p->id }}/edit">
-                                                        <i class="fas fa-pencil-alt">
-                                                        </i>
-                                                    </a>
-                                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                <div class="table-responsive">
+                                    <table class="table-bordered text-wrap mb-3 hover stripe" id="myTable">
+                                        <thead>
+                                            <tr class="bg-secondary">
+                                                <th>No.</th>
+                                                {{-- <th>ID</th> --}}
+                                                <th>Nama</th>
+                                                {{-- <th>Email</th> --}}
+                                                <th>No.Telp</th>
+                                                <th>Alamat</th>
+                                                <th>Paket internet</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($pengguna as $p)
+                                                <tr>
+                                                    <td class="border">{{ $loop->iteration }}</td>
+                                                    {{-- <td class="border">{{ $p->id }}</td> --}}
+                                                    <td class="border">{{ $p->nama }}</td>
+                                                    {{-- <td class="border">nopal@gmail.com</td> --}}
+                                                    <td class="border">{{ $p->phone }}</td>
+                                                    <td class="border">{{ $p->alamat }}</td>
+                                                    <td class="border">{{ $p->paket }}</td>
+                                                    <td class="project-actions border">
+                                                        <a class="btn btn-info btn-sm"
+                                                            href="admin/menu/pengguna/{{ $p->id }}/edit">
+                                                            <i class="fas fa-pencil-alt">
+                                                            </i>
+                                                        </a>
+                                                        <div class="btn-group" role="group" aria-label="Basic example">
 
-                                                        <form action="/admin/menu/pengguna/{{ $p->id }}"
-                                                            method="POST">
-                                                            @csrf
-                                                            @method('delete')
-                                                            {{-- Modal Button Hapus --}}
-                                                            {{-- <input class="btn btn-danger btn-sm" type="submit"
+                                                            <form action="/admin/menu/pengguna/{{ $p->id }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                @method('delete')
+                                                                {{-- Modal Button Hapus --}}
+                                                                {{-- <input class="btn btn-danger btn-sm" type="submit"
                                                             data-toggle="modal"> --}}
-                                                            <button type="button" class="btn btn-danger btn-sm"
-                                                                data-toggle="modal"
-                                                                data-target="#pengguna-{{ $p->id }}"><i
-                                                                    class="fas fa-trash"></i></button>
-                                                            <div class="modal fade" id="pengguna-{{ $p->id }}"
-                                                                tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                                                                aria-hidden="true">
-                                                                <div class="modal-dialog">
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-header">
-                                                                            <h4 class="modal-title" id="myModalLabel">
-                                                                                Konfirmasi
-                                                                                Penghapusan</h4>
-                                                                            <button type="button" class="close"
-                                                                                data-dismiss="modal"
-                                                                                aria-hidden="true">&times;</button>
-                                                                        </div>
-                                                                        <div class="modal-body">
-                                                                            Apakah Anda yakin ingin menghapus ini?
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-default"
-                                                                                data-dismiss="modal">Batal</button>
-                                                                            <button type="submit"
-                                                                                class="btn btn-danger">Hapus</button>
+                                                                <button type="button" class="btn btn-danger btn-sm"
+                                                                    data-toggle="modal"
+                                                                    data-target="#pengguna-{{ $p->id }}"><i
+                                                                        class="fas fa-trash"></i></button>
+                                                                <div class="modal fade" id="pengguna-{{ $p->id }}"
+                                                                    tabindex="-1" role="dialog"
+                                                                    aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h4 class="modal-title" id="myModalLabel">
+                                                                                    Konfirmasi
+                                                                                    Penghapusan</h4>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-hidden="true">&times;</button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                Apakah Anda yakin ingin menghapus ini?
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button"
+                                                                                    class="btn btn-default"
+                                                                                    data-dismiss="modal">Batal</button>
+                                                                                <button type="submit"
+                                                                                    class="btn btn-danger">Hapus</button>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            {{-- <input class="btn btn-danger btn-sm" type="submit" value="delete"> --}}
-                                                        </form>
-                                                    </div>
+                                                                {{-- <input class="btn btn-danger btn-sm" type="submit" value="delete"> --}}
+                                                            </form>
+                                                        </div>
 
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                                 {{-- menampilkan pencarian ketika tidak ditemukan --}}
                                 @if (isset($status))
                                     <div class="alert alert-danger text-center">{{ $status }}</div>

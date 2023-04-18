@@ -160,49 +160,50 @@
 
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             @if (count($datatagihan) > 0)
-                                <table class=" table-bordered mdb-table text-wrap mb-3 hover stripe" id="myTable">
-                                    <thead>
-                                        <tr class="bg-secondary">
-                                            <th>No.</th>
-                                            {{-- <th>ID</th> --}}
-                                            <th>Tanggal Tagihan</th>
-                                            <th>Nama</th>
-                                            <th>No.hp</th>
-                                            <th>Paket</th>
-                                            <th>Jumlah</th>
-                                            <th>Status</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
+                                <div class="table-responsive">
+                                    <table class=" table-bordered mdb-table text-wrap mb-3 hover stripe" id="myTable">
+                                        <thead>
+                                            <tr class="bg-secondary">
+                                                <th>No.</th>
+                                                {{-- <th>ID</th> --}}
+                                                <th>Tanggal Tagihan</th>
+                                                <th>Nama</th>
+                                                <th>No.hp</th>
+                                                <th>Paket</th>
+                                                <th>Jumlah</th>
+                                                <th>Status</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
 
-                                    <tbody>
-                                        @foreach ($tagihan as $t)
-                                            <tr>
-                                                <td class="border">{{ $loop->iteration }}</td>
-                                                {{-- <td>{{ $t->id_pengguna }}</td> --}}
-                                                {{-- <td class="border">{{ date('d F Y', strtotime($t->tanggal)) }}</td> --}}
-                                                <td class="border">{{ date('Y-m-d', strtotime($t->tanggal)) }}</td>
-                                                <td class="border">{{ $t->nama }}</td>
-                                                <td class="border">{{ $t->phone }}</td>
-                                                <td class="border">{{ $t->paket }}</td>
-                                                <td class="border">{{ number_format($t->tagihan) }}</td>
-                                                <td class="border"><label
-                                                        class="badge {{ $t->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $t->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
-                                                </td>
+                                        <tbody>
+                                            @foreach ($tagihan as $t)
+                                                <tr>
+                                                    <td class="border">{{ $loop->iteration }}</td>
+                                                    {{-- <td>{{ $t->id_pengguna }}</td> --}}
+                                                    {{-- <td class="border">{{ date('d F Y', strtotime($t->tanggal)) }}</td> --}}
+                                                    <td class="border">{{ date('Y-m-d', strtotime($t->tanggal)) }}</td>
+                                                    <td class="border">{{ $t->nama }}</td>
+                                                    <td class="border">{{ $t->phone }}</td>
+                                                    <td class="border">{{ $t->paket }}</td>
+                                                    <td class="border">{{ number_format($t->tagihan) }}</td>
+                                                    <td class="border"><label
+                                                            class="badge {{ $t->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $t->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
+                                                    </td>
 
-                                                <td class="project-actions border">
-                                                    <a class="btn btn-info btn-sm"
-                                                        href="/admin/menu/Lunas/{{ $t->id }}">
-                                                        <i class="fas fa-check"></i>
-                                                        </i>
-                                                    </a>
+                                                    <td class="project-actions border">
+                                                        <a class="btn btn-info btn-sm"
+                                                            href="/admin/menu/Lunas/{{ $t->id }}">
+                                                            <i class="fas fa-check"></i>
+                                                            </i>
+                                                        </a>
 
-                                                    {{-- <a class="btn btn-success btn-sm" target="_blank"
+                                                        {{-- <a class="btn btn-success btn-sm" target="_blank"
                                                         href="https://wa.me/{{ $t->phone }}?text=kepada%20yang%20terhormat%20bapak/ibu%20pengguna%20layanan%20paket%20internet%20Bumdes%20Desa%20Tunjungsari,%20hari %20ini%20adalah%20masa%20tagihan%20pembayaran%20internet %20anda,%20anda%20dapat%20melakukan%20pembayaran%20secara%20online%20melalui%20link%20berikut.%0ALink pembayaran : %0Aatau%20anda%20dapat%20melakukan%20pembayaran%20manual%20bisa%20hubungi%20petugas%20:%20(085712666154)%20atau%20datang%20ke%20kantor%20bumdes.%0ATerimakasih">
                                                         <i class="fab fa-whatsapp"></i>
                                                         </i>
                                                     </a> --}}
-                                                    {{-- <a class="btn btn-success btn-sm" target="_blank"
+                                                        {{-- <a class="btn btn-success btn-sm" target="_blank"
                                                         href="https://wa.me/{{ $t->phone }}?text=kepada%20yang%20terhormat%20*{{ $t->nama }}*%20pengguna%20layanan%20paket%20internet%20Bumdes%20Desa%20Tunjungsari,%20hari%20ini%20adalah%20masa%20tagihan%20pembayaran%20internet%20anda,%20anda%20dapat%20melakukan%20pembayaran%20secara%20online%20melalui%20link%20berikut:%0ALink%20pembayaran%20:%20
                                                         {{ $t->paket == 'Diamond'
                                                             ? 'https://app.sandbox.midtrans.com/payment-links/1676782088119PKTDiamond'
@@ -211,68 +212,70 @@
                                                                 : 'https://app.sandbox.midtrans.com/payment-links/1676781876462PKTSilver') }}%0Aatau%20anda%20dapat%20melakukan%20pembayaran%20manual%20bisa%20hubungi%20petugas%20:%20(085712666154)%20atau%20datang%20ke%20kantor%20bumdes.%0ATerimakasih">
                                                         <i class="fab fa-whatsapp"></i>
                                                     </a> --}}
-                                                    <a class="btn btn-success btn-sm" target="_blank"
-                                                        href="https://wa.me/{{ $t->phone }}?text=kepada%20yang%20terhormat%20*{{ $t->nama }}*%20pengguna%20layanan%20paket%20internet%20Bumdes%20Desa%20Tunjungsari,%20hari%20ini%20adalah%20masa%20tagihan%20pembayaran%20internet%20anda,%20anda%20dapat%20melakukan%20pembayaran%20secara%20online%20melalui%20link%20berikut:%0ALink%20pembayaran%20:%20
+                                                        <a class="btn btn-success btn-sm" target="_blank"
+                                                            href="https://wa.me/{{ $t->phone }}?text=kepada%20yang%20terhormat%20*{{ $t->nama }}*%20pengguna%20layanan%20paket%20internet%20Bumdes%20Desa%20Tunjungsari,%20hari%20ini%20adalah%20masa%20tagihan%20pembayaran%20internet%20anda,%20anda%20dapat%20melakukan%20pembayaran%20secara%20online%20melalui%20link%20berikut:%0ALink%20pembayaran%20:%20
                                                     
                                                         @if ($t->paket == 'Silver') {{ \App\Models\PayementLink::where('paket', 'Silver')->first()->link }} @endif
                                                         @if ($t->paket == 'Gold') {{ \App\Models\PayementLink::where('paket', 'Gold')->first()->link }} @endif
                                                         @if ($t->paket == 'Diamond') {{ \App\Models\PayementLink::where('paket', 'Diamond')->first()->link }} @endif
                                                         
                                                         %0Aatau%20anda%20dapat%20melakukan%20pembayaran%20manual%20bisa%20hubungi%20petugas%20:%20(085712666154)%20atau%20datang%20ke%20kantor%20bumdes.%0ATerimakasih">
-                                                        <i class="fab fa-whatsapp"></i>
-                                                    </a>
+                                                            <i class="fab fa-whatsapp"></i>
+                                                        </a>
 
 
-                                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                                        <div class="btn-group" role="group" aria-label="Basic example">
 
-                                                        <form action="/admin/menu/LihatTagihan/{{ $t->id }}"
-                                                            method="POST">
-                                                            @csrf
-                                                            @method('delete')
-                                                            <button type="button" class="btn btn-danger btn-sm"
-                                                                data-toggle="modal"
-                                                                data-target="#delete{{ $t->id }}"><i
-                                                                    class="fas fa-trash"></i></button>
-                                                            <div class="modal fade" id="delete{{ $t->id }}"
-                                                                tabindex="-1" role="dialog"
-                                                                aria-labelledby="myModalLabel" aria-hidden="true">
-                                                                <div class="modal-dialog">
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-header">
-                                                                            <h4 class="modal-title" id="myModalLabel">
-                                                                                Konfirmasi
-                                                                                Penghapusan</h4>
-                                                                            <button type="button" class="close"
-                                                                                data-dismiss="modal"
-                                                                                aria-hidden="true">&times;</button>
-                                                                        </div>
-                                                                        <div class="modal-body">
-                                                                            Apakah Anda yakin ingin menghapus ini?
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-default"
-                                                                                data-dismiss="modal">Batal</button>
-                                                                            <button type="submit"
-                                                                                class="btn btn-danger">Hapus</button>
+                                                            <form action="/admin/menu/LihatTagihan/{{ $t->id }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                @method('delete')
+                                                                <button type="button" class="btn btn-danger btn-sm"
+                                                                    data-toggle="modal"
+                                                                    data-target="#delete{{ $t->id }}"><i
+                                                                        class="fas fa-trash"></i></button>
+                                                                <div class="modal fade" id="delete{{ $t->id }}"
+                                                                    tabindex="-1" role="dialog"
+                                                                    aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h4 class="modal-title" id="myModalLabel">
+                                                                                    Konfirmasi
+                                                                                    Penghapusan</h4>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-hidden="true">&times;</button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                Apakah Anda yakin ingin menghapus ini?
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button"
+                                                                                    class="btn btn-default"
+                                                                                    data-dismiss="modal">Batal</button>
+                                                                                <button type="submit"
+                                                                                    class="btn btn-danger">Hapus</button>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            {{-- <input class="btn btn-danger btn-sm" type="submit" value="delete"> --}}
-                                                        </form>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        @endforeach
+                                                                {{-- <input class="btn btn-danger btn-sm" type="submit" value="delete"> --}}
+                                                            </form>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
 
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th colspan="5" style="text-align:right">Total:</th>
-                                            <th colspan="3"></th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th colspan="5" style="text-align:right">Total:</th>
+                                                <th colspan="3"></th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
 
                                 {{-- menampilkan pencarian ketika tidak ditemukan --}}
                                 @if (isset($status))

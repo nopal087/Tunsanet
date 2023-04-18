@@ -161,102 +161,104 @@
 
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
                             @if (count($datatransaksi) > 0)
-                                <table class="table-bordered text-wrap mb-3 hover stripe" id="myTable2">
+                                <div class="table-responsive">
+                                    <table class="table-bordered text-wrap mb-3 hover stripe" id="myTable2">
+                                        <thead>
+                                            <tr class="bg-secondary">
 
-                                    <thead>
-                                        <tr class="bg-secondary">
+                                                <th>No.</th>
+                                                <th>ID</th>
+                                                <th>Tanggal</th>
+                                                <th>Nama</th>
+                                                <th>No.Telephone</th>
+                                                <th>Alamat</th>
+                                                <th>Paket</th>
+                                                <th>Jumlah</th>
+                                                <th>Status</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($orders as $item)
+                                                <tr>
 
-                                            <th>No.</th>
-                                            <th>ID</th>
-                                            <th>Tanggal</th>
-                                            <th>Nama</th>
-                                            <th>No.Telephone</th>
-                                            <th>Alamat</th>
-                                            <th>Paket</th>
-                                            <th>Jumlah</th>
-                                            <th>Status</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($orders as $item)
-                                            <tr>
-
-                                                <td class="border">{{ $loop->iteration }}</td>
-                                                <td class="border">{{ $item->id }}</td>
-                                                {{-- <td class="border">
+                                                    <td class="border">{{ $loop->iteration }}</td>
+                                                    <td class="border">{{ $item->id }}</td>
+                                                    {{-- <td class="border">
                                                     {{ $item->updated_at->translatedFormat('Y-m-d') }}
                                                 </td> --}}
-                                                <td class="border">
-                                                    {{ $item->updated_at->translatedFormat('d F Y, H:i:s') }}
-                                                </td>
-                                                <td class="border">{{ $item->nama }}</td>
-                                                <td class="border">{{ $item->phone }}</td>
-                                                <td class="border">{{ $item->alamat }}</td>
-                                                <td class="border">{{ $item->paket }}</td>
-                                                <td class="border">
-                                                    {{ number_format($item->total_price) }}</span>
-                                                </td>
-                                                <td class="border"><label
-                                                        class="badge {{ $item->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $item->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
-                                                    {{-- <a class="btn btn-danger btn-sm" href="#">
+                                                    <td class="border">
+                                                        {{ $item->updated_at->translatedFormat('d F Y, H:i:s') }}
+                                                    </td>
+                                                    <td class="border">{{ $item->nama }}</td>
+                                                    <td class="border">{{ $item->phone }}</td>
+                                                    <td class="border">{{ $item->alamat }}</td>
+                                                    <td class="border">{{ $item->paket }}</td>
+                                                    <td class="border">
+                                                        {{ number_format($item->total_price) }}</span>
+                                                    </td>
+                                                    <td class="border"><label
+                                                            class="badge {{ $item->status == 'Paid' ? 'badge-success' : 'badge-danger' }}">{{ $item->status == 'Paid' ? 'Lunas' : 'Belum Lunas' }}</label>
+                                                        {{-- <a class="btn btn-danger btn-sm" href="#">
                                                     Belum bayar
                                                 </a> --}}
-                                                </td>
-                                                <td class="project-actions border">
-                                                    <a class="btn btn-info btn-sm"
-                                                        href="/admin/manual/lunas/{{ $item->id }}">
-                                                        <i class="fas fa-check"></i>
-                                                        </i>
-                                                    </a>
-                                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                                        <form action="/admin/menu/tagihan/{{ $item->id }}"
-                                                            method="POST">
-                                                            @csrf
-                                                            @method('delete')
-                                                            <button type="button" class="btn btn-danger btn-sm"
-                                                                data-toggle="modal"
-                                                                data-target="#confirm-delete-{{ $item->id }}"><i
-                                                                    class="fas fa-trash"></i></button>
-                                                            <div class="modal fade"
-                                                                id="confirm-delete-{{ $item->id }}" tabindex="-1"
-                                                                role="dialog" aria-labelledby="myModalLabel"
-                                                                aria-hidden="true">
-                                                                <div class="modal-dialog">
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-header">
-                                                                            <h4 class="modal-title" id="myModalLabel">
-                                                                                Konfirmasi
-                                                                                Penghapusan</h4>
-                                                                            <button type="button" class="close"
-                                                                                data-dismiss="modal"
-                                                                                aria-hidden="true">&times;</button>
-                                                                        </div>
-                                                                        <div class="modal-body">
-                                                                            Apakah Anda yakin ingin menghapus data ini?
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-default"
-                                                                                data-dismiss="modal">Batal</button>
-                                                                            <button type="submit"
-                                                                                class="btn btn-danger">Hapus</button>
+                                                    </td>
+                                                    <td class="project-actions border">
+                                                        <a class="btn btn-info btn-sm"
+                                                            href="/admin/manual/lunas/{{ $item->id }}">
+                                                            <i class="fas fa-check"></i>
+                                                            </i>
+                                                        </a>
+                                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                                            <form action="/admin/menu/tagihan/{{ $item->id }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                @method('delete')
+                                                                <button type="button" class="btn btn-danger btn-sm"
+                                                                    data-toggle="modal"
+                                                                    data-target="#confirm-delete-{{ $item->id }}"><i
+                                                                        class="fas fa-trash"></i></button>
+                                                                <div class="modal fade"
+                                                                    id="confirm-delete-{{ $item->id }}"
+                                                                    tabindex="-1" role="dialog"
+                                                                    aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h4 class="modal-title" id="myModalLabel">
+                                                                                    Konfirmasi
+                                                                                    Penghapusan</h4>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-hidden="true">&times;</button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                Apakah Anda yakin ingin menghapus data ini?
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button"
+                                                                                    class="btn btn-default"
+                                                                                    data-dismiss="modal">Batal</button>
+                                                                                <button type="submit"
+                                                                                    class="btn btn-danger">Hapus</button>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </td>
+                                                            </form>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th colspan="7" style="text-align:right">Total:</th>
+                                                <th colspan="3"></th>
                                             </tr>
-                                        @endforeach
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th colspan="7" style="text-align:right">Total:</th>
-                                            <th colspan="3"></th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                                        </tfoot>
+                                    </table>
+                                </div>
                                 {{-- menampilkan pencarian ketika tidak ditemukan --}}
                                 @if (isset($status))
                                     <div class="alert alert-danger text-center">{{ $status }}</div>
@@ -275,8 +277,7 @@
                         </div>
                     </div>
                 </div>
+            </section>
         </div>
-        </section>
-    </div>
 
-@endsection
+    @endsection

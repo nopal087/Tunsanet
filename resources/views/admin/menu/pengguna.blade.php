@@ -32,31 +32,33 @@
                     <!-- /.card-header -->
                     <div class="card mt-2">
                         <div class="card-body table-bordered-responsive p-0 mx-3 mt-3">
-                            <table class=" table-bordered text-wrap mb-3 hover stripe" border="2" id="myTable">
-                                <thead>
-                                    <tr class="bg-secondary">
-                                        <th>No.</th>
-                                        <th>ID</th>
-                                        <th>Nama</th>
-                                        <th>Email</th>
-                                        <th>No.Telp</th>
-                                        <th>Alamat</th>
-                                        {{-- <th>Aksi</th> --}}
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($user as $item)
-                                        <tr>
-                                            <td class="border">{{ $loop->iteration }}.</td>
-                                            <td class="border">{{ $item->id }}</td>
-                                            <td class="border">{{ $item->name }}</td>
-                                            <td class="border">{{ $item->email }}</td>
-                                            <td class="border">{{ $item->no_hp }}</td>
-                                            <td class="border">{{ $item->alamat }}</td>
+                            <div class="table-responsive">
+                                <table class=" table-bordered text-wrap mb-3 hover stripe" border="2" id="myTable">
+                                    <thead>
+                                        <tr class="bg-secondary">
+                                            <th>No.</th>
+                                            <th>ID</th>
+                                            <th>Nama</th>
+                                            <th>Email</th>
+                                            <th>No.Telp</th>
+                                            <th>Alamat</th>
+                                            {{-- <th>Aksi</th> --}}
                                         </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($user as $item)
+                                            <tr>
+                                                <td class="border">{{ $loop->iteration }}.</td>
+                                                <td class="border">{{ $item->id }}</td>
+                                                <td class="border">{{ $item->name }}</td>
+                                                <td class="border">{{ $item->email }}</td>
+                                                <td class="border">{{ $item->no_hp }}</td>
+                                                <td class="border">{{ $item->alamat }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                             @if (isset($status))
                                 <div class="alert alert-danger text-center">{{ $status }}</div>
                                 <div class="text-center">
