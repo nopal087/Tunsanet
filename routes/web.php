@@ -122,35 +122,8 @@ Route::get('/tagihan', [UserController::class, 'transaksi'])->name('transaksi');
 //mengambil paket internet didatabase
 Route::get('/', [UserController::class, 'paket']);
 
-
-// login admin
-Route::middleware(['auth', 'admin'])->group(function () {
-    // Rute-rute yang ingin dilindungi
-    Route::get('homedashboard', [UserController::class, 'dashboard']);
-});
-
-Route::get('homedashboard', [UserController::class, 'jumlah']);
 // Logout admin
 Route::post('/logout', [UserController::class, 'logout_admin'])->name('logout_admin');
-
-
-
-// Login admin
-// Route::get('/login_admin', [AdminController::class, 'login_admin'])->name('login_admin');
-// Route::post('/login_admin', [AdminController::class, 'authenticate']);
-
-// register admin
-// Route::get('admin_register', [AdminController::class, 'admin_register'])->name('admin_register');
-// Route::post('admin_register', [AdminController::class, 'admin_register_action'])->name('admin_register.action');
-// Route::get('/homedashboard', [AdminController::class, 'home']);
-
-//menampilkan halaman buat tagihan
-Route::get('/btagihan', [BuatTagihanController::class, 'btagihan']);
-Route::get('/UpdateLinkPayment', [BuatTagihanController::class, 'UpdateLink'])->name('UpdateLinkPayment');
-Route::post('/admin/menu/storeLink', [BuatTagihanController::class, 'storeLink']);
-Route::get('/admin/menu/paymentlink/{id}/edit', [BuatTagihanController::class, 'edit']);
-Route::put('/admin/menu/paymentlink/{id}', [BuatTagihanController::class, 'update']);
-
 
 
 //menampilkan halaman beberapa langkan untuk melakukan order/transaksi
@@ -163,44 +136,46 @@ Route::get('transaksi.invoice/{id}', [OrderController::class, 'invoice'])->name(
 //melakukan transaksi manual pada halaman transaksi.
 Route::get('/admin/manual/lunas/{id}', [OrderController::class, 'manual']);
 
-//menampilkan halaman pengguna langganan dengan fungsi CRUD
-Route::get('/Lpengguna', [PenggunaController::class, 'index'])->name('Lpengguna');
-Route::get('/admin/menu/Tambahpengguna', [PenggunaController::class, 'create']);
-Route::post('/admin/menu/store', [PenggunaController::class, 'store']);
-Route::get('/admin/menu/pengguna/{id}/edit', [PenggunaController::class, 'edit']);
-Route::put('/admin/menu/{id}', [PenggunaController::class, 'update']);
-Route::delete('/admin/menu/pengguna/{id}', [PenggunaController::class, 'destroy']);
-
-// menampilkan halaman lihat tagihan dengan fungsi CRUD
-Route::get('/LihatTagihan', [BuatTagihanController::class, 'ViewTagihan'])->name('Lihat_tagihan');
-Route::post('/admin/menu/btagihan', [BuatTagihanController::class, 'BuatTagihan']);
-Route::get('/admin/menu/Lunas/{id}', [BuatTagihanController::class, 'Lunas']);
-Route::delete('/admin/menu/LihatTagihan/{id}', [BuatTagihanController::class, 'destroy']);
-
-// Route::get('user', [UserController::class, 'pengguna']);
-
 // menampilkan halaman index user
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//menampilkan jumlah dari setiap tabel transaksi, tagihan laporan dll.
-// Route::get('homedashboard', [HomeController::class, 'jumlah']);
-
-// Menampilkan data di halaman Laporan.
-Route::get('/laporanBul', [LaporanController::class, 'laporanBulanan']);
-Route::get('/admin/menu/Tambahpengguna', [LaporanController::class, 'dataAccordion']);
-Route::get('/admin/header', [LaporanController::class, 'date']);
 
 
 // Cetak Invoice
 Route::get('/invoice.cetak/{id}', [InvoiceController::class, 'print'])->name('invoice.cetak');
-
-// menangani Agen 
-Route::get('/Agen', [AgenController::class, 'index_agen'])->name('agen');
-Route::get('/admin/menu/TambahAgen', [AgenController::class, 'create']);
-Route::post('/admin/menu/TambahAgen/store', [AgenController::class, 'store']);
-Route::get('/admin/menu/{id}/editAgen', [AgenController::class, 'edit']);
-Route::put('/admin/menu/update/{id}', [AgenController::class, 'update']);
-Route::delete('/admin/menu/Agen/{id}', [AgenController::class, 'destroy']);
-Route::get('/admin/manual/status/lunas/{id}', [AgenController::class, 'manual']);
-Route::get('/Agen', [AgenController::class, 'cari'])->name('DataAgen');
 Route::post('/user/agen', [AgenController::class, 'ajukan']);
+
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/homedashboard', [UserController::class, 'jumlah']);
+    Route::get('/Lpengguna', [PenggunaController::class, 'index'])->name('Lpengguna');
+    Route::get('/admin/menu/Tambahpengguna', [PenggunaController::class, 'create']);
+    Route::post('/admin/menu/store', [PenggunaController::class, 'store']);
+    Route::get('/admin/menu/pengguna/{id}/edit', [PenggunaController::class, 'edit']);
+    Route::put('/admin/menu/{id}', [PenggunaController::class, 'update']);
+    Route::delete('/admin/menu/pengguna/{id}', [PenggunaController::class, 'destroy']);
+
+    Route::get('/admin/menu/Tambahpengguna', [LaporanController::class, 'dataAccordion']);
+    Route::get('/laporanBul', [LaporanController::class, 'laporanBulanan']);
+    Route::get('/admin/menu/Tambahpengguna', [LaporanController::class, 'dataAccordion']);
+    Route::get('/admin/header', [LaporanController::class, 'date']);
+
+    Route::get('/Agen', [AgenController::class, 'index_agen'])->name('agen');
+    Route::get('/admin/menu/TambahAgen', [AgenController::class, 'create']);
+    Route::post('/admin/menu/TambahAgen/store', [AgenController::class, 'store']);
+    Route::get('/admin/menu/{id}/editAgen', [AgenController::class, 'edit']);
+    Route::put('/admin/menu/update/{id}', [AgenController::class, 'update']);
+    Route::delete('/admin/menu/Agen/{id}', [AgenController::class, 'destroy']);
+    Route::get('/admin/manual/status/lunas/{id}', [AgenController::class, 'manual']);
+    Route::get('/Agen', [AgenController::class, 'cari'])->name('DataAgen');
+
+    Route::get('/LihatTagihan', [BuatTagihanController::class, 'ViewTagihan'])->name('Lihat_tagihan');
+    Route::post('/admin/menu/btagihan', [BuatTagihanController::class, 'BuatTagihan']);
+    Route::get('/admin/menu/Lunas/{id}', [BuatTagihanController::class, 'Lunas']);
+    Route::delete('/admin/menu/LihatTagihan/{id}', [BuatTagihanController::class, 'destroy']);
+
+    Route::get('/btagihan', [BuatTagihanController::class, 'btagihan']);
+    Route::get('/UpdateLinkPayment', [BuatTagihanController::class, 'UpdateLink'])->name('UpdateLinkPayment');
+    Route::post('/admin/menu/storeLink', [BuatTagihanController::class, 'storeLink']);
+    Route::get('/admin/menu/paymentlink/{id}/edit', [BuatTagihanController::class, 'edit']);
+    Route::put('/admin/menu/paymentlink/{id}', [BuatTagihanController::class, 'update']);
+});
