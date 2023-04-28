@@ -222,8 +222,6 @@
                                                         %0Aatau%20anda%20dapat%20melakukan%20pembayaran%20manual%20bisa%20hubungi%20petugas%20:%20(085712666154)%20atau%20datang%20ke%20kantor%20bumdes.%0ATerimakasih">
                                                             <i class="fab fa-whatsapp"></i>
                                                         </a>
-
-
                                                         <div class="btn-group" role="group" aria-label="Basic example">
 
                                                             <form action="/admin/menu/LihatTagihan/{{ $t->id }}"

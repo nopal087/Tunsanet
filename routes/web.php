@@ -117,7 +117,7 @@ Route::post('password', [UserController::class, 'password_action'])->name('passw
 Route::get('user', [UserController::class, 'index'])->name('pengguna');
 
 //menampilkan data order dan ditampilkan ke tabel data transaksi
-Route::get('/tagihan', [UserController::class, 'transaksi'])->name('transaksi');
+
 
 //mengambil paket internet didatabase
 Route::get('/', [UserController::class, 'paket']);
@@ -178,4 +178,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('/admin/menu/storeLink', [BuatTagihanController::class, 'storeLink']);
     Route::get('/admin/menu/paymentlink/{id}/edit', [BuatTagihanController::class, 'edit']);
     Route::put('/admin/menu/paymentlink/{id}', [BuatTagihanController::class, 'update']);
+
+    Route::get('/tagihan', [UserController::class, 'transaksi'])->name('transaksi');
 });

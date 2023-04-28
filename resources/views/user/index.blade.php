@@ -188,15 +188,10 @@
             </p>
         </div>
     </div>
-    <div class="d-flex justify-content-center align-items-center">
-        <button class="btn btn-primary"><i class="fas fa-arrow-alt-circle-left"></i></button>
-        <span class="mx-3 fw-bold">Geser</span>
-        <button class="btn btn-primary"><i class="fas fa-arrow-alt-circle-right"></i></button>
-    </div>
 
     </header>
     <main class="container mb-1 ">
-        <div class=" row row-cols- row-cols-md-3 mb-3 text-center p-2 flex-nowrap overflow-auto">
+        <div class=" row row-cols- row-cols-md-3 mb-3 text-center p-2">
             @foreach ($paketInternets as $paket)
                 <div class="col-sm-4" id="paket">
                     <div class="card mb-4 rounded-3 shadow-sm border-primary">
